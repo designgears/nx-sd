@@ -3,6 +3,7 @@
 from nxsd.builder import NXSDBuilder, NXSDBuildConfig
 from nxsd.packages import atmosphere
 from nxsd.packages import hekate
+from nxsd.packages import homebrew
 
 OUTPUT_FILE = "nx-sd.zip"
 
@@ -20,7 +21,7 @@ def main():
     )
 
     nxsd_builder = NXSDBuilder(build_config)
-    package_list = [atmosphere, hekate]
+    package_list = [atmosphere, hekate, homebrew]
     for package in package_list:
         nxsd_builder.add_package(package.get_package())
     nxsd_builder.build_packages()

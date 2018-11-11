@@ -4,3 +4,9 @@
 [submodule "components/hekate"]
 	path = components/hekate
 	url = https://github.com/CTCaer/hekate.git
+[submodule "components/nx-hbloader"]
+	path = components/nx-hbloader
+	url = https://github.com/switchbrew/nx-hbloader.git
+[submodule "components/nx-hbmenu"]
+	path = components/nx-hbmenu
+	url = https://github.com/switchbrew/nx-hbmenu.git
