@@ -1,0 +1,9 @@
+build/
+nx-sd.zip
+
+__pycache__/
+.idea/
+
+*.sublime-project
+*.sublime-workspace
+*.log

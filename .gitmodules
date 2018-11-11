@@ -1,0 +1,3 @@
+[submodule "components/atmosphere"]
+	path = components/atmosphere
+	url = https://github.com/Atmosphere-NX/Atmosphere.git
