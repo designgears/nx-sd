@@ -4,7 +4,7 @@ from nxsd import util
 from nxsd.packages import NXSDPackage
 from pathlib import Path
 
-ATMOSPHERE_VERSION = '0.7.4'
+ATMOSPHERE_VERSION = '0.7.5'
 
 
 class AtmospherePackage(NXSDPackage):
