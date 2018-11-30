@@ -5,7 +5,7 @@ from nxsd.packages import NXSDPackage
 from pathlib import Path
 
 HBLOADER_VERSION = 'v2.0.1'
-HBMENU_VERSION = 'v3.0.0'
+HBMENU_VERSION = 'v3.0.1'
 
 
 class HomebrewPackage(NXSDPackage):
