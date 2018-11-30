@@ -1,4 +1,3 @@
-import os
 import shutil
 
 from abc import ABC, abstractmethod
@@ -10,11 +9,11 @@ class NXSDPackage(ABC):
         self.config = None
 
     @abstractmethod
-    def build(self, config):
+    def build(self):
         pass
 
     @abstractmethod
-    def pack(self, config):
+    def pack(self):
         pass
 
     @staticmethod
@@ -24,5 +23,5 @@ class NXSDPackage(ABC):
             if src.is_dir():
                 shutil.copytree(str(src), str(dest))
             else:
-                os.makedirs(dest.parent, exist_ok=True)
+                dest.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(str(src), str(dest))
