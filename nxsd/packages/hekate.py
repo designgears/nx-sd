@@ -15,6 +15,7 @@ class HekatePackage(NXSDPackage):
 
         hekate_root = Path(self.config.components_dir, 'hekate/')
         with util.change_dir(hekate_root):
+            subprocess.call(['git', 'fetch', 'origin'], stdout=output_dev, stderr=error_dev)
             subprocess.call(['git', 'checkout', HEKATE_VERSION], stdout=output_dev, stderr=error_dev)
             subprocess.call('make', stdout=output_dev, stderr=error_dev)
 

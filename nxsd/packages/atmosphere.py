@@ -15,6 +15,8 @@ class AtmospherePackage(NXSDPackage):
 
         ams_root = Path(self.config.components_dir, 'atmosphere/')
         with util.change_dir(ams_root):
+            subprocess.call(['git', 'fetch', 'origin'], stdout=output_dev, stderr=error_dev)
+            subprocess.call(['git', 'submodule', 'update', '--recursive'], stdout=output_dev, stderr=error_dev)
             subprocess.call(['git', 'checkout', ATMOSPHERE_VERSION], stdout=output_dev, stderr=error_dev)
             subprocess.call('make', stdout=output_dev, stderr=error_dev)
 

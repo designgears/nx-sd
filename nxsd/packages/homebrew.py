@@ -17,12 +17,14 @@ class HomebrewPackage(NXSDPackage):
         # Build nx-hbloader
         hbloader_root = Path(self.config.components_dir, 'nx-hbloader/')
         with util.change_dir(hbloader_root):
+            subprocess.call(['git', 'fetch', 'origin'], stdout=output_dev, stderr=error_dev)
             subprocess.call(['git', 'checkout', HBLOADER_VERSION], stdout=output_dev, stderr=error_dev)
             subprocess.call('make', stdout=output_dev, stderr=error_dev)
 
         # Build nx-hbmenu
         hbmenu_root = Path(self.config.components_dir, 'nx-hbmenu/')
         with util.change_dir(hbmenu_root):
+            subprocess.call(['git', 'fetch', 'origin'], stdout=output_dev, stderr=error_dev)
             subprocess.call(['git', 'checkout', HBMENU_VERSION], stdout=output_dev, stderr=error_dev)
             subprocess.call(['make', 'nx'], stdout=output_dev, stderr=error_dev)
 
