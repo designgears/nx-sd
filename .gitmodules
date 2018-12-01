@@ -10,3 +10,6 @@
 [submodule "components/nx-hbmenu"]
 	path = components/nx-hbmenu
 	url = https://github.com/switchbrew/nx-hbmenu.git
+[submodule "components/checkpoint"]
+	path = components/checkpoint
+	url = https://github.com/FlagBrew/Checkpoint.git

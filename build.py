@@ -5,6 +5,7 @@ from nxsd.packages import atmosphere
 from nxsd.packages import hekate
 from nxsd.packages import homebrew
 from nxsd.packages import sigpatches
+from nxsd.packages import checkpoint
 
 OUTPUT_FILE = "nx-sd.zip"
 
@@ -22,7 +23,7 @@ def main():
     )
 
     nxsd_builder = NXSDBuilder(build_config)
-    package_list = [atmosphere, hekate, homebrew, sigpatches]
+    package_list = [atmosphere, hekate, homebrew, sigpatches, checkpoint]
     for package in package_list:
         nxsd_builder.add_package(package.get_package())
     nxsd_builder.build_packages()
