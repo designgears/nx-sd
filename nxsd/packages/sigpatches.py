@@ -1,3 +1,5 @@
+import logging
+
 from nxsd.packages import NXSDPackage
 from pathlib import Path
 
@@ -12,6 +14,8 @@ class SigpatchesPackage(NXSDPackage):
         pass
 
     def pack(self):
+        self.config.logger.info('Packing Sigpatches {version}...'.format(version=SIGPATCHES_VERSION))
+
         component_dict = {
             'es-patches': (
                 Path(self.config.components_dir, 'sigpatches/'),

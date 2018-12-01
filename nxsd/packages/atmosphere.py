@@ -1,3 +1,4 @@
+import logging
 import subprocess
 
 from nxsd import util
@@ -10,20 +11,29 @@ ATMOSPHERE_VERSION = '0.7.5'
 class AtmospherePackage(NXSDPackage):
 
     def build(self):
-        output_dev = open('build.log', 'a')
-        error_dev = open('error.log', 'a')
+        self.config.logger.info('Building Atmosphere {version}...'.format(version=ATMOSPHERE_VERSION))
 
         ams_root = Path(self.config.components_dir, 'atmosphere/')
         with util.change_dir(ams_root):
-            subprocess.call(['git', 'fetch', 'origin'], stdout=output_dev, stderr=error_dev)
-            subprocess.call(['git', 'submodule', 'update', '--recursive'], stdout=output_dev, stderr=error_dev)
-            subprocess.call(['git', 'checkout', ATMOSPHERE_VERSION], stdout=output_dev, stderr=error_dev)
-            subprocess.call('make', stdout=output_dev, stderr=error_dev)
+            build_commands = [
+                'git fetch origin',
+                'git submodule update --recursive',
+                'git checkout {version}'.format(version=ATMOSPHERE_VERSION),
+                'make',
+            ]
 
-        output_dev.close()
-        error_dev.close()
+            for command in build_commands:
+                process = subprocess.Popen(command.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                with process.stdout:
+                    self._log_stream_output(logging.DEBUG, process.stdout)
+                with process.stderr:
+                    self._log_stream_output(logging.ERROR, process.stderr)
+
+                process.wait()
 
     def pack(self):
+        self.config.logger.info('Packing Atmosphere {version}...'.format(version=ATMOSPHERE_VERSION))
+
         ams_root = Path(self.config.components_dir, 'atmosphere/')
         dest_dir = Path(self.config.build_dir, 'sdcard/atmosphere/')
 

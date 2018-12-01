@@ -1,3 +1,4 @@
+import logging
 import shutil
 
 from abc import ABC, abstractmethod
@@ -15,6 +16,10 @@ class NXSDPackage(ABC):
     @abstractmethod
     def pack(self):
         pass
+
+    def _log_stream_output(self, level, stream):
+        for line in stream:
+            self.config.logger.log(level, '%s', line.decode('utf-8').rstrip())
 
     @staticmethod
     def _copy_package_components(component_dict):

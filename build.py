@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import logging
+
 from nxsd.builder import NXSDBuilder, NXSDBuildConfig
 from nxsd.packages import atmosphere
 from nxsd.packages import hekate
@@ -15,11 +17,14 @@ DEFAULTS_DIR = "defaults/"
 
 
 def main():
+    logger = logging.getLogger('nxsd')
+
     build_config = NXSDBuildConfig(
         build_dir=BUILD_DIR,
         components_dir=COMPONENTS_DIR,
         defaults_dir=DEFAULTS_DIR,
-        output_path=OUTPUT_FILE
+        output_path=OUTPUT_FILE,
+        logger=logger,
     )
 
     nxsd_builder = NXSDBuilder(build_config)
@@ -27,6 +32,8 @@ def main():
     for package in package_list:
         nxsd_builder.add_package(package.get_package())
     nxsd_builder.build_packages()
+
+    logger.info('Done building nx-sd!')
 
 
 if __name__ == '__main__':
