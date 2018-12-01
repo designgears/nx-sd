@@ -1,5 +1,5 @@
 build/
-nx-sd.zip
+nx-sd*.zip
 
 __pycache__/
 .idea/
