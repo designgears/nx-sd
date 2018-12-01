@@ -15,7 +15,7 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 1. Install [devkitARM and devkitA64](https://devkitpro.org/wiki/Getting_Started) toolchains.
 2. Install dependencies
 
-       sudo pacman -S switch-freetype switch-libconfig switch-libjpeg-turbo switch-sdl2 switch-sdl2_image switch-sdl2_gfx switch-sdl2_ttf switch-zlib
+       sudo pacman -S switch-curl switch-freetype switch-libconfig switch-libjpeg-turbo switch-sdl2 switch-sdl2_image switch-sdl2_gfx switch-sdl2_ttf switch-zlib
    
 3. Install [Python 3.7](https://www.python.org/downloads/) or newer.
 4. Clone this repo and all submodules recursively.
@@ -41,3 +41,4 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 | Component                                                 | Version | Description |
 | --------------------------------------------------------- | ------- | ----------- |
 | [Checkpoint](https://github.com/FlagBrew/Checkpoint)      | 3.5.0   | Save manager for the Nintendo Switch |
+| [Tinfoil](https://github.com/Adubbz/Tinfoil)              | 0.2.1   | Title manager for the Nintendo Switch |

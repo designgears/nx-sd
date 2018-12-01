@@ -13,3 +13,6 @@
 [submodule "components/checkpoint"]
 	path = components/checkpoint
 	url = https://github.com/FlagBrew/Checkpoint.git
+[submodule "components/tinfoil"]
+	path = components/tinfoil
+	url = https://github.com/Adubbz/Tinfoil.git

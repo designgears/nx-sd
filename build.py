@@ -8,6 +8,7 @@ from nxsd.packages import hekate
 from nxsd.packages import homebrew
 from nxsd.packages import sigpatches
 from nxsd.packages import checkpoint
+from nxsd.packages import tinfoil
 
 
 BUILD_DIR_CORE = 'build/core/'
@@ -46,7 +47,7 @@ def main():
     nxsd_addon = (
         'nxsd-addon',
         NXSDBuilder(nxsd_addon_config),
-        [checkpoint],
+        [checkpoint, tinfoil],
     )
 
     builders = [nxsd_core, nxsd_addon]
