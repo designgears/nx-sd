@@ -12,6 +12,8 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 
 ## Building
 
+**Note:** Atmosphère 0.8.x cannot currently be built directly with libnx (1.6.0) due to missing dependencies for `fatal`. If you have a custom build of libnx with the necessary GPU changes, install it to `$(DEVKITPRO)/libnx.newgpu`. The build script will automatically patch `fatal`'s Makefile to use this.
+
 1. Install [devkitARM and devkitA64](https://devkitpro.org/wiki/Getting_Started) toolchains.
 2. Install dependencies
 
@@ -31,7 +33,7 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 
 | Component                                                 | Version | Description |
 | --------------------------------------------------------- | ------- | ----------- |
-| [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) | 0.7.5   | Custom firmware for the Nintendo Switch |
+| [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) | 0.8.1   | Custom firmware for the Nintendo Switch |
 | [hekate](https://github.com/CTCaer/hekate)                | 4.2     | Custom Nintendo Switch bootloader |
 | [nx-hbloader](https://github.com/switchbrew/nx-hbloader)  | 2.0.1   | Host process for loading homebrew NROs |
 | [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu)      | 3.0.1   | The Nintendo Switch homebrew menu |

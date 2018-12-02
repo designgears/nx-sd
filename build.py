@@ -19,6 +19,7 @@ OUTPUT_FILE_ADDON = 'nx-sd-addon.zip'
 
 COMPONENTS_DIR = 'components/'
 DEFAULTS_DIR = 'defaults/'
+PATCHES_DIR = 'patches/'
 
 
 def main():
@@ -28,6 +29,7 @@ def main():
         build_dir=BUILD_DIR_CORE,
         components_dir=COMPONENTS_DIR,
         defaults_dir=DEFAULTS_DIR,
+        patches_dir=PATCHES_DIR,
         output_path=OUTPUT_FILE_CORE,
         logger=logger,
     )
@@ -41,6 +43,7 @@ def main():
         build_dir=BUILD_DIR_ADDON,
         components_dir=COMPONENTS_DIR,
         defaults_dir=DEFAULTS_DIR,
+        patches_dir=PATCHES_DIR,
         output_path=OUTPUT_FILE_ADDON,
         logger=logger,
     )

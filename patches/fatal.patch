@@ -1,0 +1,20 @@
+--- a/stratosphere/fatal/Makefile
++++ b/stratosphere/fatal/Makefile
+@@ -7,7 +7,7 @@ $(error "Please set DEVKITPRO in your environment. export DEVKITPRO=<path to>/de
+ endif
+ 
+ TOPDIR ?= $(CURDIR)
+-include $(DEVKITPRO)/libnx/switch_rules
++include $(DEVKITPRO)/libnx.newgpu/switch_rules
+ 
+ AMSBRANCH := $(shell git symbolic-ref --short HEAD)
+ AMSREV := $(AMSBRANCH)-$(shell git rev-parse --short HEAD)
+@@ -46,7 +46,7 @@ CFLAGS	+=	$(INCLUDE) -D__SWITCH__ `freetype-config --cflags`
+ CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++17
+ 
+ ASFLAGS	:=	-g $(ARCH)
+-LDFLAGS	=	-specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
++LDFLAGS	=	-specs=$(DEVKITPRO)/libnx.newgpu/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
+ 
+ LIBS	:= `freetype-config --libs` -lstratosphere -lnx
+ 

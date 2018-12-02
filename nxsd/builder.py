@@ -32,9 +32,10 @@ class NXSDBuilder(object):
 
 class NXSDBuildConfig(object):
 
-    def __init__(self, components_dir, build_dir, defaults_dir, output_path, logger=None):
+    def __init__(self, components_dir, build_dir, defaults_dir, patches_dir, output_path, logger=None):
         self.components_dir = components_dir
         self.build_dir = build_dir
         self.defaults_dir = defaults_dir
+        self.patches_dir = patches_dir
         self.output_path = output_path
         self.logger = logging.getLogger() if logger is None else logger
