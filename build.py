@@ -2,64 +2,45 @@
 
 import logging
 
-from nxsd.builder import NXSDBuilder, NXSDBuildConfig
-from nxsd.packages import atmosphere
-from nxsd.packages import hekate
-from nxsd.packages import homebrew
-from nxsd.packages import sigpatches
-from nxsd.packages import checkpoint
-from nxsd.packages import tinfoil
+from nxsd.package import NXSDPackage
+from nxsd.components import atmosphere
+from nxsd.components import hekate
+from nxsd.components import homebrew
+from nxsd.components import sigpatches
+from nxsd.components import checkpoint
+from nxsd.components import tinfoil
 
 
-BUILD_DIR_CORE = 'build/core/'
-OUTPUT_FILE_CORE = 'nx-sd.zip'
-
-BUILD_DIR_ADDON = 'build/addon/'
-OUTPUT_FILE_ADDON = 'nx-sd-addon.zip'
-
-COMPONENTS_DIR = 'components/'
-DEFAULTS_DIR = 'defaults/'
-PATCHES_DIR = 'patches/'
+logger = logging.getLogger('nxsd')
 
 
 def main():
-    logger = logging.getLogger('nxsd')
-
-    nxsd_core_config = NXSDBuildConfig(
-        build_dir=BUILD_DIR_CORE,
-        components_dir=COMPONENTS_DIR,
-        defaults_dir=DEFAULTS_DIR,
-        patches_dir=PATCHES_DIR,
-        output_path=OUTPUT_FILE_CORE,
-        logger=logger,
+    nxsd_core = NXSDPackage(
+        name='nxsd-core',
+        build_directory='build/core/',
+        output_filename='nx-sd.zip',
     )
-    nxsd_core = (
-        'nxsd-core',
-        NXSDBuilder(nxsd_core_config),
-        [atmosphere, hekate, homebrew, sigpatches],
-    )
+    nxsd_core.components = [
+        atmosphere,
+        hekate,
+        homebrew,
+        sigpatches,
+    ]
 
-    nxsd_addon_config = NXSDBuildConfig(
-        build_dir=BUILD_DIR_ADDON,
-        components_dir=COMPONENTS_DIR,
-        defaults_dir=DEFAULTS_DIR,
-        patches_dir=PATCHES_DIR,
-        output_path=OUTPUT_FILE_ADDON,
-        logger=logger,
+    nxsd_addon = NXSDPackage(
+        name='nxsd-addon',
+        build_directory='build/addon/',
+        output_filename='nx-sd-addon.zip',
     )
-    nxsd_addon = (
-        'nxsd-addon',
-        NXSDBuilder(nxsd_addon_config),
-        [checkpoint, tinfoil],
-    )
+    nxsd_addon.components = [
+        checkpoint, 
+        tinfoil
+    ]
 
-    builders = [nxsd_core, nxsd_addon]
-    for name, builder, packages in builders:
-        for package in packages:
-            builder.add_package(package.get_package())
-
-        builder.build_packages()
-        logger.info('Created {name} package!'.format(name=name))
+    packages = [nxsd_core, nxsd_addon]
+    for package in packages:
+        package.build_components()
+        logger.info('Created {name} package!'.format(name=package.name))
 
 
 if __name__ == '__main__':
