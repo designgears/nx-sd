@@ -58,6 +58,10 @@ class AtmosphereComponent(NXSDComponent):
         set_mitm_flags_dir.mkdir(parents=True, exist_ok=True)
         open(Path(set_mitm_flags_dir, 'boot2.flag'), 'a').close()
 
+    def clean(self):
+        with util.change_dir(self._source_directory):
+            self._execute_shell_commands(['make clean'])
+
     def _build(self):
         # Need to apply a Makefile patch for fatal to use a custom build of
         # libnx. Latest libnx (1.6.0) does not properly build Atmosphere 0.8.x

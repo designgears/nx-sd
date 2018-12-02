@@ -29,6 +29,13 @@ class NXSDComponent(ABC):
         """
         pass
 
+    @abstractmethod
+    def clean(self):
+        """
+        Clean up built binaries for this component.
+        """
+        pass
+
     def _log_stream_output(self, level, stream):
         for line in stream:
             _logger.log(level, '%s', line.decode('utf-8').rstrip())

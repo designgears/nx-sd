@@ -26,6 +26,10 @@ class CheckpointComponent(NXSDComponent):
         }
         self._copy_components(component_dict)
 
+    def clean(self):
+        with util.change_dir(self._source_directory):
+            self._execute_shell_commands(['make clean'])
+
     def _build(self):
         with util.change_dir(self._source_directory):
             build_commands = [

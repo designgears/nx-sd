@@ -38,6 +38,15 @@ class HomebrewComponent(NXSDComponent):
         }
         self._copy_components(component_dict)
 
+    def clean(self):
+        component_roots = [
+            self._hbloader_source_directory,
+            self._hbmenu_source_directory,
+        ]
+        for component_root in component_roots:
+            with util.change_dir(component_root):
+                self._execute_shell_commands(['make clean'])
+
     def _build(self):
         self._build_hbloader()
         self._build_hbmenu()

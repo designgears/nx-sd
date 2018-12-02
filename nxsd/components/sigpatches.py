@@ -22,6 +22,10 @@ class SigpatchesComponent(NXSDComponent):
         }
         self._copy_components(component_dict)
 
+    def clean(self):
+        # no-op. Nothing to clean.
+        pass
+
 
 def get_component():
     return SigpatchesComponent()

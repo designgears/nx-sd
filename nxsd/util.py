@@ -1,3 +1,4 @@
+import contextlib
 import os
 
 from contextlib import contextmanager
@@ -12,3 +13,7 @@ def change_dir(new_dir):
         yield
     finally:
         os.chdir(prev_dir)
+
+def delete_if_exists(path):
+    with contextlib.suppress(FileNotFoundError):
+        os.remove(path)

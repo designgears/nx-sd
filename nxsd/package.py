@@ -1,6 +1,7 @@
 import logging
 import shutil
 
+from nxsd import util
 from pathlib import Path
 
 
@@ -28,6 +29,17 @@ class NXSDPackage(object):
         output_path = Path(self.output_filename)
         shutil.make_archive(output_path.stem, 'zip',
                             root_dir=self.build_directory)
+
+    def clean(self):
+        self._cleanup_build_directory()
+
+        for component_module in self.components:
+            component = component_module.get_component()
+            _logger.info('Cleaning {name} {version}...'.format(
+                name=component.name, version=component.version_string))
+            component.clean()
+
+        util.delete_if_exists(Path(self.output_filename))
 
     def _cleanup_build_directory(self):
         build_dir = Path(self.build_directory)
