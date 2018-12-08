@@ -3,7 +3,7 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-ATMOSPHERE_VERSION = '0.8.1'
+ATMOSPHERE_VERSION = '0.8.2'
 
 
 class AtmosphereComponent(NXSDComponent):
@@ -18,8 +18,7 @@ class AtmosphereComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_sd = Path(install_directory, 'sdcard/')
-        dest_ams = Path(dest_sd, 'atmosphere/')
+        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
 
         component_dict = {
             'set_mitm': (
@@ -60,7 +59,7 @@ class AtmosphereComponent(NXSDComponent):
             ),
             'bct.ini': (
                 Path(self._source_directory, 'common/defaults/BCT.ini'),
-                Path(dest_sd, 'BCT.ini'),
+                Path(dest_ams, 'BCT.ini'),
             ),
         }
         self._copy_components(component_dict)
