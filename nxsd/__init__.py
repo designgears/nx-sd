@@ -21,24 +21,14 @@ def _setup_logging():
     console_handler.setFormatter(logging.Formatter('%(message)s'))
     logger.addHandler(console_handler)
 
-    file_record_format = logging.Formatter(
-        fmt='%(asctime)s - [%(levelname)s] %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S',
-    )
-
     Path('log').mkdir(parents=True, exist_ok=True)
 
-    if logger.isEnabledFor(logging.ERROR):
-        error_log_handler = logging.FileHandler('log/error.log')
-        error_log_handler.setLevel(logging.ERROR)
-        error_log_handler.setFormatter(file_record_format)
-        logger.addHandler(error_log_handler)
-
-    if logger.isEnabledFor(logging.DEBUG):
-        debug_log_handler = logging.FileHandler('log/debug.log')
-        debug_log_handler.setLevel(logging.DEBUG)
-        debug_log_handler.setFormatter(file_record_format)
-        logger.addHandler(debug_log_handler)
+    file_log_handler = logging.FileHandler('log/build.log', delay=True)
+    file_log_handler.setLevel(logging.DEBUG)
+    file_log_handler.setFormatter(logging.Formatter(
+        fmt='%(asctime)s - [%(levelname)s] %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'))
+    logger.addHandler(file_log_handler)
 
 
 _setup_logging()
