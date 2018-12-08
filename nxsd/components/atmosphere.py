@@ -34,17 +34,29 @@ class AtmosphereComponent(NXSDComponent):
                 Path(self._source_directory, 'stratosphere/creport/creport.nsp'),
                 Path(dest_ams, 'titles/0100000000000036/exefs.nsp'),
             ),
+            'fs-mitm': (
+                Path(self._source_directory, 'stratosphere/fs_mitm/fs_mitm.kip'),
+                Path(dest_ams, 'modules/core/fs_mitm.kip'),
+            ),
+            'loader': (
+                Path(self._source_directory, 'stratosphere/loader/loader.kip'),
+                Path(dest_ams, 'modules/core/loader.kip'),
+            ),
+            'pm': (
+                Path(self._source_directory, 'stratosphere/pm/pm.kip'),
+                Path(dest_ams, 'modules/core/pm.kip'),
+            ),
+            'sm': (
+                Path(self._source_directory, 'stratosphere/sm/sm.kip'),
+                Path(dest_ams, 'modules/core/sm.kip'),
+            ),
+            'secmon': (
+                Path(self._source_directory, 'exosphere/exosphere.bin'),
+                Path(dest_ams, 'secmon/exosphere.bin'),
+            ),
             'no-gc': (
                 Path(self._source_directory, 'common/defaults/kip_patches/default_nogc/'),
                 Path(dest_ams, 'kip_patches/default_nogc/'),
-            ),
-            'fusee-primary': (
-                Path(self._source_directory, 'fusee/fusee-primary/fusee-primary.bin'),
-                Path(dest_sd, 'bootloader/payloads/fusee-primary.bin'),
-            ),
-            'fusee-secondary': (
-                Path(self._source_directory, 'fusee/fusee-secondary/fusee-secondary.bin'),
-                Path(dest_sd, 'fusee-secondary.bin'),
             ),
             'bct.ini': (
                 Path(self._source_directory, 'common/defaults/BCT.ini'),

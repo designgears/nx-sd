@@ -3,7 +3,7 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-HEKATE_VERSION = 'v4.2'
+HEKATE_VERSION = 'v4.5'
 
 
 class HekateComponent(NXSDComponent):
