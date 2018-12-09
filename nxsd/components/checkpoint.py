@@ -1,4 +1,5 @@
 from nxsd import util
+from nxsd.components import _dependencies as dependencies
 from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
@@ -14,6 +15,21 @@ class CheckpointComponent(NXSDComponent):
         self._version_string = CHECKPOINT_VERSION
 
         self._source_directory = Path(settings.components_directory, 'checkpoint/')
+
+    def has_all_dependencies(self):
+        if not dependencies.check_core_dependencies():
+            return False
+
+        dependency_list = [
+            dependencies.SWITCH_SDL2_GFX,
+            dependencies.SWITCH_SDL2_IMAGE,
+            dependencies.SWITCH_SDL2_TTF
+        ]
+
+        if not dependencies.check_dependencies(dependency_list):
+            return False
+        
+        return True
 
     def install(self, install_directory):
         self._build()

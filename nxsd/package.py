@@ -19,16 +19,26 @@ class NXSDPackage(object):
 
     def build_components(self):
         self._cleanup_build_directory()
+        
+        all_builds_successful = True
 
         for component_module in self.components:
             component = component_module.get_component()
-            _logger.info('Building {name} {version}...'.format(
+            if component.has_all_dependencies():
+                _logger.info('Building {name} {version}...'.format(
                 name=component.name, version=component.version_string))
-            component.install(self.build_directory)
+                component.install(self.build_directory)
+            else:
+                all_builds_successful = False
+                _logger.info('Unable to build {name} {version}!'.format(
+                name=component.name, version=component.version_string))
 
-        output_path = Path(self.output_filename)
-        shutil.make_archive(output_path.stem, 'zip',
-                            root_dir=self.build_directory)
+        if all_builds_successful:
+            output_path = Path(self.output_filename)
+            shutil.make_archive(output_path.stem, 'zip',
+                                root_dir=self.build_directory)
+
+        return all_builds_successful
 
     def clean(self):
         self._cleanup_build_directory()

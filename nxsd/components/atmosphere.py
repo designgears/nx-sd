@@ -1,4 +1,5 @@
 from nxsd import util
+from nxsd.components import _dependencies as dependencies
 from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
@@ -14,6 +15,29 @@ class AtmosphereComponent(NXSDComponent):
         self._version_string = ATMOSPHERE_VERSION
 
         self._source_directory = Path(settings.components_directory, 'atmosphere/')
+
+    def has_all_dependencies(self):
+        if not dependencies.check_core_dependencies():
+            return False
+        
+        if not util.check_environment_variable('DEVKITARM'):
+            return False
+
+        dependency_list = [
+            dependencies.DEVKITARM,
+            dependencies.SWITCH_FREETYPE,
+            # Custom libnx for building `fatal`. This can be removed
+            # once latest libnx release can build Atmosphere.
+            dependencies.NXSDDependency(
+                name='libnx.newgpu',
+                paths=[Path(dependencies.dkp_root, 'libnx.newgpu/lib/libnx.a')]
+            )
+        ]
+
+        if not dependencies.check_dependencies(dependency_list):
+            return False
+        
+        return True
 
     def install(self, install_directory):
         self._build()

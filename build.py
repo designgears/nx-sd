@@ -39,8 +39,11 @@ def main():
 def build(args):
     packages = get_packages()
     for package in packages:
-        package.build_components()
-        logger.info('Created {name} package!'.format(name=package.name))
+        if package.build_components():
+            logger.info('Created {name} package!'.format(name=package.name))
+        else:
+            logger.info('Failed to create {name} package! Check build.log for details.'.format(name=package.name))
+        
 
 def clean(args):
     packages = get_packages()

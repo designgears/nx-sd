@@ -18,6 +18,14 @@ class NXSDComponent(ABC):
         return self._version_string
 
     @abstractmethod
+    def has_all_dependencies(self):
+        """
+        Check if dependencies required to build this component are present.
+        Return True if all dependencies are satisfied, False otherwise.
+        """
+        pass
+
+    @abstractmethod
     def install(self, install_directory):
         """
         Build this component from source (if necessary), then install it to the
