@@ -45,7 +45,7 @@ class HomebrewComponent(NXSDComponent):
         ]
         for component_root in component_roots:
             with util.change_dir(component_root):
-                self._execute_shell_commands(['make clean'])
+                util.execute_shell_commands(['make clean'])
 
     def _build(self):
         self._build_hbloader()
@@ -59,7 +59,7 @@ class HomebrewComponent(NXSDComponent):
                 'git checkout {version}'.format(version=HBLOADER_VERSION),
                 'make',
             ]
-            self._execute_shell_commands(build_commands)
+            util.execute_shell_commands(build_commands)
 
     def _build_hbmenu(self):
         component_root = Path(settings.components_directory, 'nx-hbmenu/')
@@ -69,7 +69,7 @@ class HomebrewComponent(NXSDComponent):
                 'git checkout {version}'.format(version=HBMENU_VERSION),
                 'make nx',
             ]
-            self._execute_shell_commands(build_commands)
+            util.execute_shell_commands(build_commands)
 
 
 def get_component():

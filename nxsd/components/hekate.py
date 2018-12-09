@@ -38,7 +38,7 @@ class HekateComponent(NXSDComponent):
 
     def clean(self):
         with util.change_dir(self._source_directory):
-            self._execute_shell_commands(['make clean'])
+            util.execute_shell_commands(['make clean'])
 
     def _build(self):
         with util.change_dir(self._source_directory):
@@ -47,7 +47,7 @@ class HekateComponent(NXSDComponent):
                 'git checkout {version}'.format(version=HEKATE_VERSION),
                 'make',
             ]
-            self._execute_shell_commands(build_commands)
+            util.execute_shell_commands(build_commands)
 
 
 def get_component():
