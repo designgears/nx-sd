@@ -15,4 +15,4 @@
 	url = https://github.com/FlagBrew/Checkpoint.git
 [submodule "components/tinfoil"]
 	path = components/tinfoil
-	url = https://github.com/Adubbz/Tinfoil.git
+	url = https://github.com/nicoelayda/Tinfoil.git
