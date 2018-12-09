@@ -2,6 +2,7 @@
 
 import argparse
 import logging
+import nxsd
 
 from nxsd.package import NXSDPackage
 from nxsd.components import atmosphere
@@ -10,9 +11,6 @@ from nxsd.components import homebrew
 from nxsd.components import sigpatches
 from nxsd.components import checkpoint
 from nxsd.components import tinfoil
-
-
-logger = logging.getLogger('nxsd')
 
 
 def main():
@@ -30,9 +28,9 @@ def main():
 
     args = parser.parse_args()
 
-    if args.verbose == True:
-        logger.setLevel(logging.DEBUG)
-        logger.debug('Verbose logging enabled.')
+    if args.verbose:
+        nxsd.logger.setLevel(logging.DEBUG)
+        nxsd.logger.debug('Verbose logging enabled.')
     
     commands[args.command](args)
 
@@ -40,16 +38,16 @@ def build(args):
     packages = get_packages()
     for package in packages:
         if package.build_components():
-            logger.info('Created {name} package!'.format(name=package.name))
+            nxsd.logger.info('Created {name} package!'.format(name=package.name))
         else:
-            logger.info('Failed to create {name} package! Check build.log for details.'.format(name=package.name))
+            nxsd.logger.info('Failed to create {name} package! Check build.log for details.'.format(name=package.name))
         
 
 def clean(args):
     packages = get_packages()
     for package in packages:
         package.clean()
-        logger.info('Cleaned {name} package!'.format(name=package.name))
+        nxsd.logger.info('Cleaned {name} package!'.format(name=package.name))
     pass
 
 def get_packages():

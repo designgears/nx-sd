@@ -1,11 +1,8 @@
-import logging
+import nxsd
 import shutil
 
 from nxsd import util
 from pathlib import Path
-
-
-_logger = logging.getLogger('nxsd')
 
 
 class NXSDPackage(object):
@@ -25,12 +22,12 @@ class NXSDPackage(object):
         for component_module in self.components:
             component = component_module.get_component()
             if component.has_all_dependencies():
-                _logger.info('Building {name} {version}...'.format(
+                nxsd.logger.info('Building {name} {version}...'.format(
                 name=component.name, version=component.version_string))
                 component.install(self.build_directory)
             else:
                 all_builds_successful = False
-                _logger.info('Unable to build {name} {version}!'.format(
+                nxsd.logger.info('Unable to build {name} {version}!'.format(
                 name=component.name, version=component.version_string))
 
         if all_builds_successful:
@@ -45,7 +42,7 @@ class NXSDPackage(object):
 
         for component_module in self.components:
             component = component_module.get_component()
-            _logger.info('Cleaning {name} {version}...'.format(
+            nxsd.logger.info('Cleaning {name} {version}...'.format(
                 name=component.name, version=component.version_string))
             component.clean()
 

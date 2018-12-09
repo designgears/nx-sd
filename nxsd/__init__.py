@@ -3,6 +3,9 @@ import logging
 from pathlib import Path
 
 
+logger = logging.getLogger(__name__)
+
+
 class _LoggingSingleLevelFilter(logging.Filter):
 
     def __init__(self, level):
@@ -13,7 +16,6 @@ class _LoggingSingleLevelFilter(logging.Filter):
 
 
 def _setup_logging():
-    logger = logging.getLogger(__name__)
     logger.setLevel(logging.INFO)
 
     console_handler = logging.StreamHandler()

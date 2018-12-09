@@ -1,4 +1,4 @@
-import logging
+import nxsd
 import os
 
 from nxsd import util
@@ -9,8 +9,6 @@ class NXSDDependency(object):
     def __init__(self, name, paths):
         self.name = name
         self.paths = paths
-
-_logger = logging.getLogger('nxsd')
 
 dkp_root = os.environ.get('DEVKITPRO', default='/opt/devkitpro/')
 
@@ -90,9 +88,9 @@ SWITCH_TOOLS = NXSDDependency(
 
 def check_dependency(dependency):
     for path in dependency.paths:
-        _logger.debug('Checking for dependency {} at {}'.format(dependency.name, path))
+        nxsd.logger.debug('Checking for dependency {} at {}'.format(dependency.name, path))
         if not os.path.exists(path):
-            _logger.error('Dependency {} not found.'.format(dependency.name))
+            nxsd.logger.error('Dependency {} not found.'.format(dependency.name))
             return False
 
     return True

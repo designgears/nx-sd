@@ -1,5 +1,6 @@
 import contextlib
 import logging
+import nxsd
 import os
 import subprocess
 
@@ -40,6 +41,5 @@ def execute_shell_commands(command_list):
         process.wait()
 
 def log_stream_output(level, stream):
-    logger = logging.getLogger('nxsd')
     for line in stream:
-        logger.log(level, '%s', line.decode('utf-8').rstrip())
+        nxsd.logger.log(level, '%s', line.decode('utf-8').rstrip())
