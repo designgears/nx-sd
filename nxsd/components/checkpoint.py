@@ -4,7 +4,7 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-CHECKPOINT_VERSION = 'v3.5.0'
+CHECKPOINT_VERSION = 'v3.6.0'
 
 
 class CheckpointComponent(NXSDComponent):
@@ -51,7 +51,7 @@ class CheckpointComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git checkout {version}'.format(version=CHECKPOINT_VERSION),
-                'make -C switch',
+                'make switch',
             ]
             util.execute_shell_commands(build_commands)
 

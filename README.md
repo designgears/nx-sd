@@ -42,5 +42,5 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 
 | Component                                                 | Version | Description |
 | --------------------------------------------------------- | ------- | ----------- |
-| [Checkpoint](https://github.com/FlagBrew/Checkpoint)      | 3.5.0   | Save manager for the Nintendo Switch |
+| [Checkpoint](https://github.com/FlagBrew/Checkpoint)      | 3.6.0   | Save manager for the Nintendo Switch |
 | [Tinfoil](https://github.com/Adubbz/Tinfoil)              | 0.2.1   | Title manager for the Nintendo Switch |
