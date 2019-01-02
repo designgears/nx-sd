@@ -26,12 +26,6 @@ class AtmosphereComponent(NXSDComponent):
         dependency_list = [
             dependencies.DEVKITARM,
             dependencies.SWITCH_FREETYPE,
-            # Custom libnx for building `fatal`. This can be removed
-            # once latest libnx release can build Atmosphere.
-            dependencies.NXSDDependency(
-                name='libnx.newgpu',
-                paths=[Path(dependencies.dkp_root, 'libnx.newgpu/lib/libnx.a')]
-            )
         ]
 
         if not dependencies.check_dependencies(dependency_list):
@@ -98,18 +92,12 @@ class AtmosphereComponent(NXSDComponent):
             util.execute_shell_commands(['make clean'])
 
     def _build(self):
-        # Need to apply a Makefile patch for fatal to use a custom build of
-        # libnx. Latest libnx (1.6.0) does not properly build Atmosphere 0.8.x
-        # due to missing GPU dependencies.
-        fatal_patch = Path(settings.patches_directory, 'fatal.patch').resolve()
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
                 'git submodule update --recursive',
                 'git checkout {}'.format(ATMOSPHERE_VERSION),
-                'git apply {}'.format(str(fatal_patch)),
                 'make',
-                'git reset --hard',
             ]
             util.execute_shell_commands(build_commands)
 

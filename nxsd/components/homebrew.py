@@ -79,11 +79,14 @@ class HomebrewComponent(NXSDComponent):
 
     def _build_hbmenu(self):
         component_root = Path(settings.components_directory, 'nx-hbmenu/')
+        gpu_patch = Path(settings.patches_directory, 'hbmenu-gfx.patch').resolve()
         with util.change_dir(component_root):
             build_commands = [
                 'git fetch origin',
                 'git checkout {version}'.format(version=HBMENU_VERSION),
+                'git apply {}'.format(str(gpu_patch)),
                 'make nx',
+                'git reset --hard',
             ]
             util.execute_shell_commands(build_commands)
 

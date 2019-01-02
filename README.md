@@ -12,8 +12,6 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 
 ## Building
 
-**Note:** Atmosphère 0.8.x cannot currently be built directly with libnx (1.6.0) due to missing dependencies for `fatal`. If you have a custom build of libnx with the necessary GPU changes, install it to `$(DEVKITPRO)/libnx.newgpu`. The build script will automatically patch `fatal`'s Makefile to use this.
-
 1. Install [devkitARM and devkitA64](https://devkitpro.org/wiki/Getting_Started) toolchains.
 2. Install dependencies
 
