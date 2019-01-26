@@ -4,7 +4,7 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-ATMOSPHERE_VERSION = '0.8.2'
+ATMOSPHERE_VERSION = '0.8.3'
 
 
 class AtmosphereComponent(NXSDComponent):
@@ -71,6 +71,10 @@ class AtmosphereComponent(NXSDComponent):
                 Path(self._source_directory, 'exosphere/exosphere.bin'),
                 Path(dest_ams, 'secmon/exosphere.bin'),
             ),
+            'reboot-to-payload': (
+                Path(self._source_directory, 'troposphere/reboot_to_payload/reboot_to_payload.nro'),
+                Path(dest_ams, 'reboot_to_payload.bin'),
+            ),
             'no-gc': (
                 Path(self._source_directory, 'common/defaults/kip_patches/default_nogc/'),
                 Path(dest_ams, 'kip_patches/default_nogc/'),
@@ -78,6 +82,10 @@ class AtmosphereComponent(NXSDComponent):
             'bct.ini': (
                 Path(self._source_directory, 'common/defaults/BCT.ini'),
                 Path(dest_ams, 'BCT.ini'),
+            ),
+            'system-settings': (
+                Path(self._source_directory, 'common/defaults/system_settings.ini'),
+                Path(dest_ams, 'system_settings.ini'),
             ),
         }
         self._copy_components(component_dict)
@@ -89,7 +97,11 @@ class AtmosphereComponent(NXSDComponent):
 
     def clean(self):
         with util.change_dir(self._source_directory):
-            util.execute_shell_commands(['make clean'])
+            util.execute_shell_commands([
+                'make clean',
+                # manually clean troposphere due to makefile issues
+                'make clean -C troposphere',
+            ])
 
     def _build(self):
         with util.change_dir(self._source_directory):
@@ -98,6 +110,8 @@ class AtmosphereComponent(NXSDComponent):
                 'git submodule update --recursive',
                 'git checkout {}'.format(ATMOSPHERE_VERSION),
                 'make',
+                # manually build troposphere due to makefile issues
+                'make -C troposphere',
             ]
             util.execute_shell_commands(build_commands)
 
