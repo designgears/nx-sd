@@ -4,7 +4,7 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-LOCKPICKRCM_VERSION = 'v1.0'
+LOCKPICKRCM_VERSION = 'master'
 
 
 class LockpickRCMComponent(NXSDComponent):
