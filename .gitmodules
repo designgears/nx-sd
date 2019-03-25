@@ -20,3 +20,6 @@
 	path = components/lockpick-rcm
 	url = https://github.com/shchmue/Lockpick_RCM
 	ignore = untracked
+[submodule "components/edizon-scripts"]
+	path = components/edizon-scripts
+	url = https://github.com/WerWolv/EdiZon_CheatsConfigsAndScripts.git

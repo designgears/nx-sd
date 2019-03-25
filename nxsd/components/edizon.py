@@ -5,16 +5,18 @@ from nxsd.config import settings
 from pathlib import Path
 
 EDIZON_VERSION = 'v3.0.1'
+SCRIPTS_VERSION = 'master'
 
 
 class EdizonComponent(NXSDComponent):
 
     def __init__(self):
         super().__init__()
-        self._name = 'EdiZon'
+        self._name = 'EdiZon + Scripts + Cheats'
         self._version_string = EDIZON_VERSION
 
-        self._source_directory = Path(settings.components_directory, 'edizon/')
+        self._edizon_source_directory = Path(settings.components_directory, 'edizon/')
+        self._scripts_source_directory = Path(settings.components_directory, 'edizon-scripts/')
 
     def has_all_dependencies(self):
         if not dependencies.check_core_dependencies():
@@ -32,24 +34,52 @@ class EdizonComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
+        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
+        dest_nro = Path(install_directory, 'sdcard/switch/')
+        edizon_conf = Path(install_directory, 'sdcard/EdiZon/')
+
         component_dict = {
             'edizon': (
-                Path(self._source_directory, 'out/EdiZon.nro'),
-                Path(install_directory, 'sdcard/switch/EdiZon/EdiZon.nro'),
+                Path(self._edizon_source_directory, 'out/EdiZon.nro'),
+                Path(dest_nro, 'EdiZon/EdiZon.nro'),
+            ),
+            'configs': (
+                Path(self._scripts_source_directory, 'Configs'),
+                Path(edizon_conf, 'editor'),
+            ),
+            'scripts': (
+                Path(self._scripts_source_directory, 'Scripts'),
+                Path(edizon_conf, 'editor/scripts'),
+            ),
+            'cheats': (
+                Path(self._scripts_source_directory, 'Cheats'),
+                Path(dest_ams, 'titles'),
             ),
         }
         self._copy_components(component_dict)
 
     def clean(self):
-        with util.change_dir(self._source_directory):
+        with util.change_dir(self._edizon_source_directory):
             util.execute_shell_commands(['make clean'])
 
     def _build(self):
-        with util.change_dir(self._source_directory):
+        self._build_edizon()
+        self._build_scripts()
+
+    def _build_edizon(self):
+        with util.change_dir(self._edizon_source_directory):
             build_commands = [
                 'git fetch origin',
                 'git checkout {version}'.format(version=EDIZON_VERSION),
                 'make',
+            ]
+            util.execute_shell_commands(build_commands)
+
+    def _build_scripts(self):
+        with util.change_dir(self._scripts_source_directory):
+            build_commands = [
+                'git fetch origin',
+                'git checkout {version}'.format(version=SCRIPTS_VERSION),
             ]
             util.execute_shell_commands(build_commands)
 
