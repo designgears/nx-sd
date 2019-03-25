@@ -61,6 +61,7 @@ def get_packages():
         atmosphere,
         hekate,
         homebrew,
+        lockpickrcm,
         sigpatches,
     ]
 
@@ -72,7 +73,6 @@ def get_packages():
     nxsd_addon.components = [
         checkpoint,
         edizon,
-        lockpickrcm,
     ]
 
     return [nxsd_core, nxsd_addon]
