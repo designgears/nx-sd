@@ -20,12 +20,6 @@ class SysCLKComponent(NXSDComponent):
         if not dependencies.check_core_dependencies():
             return False
         
-        if not util.check_environment_variable('DEVKITARM'):
-            return False
-
-        if not dependencies.check_dependency(dependencies.DEVKITARM):
-            return False
-        
         return True
 
     def install(self, install_directory):
