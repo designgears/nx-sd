@@ -36,6 +36,7 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 | [nx-hbloader](https://github.com/switchbrew/nx-hbloader)  | 2.1.0   | Host process for loading homebrew NROs |
 | [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu)      | master  | The Nintendo Switch homebrew menu |
 | [sigpatches](https://goo.gl/rsYAaB)                       | 7.0.1   | Sweet patches! |
+| [Lockpick_RCM](https://github.com/shchmue/Lockpick_RCM)   | 1.0     | Nintendo Switch encryption key derivation bare metal RCM payload |
 
 ### Addons
 
