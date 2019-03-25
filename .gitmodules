@@ -23,3 +23,6 @@
 [submodule "components/edizon-scripts"]
 	path = components/edizon-scripts
 	url = https://github.com/WerWolv/EdiZon_CheatsConfigsAndScripts.git
+[submodule "components/sys-clk"]
+	path = components/sys-clk
+	url = https://github.com/retronx-team/sys-clk.git

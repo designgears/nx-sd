@@ -12,6 +12,7 @@ from nxsd.components import sigpatches
 from nxsd.components import checkpoint
 from nxsd.components import edizon
 from nxsd.components import lockpickrcm
+from nxsd.components import sysclk
 
 
 def main():
@@ -73,6 +74,7 @@ def get_packages():
     nxsd_addon.components = [
         checkpoint,
         edizon,
+        sysclk,
     ]
 
     return [nxsd_core, nxsd_addon]
