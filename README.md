@@ -34,12 +34,12 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 | [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) | master  | Custom firmware for the Nintendo Switch |
 | [hekate](https://github.com/CTCaer/hekate)                | master  | Custom Nintendo Switch bootloader |
 | [nx-hbloader](https://github.com/switchbrew/nx-hbloader)  | 2.1.0   | Host process for loading homebrew NROs |
-| [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu)      | 3.0.1   | The Nintendo Switch homebrew menu |
-| [sigpatches](https://gbatemp.net/threads/i-heard-that-you-guys-need-some-sweet-patches-for-atmosphere.521164/)      | 7.0.1   | The Nintendo Switch homebrew menu |
+| [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu)      | master  | The Nintendo Switch homebrew menu |
+| [sigpatches](https://goo.gl/rsYAaB)                       | 7.0.1   | The Nintendo Switch homebrew menu |
 
 ### Addons
 
 | Component                                                 | Version | Description |
 | --------------------------------------------------------- | ------- | ----------- |
 | [Checkpoint](https://github.com/FlagBrew/Checkpoint)      | 3.6.0   | Save manager for the Nintendo Switch |
-| [EdiZon](https://github.com/WerWolv/EdiZon)               | 3.0.1   | Save management, editing tool, and memory trainer for the Nintendo Switch |
+| [EdiZon](https://github.com/WerWolv/EdiZon)               | 3.0.1   | Save manager, editing tool, and memory trainer for the Nintendo Switch |
