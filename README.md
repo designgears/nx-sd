@@ -5,7 +5,7 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 
 ## Quick Start Guide
 
-1. Download and extract the [latest release](https://github.com/nicoelayda/nx-sd/releases/latest) of nx-sd.
+1. Download and extract the [latest release](https://github.com/designgears/nx-sd/releases/latest) of nx-sd.
 2. Copy the contents of the `sdcard` folder to the root of your microSD card.
 3. Power on your Nintendo Switch in RCM and inject the payload in `payload` folder.
 4. Atmosphère will boot automatically.
@@ -35,7 +35,7 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 | [hekate](https://github.com/CTCaer/hekate)                | master  | Custom Nintendo Switch bootloader |
 | [nx-hbloader](https://github.com/switchbrew/nx-hbloader)  | 2.1.0   | Host process for loading homebrew NROs |
 | [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu)      | master  | The Nintendo Switch homebrew menu |
-| [sigpatches](https://goo.gl/rsYAaB)                       | 7.0.1   | The Nintendo Switch homebrew menu |
+| [sigpatches](https://goo.gl/rsYAaB)                       | 7.0.1   | Sweet patches! |
 
 ### Addons
 
