@@ -10,7 +10,7 @@ from nxsd.components import hekate
 from nxsd.components import homebrew
 from nxsd.components import sigpatches
 from nxsd.components import checkpoint
-from nxsd.components import tinfoil
+from nxsd.components import edizon
 
 
 def main():
@@ -69,8 +69,8 @@ def get_packages():
         output_filename='nx-sd-addon.zip',
     )
     nxsd_addon.components = [
-        checkpoint, 
-        tinfoil
+        checkpoint,
+        edizon
     ]
 
     return [nxsd_core, nxsd_addon]

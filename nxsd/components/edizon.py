@@ -4,27 +4,26 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-TINFOIL_VERSION = 'master'
+EDIZON_VERSION = 'v3.0.1'
 
 
-class TinfoilComponent(NXSDComponent):
+class EdizonComponent(NXSDComponent):
 
     def __init__(self):
         super().__init__()
-        self._name = 'Tinfoil'
-        self._version_string = TINFOIL_VERSION
+        self._name = 'EdiZon'
+        self._version_string = EDIZON_VERSION
 
-        self._source_directory = Path(settings.components_directory, 'tinfoil/')
+        self._source_directory = Path(settings.components_directory, 'edizon/')
 
     def has_all_dependencies(self):
         if not dependencies.check_core_dependencies():
             return False
 
         dependency_list = [
-            dependencies.SWITCH_FREETYPE,
-            dependencies.SWITCH_CURL
+            dependencies.SWITCH_FREETYPE
         ]
-        
+
         if not dependencies.check_dependencies(dependency_list):
             return False
         
@@ -32,10 +31,11 @@ class TinfoilComponent(NXSDComponent):
 
     def install(self, install_directory):
         self._build()
+
         component_dict = {
-            'tinfoil': (
-                Path(self._source_directory, 'tinfoil.nro'),
-                Path(install_directory, 'sdcard/switch/Tinfoil/tinfoil.nro'),
+            'edizon': (
+                Path(self._source_directory, 'out/EdiZon.nro'),
+                Path(install_directory, 'sdcard/switch/EdiZon/EdiZon.nro'),
             ),
         }
         self._copy_components(component_dict)
@@ -48,11 +48,11 @@ class TinfoilComponent(NXSDComponent):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
-                'git checkout {version}'.format(version=TINFOIL_VERSION),
+                'git checkout {version}'.format(version=EDIZON_VERSION),
                 'make',
             ]
             util.execute_shell_commands(build_commands)
 
 
 def get_component():
-    return TinfoilComponent()
+    return EdizonComponent()

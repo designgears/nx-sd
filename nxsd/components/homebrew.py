@@ -4,7 +4,7 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-HBLOADER_VERSION = 'v2.0.1'
+HBLOADER_VERSION = 'v2.1.0'
 HBMENU_VERSION = 'v3.0.1'
 
 
@@ -48,7 +48,7 @@ class HomebrewComponent(NXSDComponent):
                 Path(dest_sd, 'hbmenu.nro'),
             ),
             'config': (
-                Path(settings.defaults_directory, 'atmosphere/loader.ini'),
+                Path(settings.components_directory, 'atmosphere/common/defaults/loader.ini'),
                 Path(dest_sd, 'atmosphere/loader.ini'),
             ),
         }
@@ -79,14 +79,11 @@ class HomebrewComponent(NXSDComponent):
 
     def _build_hbmenu(self):
         component_root = Path(settings.components_directory, 'nx-hbmenu/')
-        gpu_patch = Path(settings.patches_directory, 'hbmenu-gfx.patch').resolve()
         with util.change_dir(component_root):
             build_commands = [
                 'git fetch origin',
                 'git checkout {version}'.format(version=HBMENU_VERSION),
-                'git apply {}'.format(str(gpu_patch)),
                 'make nx',
-                'git reset --hard',
             ]
             util.execute_shell_commands(build_commands)
 

@@ -4,7 +4,7 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-HEKATE_VERSION = 'v4.6'
+HEKATE_VERSION = 'master'
 
 
 class HekateComponent(NXSDComponent):
@@ -36,7 +36,7 @@ class HekateComponent(NXSDComponent):
         component_dict = {
             'payload': (
                 Path(self._source_directory, 'output/hekate.bin'),
-                Path(install_directory, 'payload/hekate.bin'),
+                Path(install_directory, 'payload/hekate-{version}.bin'.format(version=HEKATE_VERSION)),
             ),
             'sleep_module': (
                 Path(self._source_directory, 'output/libsys_lp0.bso'),
@@ -48,6 +48,12 @@ class HekateComponent(NXSDComponent):
             ),
         }
         self._copy_components(component_dict)
+
+        ini_dir = Path(dest_bootloader, 'ini')
+        ini_dir.mkdir(parents=True, exist_ok=True)
+
+        payloads_dir = Path(dest_bootloader, 'payloads')
+        payloads_dir.mkdir(parents=True, exist_ok=True)
 
     def clean(self):
         with util.change_dir(self._source_directory):

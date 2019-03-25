@@ -4,7 +4,7 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-ATMOSPHERE_VERSION = '0.8.3'
+ATMOSPHERE_VERSION = 'master'
 
 
 class AtmosphereComponent(NXSDComponent):
@@ -37,10 +37,12 @@ class AtmosphereComponent(NXSDComponent):
         self._build()
 
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
+        dest_nro = Path(install_directory, 'sdcard/switch/')
+        dest_spt = Path(install_directory, 'sdcard/sept/')
 
         component_dict = {
-            'set_mitm': (
-                Path(self._source_directory, 'stratosphere/set_mitm/set_mitm.nsp'),
+            'ams_mitm': (
+                Path(self._source_directory, 'stratosphere/eclct.stub/eclct.stub.nsp'),
                 Path(dest_ams, 'titles/0100000000000032/exefs.nsp'),
             ),
             'fatal': (
@@ -51,33 +53,45 @@ class AtmosphereComponent(NXSDComponent):
                 Path(self._source_directory, 'stratosphere/creport/creport.nsp'),
                 Path(dest_ams, 'titles/0100000000000036/exefs.nsp'),
             ),
-            'fs-mitm': (
-                Path(self._source_directory, 'stratosphere/fs_mitm/fs_mitm.kip'),
-                Path(dest_ams, 'modules/core/fs_mitm.kip'),
+            'dmnt': (
+                Path(self._source_directory, 'stratosphere/dmnt/dmnt.nsp'),
+                Path(dest_ams, 'titles/010000000000000D/exefs.nsp'),
             ),
-            'loader': (
-                Path(self._source_directory, 'stratosphere/loader/loader.kip'),
-                Path(dest_ams, 'modules/core/loader.kip'),
+            'sept-primary': (
+                Path(self._source_directory, 'sept/sept-primary/sept-primary.bin'),
+                Path(dest_spt, 'sept-primary.bin'),
             ),
-            'pm': (
-                Path(self._source_directory, 'stratosphere/pm/pm.kip'),
-                Path(dest_ams, 'modules/core/pm.kip'),
+            'sept-secondary': (
+                Path(self._source_directory, 'sept/sept-secondary/sept-secondary.bin'),
+                Path(dest_spt, 'sept-secondary.bin'),
             ),
-            'sm': (
-                Path(self._source_directory, 'stratosphere/sm/sm.kip'),
-                Path(dest_ams, 'modules/core/sm.kip'),
+            'sept-secondary-enc': (
+                Path(self._source_directory, 'sept/sept-secondary/sept-secondary.enc'),
+                Path(dest_spt, 'sept-secondary.enc'),
             ),
-            'secmon': (
-                Path(self._source_directory, 'exosphere/exosphere.bin'),
-                Path(dest_ams, 'secmon/exosphere.bin'),
+            'sept-payload': (
+                Path(self._source_directory, 'fusee/fusee-secondary/fusee-secondary.bin'),
+                Path(dest_spt, 'payload.bin'),
             ),
-            'reboot-to-payload': (
+            'fusee-secondary': (
+                Path(self._source_directory, 'fusee/fusee-secondary/fusee-secondary.bin'),
+                Path(dest_ams, 'fusee-secondary.bin'),
+            ),
+            'reboot-to-payload-bin': (
+                Path(self._source_directory, 'fusee/fusee-primary/fusee-primary.bin'),
+                Path(dest_ams, 'reboot_payload.bin'),
+            ),
+            'reboot-to-payload-nro': (
                 Path(self._source_directory, 'troposphere/reboot_to_payload/reboot_to_payload.nro'),
-                Path(dest_ams, 'reboot_to_payload.bin'),
+                Path(dest_nro, 'reboot_to_payload.nro'),
             ),
             'no-gc': (
                 Path(self._source_directory, 'common/defaults/kip_patches/default_nogc/'),
                 Path(dest_ams, 'kip_patches/default_nogc/'),
+            ),
+            'hbl-html': (
+                Path(self._source_directory, 'common/defaults/hbl_html/accessible-urls/'),
+                Path(dest_ams, 'hbl_html/accessible-urls/'),
             ),
             'bct.ini': (
                 Path(self._source_directory, 'common/defaults/BCT.ini'),
@@ -90,10 +104,10 @@ class AtmosphereComponent(NXSDComponent):
         }
         self._copy_components(component_dict)
 
-        _, set_mitm_dir = component_dict['set_mitm']
-        set_mitm_flags_dir = Path(set_mitm_dir.parent, 'flags')
-        set_mitm_flags_dir.mkdir(parents=True, exist_ok=True)
-        open(Path(set_mitm_flags_dir, 'boot2.flag'), 'a').close()
+        _, ams_mitm_dir = component_dict['ams_mitm']
+        ams_mitm_flags_dir = Path(ams_mitm_dir.parent, 'flags')
+        ams_mitm_flags_dir.mkdir(parents=True, exist_ok=True)
+        open(Path(ams_mitm_flags_dir, 'boot2.flag'), 'a').close()
 
     def clean(self):
         with util.change_dir(self._source_directory):
