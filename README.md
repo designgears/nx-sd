@@ -20,7 +20,7 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 3. Install [Python 3.7](https://www.python.org/downloads/) or newer.
 4. Clone this repo and all submodules recursively.
 
-       git clone https://github.com/nicoelayda/nx-sd.git --recurse-submodules
+       git clone https://github.com/designgears/nx-sd.git --recurse-submodules
 
 5. Run `build.py`.
 
@@ -31,9 +31,9 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 
 | Component                                                 | Version | Description |
 | --------------------------------------------------------- | ------- | ----------- |
-| [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) | 0.8.3   | Custom firmware for the Nintendo Switch |
-| [hekate](https://github.com/CTCaer/hekate)                | 4.6     | Custom Nintendo Switch bootloader |
-| [nx-hbloader](https://github.com/switchbrew/nx-hbloader)  | 2.0.1   | Host process for loading homebrew NROs |
+| [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) | master  | Custom firmware for the Nintendo Switch |
+| [hekate](https://github.com/CTCaer/hekate)                | master  | Custom Nintendo Switch bootloader |
+| [nx-hbloader](https://github.com/switchbrew/nx-hbloader)  | 2.1.0   | Host process for loading homebrew NROs |
 | [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu)      | 3.0.1   | The Nintendo Switch homebrew menu |
 
 ### Addons
@@ -41,4 +41,4 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 | Component                                                 | Version | Description |
 | --------------------------------------------------------- | ------- | ----------- |
 | [Checkpoint](https://github.com/FlagBrew/Checkpoint)      | 3.6.0   | Save manager for the Nintendo Switch |
-| [Tinfoil](https://github.com/Adubbz/Tinfoil)              | 0.2.1   | Title manager for the Nintendo Switch |
+| [EdiZon](https://github.com/WerWolv/EdiZon)               | 3.0.1   | Save management, editing tool, and memory trainer for the Nintendo Switch |
