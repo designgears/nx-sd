@@ -1,4 +1,6 @@
 build/
+components/lockpick-rcm/output/
+components/lockpick-rcm/build/
 nx-sd*.zip
 
 __pycache__/
