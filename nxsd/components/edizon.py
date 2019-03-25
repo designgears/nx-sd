@@ -23,6 +23,7 @@ class EdizonComponent(NXSDComponent):
             return False
 
         dependency_list = [
+            dependencies.SWITCH_CURL,
             dependencies.SWITCH_FREETYPE
         ]
 
