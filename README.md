@@ -15,9 +15,9 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 1. Install [devkitARM and devkitA64](https://devkitpro.org/wiki/Getting_Started) toolchains.
 2. Install dependencies
 
-       sudo pacman -S devkitARM devkitarm-rules gcc git python3 python3-pip switch-curl switch-freetype switch-libconfig switch-libjpeg-turbo switch-sdl2 switch-sdl2_gfx switch-sdl2_image switch-sdl2_ttf switch-zlib zip
+       pacman -S devkitARM devkitarm-rules gcc git python3 python3-pip switch-curl switch-freetype switch-libconfig switch-libjpeg-turbo switch-sdl2 switch-sdl2_gfx switch-sdl2_image switch-sdl2_ttf switch-zlib zip
    
-3. Install [pycryptodome](https://pycryptodome.readthedocs.io/en/latest/) with pip.
+3. Install [pycryptodome](https://pycryptodome.readthedocs.io/en/latest/)
 
        pip install pycryptodome
 
