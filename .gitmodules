@@ -16,6 +16,6 @@
 [submodule "components/edizon"]
 	path = components/edizon
 	url = https://github.com/WerWolv/EdiZon.git
-[submodule "components/Lockpick_RCM"]
+[submodule "components/lockpick-rcm"]
 	path = components/lockpick-rcm
 	url = https://github.com/shchmue/Lockpick_RCM
