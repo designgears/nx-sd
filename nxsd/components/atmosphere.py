@@ -98,7 +98,7 @@ class AtmosphereComponent(NXSDComponent):
                 Path(dest_ams, 'BCT.ini'),
             ),
             'system-settings': (
-                Path(self._source_directory, 'common/defaults/system_settings.ini'),
+                Path(settings.defaults_directory, 'atmosphere/system_settings.ini'),
                 Path(dest_ams, 'system_settings.ini'),
             ),
         }
