@@ -74,7 +74,6 @@ def get_packages():
     nxsd_addon.components = [
         checkpoint,
         edizon,
-        sysclk,
     ]
 
     return [nxsd_core, nxsd_addon]
