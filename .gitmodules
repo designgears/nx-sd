@@ -18,7 +18,7 @@
 	url = https://github.com/WerWolv/EdiZon.git
 [submodule "components/lockpick-rcm"]
 	path = components/lockpick-rcm
-	url = https://github.com/designgears/Lockpick_RCM
+	url = https://github.com/shchmue/Lockpick_RCM
 	ignore = untracked
 [submodule "components/edizon-scripts"]
 	path = components/edizon-scripts
