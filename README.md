@@ -34,6 +34,7 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 
 | Component                                                 | Version | Description |
 | --------------------------------------------------------- | ------- | ----------- |
+| [libnx](https://github.com/switchbrew/libnx/)             | master  | Library for Switch Homebrew |
 | [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) | master  | Custom firmware for the Nintendo Switch |
 | [hekate](https://github.com/CTCaer/hekate)                | master  | Custom Nintendo Switch bootloader |
 | [nx-hbloader](https://github.com/switchbrew/nx-hbloader)  | 2.1.0   | Host process for loading homebrew NROs |
