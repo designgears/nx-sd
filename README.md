@@ -48,5 +48,5 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 | --------------------------------------------------------- | -------   | ----------- |
 | [Checkpoint](https://github.com/FlagBrew/Checkpoint)      | 3.6.0     | Save manager for the Nintendo Switch |
 | [EdiZon](https://github.com/WerWolv/EdiZon)               | 3.0.1     | Save manager, editing tool, and memory trainer for the Nintendo Switch |
-| [EdiZon Cheats/Configs/Scripts](https://github.com/WerWolv/EdiZon_CheatsConfigsAndScripts) | master | Save manager, editing tool, and memory trainer for the Nintendo Switch |
+| [EdiZon Cheats/Configs/Scripts](https://github.com/WerWolv/EdiZon_CheatsConfigsAndScripts) | master | Cheats, Configs, and Scripts for EdiZon |
 | [sys-CLK](https://github.com/retronx-team/sys-clk)        | 0.11.1 b6 | Overclocking/underclocking system module |
