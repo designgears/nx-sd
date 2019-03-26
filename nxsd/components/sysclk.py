@@ -1,3 +1,4 @@
+import os
 from nxsd import util
 from nxsd.components import _dependencies as dependencies
 from nxsd.components import NXSDComponent
@@ -56,6 +57,7 @@ class SysCLKComponent(NXSDComponent):
     def _build(self):
         with util.change_dir(self._source_directory):
             build_commands = [
+                'pacman -S libnx --noconfirm',
                 'git fetch origin',
                 'git checkout {version}'.format(version=SYSCLK_VERSION),
                 'make',

@@ -26,3 +26,6 @@
 [submodule "components/sys-clk"]
 	path = components/sys-clk
 	url = https://github.com/retronx-team/sys-clk.git
+[submodule "components/libnx"]
+	path = components/libnx
+	url = https://github.com/switchbrew/libnx.git

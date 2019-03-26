@@ -136,8 +136,8 @@ class AtmosphereComponent(NXSDComponent):
         dkp_root = os.environ.get('DEVKITPRO', default='/opt/devkitpro/')
         crypt_util = Path(dkp_root, 'msys2/usr/lib/python3.7/site-packages/Crypto/Util/')
         commands = [
-            'peflags -d1 {}*.dll'.format(crypt_util),
-            'rebase {}*.dll'.format(crypt_util),
+            'peflags -d1 {}/*.dll'.format(crypt_util),
+            'rebase {}/*.dll'.format(crypt_util),
         ]
         util.execute_shell_commands(commands)
 
