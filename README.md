@@ -1,3 +1,9 @@
+# Goals
+
+The goal is to create an easy to use, transparent compiler script, so you know exactly what you're putting on your switch. Other CFW bundles don't share their compile process, so you never know if something unexpected is going to be included in pre-compiled homebrew apps.
+
+---
+
 # nx-sd
 
 nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Switch. It includes everything necessary for launching homebrew and custom NSPs.
