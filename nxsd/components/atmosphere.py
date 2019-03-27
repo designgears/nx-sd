@@ -119,7 +119,6 @@ class AtmosphereComponent(NXSDComponent):
             ])
 
     def _build(self):
-        self.rebase_python_crypto_dlls()
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
@@ -130,16 +129,6 @@ class AtmosphereComponent(NXSDComponent):
                 'make -C troposphere',
             ]
             util.execute_shell_commands(build_commands)
-
-    def rebase_python_crypto_dlls(self):
-        # fix; address space needed by '_cpuid_c.cpython-37m.dll' (0x1D0000) is already occupied
-        dkp_root = os.environ.get('DEVKITPRO', default='/opt/devkitpro/')
-        crypt_util = Path(dkp_root, 'msys2/usr/lib/python3.7/site-packages/Crypto/Util/')
-        commands = [
-            'peflags -d1 {}/*.dll'.format(crypt_util),
-            'rebase {}/*.dll'.format(crypt_util),
-        ]
-        util.execute_shell_commands(commands)
 
 
 def get_component():

@@ -4,7 +4,7 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-HBLOADER_VERSION = 'v2.1.0'
+HBLOADER_VERSION = 'master'
 HBMENU_VERSION = 'master'
 
 
