@@ -42,6 +42,7 @@ class LibNXComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git checkout {version}'.format(version=LIBNX_VERSION),
+                'git pull --recurse-submodules',
                 'make',
                 'make install',
             ]

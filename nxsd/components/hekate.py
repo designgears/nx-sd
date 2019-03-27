@@ -64,6 +64,7 @@ class HekateComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git checkout {version}'.format(version=HEKATE_VERSION),
+                'git pull --recurse-submodules',
                 'make',
             ]
             util.execute_shell_commands(build_commands)

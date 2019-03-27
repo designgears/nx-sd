@@ -73,6 +73,7 @@ class HomebrewComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git checkout {version}'.format(version=HBLOADER_VERSION),
+                'git pull --recurse-submodules',
                 'make',
             ]
             util.execute_shell_commands(build_commands)
@@ -83,6 +84,7 @@ class HomebrewComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git checkout {version}'.format(version=HBMENU_VERSION),
+                'git pull --recurse-submodules',
                 'make nx',
             ]
             util.execute_shell_commands(build_commands)

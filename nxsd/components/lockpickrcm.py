@@ -47,6 +47,7 @@ class LockpickRCMComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git checkout {version}'.format(version=LOCKPICKRCM_VERSION),
+                'git pull --recurse-submodules',
                 'make',
             ]
             util.execute_shell_commands(build_commands)

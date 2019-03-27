@@ -51,6 +51,7 @@ class CheckpointComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git checkout {version}'.format(version=CHECKPOINT_VERSION),
+                'git pull --recurse-submodules',
                 'make switch',
             ]
             util.execute_shell_commands(build_commands)

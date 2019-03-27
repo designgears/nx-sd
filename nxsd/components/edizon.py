@@ -81,6 +81,7 @@ class EdizonComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git checkout {version}'.format(version=SCRIPTS_VERSION),
+                'git pull --recurse-submodules',
             ]
             util.execute_shell_commands(build_commands)
 
