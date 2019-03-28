@@ -5,7 +5,7 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-ATMOSPHERE_VERSION = 'master'
+ATMOSPHERE_VERSION = '994d7d5'
 
 
 class AtmosphereComponent(NXSDComponent):
