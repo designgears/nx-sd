@@ -37,6 +37,8 @@ class AtmosphereComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
+        os.environ['SEPT_ENC_PATH'] = '{}atmosphere/sept-secondary.enc'.format(settings.defaults_directory)
+
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
         dest_nro = Path(install_directory, 'sdcard/switch/')
         dest_spt = Path(install_directory, 'sdcard/sept/')
@@ -67,7 +69,7 @@ class AtmosphereComponent(NXSDComponent):
                 Path(dest_spt, 'sept-secondary.bin'),
             ),
             'sept-secondary-enc': (
-                Path(self._source_directory, 'sept/sept-secondary/sept-secondary.enc'),
+                Path(settings.defaults_directory, 'atmosphere/sept-secondary.enc'),
                 Path(dest_spt, 'sept-secondary.enc'),
             ),
             'sept-payload': (
