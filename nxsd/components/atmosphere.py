@@ -80,11 +80,7 @@ class AtmosphereComponent(NXSDComponent):
                 Path(self._source_directory, 'fusee/fusee-secondary/fusee-secondary.bin'),
                 Path(dest_ams, 'fusee-secondary.bin'),
             ),
-            'reboot-to-payload-bin': (
-                Path(self._source_directory, 'fusee/fusee-primary/fusee-primary.bin'),
-                Path(dest_ams, 'reboot_payload.bin'),
-            ),
-            'reboot-to-payload-nro': (
+            'reboot-payload-nro': (
                 Path(self._source_directory, 'troposphere/reboot_to_payload/reboot_to_payload.nro'),
                 Path(dest_nro, 'reboot_to_payload.nro'),
             ),
