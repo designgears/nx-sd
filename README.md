@@ -40,19 +40,19 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 
 | Component                                                 | Version | Description |
 | --------------------------------------------------------- | ------- | ----------- |
-| [libnx](https://github.com/switchbrew/libnx/)             | master  | Library for Switch Homebrew |
-| [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) | 0.8.6-994d7d5 | Custom firmware for the Nintendo Switch |
-| [hekate](https://github.com/CTCaer/hekate)                | master  | Custom Nintendo Switch bootloader |
-| [nx-hbloader](https://github.com/switchbrew/nx-hbloader)  | 2.1.0   | Host process for loading homebrew NROs |
-| [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu)      | master  | The Nintendo Switch homebrew menu |
-| [sigpatches](https://gbatemp.net/threads/i-heard-that-you-guys-need-some-sweet-patches-for-atmosphere.521164/)                       | 7.0.1   | Sweet patches! |
-| [Lockpick_RCM](https://github.com/shchmue/Lockpick_RCM)   | 1.0     | Nintendo Switch encryption key derivation bare metal RCM payload |
+| [libnx](https://github.com/switchbrew/libnx/)             | master         | Library for Switch Homebrew |
+| [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) | 0.8.6-994d7d5  | Custom firmware for the Nintendo Switch |
+| [hekate](https://github.com/CTCaer/hekate)                | v4.9.1_        | Custom Nintendo Switch bootloader |
+| [nx-hbloader](https://github.com/switchbrew/nx-hbloader)  | v2.1.0-3af8c89 | Host process for loading homebrew NROs |
+| [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu)      | v3.0.1-6ec7388 | The Nintendo Switch homebrew menu |
+| [Lockpick_RCM](https://github.com/shchmue/Lockpick_RCM)   | v1.0-30b5faf   | Encryption key derivation bare metal RCM payload |
+| [sigpatches](https://bit.ly/2EYbEHg)                      | 2.0.0-7.0.1    | Sweet patches! |
 
 ### Addons
 
-| Component                                                 | Version   | Description |
-| --------------------------------------------------------- | -------   | ----------- |
-| [Checkpoint](https://github.com/FlagBrew/Checkpoint)      | 3.6.0     | Save manager for the Nintendo Switch |
-| [EdiZon](https://github.com/WerWolv/EdiZon)               | 3.0.1     | Save manager, editing tool, and memory trainer for the Nintendo Switch |
-| [EdiZon Cheats/Configs/Scripts](https://github.com/WerWolv/EdiZon_CheatsConfigsAndScripts) | master | Cheats, Configs, and Scripts for EdiZon |
-| [sys-CLK](https://github.com/retronx-team/sys-clk)        | 0.11.1 b6 | Overclocking/underclocking system module |
+| Component                                                 | Version | Description |
+| --------------------------------------------------------- | ------- | ----------- |
+| [Checkpoint](https://github.com/FlagBrew/Checkpoint)      | v3.6.0  | Save manager |
+| [EdiZon](https://github.com/WerWolv/EdiZon)               | v3.0.1  | Save manager, editing tool, and memory trainer |
+| [EdiZon Cheats/Configs/Scripts](https://bit.ly/2V0kXMt)   | master  | Cheats, configs, and scripts for EdiZon |
+| [sys-CLK](https://github.com/retronx-team/sys-clk)        | 0.11.1  | Overclocking/underclocking system module |
