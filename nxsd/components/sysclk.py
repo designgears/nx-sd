@@ -59,6 +59,7 @@ class SysCLKComponent(NXSDComponent):
             build_commands = [
                 'pacman -S libnx --noconfirm',
                 'git fetch origin',
+                'git submodule update --recursive',
                 'git checkout {version}'.format(version=SYSCLK_VERSION),
                 'make',
             ]

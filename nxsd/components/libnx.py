@@ -5,7 +5,7 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-LIBNX_VERSION = 'master'
+LIBNX_VERSION = 'a4c23a0'
 
 
 class LibNXComponent(NXSDComponent):
@@ -41,8 +41,8 @@ class LibNXComponent(NXSDComponent):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
+                'git submodule update --recursive',
                 'git checkout {version}'.format(version=LIBNX_VERSION),
-                'git pull --recurse-submodules',
                 'make',
                 'make install',
             ]

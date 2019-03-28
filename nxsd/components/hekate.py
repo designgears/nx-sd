@@ -4,7 +4,7 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-HEKATE_VERSION = 'master'
+HEKATE_VERSION = 'v4.9.1_'
 
 
 class HekateComponent(NXSDComponent):
@@ -68,8 +68,8 @@ class HekateComponent(NXSDComponent):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
+                'git submodule update --recursive',
                 'git checkout {version}'.format(version=HEKATE_VERSION),
-                'git pull --recurse-submodules',
                 'make',
             ]
             util.execute_shell_commands(build_commands)

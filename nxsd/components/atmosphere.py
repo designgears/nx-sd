@@ -120,8 +120,8 @@ class AtmosphereComponent(NXSDComponent):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
+                'git submodule update --recursive',
                 'git checkout {}'.format(ATMOSPHERE_VERSION),
-                'git pull --recurse-submodules',
                 'make',
                 # manually build troposphere due to makefile issues
                 'make -C troposphere',
