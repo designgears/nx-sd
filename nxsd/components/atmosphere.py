@@ -108,23 +108,24 @@ class AtmosphereComponent(NXSDComponent):
         ams_mitm_flags_dir.mkdir(parents=True, exist_ok=True)
         open(Path(ams_mitm_flags_dir, 'boot2.flag'), 'a').close()
 
+        kips_dir = Path(dest_ams, 'kips')
+        kips_dir.mkdir(parents=True, exist_ok=True)
+
     def clean(self):
         with util.change_dir(self._source_directory):
             util.execute_shell_commands([
                 'make clean',
-                # manually clean troposphere due to makefile issues
-                'make clean -C troposphere',
             ])
 
     def _build(self):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
-                'git submodule update --recursive',
-                'git checkout {}'.format(ATMOSPHERE_VERSION),
+                'git checkout -b build {}'.format(ATMOSPHERE_VERSION),
+                'git pull --recurse-submodules',
                 'make',
-                # manually build troposphere due to makefile issues
-                'make -C troposphere',
+                'git checkout master',
+                'git branch -d build',
             ]
             util.execute_shell_commands(build_commands)
 

@@ -14,6 +14,7 @@ from nxsd.components import edizon
 from nxsd.components import lockpickrcm
 from nxsd.components import sysclk
 from nxsd.components import libnx
+from nxsd.components import lanplay
 
 
 def main():
@@ -64,7 +65,6 @@ def get_packages():
         atmosphere,
         hekate,
         homebrew,
-        lockpickrcm,
         sigpatches,
     ]
 
@@ -76,6 +76,8 @@ def get_packages():
     nxsd_addon.components = [
         checkpoint,
         edizon,
+        lockpickrcm,
+        lanplay,
         sysclk,
     ]
 
