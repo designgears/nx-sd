@@ -1,4 +1,4 @@
-# nx-sd
+# nx-sd 
 
 nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Switch. It includes everything necessary for launching homebrew.
 
