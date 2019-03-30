@@ -7,14 +7,14 @@ from pathlib import Path
 LDNMITM_VERSION = 'v1.1.2'
 
 
-class LanplayComponent(NXSDComponent):
+class LdnmitmComponent(NXSDComponent):
 
     def __init__(self):
         super().__init__()
         self._name = 'ldn_mitm + ldnmitm_config'
         self._version_string = LDNMITM_VERSION
 
-        self._source_directory = Path(settings.components_directory, 'lan-play/')
+        self._source_directory = Path(settings.components_directory, 'ldn_mitm/')
 
     def has_all_dependencies(self):
         if not dependencies.check_core_dependencies():
@@ -47,7 +47,6 @@ class LanplayComponent(NXSDComponent):
     def _build(self):
         with util.change_dir(self._source_directory):
             build_commands = [
-                'pacman -S libnx --noconfirm',
                 'git fetch origin',
                 'git submodule update --recursive',
                 'git checkout {version}'.format(version=LDNMITM_VERSION),
@@ -57,4 +56,4 @@ class LanplayComponent(NXSDComponent):
 
 
 def get_component():
-    return LanplayComponent()
+    return LdnmitmComponent()

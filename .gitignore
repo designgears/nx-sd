@@ -3,6 +3,7 @@ nx-sd*.zip
 
 __pycache__/
 .idea/
+.vscode/
 
 *.sublime-project
 *.sublime-workspace

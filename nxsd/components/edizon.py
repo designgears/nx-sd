@@ -71,7 +71,6 @@ class EdizonComponent(NXSDComponent):
         with util.change_dir(self._edizon_source_directory):
             build_commands = [
                 'git fetch origin',
-                'git submodule update --recursive',
                 'git checkout {version}'.format(version=EDIZON_VERSION),
                 'make',
             ]
@@ -82,7 +81,6 @@ class EdizonComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git checkout {version}'.format(version=SCRIPTS_VERSION),
-                'git pull --recurse-submodules',
             ]
             util.execute_shell_commands(build_commands)
 

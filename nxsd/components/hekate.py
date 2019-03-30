@@ -68,7 +68,6 @@ class HekateComponent(NXSDComponent):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
-                'git submodule update --recursive',
                 'git checkout {version}'.format(version=HEKATE_VERSION),
                 'make',
             ]

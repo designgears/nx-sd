@@ -121,11 +121,9 @@ class AtmosphereComponent(NXSDComponent):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
-                'git checkout -b build {}'.format(ATMOSPHERE_VERSION),
-                'git pull --recurse-submodules',
+                'git submodule update --recursive',
+                'git checkout {version}'.format(version=ATMOSPHERE_VERSION),
                 'make',
-                'git checkout master',
-                'git branch -d build',
             ]
             util.execute_shell_commands(build_commands)
 

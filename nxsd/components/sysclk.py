@@ -57,9 +57,8 @@ class SysCLKComponent(NXSDComponent):
     def _build(self):
         with util.change_dir(self._source_directory):
             build_commands = [
-                'pacman -S libnx --noconfirm',
+                # we need to compile v2.0.0 libnx
                 'git fetch origin',
-                'git submodule update --recursive',
                 'git checkout {version}'.format(version=SYSCLK_VERSION),
                 'make',
             ]

@@ -72,7 +72,6 @@ class HomebrewComponent(NXSDComponent):
         with util.change_dir(component_root):
             build_commands = [
                 'git fetch origin',
-                'git submodule update --recursive',
                 'git checkout {version}'.format(version=HBLOADER_VERSION),
                 'make',
             ]
@@ -83,7 +82,6 @@ class HomebrewComponent(NXSDComponent):
         with util.change_dir(component_root):
             build_commands = [
                 'git fetch origin',
-                'git submodule update --recursive',
                 'git checkout {version}'.format(version=HBMENU_VERSION),
                 'make nx',
             ]

@@ -50,7 +50,6 @@ class CheckpointComponent(NXSDComponent):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
-                'git submodule update --recursive',
                 'git checkout {version}'.format(version=CHECKPOINT_VERSION),
                 'make switch',
             ]

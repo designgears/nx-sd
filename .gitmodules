@@ -29,6 +29,6 @@
 [submodule "components/libnx"]
 	path = components/libnx
 	url = https://github.com/switchbrew/libnx.git
-[submodule "components/lan-play"]
-	path = components/lan-play
-	url = https://github.com/spacemeowx2/ldn_mitm.git
+[submodule "components/ldn_mitm"]
+	path = components/ldn_mitm
+	url = https://github.com/designgears/ldn_mitm.git
