@@ -27,7 +27,6 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 
 5. Run `python build.py`.
 
-
 ## Components
 
 ### Core components
