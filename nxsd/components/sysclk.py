@@ -30,6 +30,10 @@ class SysCLKComponent(NXSDComponent):
         dest_conf = Path(install_directory, 'sdcard/config/')
         
         component_dict = {
+            'kip': (
+                Path(self._source_directory, 'out/sys-clk.kip'),
+                Path(dest_ams, 'kips/sys-clk.kip'),
+            ),
             'titles': (
                 Path(self._source_directory, 'out/sys-clk.nsp'),
                 Path(dest_ams, 'titles/00FF0000636C6BFF/exefs.nsp'),
