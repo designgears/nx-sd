@@ -59,11 +59,9 @@ class SysCLKComponent(NXSDComponent):
             util.execute_shell_commands(['make clean'])
 
     def _build(self):
+        self._downgrade()
         with util.change_dir(self._source_directory):
             build_commands = [
-                # downgrade so we can build
-                'pacman -U ' + settings.packages_directory + 'devkitA64-r12-2-any.pkg.tar.xz',
-                'pacman -U ' + settings.packages_directory + 'libnx-2.0.0-2-any.pkg.tar.xz',
                 'git fetch origin',
                 'git checkout {version}'.format(version=SYSCLK_VERSION),
                 'make',
@@ -72,6 +70,14 @@ class SysCLKComponent(NXSDComponent):
             ]
             util.execute_shell_commands(build_commands)
 
+    def _downgrade(self):
+        # downgrade so we can build - windows only atm
+        with util.change_dir(settings.packages_directory):
+            downgrade_commands = [
+                'pacman -U --noconfirm devkitA64-r12-2-any.pkg.tar.xz',
+                'pacman -U --noconfirm libnx-2.0.0-2-any.pkg.tar.xz',
+            ]
+            util.execute_shell_commands(downgrade_commands)
 
 def get_component():
     return SysCLKComponent()
