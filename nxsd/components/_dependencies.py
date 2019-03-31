@@ -22,7 +22,10 @@ DEVKITA64 = NXSDDependency(
 )
 DEVKITARM = NXSDDependency(
     name='devkitARM',
-    paths=[Path(dkp_root, 'devkitARM/lib/libarm-none-eabi-sim.a')]
+    paths=[
+        Path(dkp_root, 'devkitARM/lib/libarm-none-eabi-sim.a'),
+        Path(dkp_root, 'devkitARM/base_rules'),
+    ]
 )
 GENERAL_TOOLS = NXSDDependency(
     name='general-tools',

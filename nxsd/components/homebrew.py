@@ -4,8 +4,10 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-HBLOADER_VERSION = '3af8c89'
-HBMENU_VERSION = '6ec7388'
+HBLOADER_VERSION = 'v2.1'
+HBLOADER_COMMIT_OR_TAG = '3af8c89'
+HBMENU_VERSION = 'v3.0.1'
+HBMENU_COMMIT_OR_TAG = '6ec7388'
 
 
 class HomebrewComponent(NXSDComponent):
@@ -72,7 +74,7 @@ class HomebrewComponent(NXSDComponent):
         with util.change_dir(component_root):
             build_commands = [
                 'git fetch origin',
-                'git checkout {version}'.format(version=HBLOADER_VERSION),
+                'git checkout {version}'.format(version=HBLOADER_COMMIT_OR_TAG),
                 'make',
             ]
             util.execute_shell_commands(build_commands)
@@ -82,7 +84,7 @@ class HomebrewComponent(NXSDComponent):
         with util.change_dir(component_root):
             build_commands = [
                 'git fetch origin',
-                'git checkout {version}'.format(version=HBMENU_VERSION),
+                'git checkout {version}'.format(version=HBMENU_COMMIT_OR_TAG),
                 'make nx',
             ]
             util.execute_shell_commands(build_commands)

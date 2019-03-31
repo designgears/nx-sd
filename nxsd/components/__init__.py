@@ -44,9 +44,14 @@ class NXSDComponent(ABC):
     @staticmethod
     def _copy_components(component_dict):
         for component in component_dict:
-            src, dest = component_dict[component]
-            if src.is_dir():
-                shutil.copytree(str(src), str(dest))
-            else:
-                dest.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copy2(str(src), str(dest))
+            src, dest_list = component_dict[component]
+
+            if not isinstance(dest_list, list):
+                dest_list = [dest_list]
+
+            for dest in dest_list:
+                if src.is_dir():
+                    shutil.copytree(str(src), str(dest))
+                else:
+                    dest.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(str(src), str(dest))

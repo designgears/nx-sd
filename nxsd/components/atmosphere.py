@@ -1,11 +1,13 @@
 import os
+
 from nxsd import util
 from nxsd.components import _dependencies as dependencies
 from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-ATMOSPHERE_VERSION = '994d7d5'
+ATMOSPHERE_VERSION = 'v0.8.6'
+ATMOSPHERE_COMMIT_OR_TAG = '994d7d5'
 
 
 class AtmosphereComponent(NXSDComponent):
@@ -20,7 +22,7 @@ class AtmosphereComponent(NXSDComponent):
     def has_all_dependencies(self):
         if not dependencies.check_core_dependencies():
             return False
-        
+
         if not util.check_environment_variable('DEVKITARM'):
             return False
 
@@ -31,21 +33,24 @@ class AtmosphereComponent(NXSDComponent):
 
         if not dependencies.check_dependencies(dependency_list):
             return False
-        
+
         return True
 
     def install(self, install_directory):
         self._build()
 
-        os.environ['SEPT_ENC_PATH'] = '{}atmosphere/sept-secondary.enc'.format(settings.defaults_directory)
-
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
-        dest_nro = Path(install_directory, 'sdcard/switch/')
-        dest_spt = Path(install_directory, 'sdcard/sept/')
+        dest_sept = Path(install_directory, 'sdcard/sept/')
+        dest_switch = Path(install_directory, 'sdcard/switch')
 
         component_dict = {
-            'ams_mitm': (
-                Path(self._source_directory, 'stratosphere/eclct.stub/eclct.stub.nsp'),
+            'dmnt': (
+                Path(self._source_directory, 'stratosphere/dmnt/dmnt.nsp'),
+                Path(dest_ams, 'titles/010000000000000D/exefs.nsp'),
+            ),
+            'eclct.stub': (
+                Path(self._source_directory,
+                     'stratosphere/eclct.stub/eclct.stub.nsp'),
                 Path(dest_ams, 'titles/0100000000000032/exefs.nsp'),
             ),
             'fatal': (
@@ -56,45 +61,41 @@ class AtmosphereComponent(NXSDComponent):
                 Path(self._source_directory, 'stratosphere/creport/creport.nsp'),
                 Path(dest_ams, 'titles/0100000000000036/exefs.nsp'),
             ),
-            'dmnt': (
-                Path(self._source_directory, 'stratosphere/dmnt/dmnt.nsp'),
-                Path(dest_ams, 'titles/010000000000000D/exefs.nsp'),
+            'fusee-secondary': (
+                Path(self._source_directory, 'fusee/fusee-secondary/fusee-secondary.bin'),
+                [
+                    Path(dest_ams, 'fusee-secondary.bin'),
+                    Path(dest_sept, 'payload.bin'),
+                ],
             ),
             'sept-primary': (
                 Path(self._source_directory, 'sept/sept-primary/sept-primary.bin'),
-                Path(dest_spt, 'sept-primary.bin'),
+                Path(dest_sept, 'sept-primary.bin'),
             ),
             'sept-secondary': (
-                Path(self._source_directory, 'sept/sept-secondary/sept-secondary.bin'),
-                Path(dest_spt, 'sept-secondary.bin'),
+                Path(self._source_directory, 'sept/sept-secondary/sept-secondary.enc'),
+                Path(dest_sept, 'sept-secondary.enc'),
             ),
-            'sept-secondary-enc': (
-                Path(settings.defaults_directory, 'atmosphere/sept-secondary.enc'),
-                Path(dest_spt, 'sept-secondary.enc'),
-            ),
-            'sept-payload': (
-                Path(self._source_directory, 'fusee/fusee-secondary/fusee-secondary.bin'),
-                Path(dest_spt, 'payload.bin'),
-            ),
-            'fusee-secondary': (
-                Path(self._source_directory, 'fusee/fusee-secondary/fusee-secondary.bin'),
-                Path(dest_ams, 'fusee-secondary.bin'),
-            ),
-            'reboot-payload-nro': (
+            'reboot-to-payload': (
                 Path(self._source_directory, 'troposphere/reboot_to_payload/reboot_to_payload.nro'),
-                Path(dest_nro, 'reboot_to_payload.nro'),
+                Path(dest_switch, 'reboot_to_payload.nro'),
+            ),
+            'hbl_html': (
+                Path(self._source_directory, 'common/defaults/hbl_html/'),
+                Path(dest_ams, 'hbl_html/'),
             ),
             'no-gc': (
-                Path(self._source_directory, 'common/defaults/kip_patches/default_nogc/'),
+                Path(self._source_directory,
+                     'common/defaults/kip_patches/default_nogc/'),
                 Path(dest_ams, 'kip_patches/default_nogc/'),
-            ),
-            'hbl-html': (
-                Path(self._source_directory, 'common/defaults/hbl_html/accessible-urls/'),
-                Path(dest_ams, 'hbl_html/accessible-urls/'),
             ),
             'bct.ini': (
                 Path(self._source_directory, 'common/defaults/BCT.ini'),
                 Path(dest_ams, 'BCT.ini'),
+            ),
+            'loader.ini': (
+                Path(self._source_directory, 'common/defaults/loader.ini'),
+                Path(dest_ams, 'loader.ini'),
             ),
             'system-settings': (
                 Path(settings.defaults_directory, 'atmosphere/system_settings.ini'),
@@ -103,13 +104,10 @@ class AtmosphereComponent(NXSDComponent):
         }
         self._copy_components(component_dict)
 
-        _, ams_mitm_dir = component_dict['ams_mitm']
-        ams_mitm_flags_dir = Path(ams_mitm_dir.parent, 'flags')
-        ams_mitm_flags_dir.mkdir(parents=True, exist_ok=True)
-        open(Path(ams_mitm_flags_dir, 'boot2.flag'), 'a').close()
-
-        kips_dir = Path(dest_ams, 'kips')
-        kips_dir.mkdir(parents=True, exist_ok=True)
+        _, eclct_stub_dir = component_dict['eclct.stub']
+        eclct_stub_flags_dir = Path(eclct_stub_dir.parent, 'flags')
+        eclct_stub_flags_dir.mkdir(parents=True, exist_ok=True)
+        open(Path(eclct_stub_flags_dir, 'boot2.flag'), 'a').close()
 
     def clean(self):
         with util.change_dir(self._source_directory):
@@ -118,12 +116,14 @@ class AtmosphereComponent(NXSDComponent):
             ])
 
     def _build(self):
+        # Use a pre-built copy of sept-secondary since the keys to sign sept are not publicly available.
+        os.environ['SEPT_ENC_PATH'] = str( Path(settings.defaults_directory, 'sept/sept-secondary.enc').resolve())
+
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
-                'git checkout master',
-                'git reset --hard {version}'.format(version=ATMOSPHERE_VERSION),
                 'git submodule update --recursive',
+                'git checkout {}'.format(ATMOSPHERE_COMMIT_OR_TAG),
                 'make',
             ]
             util.execute_shell_commands(build_commands)
