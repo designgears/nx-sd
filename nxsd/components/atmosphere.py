@@ -73,7 +73,7 @@ class AtmosphereComponent(NXSDComponent):
                 Path(dest_sept, 'sept-primary.bin'),
             ),
             'sept-secondary': (
-                Path(self._source_directory, 'sept/sept-primary/sept-secondary.bin'),
+                Path(self._source_directory, 'sept/sept-secondary/sept-secondary.bin'),
                 Path(dest_sept, 'sept-secondary.bin'),
             ),
             'sept-secondary-enc': (
