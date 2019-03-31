@@ -85,8 +85,7 @@ class AtmosphereComponent(NXSDComponent):
                 Path(dest_ams, 'hbl_html/'),
             ),
             'no-gc': (
-                Path(self._source_directory,
-                     'common/defaults/kip_patches/default_nogc/'),
+                Path(self._source_directory, 'common/defaults/kip_patches/default_nogc/'),
                 Path(dest_ams, 'kip_patches/default_nogc/'),
             ),
             'bct.ini': (
@@ -117,7 +116,7 @@ class AtmosphereComponent(NXSDComponent):
 
     def _build(self):
         # Use a pre-built copy of sept-secondary since the keys to sign sept are not publicly available.
-        os.environ['SEPT_ENC_PATH'] = str( Path(settings.defaults_directory, 'sept/sept-secondary.enc').resolve())
+        os.environ['SEPT_ENC_PATH'] = str(Path(settings.defaults_directory, 'sept/sept-secondary.enc').resolve())
 
         with util.change_dir(self._source_directory):
             build_commands = [
