@@ -4,7 +4,7 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-EDIZON_VERSION = 'v3.0.1'
+EDIZON_VERSION = 'master'
 SCRIPTS_VERSION = 'master'
 
 

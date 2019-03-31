@@ -57,9 +57,14 @@ class SysCLKComponent(NXSDComponent):
     def _build(self):
         with util.change_dir(self._source_directory):
             build_commands = [
+                # downgrade so we can build
+                'pacman -U ' + settings.packages_directory + 'devkitA64-r12-2-any.pkg.tar.xz',
+                'pacman -U ' + settings.packages_directory + 'libnx-2.0.0-2-any.pkg.tar.xz',
                 'git fetch origin',
                 'git checkout {version}'.format(version=SYSCLK_VERSION),
                 'make',
+                # restore previous versions
+                'pacman -Sy --noconfirm devkitA64 libnx',
             ]
             util.execute_shell_commands(build_commands)
 

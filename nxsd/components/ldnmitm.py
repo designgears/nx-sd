@@ -4,7 +4,7 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-LDNMITM_VERSION = 'v1.1.2'
+LDNMITM_VERSION = 'master'
 
 
 class LdnmitmComponent(NXSDComponent):
