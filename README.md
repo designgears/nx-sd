@@ -19,7 +19,7 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
    
 3. Install [pycryptodome](https://pycryptodome.readthedocs.io/en/latest/)
 
-       pip install pycryptodome
+       pip3 install pycrypto pycryptodome
 
 4. Clone this repo and all submodules recursively.
 
