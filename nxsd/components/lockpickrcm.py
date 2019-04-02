@@ -4,7 +4,8 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-LOCKPICKRCM_VERSION = '30b5faf'
+LOCKPICKRCM_VERSION = 'v1.0'
+LOCKPICKRCM_COMMIT_OR_TAG = '30b5faf'
 
 
 class LockpickRCMComponent(NXSDComponent):
@@ -46,7 +47,7 @@ class LockpickRCMComponent(NXSDComponent):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
-                'git checkout {version}'.format(version=LOCKPICKRCM_VERSION),
+                'git checkout {}'.format(LOCKPICKRCM_COMMIT_OR_TAG),
                 'make',
             ]
             util.execute_shell_commands(build_commands)

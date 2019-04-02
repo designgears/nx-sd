@@ -4,7 +4,8 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-EDIZON_VERSION = 'master'
+EDIZON_VERSION = 'v3.0.1'
+EDIZON_COMMIT_OR_TAG = 'ffee462'
 SCRIPTS_VERSION = 'master'
 
 
@@ -71,7 +72,7 @@ class EdizonComponent(NXSDComponent):
         with util.change_dir(self._edizon_source_directory):
             build_commands = [
                 'git fetch origin',
-                'git checkout {version}'.format(version=EDIZON_VERSION),
+                'git checkout {version}'.format(version=EDIZON_COMMIT_OR_TAG),
                 'make',
             ]
             util.execute_shell_commands(build_commands)

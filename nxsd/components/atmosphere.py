@@ -126,8 +126,12 @@ class AtmosphereComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git submodule update --recursive',
-                'git checkout {}'.format(ATMOSPHERE_COMMIT_OR_TAG),
+                'git checkout -b build {}'.format(ATMOSPHERE_COMMIT_OR_TAG),
                 'make',
+                'git checkout master',
+                'git branch -d build',
+                'git checkout {}'.format(ATMOSPHERE_COMMIT_OR_TAG),
+                'git submodule update --recursive',
             ]
             util.execute_shell_commands(build_commands)
 
