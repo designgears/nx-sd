@@ -72,7 +72,7 @@ class EdizonComponent(NXSDComponent):
         with util.change_dir(self._edizon_source_directory):
             build_commands = [
                 'git fetch origin',
-                'git checkout {version}'.format(version=EDIZON_COMMIT_OR_TAG),
+                'git checkout {}'.format(EDIZON_COMMIT_OR_TAG),
                 'make',
             ]
             util.execute_shell_commands(build_commands)
@@ -81,7 +81,7 @@ class EdizonComponent(NXSDComponent):
         with util.change_dir(self._scripts_source_directory):
             build_commands = [
                 'git fetch origin',
-                'git checkout {version}'.format(version=SCRIPTS_VERSION),
+                'git checkout {}'.format(SCRIPTS_VERSION),
             ]
             util.execute_shell_commands(build_commands)
 
