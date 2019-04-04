@@ -48,7 +48,7 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 | [EdiZon Scripts](https://bit.ly/2V0kXMt)                  | Cheats, configs, and scripts for EdiZon |
 | [Goldleaf](https://github.com/XorTroll/Goldleaf)          | 🍂 Nintendo Switch multipurpose homebrew tool |
 | [ldn_mitm](https://github.com/spacemeowx2/ldn_mitm)       | Play local wireless supported games online |
-| [sys-CLK](https://github.com/retronx-team/sys-clk)        | Overclocking/underclocking system module |
 | [Lockpick_RCM](https://github.com/shchmue/Lockpick_RCM)   | Encryption key derivation bare metal RCM payload |
+| [sys-CLK](https://github.com/retronx-team/sys-clk)        | Overclocking/underclocking system module |
 
 
