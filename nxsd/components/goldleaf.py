@@ -15,7 +15,7 @@ class GoldleafComponent(NXSDComponent):
         self._name = 'Goldleaf'
         self._version_string = GOLDLEAF_VERSION
 
-        self._source_directory = Path(settings.components_directory, 'ldn_mitm/')
+        self._source_directory = Path(settings.components_directory, 'goldleaf/Goldleaf/')
 
     def has_all_dependencies(self):
         if not dependencies.check_core_dependencies():
@@ -30,7 +30,7 @@ class GoldleafComponent(NXSDComponent):
 
         component_dict = {
             'app': (
-                Path(self._source_directory, 'Goldleaf/Goldleaf.nro'),
+                Path(self._source_directory, 'Output/Goldleaf.nro'),
                 Path(dest_switch, 'Goldleaf.nro'),
             ),
         }
