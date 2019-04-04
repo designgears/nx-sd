@@ -5,7 +5,7 @@ from nxsd.config import settings
 from pathlib import Path
 
 LDNMITM_VERSION = 'v1.1.2'
-LOCKPICKRCM_COMMIT_OR_TAG = 'master'
+LDNMITM_COMMIT_OR_TAG = 'master'
 
 
 class LdnmitmComponent(NXSDComponent):
@@ -50,7 +50,7 @@ class LdnmitmComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git submodule update --recursive',
-                'git checkout {}'.format(LOCKPICKRCM_COMMIT_OR_TAG),
+                'git checkout {}'.format(LDNMITM_COMMIT_OR_TAG),
                 'make',
             ]
             util.execute_shell_commands(build_commands)
