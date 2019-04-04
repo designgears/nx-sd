@@ -63,10 +63,7 @@ class AtmosphereComponent(NXSDComponent):
             ),
             'fusee-secondary': (
                 Path(self._source_directory, 'fusee/fusee-secondary/fusee-secondary.bin'),
-                [
-                    Path(dest_ams, 'fusee-secondary.bin'),
-                    Path(dest_sept, 'payload.bin'),
-                ],
+                Path(dest_ams, 'fusee-secondary.bin'),
             ),
             'sept-primary': (
                 Path(self._source_directory, 'sept/sept-primary/sept-primary.bin'),

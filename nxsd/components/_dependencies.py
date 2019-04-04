@@ -55,11 +55,26 @@ SWITCH_LIBCONFIG = NXSDDependency(
         Path(dkp_root, 'portlibs/switch/lib/libconfig++.a'),
     ]
 )
+SWITCH_LIBDRM_NOUVEAU = NXSDDependency(
+    name='switch-libdrm_nouveau',
+    paths=[
+        Path(dkp_root, 'portlibs/switch/lib/libdrm_nouveau.a'),
+        Path(dkp_root, 'portlibs/switch/lib/libdrm_nouveaud.a'),
+    ]
+)
 SWITCH_LIBJPEG_TURBO = NXSDDependency(
     name='switch-libjpeg-turbo',
     paths=[
         Path(dkp_root, 'portlibs/switch/lib/libjpeg.a'),
         Path(dkp_root, 'portlibs/switch/lib/libturbojpeg.a'),
+    ]
+)
+SWITCH_MBEDTLS = NXSDDependency(
+    name='switch-mbedtls',
+    paths=[
+        Path(dkp_root, 'portlibs/switch/lib/libmbedcrypto.a'),
+        Path(dkp_root, 'portlibs/switch/lib/libmbedtls.a'),
+        Path(dkp_root, 'portlibs/switch/lib/libmbedx509.a'),
     ]
 )
 SWITCH_SDL2_GFX = NXSDDependency(

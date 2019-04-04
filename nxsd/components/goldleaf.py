@@ -21,6 +21,18 @@ class GoldleafComponent(NXSDComponent):
         if not dependencies.check_core_dependencies():
             return False
 
+        dependency_list = [
+            dependencies.SWITCH_FREETYPE,
+            dependencies.SWITCH_LIBDRM_NOUVEAU,
+            dependencies.SWITCH_MBEDTLS,
+            dependencies.SWITCH_SDL2_GFX,
+            dependencies.SWITCH_SDL2_IMAGE,
+            dependencies.SWITCH_SDL2_TTF,
+        ]
+
+        if not dependencies.check_dependencies(dependency_list):
+            return False
+
         return True
 
     def install(self, install_directory):

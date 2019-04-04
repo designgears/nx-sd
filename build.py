@@ -14,6 +14,7 @@ from nxsd.components import edizon
 from nxsd.components import lockpickrcm
 from nxsd.components import ldnmitm
 from nxsd.components import goldleaf
+from nxsd.components import sysclk
 
 
 def main():
@@ -77,6 +78,7 @@ def get_packages():
         lockpickrcm,
         ldnmitm,
         goldleaf,
+        sysclk,
     ]
 
     return [nxsd_core, nxsd_addon]
