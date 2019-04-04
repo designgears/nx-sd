@@ -32,3 +32,6 @@
 [submodule "components/ldn_mitm"]
 	path = components/ldn_mitm
 	url = https://github.com/designgears/ldn_mitm.git
+[submodule "components/goldleaf"]
+	path = components/goldleaf
+	url = https://github.com/XorTroll/Goldleaf
