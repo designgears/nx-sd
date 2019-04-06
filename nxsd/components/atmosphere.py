@@ -105,6 +105,11 @@ class AtmosphereComponent(NXSDComponent):
         eclct_stub_flags_dir.mkdir(parents=True, exist_ok=True)
         open(Path(eclct_stub_flags_dir, 'boot2.flag'), 'a').close()
 
+        atmos_flags_dir = Path(dest_ams, 'flags')
+        atmos_flags_dir.mkdir(parents=True, exist_ok=True)
+        open(Path(atmos_flags_dir, 'hbl_bis_write.flag'), 'a').close()
+        open(Path(atmos_flags_dir, 'hbl_cal_read.flag'), 'a').close()
+
     def clean(self):
         with util.change_dir(self._source_directory):
             util.execute_shell_commands([
