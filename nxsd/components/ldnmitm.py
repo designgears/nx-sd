@@ -5,7 +5,7 @@ from nxsd.config import settings
 from pathlib import Path
 
 LDNMITM_VERSION = 'v1.1.2'
-LDNMITM_COMMIT_OR_TAG = 'master'
+LDNMITM_COMMIT_OR_TAG = 'f483fab'
 
 
 class LdnmitmComponent(NXSDComponent):
