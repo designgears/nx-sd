@@ -3,7 +3,8 @@
 	url = https://github.com/Atmosphere-NX/Atmosphere.git
 [submodule "components/hekate"]
 	path = components/hekate
-	url = https://github.com/CTCaer/hekate.git
+	url = https://github.com/Joonie86/hekate.git
+	branch = master
 [submodule "components/nx-hbloader"]
 	path = components/nx-hbloader
 	url = https://github.com/switchbrew/nx-hbloader.git
