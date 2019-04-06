@@ -59,6 +59,7 @@ class GoldleafComponent(NXSDComponent):
                 'git submodule update --recursive',
                 'git checkout {}'.format(GOLDLEAF_COMMIT_OR_TAG),
                 'mv /opt/devkitpro/libnx /opt/devkitpro/libnx_',
+                'touch ../libnx-Goldleaf/nx/default_icon.jpg',
                 'make install -C ../libnx-Goldleaf/',
                 'make',
                 'rm -rf /opt/devkitpro/libnx',
