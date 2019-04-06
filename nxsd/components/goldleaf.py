@@ -4,8 +4,8 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-GOLDLEAF_VERSION = 'v0.5'
-GOLDLEAF_COMMIT_OR_TAG = '0.5'
+GOLDLEAF_VERSION = 'v0.6'
+GOLDLEAF_COMMIT_OR_TAG = 'master'
 
 
 class GoldleafComponent(NXSDComponent):
@@ -58,7 +58,11 @@ class GoldleafComponent(NXSDComponent):
                 'git fetch origin',
                 'git submodule update --recursive',
                 'git checkout {}'.format(GOLDLEAF_COMMIT_OR_TAG),
+                'mv /opt/devkitpro/libnx /opt/devkitpro/libnx_',
+                'make install -C ../libnx-Goldleaf/',
                 'make',
+                'rm -rf /opt/devkitpro/libnx',
+                'mv /opt/devkitpro/libnx_ /opt/devkitpro/libnx',
             ]
             util.execute_shell_commands(build_commands)
 
