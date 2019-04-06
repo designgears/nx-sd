@@ -4,8 +4,8 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-HEKATE_VERSION = 'v4.9.1'
-HEKATE_COMMIT_OR_TAG = 'v4.9.1_'
+HEKATE_VERSION = 'v4.9.1A'
+HEKATE_COMMIT_OR_TAG = '2d137c1'
 
 
 class HekateComponent(NXSDComponent):
@@ -38,7 +38,7 @@ class HekateComponent(NXSDComponent):
         component_dict = {
             'payload': (
                 Path(self._source_directory, 'output/hekate.bin'),
-                Path(install_directory, 'payload/hekate-{version}.bin'.format(version=HEKATE_VERSION)),
+                Path(install_directory, 'payload/hekate-{}.bin'.format(HEKATE_VERSION)),
             ),
             'reboot-payload-bin': (
                 Path(self._source_directory, 'output/hekate.bin'),
