@@ -9,11 +9,9 @@ from nxsd.components import atmosphere
 from nxsd.components import hekate
 from nxsd.components import homebrew
 from nxsd.components import sigpatches
-from nxsd.components import checkpoint
 from nxsd.components import edizon
 from nxsd.components import lockpickrcm
 from nxsd.components import ldnmitm
-from nxsd.components import goldleaf
 from nxsd.components import sysclk
 
 
@@ -73,7 +71,6 @@ def get_packages():
         output_filename='nx-sd-addon.zip',
     )
     nxsd_addon.components = [
-        checkpoint,
         edizon,
         lockpickrcm,
         ldnmitm,

@@ -7,9 +7,6 @@
 [submodule "components/nx-hbmenu"]
 	path = components/nx-hbmenu
 	url = https://github.com/switchbrew/nx-hbmenu.git
-[submodule "components/checkpoint"]
-	path = components/checkpoint
-	url = https://github.com/FlagBrew/Checkpoint.git
 [submodule "components/edizon"]
 	path = components/edizon
 	url = https://github.com/WerWolv/EdiZon.git
@@ -29,9 +26,6 @@
 [submodule "components/ldn_mitm"]
 	path = components/ldn_mitm
 	url = https://github.com/designgears/ldn_mitm.git
-[submodule "components/goldleaf"]
-	path = components/goldleaf
-	url = https://github.com/XorTroll/Goldleaf
 [submodule "components/hekate"]
 	path = components/hekate
 	url = https://github.com/CTCaer/hekate.git
