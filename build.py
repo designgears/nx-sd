@@ -77,7 +77,6 @@ def get_packages():
         edizon,
         lockpickrcm,
         ldnmitm,
-        goldleaf,
         sysclk,
     ]
 

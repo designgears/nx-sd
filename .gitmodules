@@ -34,4 +34,4 @@
 	url = https://github.com/XorTroll/Goldleaf
 [submodule "components/hekate"]
 	path = components/hekate
-	url = https://github.com/Joonie86/hekate.git
+	url = https://github.com/CTCaer/hekate.git

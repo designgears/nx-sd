@@ -4,8 +4,8 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-HEKATE_VERSION = 'v4.9.1A'
-HEKATE_COMMIT_OR_TAG = '2d137c1'
+HEKATE_VERSION = 'v4.9.1'
+HEKATE_COMMIT_OR_TAG = 'v4.9.1_'
 
 
 class HekateComponent(NXSDComponent):

@@ -42,6 +42,7 @@ class AtmosphereComponent(NXSDComponent):
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
         dest_sept = Path(install_directory, 'sdcard/sept/')
         dest_switch = Path(install_directory, 'sdcard/switch')
+        dest_hekate = Path(install_directory, 'sdcard/bootloader')
 
         component_dict = {
             'dmnt': (
@@ -60,6 +61,10 @@ class AtmosphereComponent(NXSDComponent):
             'creport': (
                 Path(self._source_directory, 'stratosphere/creport/creport.nsp'),
                 Path(dest_ams, 'titles/0100000000000036/exefs.nsp'),
+            ),
+            'fusee-primary': (
+                Path(self._source_directory, 'fusee/fusee-primary/fusee-primary.bin'),
+                Path(dest_hekate, 'payloads/fusee-primary.bin'),
             ),
             'fusee-secondary': (
                 Path(self._source_directory, 'fusee/fusee-secondary/fusee-secondary.bin'),
