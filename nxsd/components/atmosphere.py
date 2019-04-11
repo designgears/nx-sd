@@ -6,8 +6,8 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-ATMOSPHERE_VERSION = 'v0.8.6'
-ATMOSPHERE_COMMIT_OR_TAG = '994d7d5'
+ATMOSPHERE_VERSION = 'v0.8.7'
+ATMOSPHERE_COMMIT_OR_TAG = 'master'
 
 
 class AtmosphereComponent(NXSDComponent):
@@ -129,12 +129,7 @@ class AtmosphereComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git submodule update --recursive',
-                'git checkout -b build {}'.format(ATMOSPHERE_COMMIT_OR_TAG),
-                'make',
-                'git checkout master',
-                'git branch -d build',
                 'git checkout {}'.format(ATMOSPHERE_COMMIT_OR_TAG),
-                'git submodule update --recursive',
             ]
             util.execute_shell_commands(build_commands)
 
