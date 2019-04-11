@@ -130,6 +130,7 @@ class AtmosphereComponent(NXSDComponent):
                 'git fetch origin',
                 'git submodule update --recursive',
                 'git checkout {}'.format(ATMOSPHERE_COMMIT_OR_TAG),
+                'make',
             ]
             util.execute_shell_commands(build_commands)
 
