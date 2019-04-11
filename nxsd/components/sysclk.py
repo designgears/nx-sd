@@ -6,7 +6,7 @@ from nxsd.config import settings
 from pathlib import Path
 
 SYSCLK_VERSION = '0.11.1'
-SYSCLK_COMMIT_OR_TAG = '9e98488'
+SYSCLK_COMMIT_OR_TAG = 'master'
 
 class SysCLKComponent(NXSDComponent):
 
