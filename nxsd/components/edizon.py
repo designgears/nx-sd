@@ -7,6 +7,7 @@ from pathlib import Path
 EDIZON_VERSION = 'v3.0.1'
 EDIZON_COMMIT_OR_TAG = 'ffee462'
 SCRIPTS_VERSION = 'master'
+LIBNX_COMMIT_OR_TAG = 'v2.1.0'
 
 
 class EdizonComponent(NXSDComponent):
@@ -18,6 +19,7 @@ class EdizonComponent(NXSDComponent):
 
         self._edizon_source_directory = Path(settings.components_directory, 'edizon/')
         self._scripts_source_directory = Path(settings.components_directory, 'edizon-scripts/')
+        self._libnx_source_directory = Path(settings.components_directory, 'libnx/')
 
     def has_all_dependencies(self):
         if not dependencies.check_core_dependencies():
@@ -65,6 +67,7 @@ class EdizonComponent(NXSDComponent):
             util.execute_shell_commands(['make clean'])
 
     def _build(self):
+        self._build_libnx()
         self._build_edizon()
         self._build_scripts()
 
@@ -82,6 +85,16 @@ class EdizonComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git checkout {}'.format(SCRIPTS_VERSION),
+            ]
+            util.execute_shell_commands(build_commands)
+
+    def _build_libnx(self):
+        with util.change_dir(self._libnx_source_directory):
+            build_commands = [
+                'git fetch origin',
+                'git submodule update --recursive',
+                'git checkout {}'.format(LIBNX_COMMIT_OR_TAG),
+                'make install',
             ]
             util.execute_shell_commands(build_commands)
 
