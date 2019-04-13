@@ -20,9 +20,10 @@
 [submodule "components/sys-clk"]
 	path = components/sys-clk
 	url = https://github.com/retronx-team/sys-clk.git
-[submodule "components/ldn_mitm"]
-	path = components/ldn_mitm
-	url = https://github.com/designgears/ldn_mitm.git
-[submodule "components/hekate"]
-	path = components/hekate
-	url = https://github.com/CTCaer/hekate.git
+[submodule "components/ldn-mitm"]
+	path = components/ldn-mitm
+	url = https://github.com/spacemeowx2/ldn_mitm.git
+	branch = dev
+[submodule "components/libnx"]
+	path = components/libnx
+	url = https://github.com/switchbrew/libnx.git
