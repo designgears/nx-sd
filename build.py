@@ -6,7 +6,6 @@ import nxsd
 
 from nxsd.package import NXSDPackage
 from nxsd.components import atmosphere
-from nxsd.components import hekate
 from nxsd.components import homebrew
 from nxsd.components import sigpatches
 from nxsd.components import edizon
@@ -60,7 +59,6 @@ def get_packages():
     )
     nxsd_core.components = [
         atmosphere,
-        hekate,
         homebrew,
         sigpatches,
     ]
