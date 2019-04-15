@@ -1,6 +1,6 @@
 FROM devkitpro/devkita64
 
-RUN dkp-pacman -Syyu --noconfirm \
+RUN dkp-pacman -Syyu --noconfirm --needed \
     devkitA64 \
     devkitARM \
     devkitarm-rules && \

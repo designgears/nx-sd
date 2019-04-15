@@ -32,7 +32,7 @@ class LockpickRCMComponent(NXSDComponent):
     def clean(self):
         with util.change_dir(self._source_directory):
             build_commands = [
-                'make clean',
+                'git clean -fdx',
                 'docker image ls | grep {} -c > /dev/null && docker image rm {} || echo "No image to delete."'.format(
                     DOCKER_IMAGE_NAME, DOCKER_IMAGE_NAME),
             ]

@@ -2,7 +2,9 @@ FROM devkitpro/devkita64:latest
 
 COPY ./sept-secondary.enc /sept-secondary.enc
 
-RUN dkp-pacman -Syyu --noconfirm devkitA64 devkitARM \
+RUN dkp-pacman -Syyu --noconfirm --needed \
+        devkitA64 \
+        devkitARM \
         devkitarm-rules \
         switch-freetype \
         switch-portlibs \
@@ -18,4 +20,4 @@ RUN make -j12 install
 
 WORKDIR /developer/components/Atmosphere
 
-ENTRYPOINT ["make"]
+ENTRYPOINT ["make", "-j12"]

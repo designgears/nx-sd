@@ -111,7 +111,7 @@ class AtmosphereComponent(NXSDComponent):
     def clean(self):
         with util.change_dir(self._source_directory):
             build_commands = [
-                'make clean',
+                'git clean -fdx',
                 'docker image ls | grep {} -c > /dev/null && docker image rm {} || echo "No image to delete."'.format(
                     DOCKER_IMAGE_NAME, DOCKER_IMAGE_NAME),
             ]
@@ -135,7 +135,7 @@ class AtmosphereComponent(NXSDComponent):
                 'git fetch origin',
                 'git submodule update --recursive',
                 'git checkout {}'.format(COMPONENT_COMMIT_OR_TAG),
-                'docker run -it --rm -a stdout -a stderr --name {} --mount src="$(cd ../../ && pwd)",target=/developer,type=bind {}:latest'.format(
+                'docker run --rm -a stdout -a stderr --name {} --mount src="$(cd ../../ && pwd)",target=/developer,type=bind {}:latest'.format(
                     DOCKER_IMAGE_NAME, DOCKER_IMAGE_NAME),
             ]
             util.execute_shell_commands(build_commands)
