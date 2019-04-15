@@ -1,12 +1,11 @@
 import os
 from nxsd import util
-from nxsd.components import _dependencies as dependencies
 from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-SYSCLK_VERSION = '0.11.1'
-SYSCLK_COMMIT_OR_TAG = 'master'
+SYSCLK_VERSION = '0.12.0'
+SYSCLK_COMMIT_OR_TAG = '0.12.0'
 
 class SysCLKComponent(NXSDComponent):
 
@@ -16,12 +15,6 @@ class SysCLKComponent(NXSDComponent):
         self._version_string = SYSCLK_VERSION
 
         self._source_directory = Path(settings.components_directory, 'sys-clk/')
-
-    def has_all_dependencies(self):
-        if not dependencies.check_core_dependencies():
-            return False
-        
-        return True
 
     def install(self, install_directory):
         self._build()
@@ -59,7 +52,7 @@ class SysCLKComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git checkout {}'.format(SYSCLK_COMMIT_OR_TAG),
-                'make',
+                'make -j12',
             ]
             util.execute_shell_commands(build_commands)
 

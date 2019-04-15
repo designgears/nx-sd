@@ -1,5 +1,4 @@
 from nxsd import util
-from nxsd.components import _dependencies as dependencies
 from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
@@ -19,21 +18,6 @@ class HomebrewComponent(NXSDComponent):
 
         self._hbloader_source_directory = Path(settings.components_directory, 'nx-hbloader/')
         self._hbmenu_source_directory = Path(settings.components_directory, 'nx-hbmenu/')
-
-    def has_all_dependencies(self):
-        if not dependencies.check_core_dependencies():
-            return False
-
-        dependency_list = [
-            dependencies.SWITCH_FREETYPE,
-            dependencies.SWITCH_LIBCONFIG,
-            dependencies.SWITCH_LIBJPEG_TURBO,
-        ]
-
-        if not dependencies.check_dependencies(dependency_list):
-            return False
-        
-        return True
 
     def install(self, install_directory):
         self._build()
@@ -75,7 +59,7 @@ class HomebrewComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git checkout {version}'.format(version=HBLOADER_COMMIT_OR_TAG),
-                'make',
+                'make -j12',
             ]
             util.execute_shell_commands(build_commands)
 
@@ -85,7 +69,7 @@ class HomebrewComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git checkout {version}'.format(version=HBMENU_COMMIT_OR_TAG),
-                'make nx',
+                'make -j12 nx',
             ]
             util.execute_shell_commands(build_commands)
 

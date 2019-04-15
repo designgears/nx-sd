@@ -1,11 +1,10 @@
 from nxsd import util
-from nxsd.components import _dependencies as dependencies
 from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
 LDNMITM_VERSION = 'v1.1.2'
-LDNMITM_COMMIT_OR_TAG = 'c053868'
+LDNMITM_COMMIT_OR_TAG = '1d78707'
 
 
 class LdnmitmComponent(NXSDComponent):
@@ -16,12 +15,6 @@ class LdnmitmComponent(NXSDComponent):
         self._version_string = LDNMITM_VERSION
 
         self._source_directory = Path(settings.components_directory, 'ldn-mitm/')
-
-    def has_all_dependencies(self):
-        if not dependencies.check_core_dependencies():
-            return False
-
-        return True
 
     def install(self, install_directory):
         self._build()
@@ -56,7 +49,7 @@ class LdnmitmComponent(NXSDComponent):
                 'git fetch origin',
                 'git submodule update --recursive',
                 'git checkout {}'.format(LDNMITM_COMMIT_OR_TAG),
-                'make',
+                'make -j12',
             ]
             util.execute_shell_commands(build_commands)
 

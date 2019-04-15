@@ -21,14 +21,9 @@ class NXSDPackage(object):
 
         for component_module in self.components:
             component = component_module.get_component()
-            if component.has_all_dependencies():
-                nxsd.logger.info('Building {name} {version}...'.format(
-                name=component.name, version=component.version_string))
-                component.install(self.build_directory)
-            else:
-                all_builds_successful = False
-                nxsd.logger.info('Unable to build {name} {version}!'.format(
-                name=component.name, version=component.version_string))
+            nxsd.logger.info('Building {name} {version}...'.format(
+            name=component.name, version=component.version_string))
+            component.install(self.build_directory)
 
         if all_builds_successful:
             output_path = Path(self.output_filename)

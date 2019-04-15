@@ -13,10 +13,6 @@ class SigpatchesComponent(NXSDComponent):
         self._name = 'Sigpatches'
         self._version_string = SIGPATCHES_VERSION
 
-    def has_all_dependencies(self):
-        # No dependencies
-        return True
-
     def install(self, install_directory):
 
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')

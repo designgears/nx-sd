@@ -31,8 +31,8 @@ def delete_if_exists(path):
 
 def execute_shell_commands(command_list):
     for command in command_list:
-        process = subprocess.Popen(command.split(),
-                stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        process = subprocess.Popen(command,
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         with process.stdout:
             log_stream_output(logging.DEBUG, process.stdout)
         with process.stderr:

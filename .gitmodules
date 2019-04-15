@@ -1,6 +1,3 @@
-[submodule "components/atmosphere"]
-	path = components/atmosphere
-	url = https://github.com/Atmosphere-NX/Atmosphere.git
 [submodule "components/nx-hbloader"]
 	path = components/nx-hbloader
 	url = https://github.com/switchbrew/nx-hbloader.git
@@ -10,10 +7,6 @@
 [submodule "components/edizon"]
 	path = components/edizon
 	url = https://github.com/WerWolv/EdiZon.git
-[submodule "components/lockpick-rcm"]
-	path = components/lockpick-rcm
-	url = https://github.com/shchmue/Lockpick_RCM
-	ignore = untracked
 [submodule "components/edizon-scripts"]
 	path = components/edizon-scripts
 	url = https://github.com/WerWolv/EdiZon_CheatsConfigsAndScripts.git
@@ -27,3 +20,9 @@
 [submodule "components/libnx"]
 	path = components/libnx
 	url = https://github.com/switchbrew/libnx.git
+[submodule "components/Lockpick_RCM"]
+	path = components/Lockpick_RCM
+	url = https://github.com/shchmue/Lockpick_RCM.git
+[submodule "components/Atmosphere"]
+	path = components/Atmosphere
+	url = https://github.com/Atmosphere-NX/Atmosphere.git

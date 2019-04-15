@@ -45,6 +45,9 @@ def build(args):
         
 
 def clean(args):
+    with open('log/build.log', "w"):
+        pass
+    nxsd.logger.info('Cleared log!')
     packages = get_packages()
     for package in packages:
         package.clean()
@@ -59,8 +62,6 @@ def get_packages():
     )
     nxsd_core.components = [
         atmosphere,
-        homebrew,
-        sigpatches,
     ]
 
     nxsd_addon = NXSDPackage(
@@ -69,10 +70,7 @@ def get_packages():
         output_filename='nx-sd-addon.zip',
     )
     nxsd_addon.components = [
-        edizon,
         lockpickrcm,
-        ldnmitm,
-        sysclk,
     ]
 
     return [nxsd_core, nxsd_addon]
