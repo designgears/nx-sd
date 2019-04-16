@@ -16,8 +16,8 @@ ENV SEPT_ENC_PATH="/sept-secondary.enc"
 
 RUN git clone https://github.com/switchbrew/libnx.git
 WORKDIR /libnx
-RUN make -j12 install
+RUN make -j5 install
 
 WORKDIR /developer/components/Atmosphere
 
-ENTRYPOINT ["make", "-j12"]
+ENTRYPOINT ["make", "-j5"]

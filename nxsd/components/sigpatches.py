@@ -2,16 +2,18 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-# Corresponds to Nintendo Switch system software version
-SIGPATCHES_VERSION = '7.0.1'
+COMPONENT_NAME = 'Sigpatches'
+COMPONENT_VERSION = '7.0.1'
 
 
 class SigpatchesComponent(NXSDComponent):
 
     def __init__(self):
         super().__init__()
-        self._name = 'Sigpatches'
-        self._version_string = SIGPATCHES_VERSION
+        self._name = COMPONENT_NAME
+        self._version_string = COMPONENT_VERSION
+
+        self._source_directory = Path(settings.components_directory, COMPONENT_NAME)
 
     def install(self, install_directory):
 
@@ -19,11 +21,11 @@ class SigpatchesComponent(NXSDComponent):
 
         component_dict = {
             'es-patches': (
-                Path(settings.components_directory, 'sigpatches/exefs_patches/es_patches/'),
+                Path(self._source_directory, 'exefs_patches/es_patches/'),
                 Path(dest_ams, 'exefs_patches/es_patches/'),
             ),
             'fs-patches': (
-                Path(settings.components_directory, 'sigpatches/kip_patches/fs_patches/'),
+                Path(self._source_directory, 'kip_patches/fs_patches/'),
                 Path(dest_ams, 'kip_patches/fs_patches/'),
             ),
         }

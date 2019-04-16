@@ -3,14 +3,13 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-COMPONENT_NAME = 'EdiZon'
-COMPONENT_VERSION = 'v3.0.1'
-COMPONENT_COMMIT_OR_TAG = 'ba59a42'
+COMPONENT_NAME = 'nx-hbloader'
+COMPONENT_VERSION = 'v2.1'
+COMPONENT_COMMIT_OR_TAG = '3af8c89'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
-SCRIPTS_VERSION = 'master'
 
 
-class EdizonComponent(NXSDComponent):
+class HBLoaderComponent(NXSDComponent):
 
     def __init__(self):
         super().__init__()
@@ -19,30 +18,16 @@ class EdizonComponent(NXSDComponent):
 
         self._source_directory = Path(settings.components_directory, COMPONENT_NAME)
         self._dockerfiles_directory = Path(settings.dockerfiles_directory, COMPONENT_NAME)
-        self._scripts_source_directory = Path(settings.components_directory, 'edizon-scripts/')
 
     def install(self, install_directory):
         self._build()
 
-        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
-        dest_nro = Path(install_directory, 'sdcard/switch/')
+        dest_sd = Path(install_directory, 'sdcard/')
 
         component_dict = {
-            'edizon': (
-                Path(self._source_directory, 'out/EdiZon.nro'),
-                Path(dest_nro, 'EdiZon/EdiZon.nro'),
-            ),
-            'configs': (
-                Path(self._scripts_source_directory, 'Configs'),
-                Path(dest_nro, 'EdiZon/editor'),
-            ),
-            'scripts': (
-                Path(self._scripts_source_directory, 'Scripts'),
-                Path(dest_nro, 'EdiZon/editor/scripts'),
-            ),
-            'cheats': (
-                Path(self._scripts_source_directory, 'Cheats'),
-                Path(dest_ams, 'titles'),
+            'hbloader': (
+                Path(self._source_directory, 'hbl.nsp'),
+                Path(dest_sd, 'atmosphere/hbl.nsp'),
             ),
         }
         self._copy_components(component_dict)
@@ -59,7 +44,6 @@ class EdizonComponent(NXSDComponent):
     def _build(self):
         self._build_docker()
         self._build_component()
-        self._build_scripts()
 
     def _build_docker(self):
         with util.change_dir(self._dockerfiles_directory):
@@ -79,14 +63,6 @@ class EdizonComponent(NXSDComponent):
             ]
             util.execute_shell_commands(build_commands)
 
-    def _build_scripts(self):
-        with util.change_dir(self._scripts_source_directory):
-            build_commands = [
-                'git fetch origin',
-                'git checkout {}'.format(SCRIPTS_VERSION),
-            ]
-            util.execute_shell_commands(build_commands)
-
 
 def get_component():
-    return EdizonComponent()
+    return HBLoaderComponent()

@@ -4,25 +4,21 @@
 [submodule "components/nx-hbmenu"]
 	path = components/nx-hbmenu
 	url = https://github.com/switchbrew/nx-hbmenu.git
-[submodule "components/edizon"]
-	path = components/edizon
-	url = https://github.com/WerWolv/EdiZon.git
 [submodule "components/edizon-scripts"]
 	path = components/edizon-scripts
 	url = https://github.com/WerWolv/EdiZon_CheatsConfigsAndScripts.git
-[submodule "components/sys-clk"]
-	path = components/sys-clk
-	url = https://github.com/retronx-team/sys-clk.git
-[submodule "components/ldn-mitm"]
-	path = components/ldn-mitm
-	url = https://github.com/spacemeowx2/ldn_mitm.git
-	branch = dev
-[submodule "components/libnx"]
-	path = components/libnx
-	url = https://github.com/switchbrew/libnx.git
 [submodule "components/Lockpick_RCM"]
 	path = components/Lockpick_RCM
 	url = https://github.com/shchmue/Lockpick_RCM.git
 [submodule "components/Atmosphere"]
 	path = components/Atmosphere
 	url = https://github.com/Atmosphere-NX/Atmosphere.git
+[submodule "components/ldn_mitm"]
+	path = components/ldn_mitm
+	url = https://github.com/spacemeowx2/ldn_mitm.git
+[submodule "components/EdiZon"]
+	path = components/EdiZon
+	url = https://github.com/WerWolv/EdiZon.git
+[submodule "components/sys-clk"]
+	path = components/sys-clk
+	url = https://github.com/retronx-team/sys-clk.git

@@ -6,7 +6,8 @@ import nxsd
 
 from nxsd.package import NXSDPackage
 from nxsd.components import atmosphere
-from nxsd.components import homebrew
+from nxsd.components import nxhbloader
+from nxsd.components import nxhbmenu
 from nxsd.components import sigpatches
 from nxsd.components import edizon
 from nxsd.components import lockpickrcm
@@ -62,6 +63,9 @@ def get_packages():
     )
     nxsd_core.components = [
         atmosphere,
+        nxhbloader,
+        nxhbmenu,
+        sigpatches,
     ]
 
     nxsd_addon = NXSDPackage(
@@ -70,7 +74,10 @@ def get_packages():
         output_filename='nx-sd-addon.zip',
     )
     nxsd_addon.components = [
+        edizon,
         lockpickrcm,
+        ldnmitm,
+        sysclk,
     ]
 
     return [nxsd_core, nxsd_addon]

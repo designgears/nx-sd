@@ -8,6 +8,6 @@ RUN dkp-pacman -Syyu --noconfirm --needed \
 
 ENV DEVKITARM=${DEVKITPRO}/devkitARM
 
-WORKDIR /developer/components/Lockpick_RCM
+WORKDIR /developer/components/nx-hbloader
 
 ENTRYPOINT ["make", "-j5"]
