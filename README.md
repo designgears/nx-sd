@@ -12,16 +12,13 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 
 ## Building
 
-1. Install [devkitARM and devkitA64](https://devkitpro.org/wiki/Getting_Started) toolchains.
-2. Install dependencies
+1. Install [Docker](https://hub.docker.com/search/?type=edition&offering=community) and [Python 3.7](https://www.python.org/downloads/).
 
-       pacman -S devkitA64 devkitARM devkitarm-rules switch-dev switch-portlibs switch-freetype switch-zlib
-
-3. Clone this repo and all submodules recursively.
+2. Clone this repo and all submodules recursively.
 
        git clone https://github.com/designgears/nx-sd.git --recurse-submodules
 
-4. Run `python3 build.py`.
+3. Run `python3 build.py`.
 
 ## Components
 
