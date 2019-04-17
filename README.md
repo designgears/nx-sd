@@ -40,3 +40,4 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 | [ldn_mitm](https://github.com/spacemeowx2/ldn_mitm)       | Play local wireless supported games online |
 | [Lockpick_RCM](https://github.com/shchmue/Lockpick_RCM)   | Encryption key derivation bare metal RCM payload |
 | [sys-CLK](https://github.com/retronx-team/sys-clk)        | Overclocking/underclocking system module |
+| [Goldleaf](https://github.com/XorTroll/Goldleaf)          | Nintendo Switch multipurpose homebrew tool |
