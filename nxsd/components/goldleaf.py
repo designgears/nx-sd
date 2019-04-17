@@ -43,7 +43,6 @@ class GoldleafComponent(NXSDComponent):
             util.execute_shell_commands(build_commands)
 
     def _build(self):
-        print(self._source_directory)
         self._build_docker()
         self._build_component()
 
