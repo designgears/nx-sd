@@ -22,3 +22,6 @@
 [submodule "components/sys-clk"]
 	path = components/sys-clk
 	url = https://github.com/retronx-team/sys-clk.git
+[submodule "components/Goldleaf"]
+	path = components/Goldleaf
+	url = https://github.com/XorTroll/Goldleaf.git
