@@ -1,13 +1,8 @@
-FROM devkitpro/devkita64
+FROM devkitpro/devkita64:20190329
 
 RUN apt install -y zip
 
-RUN dkp-pacman -Syyu --noconfirm --needed \
-    devkitA64 \
-    devkitARM \
-    libnx \
-    devkitarm-rules && \
-    dkp-pacman -Scc --noconfirm
+RUN dkp-pacman -Scc --noconfirm
 
 ENV DEVKITARM=${DEVKITPRO}/devkitARM
 

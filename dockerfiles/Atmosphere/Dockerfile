@@ -1,4 +1,4 @@
-FROM devkitpro/devkita64:latest
+FROM devkitpro/devkita64:20190329
 
 COPY ./sept-secondary.enc /sept-secondary.enc
 
