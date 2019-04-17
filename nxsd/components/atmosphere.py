@@ -70,7 +70,7 @@ class AtmosphereComponent(NXSDComponent):
             ),
             'reboot-to-payload': (
                 Path(self._source_directory, 'troposphere/reboot_to_payload/reboot_to_payload.nro'),
-                Path(dest_switch, 'reboot_to_payload.nro'),
+                Path(dest_switch, 'reboot_to_payload/reboot_to_payload.nro'),
             ),
             'hbl-html': (
                 Path(self._source_directory, 'common/defaults/hbl_html/'),

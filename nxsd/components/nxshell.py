@@ -28,7 +28,7 @@ class NXShellComponent(NXSDComponent):
         component_dict = {
             'app': (
                 Path(self._source_directory, 'NX-Shell.nro'),
-                Path(dest_nro, 'NX-Shell.nro'),
+                Path(dest_nro, 'NX-Shell/NX-Shell.nro'),
             ),
         }
         self._copy_components(component_dict)

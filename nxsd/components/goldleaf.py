@@ -28,7 +28,7 @@ class GoldleafComponent(NXSDComponent):
         component_dict = {
             'app': (
                 Path(self._source_directory, 'Goldleaf/Output/Goldleaf.nro'),
-                Path(dest_nro, 'Goldleaf.nro'),
+                Path(dest_nro, 'Goldleaf/Goldleaf.nro'),
             ),
         }
         self._copy_components(component_dict)
