@@ -42,4 +42,4 @@ nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Sw
 | [sys-CLK](https://github.com/retronx-team/sys-clk)        | Overclocking/underclocking system module |
 | [Goldleaf](https://github.com/XorTroll/Goldleaf)          | Nintendo Switch multipurpose homebrew tool |
 | [NX-Shell](https://github.com/joel16/NX-Shell)            | 3DShell port for the Nintendo Switch |
-| [incognito](https://github.com/blawar)                    | Wipes personal information from your Nintendo Switch |
+| [incognito](https://github.com/blawar/incognito)          | Wipes personal information from your Nintendo Switch |
