@@ -16,4 +16,4 @@ ENV DEVKITARM=${DEVKITPRO}/devkitARM
 
 WORKDIR /developer/Goldleaf/
 
-ENTRYPOINT ["make" "-j5"]
+ENTRYPOINT ["make", "-j5"]
