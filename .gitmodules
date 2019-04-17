@@ -25,3 +25,6 @@
 [submodule "components/Goldleaf"]
 	path = components/Goldleaf
 	url = https://github.com/XorTroll/Goldleaf.git
+[submodule "components/NX-Shell"]
+	path = components/NX-Shell
+	url = https://github.com/joel16/NX-Shell.git

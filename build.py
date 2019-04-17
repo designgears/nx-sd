@@ -14,6 +14,7 @@ from nxsd.components import lockpickrcm
 from nxsd.components import ldnmitm
 from nxsd.components import sysclk
 from nxsd.components import goldleaf
+from nxsd.components import nxshell
 
 
 def main():
@@ -80,6 +81,7 @@ def get_packages():
         ldnmitm,
         sysclk,
         goldleaf,
+        nxshell,
     ]
 
     return [nxsd_core, nxsd_addon]
