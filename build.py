@@ -15,6 +15,7 @@ from nxsd.components import ldnmitm
 from nxsd.components import sysclk
 from nxsd.components import goldleaf
 from nxsd.components import nxshell
+from nxsd.components import incognito
 
 
 def main():
@@ -82,6 +83,7 @@ def get_packages():
         sysclk,
         goldleaf,
         nxshell,
+        incognito,
     ]
 
     return [nxsd_core, nxsd_addon]

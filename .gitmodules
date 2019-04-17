@@ -28,3 +28,6 @@
 [submodule "components/NX-Shell"]
 	path = components/NX-Shell
 	url = https://github.com/joel16/NX-Shell.git
+[submodule "components/incognito"]
+	path = components/incognito
+	url = https://github.com/blawar/incognito.git
