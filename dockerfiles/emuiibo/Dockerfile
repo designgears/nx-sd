@@ -6,6 +6,6 @@ RUN dkp-pacman -Scc --noconfirm
 
 ENV DEVKITARM=${DEVKITPRO}/devkitARM
 
-WORKDIR /emuiibo
+WORKDIR /
 
 ENTRYPOINT ["make", "-j5"]

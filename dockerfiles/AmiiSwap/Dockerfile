@@ -4,6 +4,6 @@ RUN dkp-pacman -Scc --noconfirm
 
 ENV DEVKITARM=${DEVKITPRO}/devkitARM
 
-WORKDIR /developer
+WORKDIR /developer/components/AmiiSwap
 
 ENTRYPOINT ["make", "-j5"]

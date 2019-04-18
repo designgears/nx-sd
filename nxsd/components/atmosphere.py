@@ -112,6 +112,7 @@ class AtmosphereComponent(NXSDComponent):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git clean -fdx',
+                'git submodule foreach --recursive git clean -fdx',
                 'docker image ls | grep {} -c > /dev/null && docker image rm {} || echo "No image to delete."'.format(
                     DOCKER_IMAGE_NAME, DOCKER_IMAGE_NAME),
             ]
