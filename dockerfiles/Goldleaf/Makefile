@@ -7,4 +7,3 @@ libnx-Goldleaf:
 
 Goldleaf:
 	$(MAKE) -C Goldleaf
-	
