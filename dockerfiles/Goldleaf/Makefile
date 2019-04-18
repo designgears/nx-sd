@@ -5,6 +5,6 @@ all: $(COMPONENTS)
 libnx-Goldleaf:
 	$(MAKE) -C libnx-Goldleaf install
 
-Goldleaf: thermosphere
+Goldleaf:
 	$(MAKE) -C Goldleaf
 	

@@ -31,3 +31,9 @@
 [submodule "components/incognito"]
 	path = components/incognito
 	url = https://github.com/blawar/incognito.git
+[submodule "components/AmiiSwap"]
+	path = components/AmiiSwap
+	url = https://github.com/FuryBaguette/AmiiSwap
+[submodule "components/emuiibo"]
+	path = components/emuiibo
+	url = https://github.com/XorTroll/emuiibo
