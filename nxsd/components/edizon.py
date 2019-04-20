@@ -74,7 +74,8 @@ class EdizonComponent(NXSDComponent):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
-                'git checkout {}'.format(COMPONENT_COMMIT_OR_TAG),
+                'git submodule update --init --recursive',
+                'git checkout {} && git reset --hard && git pull'.format(COMPONENT_COMMIT_OR_TAG),
                 'docker run --rm -a stdout -a stderr --name {} --mount src="$(cd ../../ && pwd)",target=/developer,type=bind {}:latest'.format(
                     DOCKER_IMAGE_NAME, DOCKER_IMAGE_NAME),
             ]
@@ -84,7 +85,7 @@ class EdizonComponent(NXSDComponent):
         with util.change_dir(self._scripts_source_directory):
             build_commands = [
                 'git fetch origin',
-                'git checkout {}'.format(SCRIPTS_VERSION),
+                'git checkout {} && git reset --hard && git pull'.format(SCRIPTS_VERSION),
             ]
             util.execute_shell_commands(build_commands)
 

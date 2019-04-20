@@ -4,8 +4,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Lockpick_RCM'
-COMPONENT_VERSION = 'v1.0'
-COMPONENT_COMMIT_OR_TAG = '30b5faf'
+COMPONENT_VERSION = 'v1.1.1'
+COMPONENT_COMMIT_OR_TAG = 'v1.1.1'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 class LockpickRCMComponent(NXSDComponent):
@@ -55,8 +55,8 @@ class LockpickRCMComponent(NXSDComponent):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
-                'git submodule update --recursive',
-                'git checkout {}'.format(COMPONENT_COMMIT_OR_TAG),
+                'git submodule update --init --recursive',
+                'git checkout {} && git reset --hard && git pull'.format(COMPONENT_COMMIT_OR_TAG),
                 'docker run -it --rm -a stdout -a stderr --name {} --mount src="$(cd ../../ && pwd)",target=/developer,type=bind {}:latest'.format(
                     DOCKER_IMAGE_NAME, DOCKER_IMAGE_NAME),
             ]

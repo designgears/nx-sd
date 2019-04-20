@@ -5,7 +5,7 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'AmiiSwap'
-COMPONENT_VERSION = 'v0.1.2'
+COMPONENT_VERSION = 'v0.1.3'
 COMPONENT_COMMIT_OR_TAG = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
@@ -59,7 +59,8 @@ class SysCLKComponent(NXSDComponent):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
-                'git checkout {}'.format(COMPONENT_COMMIT_OR_TAG),
+                'git submodule update --init --recursive',
+                'git checkout {} && git reset --hard && git pull'.format(COMPONENT_COMMIT_OR_TAG),
                 'docker run -it --rm -a stdout -a stderr --name {} --mount src="$(cd ../../ && pwd)",target=/developer,type=bind {}:latest'.format(
                     DOCKER_IMAGE_NAME, DOCKER_IMAGE_NAME),
             ]
