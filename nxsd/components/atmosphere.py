@@ -6,7 +6,7 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Atmosphere'
-COMPONENT_VERSION = 'v0.8.7'
+COMPONENT_VERSION = 'v0.8.8'
 COMPONENT_COMMIT_OR_TAG = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
