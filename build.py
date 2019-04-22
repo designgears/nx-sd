@@ -81,13 +81,13 @@ def get_packages():
     nxsd_addon.components = [
         edizon,
         lockpickrcm,
-        ldnmitm,
+        # ldnmitm,
         sysclk,
         goldleaf,
         nxshell,
         incognito,
-        emuiibo,
-        amiiswap,
+        # emuiibo,
+        # amiiswap,
     ]
 
     return [nxsd_core, nxsd_addon]
