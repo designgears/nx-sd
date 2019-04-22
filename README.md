@@ -1,15 +1,3 @@
-# nx-sd 
-
-nx-sd is a lightweight, ready-to-use custom firmware package for the Nintendo Switch. It includes everything necessary for launching homebrew.
-
-
-## Quick Start Guide
-
-1. Download and extract the [latest release](https://github.com/designgears/nx-sd/releases/latest) of nx-sd.
-2. Copy the contents of the `sdcard` folder to the root of your microSD card.
-3. Power on your Nintendo Switch in RCM and inject the payload in `payload` folder.
-4. Atmosphère will boot automatically.
-
 ## Building
 
 1. Install [Docker](https://hub.docker.com/search/?type=edition&offering=community) and [Python 3.7](https://www.python.org/downloads/).
