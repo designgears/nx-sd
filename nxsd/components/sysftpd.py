@@ -10,7 +10,7 @@ COMPONENT_COMMIT_OR_TAG = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
-class SysCLKComponent(NXSDComponent):
+class SysftpdComponent(NXSDComponent):
 
     def __init__(self):
         super().__init__()
@@ -78,4 +78,4 @@ class SysCLKComponent(NXSDComponent):
 
 
 def get_component():
-    return SysCLKComponent()
+    return SysftpdComponent()

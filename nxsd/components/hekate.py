@@ -4,13 +4,13 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-COMPONENT_NAME = 'incognito'
-COMPONENT_VERSION = 'v1.3'
-COMPONENT_COMMIT_OR_TAG = 'master'
+COMPONENT_NAME = 'hekate'
+COMPONENT_VERSION = 'v4.10'
+COMPONENT_COMMIT_OR_TAG = 'v4.10'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
-class IncognitoComponent(NXSDComponent):
+class HekateComponent(NXSDComponent):
 
     def __init__(self):
         super().__init__()
@@ -23,15 +23,33 @@ class IncognitoComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_nro = Path(install_directory, 'sdcard/switch/')
-        
+        dest_bootloader = Path(install_directory, 'sdcard/bootloader/')
+        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
+
         component_dict = {
-            'app': (
-                Path(self._source_directory, 'incognito.nro'),
-                Path(dest_nro, 'incognito/incognito.nro'),
+            'payload': (
+                Path(self._source_directory, 'output/hekate.bin'),
+                [
+                    Path(install_directory, 'payloads/hekate-{}.bin'.format(COMPONENT_VERSION)),
+                    Path(dest_ams, 'reboot_payload.bin'),
+                ],
+            ),
+            'sleep-module': (
+                Path(self._source_directory, 'output/libsys_lp0.bso'),
+                Path(dest_bootloader, 'sys/libsys_lp0.bso'),
+            ),
+            'config': (
+                Path(settings.defaults_directory, 'hekate/hekate_ipl.ini'),
+                Path(dest_bootloader, 'hekate_ipl.ini'),
             ),
         }
         self._copy_components(component_dict)
+
+        ini_dir = Path(dest_bootloader, 'ini')
+        ini_dir.mkdir(parents=True, exist_ok=True)
+
+        payloads_dir = Path(dest_bootloader, 'payloads')
+        payloads_dir.mkdir(parents=True, exist_ok=True)
 
     def clean(self):
         with util.change_dir(self._source_directory):
@@ -68,4 +86,4 @@ class IncognitoComponent(NXSDComponent):
 
 
 def get_component():
-    return IncognitoComponent()
+    return HekateComponent()

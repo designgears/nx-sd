@@ -40,3 +40,6 @@
 [submodule "components/sys-ftpd"]
 	path = components/sys-ftpd
 	url = https://github.com/jakibaki/sys-ftpd
+[submodule "components/hekate"]
+	path = components/hekate
+	url = https://github.com/CTCaer/hekate

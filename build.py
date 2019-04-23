@@ -5,6 +5,7 @@ import logging
 import nxsd
 
 from nxsd.package import NXSDPackage
+from nxsd.components import hekate
 from nxsd.components import atmosphere
 from nxsd.components import nxhbloader
 from nxsd.components import nxhbmenu
@@ -68,6 +69,7 @@ def get_packages():
         output_filename='nx-sd.zip',
     )
     nxsd_core.components = [
+        hekate,
         atmosphere,
         nxhbloader,
         nxhbmenu,

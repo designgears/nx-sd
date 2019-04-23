@@ -21,10 +21,15 @@ class LockpickRCMComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
+        dest_boot = Path(install_directory, 'sdcard/bootloader/')
+
         component_dict = {
             'lockpick-rcm': (
                 Path(self._source_directory, 'output/Lockpick_RCM.bin'),
-                Path(install_directory, 'payload/Lockpick_RCM.bin'),
+                [
+                    Path(install_directory, 'payloads/Lockpick_RCM.bin'),
+                    Path(dest_boot, 'payloads/Lockpick_RCM.bin'),
+                ],
             ),
         }
         self._copy_components(component_dict)
