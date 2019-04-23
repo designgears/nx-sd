@@ -1,45 +1,60 @@
 [submodule "components/nx-hbloader"]
 	path = components/nx-hbloader
 	url = https://github.com/switchbrew/nx-hbloader.git
+	ignore = dirty
 [submodule "components/nx-hbmenu"]
 	path = components/nx-hbmenu
 	url = https://github.com/switchbrew/nx-hbmenu.git
+	ignore = dirty
 [submodule "components/edizon-scripts"]
 	path = components/edizon-scripts
 	url = https://github.com/WerWolv/EdiZon_CheatsConfigsAndScripts.git
+	ignore = dirty
 [submodule "components/Lockpick_RCM"]
 	path = components/Lockpick_RCM
 	url = https://github.com/shchmue/Lockpick_RCM.git
+	ignore = dirty
 [submodule "components/Atmosphere"]
 	path = components/Atmosphere
 	url = https://github.com/Atmosphere-NX/Atmosphere.git
+	ignore = dirty
 [submodule "components/ldn_mitm"]
 	path = components/ldn_mitm
 	url = https://github.com/spacemeowx2/ldn_mitm.git
+	ignore = dirty
 [submodule "components/EdiZon"]
 	path = components/EdiZon
 	url = https://github.com/WerWolv/EdiZon.git
+	ignore = dirty
 [submodule "components/sys-clk"]
 	path = components/sys-clk
 	url = https://github.com/retronx-team/sys-clk.git
+	ignore = dirty
 [submodule "components/Goldleaf"]
 	path = components/Goldleaf
 	url = https://github.com/XorTroll/Goldleaf.git
+	ignore = dirty
 [submodule "components/NX-Shell"]
 	path = components/NX-Shell
 	url = https://github.com/joel16/NX-Shell.git
+	ignore = dirty
 [submodule "components/incognito"]
 	path = components/incognito
 	url = https://github.com/blawar/incognito.git
+	ignore = dirty
 [submodule "components/AmiiSwap"]
 	path = components/AmiiSwap
 	url = https://github.com/FuryBaguette/AmiiSwap
+	ignore = dirty
 [submodule "components/emuiibo"]
 	path = components/emuiibo
 	url = https://github.com/XorTroll/emuiibo
+	ignore = dirty
 [submodule "components/sys-ftpd"]
 	path = components/sys-ftpd
 	url = https://github.com/jakibaki/sys-ftpd
+	ignore = dirty
 [submodule "components/hekate"]
 	path = components/hekate
 	url = https://github.com/CTCaer/hekate
+	ignore = dirty
