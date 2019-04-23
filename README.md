@@ -15,6 +15,7 @@
 | Component                                                 | Description |
 | --------------------------------------------------------- | ----------- |
 | [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) | Custom firmware for the Nintendo Switch |
+| [hekate](https://github.com/CTCaer/hekate)                | Nintendo Switch Bootloader |
 | [nx-hbloader](https://github.com/switchbrew/nx-hbloader)  | Host process for loading homebrew NROs |
 | [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu)      | The Nintendo Switch homebrew menu |
 | [sigpatches](https://gbatemp.net/threads/i-heard-that-you-guys-need-some-sweet-patches-for-atmosphere.521164/page-45#post-8603553) | Sweet patches! |
