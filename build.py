@@ -13,6 +13,7 @@ from nxsd.components import edizon
 from nxsd.components import lockpickrcm
 from nxsd.components import ldnmitm
 from nxsd.components import sysclk
+from nxsd.components import sysftpd
 from nxsd.components import goldleaf
 from nxsd.components import nxshell
 from nxsd.components import incognito
@@ -81,8 +82,9 @@ def get_packages():
     nxsd_addon.components = [
         edizon,
         lockpickrcm,
-        # ldnmitm,
+        ldnmitm,
         sysclk,
+        sysftpd,
         goldleaf,
         nxshell,
         incognito,

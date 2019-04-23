@@ -1,15 +1,16 @@
+import os
 from nxsd import util
 from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-COMPONENT_NAME = 'ldn_mitm'
-COMPONENT_VERSION = 'v1.2.2'
-COMPONENT_COMMIT_OR_TAG = 'v1.2.2'
+COMPONENT_NAME = 'sys-ftpd'
+COMPONENT_VERSION = 'v1.0' # fake version, doesn't seem to have a version
+COMPONENT_COMMIT_OR_TAG = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
-class LdnmitmComponent(NXSDComponent):
+class SysCLKComponent(NXSDComponent):
 
     def __init__(self):
         super().__init__()
@@ -21,26 +22,26 @@ class LdnmitmComponent(NXSDComponent):
 
     def install(self, install_directory):
         self._build()
-        
-        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
-        dest_nro = Path(install_directory, 'sdcard/switch/')
 
+        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
+        dest_sd = Path(install_directory, 'sdcard/')
+        
         component_dict = {
-            'ldn_mitm': (
-                Path(self._source_directory, 'ldn_mitm/out/ldn_mitm.nsp'),
-                Path(dest_ams, 'titles/4200000000000010/exefs.nsp'),
+            'titles': (
+                Path(self._source_directory, 'sys-ftpd.nsp'),
+                Path(dest_ams, 'titles/420000000000000E/exefs.nsp'),
             ),
-            'config-app': (
-                Path(self._source_directory, 'ldnmitm_config/ldnmitm_config.nro'),
-                Path(dest_nro, 'ldnmitm_config/ldnmitm_config.nro'),
+            'config': (
+                Path(self._source_directory, 'sd_card/ftpd/'),
+                Path(dest_sd, 'ftpd/'),
             ),
         }
         self._copy_components(component_dict)
 
-        _, ldn_mitm_stub_dir = component_dict['ldn_mitm']
-        ldn_mitm_stub_flags_dir = Path(ldn_mitm_stub_dir.parent, 'flags')
-        ldn_mitm_stub_flags_dir.mkdir(parents=True, exist_ok=True)
-        open(Path(ldn_mitm_stub_flags_dir, 'boot2.flag'), 'a').close()
+        _, titles_dir = component_dict['titles']
+        titles_flags_dir = Path(titles_dir.parent, 'flags')
+        titles_flags_dir.mkdir(parents=True, exist_ok=True)
+        open(Path(titles_flags_dir, 'boot2.flag'), 'a').close()
 
     def clean(self):
         with util.change_dir(self._source_directory):
@@ -77,4 +78,4 @@ class LdnmitmComponent(NXSDComponent):
 
 
 def get_component():
-    return LdnmitmComponent()
+    return SysCLKComponent()
