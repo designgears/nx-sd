@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'emuiibo'
 COMPONENT_VERSION = 'v0.1'
-COMPONENT_COMMIT_OR_TAG = '70ee5dc'
+COMPONENT_COMMIT_OR_TAG = '3fe03dc'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
