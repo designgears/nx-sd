@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'emuiibo'
 COMPONENT_VERSION = 'v0.1'
-COMPONENT_COMMIT_OR_TAG = 'master'
+COMPONENT_COMMIT_OR_TAG = '0.1'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -65,7 +65,7 @@ class EmuiiboComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git submodule update --init --recursive',
-                'git checkout {} && git reset --hard && git pull'.format(COMPONENT_COMMIT_OR_TAG),
+                'git checkout {} && git reset --hard'.format(COMPONENT_COMMIT_OR_TAG),
                 'docker run -it --rm -a stdout -a stderr --name {} --mount src="$(cd ../../ && pwd)",target=/developer,type=bind {}:latest'.format(
                     DOCKER_IMAGE_NAME, DOCKER_IMAGE_NAME),
             ]
