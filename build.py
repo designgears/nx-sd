@@ -16,7 +16,7 @@ from nxsd.components import ldnmitm
 from nxsd.components import sysclk
 from nxsd.components import sysftpd
 from nxsd.components import goldleaf
-from nxsd.components import nxshell 
+from nxsd.components import nxshell
 from nxsd.components import incognito
 from nxsd.components import amiiswap
 from nxsd.components import emuiibo

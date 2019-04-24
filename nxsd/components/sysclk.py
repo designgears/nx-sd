@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'sys-clk'
 COMPONENT_VERSION = 'v0.12.2'
-COMPONENT_COMMIT_OR_TAG = '0.12.2'
+COMPONENT_COMMIT_OR_TAG = '9037d4c'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -75,7 +75,7 @@ class SysCLKComponent(NXSDComponent):
                 'git fetch origin',
                 'git submodule update --init --recursive',
                 'git checkout {} && git reset --hard'.format(COMPONENT_COMMIT_OR_TAG),
-                'docker run --rm -a stdout -a stderr --name {} --mount src="$(cd ../../ && pwd)",target=/developer,type=bind {}:latest'.format(
+                'docker run -it --rm -a stdout -a stderr --name {} --mount src="$(cd ../../ && pwd)",target=/developer,type=bind {}:latest'.format(
                     DOCKER_IMAGE_NAME, DOCKER_IMAGE_NAME),
             ]
             util.execute_shell_commands(build_commands)
