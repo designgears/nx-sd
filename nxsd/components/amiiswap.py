@@ -60,8 +60,8 @@ class AmiiSwapComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git submodule update --init --recursive',
-                'git checkout {} && git reset --hard && git pull'.format(COMPONENT_COMMIT_OR_TAG),
-                'docker run -it --rm -a stdout -a stderr --name {} --mount src="$(cd ../../ && pwd)",target=/developer,type=bind {}:latest'.format(
+                'git checkout {} && git reset --hard'.format(COMPONENT_COMMIT_OR_TAG),
+                'docker run --rm -a stdout -a stderr --name {} --mount src="$(cd ../../ && pwd)",target=/developer,type=bind {}:latest'.format(
                     DOCKER_IMAGE_NAME, DOCKER_IMAGE_NAME),
             ]
             util.execute_shell_commands(build_commands)
