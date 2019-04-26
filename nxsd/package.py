@@ -27,7 +27,7 @@ class NXSDPackage(object):
 
         if all_builds_successful:
             output_path = Path(self.output_filename)
-            shutil.make_archive(output_path.stem, 'zip',
+            shutil.make_archive(output_path.with_suffix(''), 'zip',
                                 root_dir=self.build_directory)
 
         return all_builds_successful

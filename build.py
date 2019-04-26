@@ -72,7 +72,7 @@ def get_package(component):
     nxsd_component = NXSDPackage(
         name='nxsd-{}'.format(component),
         build_directory='build/{}/'.format(component),
-        output_filename='nxsd-{}.zip'.format(component),
+        output_filename='build/{}.zip'.format(component),
     )
     nxsd_component.components = [eval(component)]
 
@@ -82,7 +82,7 @@ def get_packages():
     nxsd_core = NXSDPackage(
         name='nxsd-core',
         build_directory='build/core/',
-        output_filename='nxsd-core.zip',
+        output_filename='build/nxsd-core.zip',
     )
     nxsd_core.components = [
         hekate,
@@ -95,7 +95,7 @@ def get_packages():
     nxsd_addon = NXSDPackage(
         name='nxsd-addon',
         build_directory='build/addon/',
-        output_filename='nxsd-addon.zip',
+        output_filename='build/nxsd-addon.zip',
     )
     nxsd_addon.components = [
         edizon,
