@@ -106,8 +106,6 @@ def get_packages():
         goldleaf,
         nxshell,
         incognito,
-        emuiibo,
-        amiiswap,
     ]
 
     return [nxsd_core, nxsd_addon]
