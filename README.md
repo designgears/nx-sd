@@ -8,11 +8,11 @@
 
 3. Run `python3 build.py`.
 
-### Building one-off components
+### Building optional components
 
 The name of each componenet corresponds with its filename in `/nxsd/components`. A successful build will output to the `/build` directory under the same name, and a zip will be located in the root directory.
 
-       python3 build.py build -c hekate
+       python3 build.py build -c tinfoil
 
 ## Components
 
