@@ -10,7 +10,7 @@
 
 ### Building optional components
 
-The name of each componenet corresponds with its filename in `/nxsd/components`. A successful build will output to the `/build` directory under the same name, and a zip will be located in the root directory.
+The name of each componenet corresponds with its filename in `/nxsd/components`. A successful build will output to the `/build` directory under the same name.
 
        python3 build.py build -c tinfoil
 
