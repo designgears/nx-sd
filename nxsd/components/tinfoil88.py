@@ -5,7 +5,7 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Tinfoil88'
-COMPONENT_VERSION = 'v1.0' # fake version, doesn't seem to have a version
+COMPONENT_VERSION = 'v0.2.1'
 COMPONENT_COMMIT_OR_TAG = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
