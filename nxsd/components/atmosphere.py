@@ -6,7 +6,7 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Atmosphere'
-COMPONENT_VERSION = 'v0.8.8'
+COMPONENT_VERSION = 'v0.8.9'
 COMPONENT_COMMIT_OR_TAG = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
@@ -136,7 +136,7 @@ class AtmosphereComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git submodule update --init --recursive',
-                'git checkout {} && git reset --hard'.format(COMPONENT_COMMIT_OR_TAG),
+                'git checkout {} && git reset --hard && git pull'.format(COMPONENT_COMMIT_OR_TAG),
                 'docker run --rm -a stdout -a stderr --name {} --mount src="$(cd ../../ && pwd)",target=/developer,type=bind {}:latest'.format(
                     DOCKER_IMAGE_NAME, DOCKER_IMAGE_NAME),
             ]
