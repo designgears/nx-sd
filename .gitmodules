@@ -38,10 +38,6 @@
 	path = components/NX-Shell
 	url = https://github.com/joel16/NX-Shell.git
 	ignore = dirty
-[submodule "components/incognito"]
-	path = components/incognito
-	url = https://github.com/blawar/incognito.git
-	ignore = dirty
 [submodule "components/AmiiSwap"]
 	path = components/AmiiSwap
 	url = https://github.com/FuryBaguette/AmiiSwap
@@ -57,4 +53,8 @@
 [submodule "components/hekate"]
 	path = components/hekate
 	url = https://github.com/CTCaer/hekate
+	ignore = dirty
+[submodule "components/incognito"]
+	path = components/incognito
+	url = https://github.com/Kronos2308/incognito
 	ignore = dirty

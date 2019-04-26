@@ -105,7 +105,6 @@ def get_packages():
         sysftpd,
         goldleaf,
         nxshell,
-        incognito,
     ]
 
     return [nxsd_core, nxsd_addon]
