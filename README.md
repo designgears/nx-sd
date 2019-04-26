@@ -8,6 +8,12 @@
 
 3. Run `python3 build.py`.
 
+### Building one-off components
+
+The name of each componenet corresponds with its filename in `/nxsd/components`. A successful build will output to the `/build` directory under the same name, and a zip will be located in the root directory.
+
+`python3 build.py build -c hekate`
+
 ## Components
 
 ### Core components
@@ -35,10 +41,3 @@
 | [NX-Shell](https://github.com/joel16/NX-Shell)            | 3DShell port for the Nintendo Switch |
 | [sys-CLK](https://github.com/retronx-team/sys-clk)        | Overclocking/underclocking system module |
 | [sys-ftpd](https://github.com/jakibaki/sys-ftpd)          | Ftpd as a Nintendo Switch sysmodule |
-
-
-## Building one-off components
-
-The name of each componenet corresponds with its filename in `/nxsd/components`. A successful build will output to the `/build` directory under the same name, and a zip will be located in the root directory.
-
-`python build.py build -c hekate`
