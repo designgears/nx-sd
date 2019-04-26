@@ -58,3 +58,7 @@
 	path = components/incognito
 	url = https://github.com/Kronos2308/incognito
 	ignore = dirty
+[submodule "components/Tinfoil88"]
+	path = components/Tinfoil88
+	url = https://github.com/Adubbz/Tinfoil
+	ignore = dirty

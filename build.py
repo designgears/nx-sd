@@ -20,6 +20,7 @@ from nxsd.components import nxshell
 from nxsd.components import incognito
 from nxsd.components import amiiswap
 from nxsd.components import emuiibo
+from nxsd.components import tinfoil88
 
 
 def main():
