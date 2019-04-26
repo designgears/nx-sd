@@ -35,3 +35,10 @@
 | [NX-Shell](https://github.com/joel16/NX-Shell)            | 3DShell port for the Nintendo Switch |
 | [sys-CLK](https://github.com/retronx-team/sys-clk)        | Overclocking/underclocking system module |
 | [sys-ftpd](https://github.com/jakibaki/sys-ftpd)          | Ftpd as a Nintendo Switch sysmodule |
+
+
+## Building one-off components
+
+The name of each componenet corresponds with its filename in `/nxsd/components`
+
+`python build.py build -c hekate`
