@@ -1,9 +1,9 @@
 FROM devkitpro/devkita64:20181128
 
+COPY ./compile.sh /compile.sh
+
 RUN dkp-pacman -Scc --noconfirm
 
 ENV DEVKITARM=${DEVKITPRO}/devkitARM
 
-WORKDIR /developer/components/Tinfoil88
-
-ENTRYPOINT ["make", "-j5"]
+ENTRYPOINT ["/compile.sh"]
