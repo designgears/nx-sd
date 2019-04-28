@@ -20,7 +20,7 @@ from nxsd.components import nxshell
 from nxsd.components import incognito
 from nxsd.components import amiiswap
 from nxsd.components import emuiibo
-from nxsd.components import tinfoil88
+from nxsd.components import ogtinfoil
 
 CORE_COMPONENTS = {
     'hekate': hekate,
@@ -43,7 +43,7 @@ ADDON_COMPONENTS = {
 OPTIONAL_COMPONENTS = {
     'amiiswap': amiiswap,
     'emuiibo': emuiibo,
-    'tinfoil88': tinfoil88,
+    'ogtinfoil': ogtinfoil,
     'incognito': incognito,
 }
 
@@ -63,7 +63,7 @@ def main():
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='enable verbose logging output to log/build.log')
     parser.add_argument('-c', '--component', help='build/clean a specific component',
-                        choices=ALL_COMPONENTS.keys())
+                        choices=sorted(ALL_COMPONENTS.keys()))
     parser.add_argument('command', nargs='?', default='build',
                         choices=commands.keys(),
                         help='build command to execute. options: build, clean (default: build)')
@@ -102,7 +102,7 @@ def clean(args):
 
 def get_package(component):
     nxsd_component = NXSDPackage(
-        name='nxsd-{}'.format(component),
+        name=component,
         build_directory='build/{}/'.format(component),
         output_filename='build/{}.zip'.format(component),
     )

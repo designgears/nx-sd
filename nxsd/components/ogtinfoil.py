@@ -4,13 +4,13 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-COMPONENT_NAME = 'Tinfoil88'
+COMPONENT_NAME = 'OG-Tinfoil'
 COMPONENT_VERSION = 'v0.2.1'
 COMPONENT_COMMIT_OR_TAG = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
-class Tinfoil88Component(NXSDComponent):
+class OGTinfoilComponent(NXSDComponent):
 
     def __init__(self):
         super().__init__()
@@ -27,8 +27,8 @@ class Tinfoil88Component(NXSDComponent):
 
         component_dict = {
             'app': (
-                Path(self._source_directory, 'Tinfoil88.nro'),
-                Path(dest_nro, 'Tinfoil88/Tinfoil88.nro'),
+                Path(self._source_directory, 'OG-Tinfoil.nro'),
+                Path(dest_nro, 'OG-Tinfoil/OG-Tinfoil.nro'),
             ),
         }
         self._copy_components(component_dict)
@@ -68,4 +68,4 @@ class Tinfoil88Component(NXSDComponent):
 
 
 def get_component():
-    return Tinfoil88Component()
+    return OGTinfoilComponent()
