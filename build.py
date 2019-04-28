@@ -28,11 +28,11 @@ CORE_COMPONENTS = {
     'nxhbloader': nxhbloader,
     'nxhbmenu': nxhbmenu,
     'sigpatches': sigpatches,
+    'lockpickrcm': lockpickrcm,
 }
 
 ADDON_COMPONENTS = {
     'edizon': edizon,
-    'lockpickrcm': lockpickrcm,
     'ldnmitm': ldnmitm,
     'sysclk': sysclk,
     'sysftpd': sysftpd,
