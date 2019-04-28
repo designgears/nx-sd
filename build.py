@@ -22,6 +22,36 @@ from nxsd.components import amiiswap
 from nxsd.components import emuiibo
 from nxsd.components import tinfoil88
 
+CORE_COMPONENTS = {
+    'hekate': hekate,
+    'atmosphere': atmosphere,
+    'nxhbloader': nxhbloader,
+    'nxhbmenu': nxhbmenu,
+    'sigpatches': sigpatches,
+}
+
+ADDON_COMPONENTS = {
+    'edizon': edizon,
+    'lockpickrcm': lockpickrcm,
+    'ldnmitm': ldnmitm,
+    'sysclk': sysclk,
+    'sysftpd': sysftpd,
+    'goldleaf': goldleaf,
+    'nxshell': nxshell,
+}
+
+OPTIONAL_COMPONENTS = {
+    'amiiswap': amiiswap,
+    'emuiibo': emuiibo,
+    'tinfoil88': tinfoil88,
+    'incognito': incognito,
+}
+
+ALL_COMPONENTS = {
+    **CORE_COMPONENTS,
+    **ADDON_COMPONENTS,
+    **OPTIONAL_COMPONENTS,
+}
 
 def main():
     commands = {
@@ -32,7 +62,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='enable verbose logging output to log/build.log')
-    parser.add_argument('-c', '--component', help='build/clean a specific component')
+    parser.add_argument('-c', '--component', help='build/clean a specific component',
+                        choices=ALL_COMPONENTS.keys())
     parser.add_argument('command', nargs='?', default='build',
                         choices=commands.keys(),
                         help='build command to execute. options: build, clean (default: build)')
@@ -75,7 +106,7 @@ def get_package(component):
         build_directory='build/{}/'.format(component),
         output_filename='build/{}.zip'.format(component),
     )
-    nxsd_component.components = [eval(component)]
+    nxsd_component.components = [ALL_COMPONENTS[component]]
 
     return [nxsd_component]
 
@@ -85,28 +116,14 @@ def get_packages():
         build_directory='build/core/',
         output_filename='build/nxsd-core.zip',
     )
-    nxsd_core.components = [
-        hekate,
-        atmosphere,
-        nxhbloader,
-        nxhbmenu,
-        sigpatches,
-    ]
+    nxsd_core.components = list(CORE_COMPONENTS.values())
 
     nxsd_addon = NXSDPackage(
         name='nxsd-addon',
         build_directory='build/addon/',
         output_filename='build/nxsd-addon.zip',
     )
-    nxsd_addon.components = [
-        edizon,
-        lockpickrcm,
-        ldnmitm,
-        sysclk,
-        sysftpd,
-        goldleaf,
-        nxshell,
-    ]
+    nxsd_addon.components = list(ADDON_COMPONENTS.values())
 
     return [nxsd_core, nxsd_addon]
 
