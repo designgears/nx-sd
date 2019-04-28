@@ -22,6 +22,7 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 | --------------------------------------------------------- | ----------- |
 | [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) | Custom firmware for the Nintendo Switch |
 | [hekate](https://github.com/CTCaer/hekate)                | Nintendo Switch Bootloader |
+| [Lockpick_RCM](https://github.com/shchmue/Lockpick_RCM)   | Encryption key derivation bare metal RCM payload |
 | [nx-hbloader](https://github.com/switchbrew/nx-hbloader)  | Host process for loading homebrew NROs |
 | [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu)      | The Nintendo Switch homebrew menu |
 | [sigpatches](https://gbatemp.net/threads/i-heard-that-you-guys-need-some-sweet-patches-for-atmosphere.521164/) | Sweet patches! |
@@ -34,7 +35,6 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 | [EdiZon Scripts](https://github.com/WerWolv/EdiZon_CheatsConfigsAndScripts) | Cheats, configs, and scripts for EdiZon |
 | [Goldleaf](https://github.com/XorTroll/Goldleaf)          | Nintendo Switch multipurpose homebrew tool |
 | [ldn_mitm](https://github.com/spacemeowx2/ldn_mitm)       | Play local wireless supported games online |
-| [Lockpick_RCM](https://github.com/shchmue/Lockpick_RCM)   | Encryption key derivation bare metal RCM payload |
 | [NX-Shell](https://github.com/joel16/NX-Shell)            | 3DShell port for the Nintendo Switch |
 | [sys-CLK](https://github.com/retronx-team/sys-clk)        | Overclocking/underclocking system module |
 | [sys-ftpd](https://github.com/jakibaki/sys-ftpd)          | Ftpd as a Nintendo Switch sysmodule |
