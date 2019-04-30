@@ -64,8 +64,7 @@ class EmuiiboComponent(NXSDComponent):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
-                'git submodule update --init --recursive',
-                'git checkout {} && git reset --hard'.format(COMPONENT_COMMIT_OR_TAG),
+                'git reset --hard {}'.format(COMPONENT_COMMIT_OR_TAG),
                 'docker run -it --rm -a stdout -a stderr --name {} --mount src="$(cd ../../ && pwd)",target=/developer,type=bind {}:latest'.format(
                     DOCKER_IMAGE_NAME, DOCKER_IMAGE_NAME),
             ]
