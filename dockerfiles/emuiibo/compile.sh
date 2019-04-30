@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# update libstratosphere to latest master
+# update libstratosphere
 cd /developer/components/emuiibo/libstratosphere
 git clean -fdx
 
