@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'hekate'
 COMPONENT_VERSION = 'v4.10.1'
-COMPONENT_COMMIT_OR_TAG = 'v4.10.1'
+COMPONENT_COMMIT_OR_TAG = '5ff1115'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -23,7 +23,7 @@ class HekateComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_bootloader = Path(install_directory, 'sdcard/bootloader/')
+        dest_hekate = Path(install_directory, 'sdcard/hekate/')
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
 
         component_dict = {
@@ -36,19 +36,19 @@ class HekateComponent(NXSDComponent):
             ),
             'sleep-module': (
                 Path(self._source_directory, 'output/libsys_lp0.bso'),
-                Path(dest_bootloader, 'sys/libsys_lp0.bso'),
+                Path(dest_hekate, 'sys/libsys_lp0.bso'),
             ),
             'config': (
                 Path(settings.defaults_directory, 'hekate/hekate_ipl.ini'),
-                Path(dest_bootloader, 'hekate_ipl.ini'),
+                Path(dest_hekate, 'hekate_ipl.ini'),
             ),
         }
         self._copy_components(component_dict)
 
-        ini_dir = Path(dest_bootloader, 'ini')
+        ini_dir = Path(dest_hekate, 'ini')
         ini_dir.mkdir(parents=True, exist_ok=True)
 
-        payloads_dir = Path(dest_bootloader, 'payloads')
+        payloads_dir = Path(dest_hekate, 'payloads')
         payloads_dir.mkdir(parents=True, exist_ok=True)
 
     def clean(self):

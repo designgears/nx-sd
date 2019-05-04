@@ -33,7 +33,7 @@ class SysftpdComponent(NXSDComponent):
             ),
             'config': (
                 Path(self._source_directory, 'sd_card/ftpd/'),
-                Path(dest_sd, 'ftpd/'),
+                Path(dest_sd, 'config/ftpd/'),
             ),
         }
         self._copy_components(component_dict)

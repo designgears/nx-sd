@@ -25,7 +25,7 @@ class AtmosphereComponent(NXSDComponent):
         self._build()
 
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
-        dest_boot = Path(install_directory, 'sdcard/bootloader/')
+        dest_hekate = Path(install_directory, 'sdcard/hekate/')
         dest_sept = Path(install_directory, 'sdcard/sept/')
         dest_switch = Path(install_directory, 'sdcard/switch')
 
@@ -50,7 +50,7 @@ class AtmosphereComponent(NXSDComponent):
             'fusee-primary': (
                 Path(self._source_directory, 'fusee/fusee-primary/fusee-primary.bin'),
                 [
-                    Path(dest_boot, 'payloads/fusee-primary.bin'),
+                    Path(dest_hekate, 'payloads/fusee-primary.bin'),
                     Path(install_directory, 'payloads/fusee-primary.bin'),
                 ],
             ),
