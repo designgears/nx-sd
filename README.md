@@ -36,7 +36,7 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 | [ldn_mitm](https://github.com/spacemeowx2/ldn_mitm)       | Play local wireless supported games online |
 | [NX-Shell](https://github.com/joel16/NX-Shell)            | 3DShell port for the Nintendo Switch |
 | [sys-CLK](https://github.com/retronx-team/sys-clk)        | Overclocking/underclocking system module |
-| [sys-ftpd](https://github.com/jakibaki/sys-ftpd)          | Ftpd as a Nintendo Switch sysmodule |
+| [sys-ftpd](https://github.com/designgears/sys-ftpd)       | Ftpd as a Nintendo Switch sysmodule |
 
 ### Optional
 
