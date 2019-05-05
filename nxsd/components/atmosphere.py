@@ -25,7 +25,7 @@ class AtmosphereComponent(NXSDComponent):
         self._build()
 
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
-        dest_hekate = Path(install_directory, 'sdcard/hekate/')
+        dest_hekate = Path(install_directory, 'sdcard/bootloader/')
         dest_sept = Path(install_directory, 'sdcard/sept/')
         dest_switch = Path(install_directory, 'sdcard/switch')
 
@@ -76,10 +76,6 @@ class AtmosphereComponent(NXSDComponent):
             'hbl-html': (
                 Path(self._source_directory, 'common/defaults/hbl_html/'),
                 Path(dest_ams, 'hbl_html/'),
-            ),
-            'no-gc': (
-                Path(self._source_directory, 'common/defaults/kip_patches/default_nogc/'),
-                Path(dest_ams, 'kip_patches/default_nogc/'),
             ),
             'bct.ini': (
                 Path(self._source_directory, 'common/defaults/BCT.ini'),

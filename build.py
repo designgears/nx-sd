@@ -9,7 +9,6 @@ from nxsd.components import hekate
 from nxsd.components import atmosphere
 from nxsd.components import nxhbloader
 from nxsd.components import nxhbmenu
-from nxsd.components import sigpatches
 from nxsd.components import edizon
 from nxsd.components import lockpickrcm
 from nxsd.components import ldnmitm
@@ -27,7 +26,6 @@ CORE_COMPONENTS = {
     'atmosphere': atmosphere,
     'nxhbloader': nxhbloader,
     'nxhbmenu': nxhbmenu,
-    'sigpatches': sigpatches,
     'lockpickrcm': lockpickrcm,
 }
 

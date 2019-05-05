@@ -5,8 +5,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'hekate'
-COMPONENT_VERSION = 'v4.10.1'
-COMPONENT_COMMIT_OR_TAG = '5ff1115'
+COMPONENT_VERSION = 'v4.10.2J'
+COMPONENT_COMMIT_OR_TAG = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -23,7 +23,7 @@ class HekateComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_hekate = Path(install_directory, 'sdcard/hekate/')
+        dest_hekate = Path(install_directory, 'sdcard/bootloader/')
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
 
         component_dict = {
@@ -41,6 +41,18 @@ class HekateComponent(NXSDComponent):
             'config': (
                 Path(settings.defaults_directory, 'hekate/hekate_ipl.ini'),
                 Path(dest_hekate, 'hekate_ipl.ini'),
+            ),
+            'bootlogo': (
+                Path(settings.defaults_directory, 'hekate/bootlogo.bmp'),
+                Path(dest_hekate, 'bootlogo.bmp'),
+            ),
+            'update': (
+                Path(settings.defaults_directory, 'hekate/update.bin'),
+                Path(dest_hekate, 'update.bin'),
+            ),
+            'update.sig': (
+                Path(settings.defaults_directory, 'hekate/update.bin.sig'),
+                Path(dest_hekate, 'update.bin.sig'),
             ),
         }
         self._copy_components(component_dict)

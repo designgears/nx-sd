@@ -54,11 +54,11 @@
 	path = components/OG-Tinfoil
 	url = https://github.com/Adubbz/Tinfoil
 	ignore = dirty
-[submodule "components/hekate"]
-	path = components/hekate
-	url = https://github.com/designgears/hekate.git
-	ignore = dirty
 [submodule "components/sys-ftpd"]
 	path = components/sys-ftpd
 	url = https://github.com/designgears/sys-ftpd.git
+	ignore = dirty
+[submodule "components/hekate"]
+	path = components/hekate
+	url = https://github.com/Joonie86/hekate.git
 	ignore = dirty
