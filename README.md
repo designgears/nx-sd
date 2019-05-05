@@ -21,7 +21,7 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 | Component                                                 | Description |
 | --------------------------------------------------------- | ----------- |
 | [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) | Custom firmware for the Nintendo Switch |
-| [hekate](https://github.com/CTCaer/hekate)                | Nintendo Switch Bootloader |
+| [hekate](https://github.com/Joonie86/hekate)                | Nintendo Switch Bootloader |
 | [Lockpick_RCM](https://github.com/shchmue/Lockpick_RCM)   | Encryption key derivation bare metal RCM payload |
 | [nx-hbloader](https://github.com/switchbrew/nx-hbloader)  | Host process for loading homebrew NROs |
 | [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu)      | The Nintendo Switch homebrew menu |
