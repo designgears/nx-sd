@@ -25,7 +25,7 @@ class AtmosphereComponent(NXSDComponent):
         self._build()
 
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
-        dest_hekate = Path(install_directory, 'sdcard/bootloader/')
+        dest_hekate = Path(install_directory, 'sdcard/bootloader2/')
         dest_sept = Path(install_directory, 'sdcard/sept/')
         dest_switch = Path(install_directory, 'sdcard/switch')
 
