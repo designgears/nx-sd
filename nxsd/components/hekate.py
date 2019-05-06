@@ -46,14 +46,6 @@ class HekateComponent(NXSDComponent):
                 Path(settings.defaults_directory, 'hekate/bootlogo.bmp'),
                 Path(dest_hekate, 'bootlogo.bmp'),
             ),
-            'update': (
-                Path(settings.defaults_directory, 'hekate/update.bin'),
-                Path(dest_hekate, 'update.bin'),
-            ),
-            'update.sig': (
-                Path(settings.defaults_directory, 'hekate/update.bin.sig'),
-                Path(dest_hekate, 'update.bin.sig'),
-            ),
         }
         self._copy_components(component_dict)
 
