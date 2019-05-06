@@ -62,3 +62,6 @@
 	path = components/hekate
 	url = https://github.com/designgears/hekate.git
 	ignore = dirty
+[submodule "components/Toolbox"]
+	path = components/Toolbox
+	url = https://github.com/designgears/Kosmos-Toolbox.git

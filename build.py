@@ -20,6 +20,7 @@ from nxsd.components import incognito
 from nxsd.components import amiiswap
 from nxsd.components import emuiibo
 from nxsd.components import ogtinfoil
+from nxsd.components import toolbox
 
 CORE_COMPONENTS = {
     'hekate': hekate,
@@ -36,6 +37,7 @@ ADDON_COMPONENTS = {
     'sysftpd': sysftpd,
     'goldleaf': goldleaf,
     'nxshell': nxshell,
+    'toolbox': toolbox,
 }
 
 OPTIONAL_COMPONENTS = {
