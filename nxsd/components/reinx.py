@@ -19,6 +19,7 @@ class ReiNXComponent(NXSDComponent):
 
         self._source_directory = Path(settings.components_directory, COMPONENT_NAME)
         self._ams_source_directory = Path(settings.components_directory, 'Atmosphere')
+        self._nxs_source_directory = Path(settings.components_directory, 'NX_Sysmodules')
         self._dockerfiles_directory = Path(settings.dockerfiles_directory, COMPONENT_NAME)
 
     def install(self, install_directory):
@@ -32,23 +33,39 @@ class ReiNXComponent(NXSDComponent):
                 Path(self._source_directory, 'out/'),
                 Path(dest_sdcard),
             ),
+            'rnx_mitm': (
+                Path(self._nxs_source_directory, 'rnx_mitm/rnx_mitm.kip'),
+                Path(dest_reinx, 'sysmodules/rnx_mitm.kip'),
+            ),
+            'pm': (
+                Path(self._nxs_source_directory, 'pm/pm.kip'),
+                Path(dest_reinx, 'sysmodules/pm.kip'),
+            ),
+            'sm': (
+                Path(self._nxs_source_directory, 'sm/sm.kip'),
+                Path(dest_reinx, 'sysmodules/sm.kip'),
+            ),
+            'loader': (
+                Path(self._nxs_source_directory, 'loader/loader.kip'),
+                Path(dest_reinx, 'sysmodules/loader.kip'),
+            ),
             'payload': (
                 Path(self._source_directory, 'out/ReiNX.bin'),
                 Path(install_directory, 'payloads/ReiNX-{}.bin'.format(COMPONENT_VERSION)),
             ),
-            'secmon': (
+            'ams-secmon': (
                 Path(self._ams_source_directory, 'exosphere/exosphere.bin'),
                 Path(dest_reinx, 'secmon.bin'),
             ),
-            'warmboot': (
+            'ams-warmboot': (
                 Path(self._ams_source_directory, 'exosphere/lp0fw/lp0fw.bin'),
                 Path(dest_reinx, 'warmboot.bin'),
             ),
-            'sept-primary': (
+            'ams-sept-primary': (
                 Path(self._ams_source_directory, 'sept/sept-primary/sept-primary.bin'),
                 Path(dest_sdcard, 'sept/sept-primary.bin'),
             ),
-            'sept-secondary': (
+            'ams-sept-secondary': (
                 Path(self._ams_source_directory, 'sept/sept-secondary/sept-secondary.enc'),
                 Path(dest_sdcard, 'sept/sept-secondary.enc'),
             ),

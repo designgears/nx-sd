@@ -5,5 +5,8 @@ make -j5
 cd /developer/components/Atmosphere/sept
 make -j5
 
+cd /developer/components/NX_Sysmodules
+make -j5
+
 cd /developer/components/ReiNX
 make -j5

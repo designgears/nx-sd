@@ -6,23 +6,15 @@ COPY ./compile.sh /compile.sh
 ENV SEPT_ENC_PATH="/sept-secondary.enc"
 
 RUN dkp-pacman -Syyu --noconfirm --needed \
+    devkit-env \
     devkitA64 \
     devkitARM \
     devkitarm-rules \
-    switch-freetype \
-    switch-portlibs \
-    switch-dev && \
-    dkp-pacman -Scc --noconfirm
+    libnx \
+    switch-tools \
+    switch-dev
 
 ENV DEVKITARM=${DEVKITPRO}/devkitARM
-
-RUN git clone https://github.com/switchbrew/libnx.git
-
-WORKDIR /libnx
-
-RUN git reset --hard bc1786b
-
-RUN make -j5 install
 
 WORKDIR /
 
