@@ -12,7 +12,7 @@
 
 The name of each componenet corresponds with its filename in `/nxsd/components`. A successful build will output to the `/build` directory under the same name.
 
-       python3 build.py build -c tinfoil
+       python3 build.py -c tinfoil
 
 ## Components
 
