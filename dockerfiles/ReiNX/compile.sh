@@ -1,4 +1,8 @@
 #!/bin/bash
+cd /developer/components/Atmosphere
+git checkout master
+git pull
+
 cd /developer/components/Atmosphere/exosphere
 make -j5
 
