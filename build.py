@@ -21,6 +21,7 @@ from nxsd.components import amiiswap
 from nxsd.components import emuiibo
 from nxsd.components import ogtinfoil
 from nxsd.components import toolbox
+from nxsd.components import reinx
 
 CORE_COMPONENTS = {
     'hekate': hekate,
@@ -45,6 +46,7 @@ OPTIONAL_COMPONENTS = {
     'emuiibo': emuiibo,
     'ogtinfoil': ogtinfoil,
     'incognito': incognito,
+    'reinx': reinx,
 }
 
 ALL_COMPONENTS = {
