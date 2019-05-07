@@ -33,6 +33,14 @@ class ReiNXComponent(NXSDComponent):
                 Path(self._source_directory, 'out/'),
                 Path(dest_sdcard),
             ),
+            'nxs-fatal': (
+                Path(self._nxs_source_directory, 'fatal/fatal.nsp'),
+                Path(dest_reinx, 'titles/0100000000000034/exefs.nsp'),
+            ),
+            'nxs-creport': (
+                Path(self._nxs_source_directory, 'creport/0100000000000036'),
+                Path(dest_reinx, 'titles/0100000000000036'),
+            ),
             'nxs-rnx_mitm': (
                 Path(self._nxs_source_directory, 'rnx_mitm/rnx_mitm.kip'),
                 Path(dest_reinx, 'sysmodules/rnx_mitm.kip'),
