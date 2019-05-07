@@ -33,19 +33,19 @@ class ReiNXComponent(NXSDComponent):
                 Path(self._source_directory, 'out/'),
                 Path(dest_sdcard),
             ),
-            'rnx_mitm': (
+            'nxs-rnx_mitm': (
                 Path(self._nxs_source_directory, 'rnx_mitm/rnx_mitm.kip'),
                 Path(dest_reinx, 'sysmodules/rnx_mitm.kip'),
             ),
-            'pm': (
+            'nxs-pm': (
                 Path(self._nxs_source_directory, 'pm/pm.kip'),
                 Path(dest_reinx, 'sysmodules/pm.kip'),
             ),
-            'sm': (
+            'nxs-sm': (
                 Path(self._nxs_source_directory, 'sm/sm.kip'),
                 Path(dest_reinx, 'sysmodules/sm.kip'),
             ),
-            'loader': (
+            'nxs-loader': (
                 Path(self._nxs_source_directory, 'loader/loader.kip'),
                 Path(dest_reinx, 'sysmodules/loader.kip'),
             ),
@@ -71,6 +71,9 @@ class ReiNXComponent(NXSDComponent):
             ),
         }
         self._copy_components(component_dict)
+
+        disabled_sysmodules_dir = Path(dest_reinx, 'sysmodules.dis')
+        disabled_sysmodules_dir.mkdir(parents=True, exist_ok=True)
 
     def clean(self):
         with util.change_dir(self._source_directory):
