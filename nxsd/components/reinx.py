@@ -19,7 +19,6 @@ class ReiNXComponent(NXSDComponent):
 
         self._source_directory = Path(settings.components_directory, COMPONENT_NAME)
         self._ams_source_directory = Path(settings.components_directory, 'Atmosphere')
-        self._nxs_source_directory = Path(settings.components_directory, 'NX_Sysmodules')
         self._dockerfiles_directory = Path(settings.dockerfiles_directory, COMPONENT_NAME)
 
     def install(self, install_directory):
@@ -32,30 +31,6 @@ class ReiNXComponent(NXSDComponent):
             'ReiNX': (
                 Path(self._source_directory, 'out/'),
                 Path(dest_sdcard),
-            ),
-            'nxs-fatal': (
-                Path(self._nxs_source_directory, 'fatal/fatal.nsp'),
-                Path(dest_reinx, 'titles/0100000000000034/exefs.nsp'),
-            ),
-            'nxs-creport': (
-                Path(self._nxs_source_directory, 'creport/0100000000000036'),
-                Path(dest_reinx, 'titles/0100000000000036'),
-            ),
-            'nxs-rnx_mitm': (
-                Path(self._nxs_source_directory, 'rnx_mitm/rnx_mitm.kip'),
-                Path(dest_reinx, 'sysmodules/rnx_mitm.kip'),
-            ),
-            'nxs-pm': (
-                Path(self._nxs_source_directory, 'pm/pm.kip'),
-                Path(dest_reinx, 'sysmodules/pm.kip'),
-            ),
-            'nxs-sm': (
-                Path(self._nxs_source_directory, 'sm/sm.kip'),
-                Path(dest_reinx, 'sysmodules/sm.kip'),
-            ),
-            'nxs-loader': (
-                Path(self._nxs_source_directory, 'loader/loader.kip'),
-                Path(dest_reinx, 'sysmodules/loader.kip'),
             ),
             'payload': (
                 Path(self._source_directory, 'out/ReiNX.bin'),

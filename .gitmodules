@@ -69,7 +69,3 @@
 	path = components/ReiNX
 	url = https://github.com/Reisyukaku/ReiNX.git
 	ignore = dirty
-[submodule "components/NX_Sysmodules"]
-	path = components/NX_Sysmodules
-	url = https://github.com/Reisyukaku/NX_Sysmodules.git
-	ignore = dirty
