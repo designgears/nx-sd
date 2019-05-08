@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Toolbox'
 COMPONENT_VERSION = 'v2.0.0'
-COMPONENT_COMMIT_OR_TAG = 'master'
+COMPONENT_COMMIT_OR_TAG = 'b0cfaec'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -64,7 +64,7 @@ class ToolboxComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git submodule update --init --recursive',
-                'git checkout {} && git reset --hard && git pull'.format(COMPONENT_COMMIT_OR_TAG),
+                'git checkout {c} && git reset --hard {c}'.format(c=COMPONENT_COMMIT_OR_TAG),
                 'docker run --rm -a stdout -a stderr --name {d} --mount src="$(cd ../.. && pwd)",target=/developer,type=bind {d}:latest'.format(
                     d=DOCKER_IMAGE_NAME),
             ]

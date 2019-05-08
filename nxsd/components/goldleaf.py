@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Goldleaf'
 COMPONENT_VERSION = 'v0.6'
-COMPONENT_COMMIT_OR_TAG = 'master'
+COMPONENT_COMMIT_OR_TAG = '417e18f'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -60,7 +60,7 @@ class GoldleafComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git submodule update --init --recursive',
-                'git checkout {c} && git reset --hard {c} && git pull'.format(c=COMPONENT_COMMIT_OR_TAG),
+                'git checkout {c} && git reset --hard {c}'.format(c=COMPONENT_COMMIT_OR_TAG),
                 'docker run --rm -a stdout -a stderr --name {d} --mount src="$(cd ../.. && pwd)",target=/developer,type=bind {d}:latest'.format(
                     d=DOCKER_IMAGE_NAME),
             ]

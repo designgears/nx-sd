@@ -1,4 +1,4 @@
-FROM devkitpro/devkita64:20190329
+FROM devkitpro/devkita64:20190502
 
 COPY ./sept-secondary.enc /sept-secondary.enc
 
@@ -13,12 +13,6 @@ RUN dkp-pacman -Syyu --noconfirm --needed \
 
 ENV DEVKITARM=${DEVKITPRO}/devkitARM
 ENV SEPT_ENC_PATH="/sept-secondary.enc"
-
-RUN git clone https://github.com/switchbrew/libnx.git
-
-WORKDIR /libnx
-
-RUN make -j5 install
 
 WORKDIR /developer/components/Atmosphere
 

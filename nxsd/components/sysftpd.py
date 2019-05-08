@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'sys-ftpd'
 COMPONENT_VERSION = 'v1.0' # fake version, doesn't seem to have a version
-COMPONENT_COMMIT_OR_TAG = 'master'
+COMPONENT_COMMIT_OR_TAG = '4fed6f5'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -70,7 +70,7 @@ class SysftpdComponent(NXSDComponent):
             build_commands = [
                 'git fetch origin',
                 'git submodule update --init --recursive',
-                'git checkout {} && git reset --hard && git pull'.format(COMPONENT_COMMIT_OR_TAG),
+                'git checkout {c} && git reset --hard {c}'.format(c=COMPONENT_COMMIT_OR_TAG),
                 'docker run --rm -a stdout -a stderr --name {d} --mount src="$(cd ../.. && pwd)",target=/developer,type=bind {d}:latest'.format(
                     d=DOCKER_IMAGE_NAME),
             ]
