@@ -3,6 +3,8 @@ FROM devkitpro/devkita64:latest
 COPY ./sept-secondary.enc /sept-secondary.enc
 COPY ./compile.sh /compile.sh
 
+RUN chmod a+x /compile.sh
+
 ENV SEPT_ENC_PATH="/sept-secondary.enc"
 
 RUN dkp-pacman -Syyu --noconfirm --needed \

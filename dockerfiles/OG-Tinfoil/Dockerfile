@@ -2,6 +2,8 @@ FROM devkitpro/devkita64:20181128
 
 COPY ./compile.sh /compile.sh
 
+RUN chmod a+x /compile.sh
+
 RUN dkp-pacman -Scc --noconfirm
 
 ENV DEVKITARM=${DEVKITPRO}/devkitARM
