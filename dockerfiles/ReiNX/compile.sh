@@ -18,5 +18,3 @@ cd /developer/components/ReiNX
 sed -i 's/"%s ReiNX(%s.%s)"/"%s ReiNX(%d.%d)"/g' NX_Sysmodules/rnx_mitm/source/set_mitm/setsys_firmware_version.cpp
 
 make -j5
-
-sed -i 's/"%s ReiNX(%d.%d)"/"%s ReiNX(%s.%s)"/g' NX_Sysmodules/rnx_mitm/source/set_mitm/setsys_firmware_version.cpp
