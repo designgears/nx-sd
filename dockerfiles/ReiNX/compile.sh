@@ -15,6 +15,8 @@ git reset --hard a06c3ba
 
 cd /developer/components/ReiNX
 
-sed -i 's/@$(MAKE) ver_maj=$(ver_major) ver_min=$(ver_minor) -C $(dir_sysmod)/@$(MAKE) -C $(dir_sysmod)/g' Makefile
+sed -i 's/"%s ReiNX(%s.%s)"/"%s ReiNX(%d.%d)"/g' NX_Sysmodules/rnx_mitm/source/set_mitm/setsys_firmware_version.cpp
 
 make -j5
+
+sed -i 's/"%s ReiNX(%d.%d)"/"%s ReiNX(%s.%s)"/g' NX_Sysmodules/rnx_mitm/source/set_mitm/setsys_firmware_version.cpp
