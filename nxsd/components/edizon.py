@@ -42,10 +42,10 @@ class EdizonComponent(NXSDComponent):
                 Path(dest_nro, 'EdiZon/editor/scripts'),
             ),
             'cheats': (
-                Path(self._scripts_source_directory, 'Cheats/'),
+                Path(self._scripts_source_directory, 'Cheats'),
                 [
-                    Path(dest_ams, 'titles/'),
-                    Path(dest_reinx, 'titles/'),
+                    Path(dest_ams, 'titles'),
+                    Path(dest_reinx, 'titles'),
                 ]
             ),
         }
