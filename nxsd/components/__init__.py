@@ -1,5 +1,6 @@
 import shutil
 
+from distutils.dir_util import copy_tree
 from abc import ABC, abstractmethod
 
 
@@ -43,7 +44,7 @@ class NXSDComponent(ABC):
 
             for dest in dest_list:
                 if src.is_dir():
-                    shutil.copytree(str(src), str(dest))
+                    copy_tree(str(src), str(dest))
                 else:
                     dest.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copy2(str(src), str(dest))
