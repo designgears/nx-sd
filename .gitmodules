@@ -46,10 +46,6 @@
 	path = components/emuiibo
 	url = https://github.com/XorTroll/emuiibo
 	ignore = dirty
-[submodule "components/incognito"]
-	path = components/incognito
-	url = https://github.com/Kronos2308/incognito
-	ignore = dirty
 [submodule "components/OG-Tinfoil"]
 	path = components/OG-Tinfoil
 	url = https://github.com/Adubbz/Tinfoil
@@ -69,3 +65,6 @@
 	path = components/ReiNX
 	url = https://github.com/Reisyukaku/ReiNX.git
 	ignore = dirty
+[submodule "components/incognito"]
+	path = components/incognito
+	url = https://github.com/blawar/incognito.git
