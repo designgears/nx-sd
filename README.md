@@ -21,10 +21,12 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 | Component                                                 | Description |
 | --------------------------------------------------------- | ----------- |
 | [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) | Custom firmware for the Nintendo Switch |
-| [hekate](https://github.com/designgears/hekate)                | Nintendo Switch Bootloader |
+| [hekate](https://github.com/designgears/hekate)           | Nintendo Switch Bootloader |
+| [incognito](https://github.com/blawar/incognito)          | Wipes personal information from your Nintendo Switch |
 | [Lockpick_RCM](https://github.com/shchmue/Lockpick_RCM)   | Encryption key derivation bare metal RCM payload |
 | [nx-hbloader](https://github.com/switchbrew/nx-hbloader)  | Host process for loading homebrew NROs |
 | [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu)      | The Nintendo Switch homebrew menu |
+| [ReiNX](https://github.com/Reisyukaku/ReiNX/)             | A modular Switch custom firmware |
 
 ### Addons
 
@@ -33,7 +35,6 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 | [EdiZon](https://github.com/WerWolv/EdiZon)               | Save manager, editing tool, and memory trainer |
 | [EdiZon Scripts](https://github.com/WerWolv/EdiZon_CheatsConfigsAndScripts) | Cheats, configs, and scripts for EdiZon |
 | [Goldleaf](https://github.com/XorTroll/Goldleaf)          | Nintendo Switch multipurpose homebrew tool |
-| [Toolbox](https://github.com/designgears/Kosmos-Toolbox)  | A toolbox for the Kosmos CFW package |
 | [ldn_mitm](https://github.com/spacemeowx2/ldn_mitm)       | Play local wireless supported games online |
 | [NX-Shell](https://github.com/joel16/NX-Shell)            | 3DShell port for the Nintendo Switch |
 | [sys-CLK](https://github.com/retronx-team/sys-clk)        | Overclocking/underclocking system module |
@@ -45,6 +46,5 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 | --------------------------------------------------------- | ----------- |
 | [AmiiSwap](https://github.com/FuryBaguette/AmiiSwap)      | Nintendo Switch GUI Amiibo Manager homebrew for emulation with Emuiibo |
 | [emuiibo](https://github.com/XorTroll/emuiibo)            | MitM'ing NFP services for Amiibo emulation! |
-| [incognito](https://github.com/blawar/incognito)          | Wipes personal information from your Nintendo Switch |
-| [ReiNX](https://github.com/Reisyukaku/ReiNX/)             | A modular Switch custom firmware |
-| [tinfoil](https://github.com/Adubbz/Tinfoil)              | OG tnfoil, also known as `tinfoil 88` |
+| [tinfoil](https://github.com/Adubbz/Tinfoil)              | `OG tnfoil`, also known as `tinfoil 88` |
+| [Toolbox](https://github.com/designgears/Kosmos-Toolbox)  | A toolbox for the Kosmos CFW package |
