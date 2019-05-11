@@ -32,6 +32,7 @@ class HekateComponent(NXSDComponent):
                 [
                     Path(install_directory, 'payloads/hekate-{}.bin'.format(COMPONENT_VERSION)),
                     Path(dest_ams, 'reboot_payload.bin'),
+                    Path(dest_hekate, 'update.bin'),
                 ],
             ),
             'sleep-module': (
