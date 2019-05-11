@@ -42,16 +42,16 @@ class SysCLKComponent(NXSDComponent):
         }
         self._copy_components(component_dict)
 
-        _, titles_dir = component_dict['titles']
-        ams_titles_dir, reinx_titles_dir = titles_dir
+        # _, titles_dir = component_dict['titles']
+        # ams_titles_dir, reinx_titles_dir = titles_dir
 
-        titles_flags_dir = Path(ams_titles_dir.parent, 'flags')
-        titles_flags_dir.mkdir(parents=True, exist_ok=True)
-        open(Path(titles_flags_dir, 'boot2.flag'), 'a').close()
+        # titles_flags_dir = Path(ams_titles_dir.parent, 'flags')
+        # titles_flags_dir.mkdir(parents=True, exist_ok=True)
+        # open(Path(titles_flags_dir, 'boot2.flag'), 'a').close()
 
-        titles_flags_dir = Path(reinx_titles_dir.parent, 'flags')
-        titles_flags_dir.mkdir(parents=True, exist_ok=True)
-        open(Path(titles_flags_dir, 'boot2.flag'), 'a').close()
+        # titles_flags_dir = Path(reinx_titles_dir.parent, 'flags')
+        # titles_flags_dir.mkdir(parents=True, exist_ok=True)
+        # open(Path(titles_flags_dir, 'boot2.flag'), 'a').close()
 
     def clean(self):
         with util.change_dir(self._source_directory):

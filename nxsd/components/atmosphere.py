@@ -23,7 +23,6 @@ class AtmosphereComponent(NXSDComponent):
         self._build()
 
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
-        dest_hekate = Path(install_directory, 'sdcard/bootloader2/')
         dest_sept = Path(install_directory, 'sdcard/sept/')
         dest_switch = Path(install_directory, 'sdcard/switch')
 
@@ -33,8 +32,7 @@ class AtmosphereComponent(NXSDComponent):
                 Path(dest_ams, 'titles/010000000000000D/exefs.nsp'),
             ),
             'eclct.stub': (
-                Path(self._source_directory,
-                     'stratosphere/eclct.stub/eclct.stub.nsp'),
+                Path(self._source_directory, 'stratosphere/eclct.stub/eclct.stub.nsp'),
                 Path(dest_ams, 'titles/0100000000000032/exefs.nsp'),
             ),
             'fatal': (
@@ -47,17 +45,11 @@ class AtmosphereComponent(NXSDComponent):
             ),
             'fusee-primary': (
                 Path(self._source_directory, 'fusee/fusee-primary/fusee-primary.bin'),
-                [
-                    Path(dest_hekate, 'payloads/fusee-primary.bin'),
-                    Path(install_directory, 'payloads/fusee-primary.bin'),
-                ],
+                Path(install_directory, 'payloads/fusee-primary.bin'),
             ),
             'fusee-secondary': (
                 Path(self._source_directory, 'fusee/fusee-secondary/fusee-secondary.bin'),
-                [
-                    Path(dest_ams, 'fusee-secondary.bin'),
-                    Path(dest_sept, 'payload.bin'),
-                ],
+                Path(dest_ams, 'fusee-secondary.bin'),
             ),
             'sept-primary': (
                 Path(self._source_directory, 'sept/sept-primary/sept-primary.bin'),
@@ -76,7 +68,7 @@ class AtmosphereComponent(NXSDComponent):
                 Path(dest_ams, 'hbl_html/'),
             ),
             'bct.ini': (
-                Path(self._source_directory, 'common/defaults/BCT.ini'),
+                Path(settings.defaults_directory, 'atmosphere/BCT.ini'),
                 Path(dest_ams, 'BCT.ini'),
             ),
             'loader.ini': (
@@ -87,16 +79,20 @@ class AtmosphereComponent(NXSDComponent):
                 Path(settings.defaults_directory, 'atmosphere/system_settings.ini'),
                 Path(dest_ams, 'system_settings.ini'),
             ),
+            'bootlogo': (
+                Path(settings.defaults_directory, 'atmosphere/bootlogo.bmp'),
+                Path(dest_ams, 'bootlogo.bmp'),
+            ),
         }
         self._copy_components(component_dict)
+
+        fatal_errors_dir = Path(dest_ams, 'fatal_errors')
+        fatal_errors_dir.mkdir(parents=True, exist_ok=True)
 
         _, eclct_stub_dir = component_dict['eclct.stub']
         eclct_stub_flags_dir = Path(eclct_stub_dir.parent, 'flags')
         eclct_stub_flags_dir.mkdir(parents=True, exist_ok=True)
         open(Path(eclct_stub_flags_dir, 'boot2.flag'), 'a').close()
-
-        fatal_errors_dir = Path(dest_ams, 'fatal_errors')
-        fatal_errors_dir.mkdir(parents=True, exist_ok=True)
 
         atmos_flags_dir = Path(dest_ams, 'flags')
         atmos_flags_dir.mkdir(parents=True, exist_ok=True)

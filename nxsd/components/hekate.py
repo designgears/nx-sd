@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'hekate'
 COMPONENT_VERSION = 'v4.10.2J'
-COMPONENT_COMMIT_OR_TAG = '724ad92'
+COMPONENT_COMMIT_OR_TAG = '5142b77'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -37,6 +37,10 @@ class HekateComponent(NXSDComponent):
             'sleep-module': (
                 Path(self._source_directory, 'output/libsys_lp0.bso'),
                 Path(dest_hekate, 'sys/libsys_lp0.bso'),
+            ),
+            'minerva': (
+                Path(self._source_directory, 'output/libsys_minerva.bso'),
+                Path(dest_hekate, 'sys/libsys_minerva.bso'),
             ),
             'config': (
                 Path(settings.defaults_directory, 'hekate/hekate_ipl.ini'),

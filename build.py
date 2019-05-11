@@ -25,11 +25,10 @@ from nxsd.components import reinx
 
 CORE_COMPONENTS = {
     'hekate': hekate,
-    'atmosphere': atmosphere,
     'reinx': reinx,
+    'atmosphere': atmosphere,
     'nxhbloader': nxhbloader,
     'nxhbmenu': nxhbmenu,
-    'incognito': incognito,
     'lockpickrcm': lockpickrcm,
 }
 
@@ -40,13 +39,14 @@ ADDON_COMPONENTS = {
     'sysftpd': sysftpd,
     'goldleaf': goldleaf,
     'nxshell': nxshell,
+    'toolbox': toolbox,
 }
 
 OPTIONAL_COMPONENTS = {
-    'toolbox': toolbox,
+    'ogtinfoil': ogtinfoil,
+    'incognito': incognito,
     'amiiswap': amiiswap,
     'emuiibo': emuiibo,
-    'ogtinfoil': ogtinfoil,
 }
 
 ALL_COMPONENTS = {
