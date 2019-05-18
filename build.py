@@ -25,7 +25,6 @@ from nxsd.components import reinx
 
 CORE_COMPONENTS = {
     'hekate': hekate,
-    'reinx': reinx,
     'atmosphere': atmosphere,
     'nxhbloader': nxhbloader,
     'nxhbmenu': nxhbmenu,
@@ -43,6 +42,7 @@ ADDON_COMPONENTS = {
 }
 
 OPTIONAL_COMPONENTS = {
+    'reinx': reinx,
     'ogtinfoil': ogtinfoil,
     'incognito': incognito,
     'amiiswap': amiiswap,

@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'AmiiSwap'
 COMPONENT_VERSION = 'v0.2'
-COMPONENT_COMMIT_OR_TAG = 'cad7835'
+COMPONENT_COMMIT_OR_TAG = 'ac0918c'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 

@@ -5,7 +5,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'EdiZon'
 COMPONENT_VERSION = 'v3.0.1'
-COMPONENT_COMMIT_OR_TAG = '22eddf6'
+COMPONENT_COMMIT_OR_TAG = 'bca0887'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 SCRIPTS_VERSION = 'master'
 
@@ -24,8 +24,6 @@ class EdizonComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
-        dest_reinx = Path(install_directory, 'sdcard/ReiNX/')
         dest_nro = Path(install_directory, 'sdcard/switch/')
 
         component_dict = {
@@ -40,13 +38,6 @@ class EdizonComponent(NXSDComponent):
             'scripts': (
                 Path(self._scripts_source_directory, 'Scripts'),
                 Path(dest_nro, 'EdiZon/editor/scripts'),
-            ),
-            'cheats': (
-                Path(self._scripts_source_directory, 'Cheats'),
-                [
-                    Path(dest_ams, 'titles'),
-                    Path(dest_reinx, 'titles'),
-                ]
             ),
         }
         self._copy_components(component_dict)
