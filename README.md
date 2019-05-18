@@ -26,7 +26,6 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 | [Lockpick_RCM](https://github.com/shchmue/Lockpick_RCM)   | Encryption key derivation bare metal RCM payload |
 | [nx-hbloader](https://github.com/switchbrew/nx-hbloader)  | Host process for loading homebrew NROs |
 | [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu)      | The Nintendo Switch homebrew menu |
-| [ReiNX](https://github.com/Reisyukaku/ReiNX/)             | A modular Switch custom firmware |
 
 ### Addons
 
@@ -46,5 +45,6 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 | --------------------------------------------------------- | ----------- |
 | [AmiiSwap](https://github.com/FuryBaguette/AmiiSwap)      | Nintendo Switch GUI Amiibo Manager homebrew for emulation with Emuiibo |
 | [emuiibo](https://github.com/XorTroll/emuiibo)            | MitM'ing NFP services for Amiibo emulation! |
+| [ReiNX](https://github.com/Reisyukaku/ReiNX/)             | A modular Switch custom firmware |
 | [tinfoil](https://github.com/Adubbz/Tinfoil)              | `OG tnfoil`, also known as `tinfoil 88` |
 | [Toolbox](https://github.com/designgears/Kosmos-Toolbox)  | A toolbox for the Kosmos CFW package |
