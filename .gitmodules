@@ -6,10 +6,6 @@
 	path = components/nx-hbmenu
 	url = https://github.com/switchbrew/nx-hbmenu.git
 	ignore = dirty
-[submodule "components/edizon-scripts"]
-	path = components/edizon-scripts
-	url = https://github.com/WerWolv/EdiZon_CheatsConfigsAndScripts.git
-	ignore = dirty
 [submodule "components/Lockpick_RCM"]
 	path = components/Lockpick_RCM
 	url = https://github.com/shchmue/Lockpick_RCM.git
