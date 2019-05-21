@@ -1,7 +1,8 @@
-FROM devkitpro/devkita64:20190329
+FROM devkitpro/devkita64:latest
 
 COPY ./Makefile /Makefile
 COPY ./compile.sh /compile.sh
+COPY ./default_icon.jpg /default_icon.jpg
 
 RUN chmod a+x /compile.sh
 
