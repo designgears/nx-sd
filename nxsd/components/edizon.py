@@ -5,7 +5,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'EdiZon'
 COMPONENT_VERSION = 'v3.0.1'
-COMPONENT_COMMIT_OR_TAG = 'bca0887'
+COMPONENT_COMMIT_OR_TAG = 'ce34a3c'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 SCRIPTS_VERSION = 'master'
 
