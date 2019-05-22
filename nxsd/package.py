@@ -46,4 +46,4 @@ class NXSDPackage(object):
     def _cleanup_build_directory(self):
         build_dir = Path(self.build_directory)
         if build_dir.exists():
-            shutil.rmtree(build_dir)
+            shutil.rmtree(build_dir, ignore_errors=True)
