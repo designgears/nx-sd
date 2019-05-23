@@ -2,7 +2,7 @@ import contextlib
 import logging
 import nxsd
 import os
-import subprocess
+from subprocess import Popen, PIPE, STDOUT
 
 from contextlib import contextmanager
 from pathlib import Path
@@ -31,15 +31,6 @@ def delete_if_exists(path):
 
 def execute_shell_commands(command_list):
     for command in command_list:
-        process = subprocess.Popen(command,
-                stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-        with process.stdout:
-            log_stream_output(logging.DEBUG, process.stdout)
-        with process.stderr:
-            log_stream_output(logging.ERROR, process.stderr)
-
-        process.wait()
-
-def log_stream_output(level, stream):
-    for line in stream:
-        nxsd.logger.log(level, '%s', line.decode('utf-8').rstrip())
+        with Popen(command, stdout=PIPE, stderr=STDOUT, shell=True, bufsize=1, universal_newlines=True) as p:
+            for line in p.stdout:
+                nxsd.logger.log(logging.DEBUG, '%s', line.rstrip())
