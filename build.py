@@ -59,6 +59,7 @@ def main():
     commands = {
         'build': build,
         'clean': clean,
+        'purge': purge,
     }
 
     parser = argparse.ArgumentParser()
@@ -88,6 +89,14 @@ def build(args):
             nxsd.logger.info('Created {name} package!'.format(name=package.name))
         else:
             nxsd.logger.info('Failed to create {name} package! Check build.log for details.'.format(name=package.name))
+
+def purge(args):
+    purge_commands = [
+        'git clean -fdx',
+        'git submodule foreach --recursive git clean -fdx',
+        'docker system prune -f',
+    ]
+    nxsd.util.execute_shell_commands(purge_commands)
 
 def clean(args):
     with open('log/build.log', "w"):
