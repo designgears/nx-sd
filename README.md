@@ -31,7 +31,9 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 
 | Component                                                 | Description |
 | --------------------------------------------------------- | ----------- |
+| [AmiiSwap](https://github.com/FuryBaguette/AmiiSwap)      | Nintendo Switch GUI Amiibo Manager homebrew for emulation with Emuiibo |
 | [EdiZon](https://github.com/WerWolv/EdiZon)               | Save manager, editing tool, and memory trainer |
+| [emuiibo](https://github.com/XorTroll/emuiibo)            | MitM'ing NFP services for Amiibo emulation! |
 | [Goldleaf](https://github.com/XorTroll/Goldleaf)          | Nintendo Switch multipurpose homebrew tool |
 | [ldn_mitm](https://github.com/spacemeowx2/ldn_mitm)       | Play local wireless supported games online |
 | [NX-Shell](https://github.com/joel16/NX-Shell)            | 3DShell port for the Nintendo Switch |
@@ -43,7 +45,5 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 
 | Component                                                 | Description |
 | --------------------------------------------------------- | ----------- |
-| [AmiiSwap](https://github.com/FuryBaguette/AmiiSwap)      | Nintendo Switch GUI Amiibo Manager homebrew for emulation with Emuiibo |
-| [emuiibo](https://github.com/XorTroll/emuiibo)            | MitM'ing NFP services for Amiibo emulation! |
 | [ReiNX](https://github.com/Reisyukaku/ReiNX/)             | A modular Switch custom firmware |
 | [tinfoil](https://github.com/Adubbz/Tinfoil)              | `OG tnfoil`, also known as `tinfoil 88` |
