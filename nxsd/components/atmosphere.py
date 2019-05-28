@@ -59,10 +59,6 @@ class AtmosphereComponent(NXSDComponent):
                 Path(self._source_directory, 'sept/sept-secondary/sept-secondary.enc'),
                 Path(dest_sept, 'sept-secondary.enc'),
             ),
-            'reboot-to-payload': (
-                Path(self._source_directory, 'troposphere/reboot_to_payload/reboot_to_payload.nro'),
-                Path(dest_switch, 'reboot_to_payload/reboot_to_payload.nro'),
-            ),
             'hbl-html': (
                 Path(self._source_directory, 'common/defaults/hbl_html/'),
                 Path(dest_ams, 'hbl_html/'),
