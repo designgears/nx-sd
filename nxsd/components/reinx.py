@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'ReiNX'
 COMPONENT_VERSION = 'v2.2.1'
-COMPONENT_COMMIT_OR_TAG = '948e2db'
+COMPONENT_COMMIT_OR_TAG = '5ab92d1'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 

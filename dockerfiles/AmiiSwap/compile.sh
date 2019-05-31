@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /developer/components/AmiiSwap/Plutonium
-git checkout f66d07d
-git reset --hard f66d07d
+git checkout 82279ad
+git reset --hard 82279ad
 
 cd /developer/components/AmiiSwap
 

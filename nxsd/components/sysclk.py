@@ -24,12 +24,16 @@ class SysCLKComponent(NXSDComponent):
         self._build()
 
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
+        dest_reinx = Path(install_directory, 'sdcard/ReiNX/')
         dest_conf = Path(install_directory, 'sdcard/config/')
 
         component_dict = {
             'titles': (
                 Path(self._source_directory, 'out/sys-clk.nsp'),
-                Path(dest_ams, 'titles/00FF0000636C6BFF/exefs.nsp'),
+                [
+                    Path(dest_ams, 'titles/00FF0000636C6BFF/exefs.nsp'),
+                    Path(dest_reinx, 'titles/00FF0000636C6BFF/exefs.nsp'),
+                ]
             ),
             'config': (
                 Path(settings.defaults_directory, 'sys-clk/config.ini'),
@@ -39,7 +43,13 @@ class SysCLKComponent(NXSDComponent):
         self._copy_components(component_dict)
 
         _, titles_dir = component_dict['titles']
-        titles_flags_dir = Path(titles_dir.parent, 'flags')
+        ams_titles_dir, reinx_titles_dir = titles_dir
+
+        titles_flags_dir = Path(ams_titles_dir.parent, 'flags')
+        titles_flags_dir.mkdir(parents=True, exist_ok=True)
+        # open(Path(titles_flags_dir, 'boot2.flag'), 'a').close()
+
+        titles_flags_dir = Path(reinx_titles_dir.parent, 'flags')
         titles_flags_dir.mkdir(parents=True, exist_ok=True)
         # open(Path(titles_flags_dir, 'boot2.flag'), 'a').close()
 
