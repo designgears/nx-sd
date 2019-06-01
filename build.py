@@ -30,6 +30,7 @@ CORE_COMPONENTS = {
     'nxhbloader': nxhbloader,
     'nxhbmenu': nxhbmenu,
     'lockpickrcm': lockpickrcm,
+    'toolbox': toolbox,
 }
 
 ADDON_COMPONENTS = {
@@ -41,7 +42,6 @@ ADDON_COMPONENTS = {
     'edizon': edizon,
     'goldleaf': goldleaf,
     'nxshell': nxshell,
-    'toolbox': toolbox,
 }
 
 OPTIONAL_COMPONENTS = {
