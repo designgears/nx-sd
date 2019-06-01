@@ -4,8 +4,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Lockpick_RCM'
-COMPONENT_VERSION = 'v1.1.1'
-COMPONENT_COMMIT_OR_TAG = 'v1.1.1'
+COMPONENT_VERSION = 'v1.2'
+COMPONENT_COMMIT_OR_TAG = 'v1.2'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 class LockpickRCMComponent(NXSDComponent):
