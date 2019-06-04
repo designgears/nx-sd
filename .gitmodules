@@ -57,11 +57,12 @@
 [submodule "components/Toolbox"]
 	path = components/Toolbox
 	url = https://github.com/designgears/Kosmos-Toolbox.git
+	ignore = dirty
 [submodule "components/incognito"]
 	path = components/incognito
 	url = https://github.com/blawar/incognito.git
 	ignore = dirty
 [submodule "components/ReiNX"]
 	path = components/ReiNX
-	url = https://github.com/designgears/ReiNX.git
+	url = https://github.com/Reisyukaku/ReiNX.git
 	ignore = dirty

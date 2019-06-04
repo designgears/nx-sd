@@ -5,8 +5,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'ReiNX'
-COMPONENT_VERSION = 'v2.2.1'
-COMPONENT_COMMIT_OR_TAG = '5ab92d1'
+COMPONENT_VERSION = 'v2.3'
+COMPONENT_COMMIT_OR_TAG = '2a9b9e2'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
