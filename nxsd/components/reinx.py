@@ -39,10 +39,6 @@ class ReiNXComponent(NXSDComponent):
                 Path(self._source_directory, 'out/sept/payload.bin'),
                 Path(dest_reinx, 'septchainloader.bin'),
             ),
-            'splash': (
-                Path(self._source_directory, 'out/ReiNX/splash.bin'),
-                Path(dest_reinx, 'splash.bin'),
-            ),
             'patches': (
                 Path(self._source_directory, 'out/ReiNX/patches/es_patch.rxp'),
                 Path(dest_reinx, 'patches/es_patch.rxp'),
@@ -90,6 +86,14 @@ class ReiNXComponent(NXSDComponent):
             'ams-sept-secondary': (
                 Path(self._ams_source_directory, 'sept/sept-secondary/sept-secondary.enc'),
                 Path(dest_sdcard, 'sept/sept-secondary.enc'),
+            ),
+            'splash': (
+                Path(settings.defaults_directory, 'reinx/splash.bin'),
+                Path(dest_reinx, 'splash.bin'),
+            ),
+            'bootlogo': (
+                Path(settings.defaults_directory, 'reinx/bootlogo.bmp'),
+                Path(dest_reinx, 'bootlogo.bmp'),
             ),
         }
         self._copy_components(component_dict)

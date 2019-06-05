@@ -49,10 +49,6 @@ class HekateComponent(NXSDComponent):
                 Path(settings.defaults_directory, 'hekate/hekate_ipl.ini'),
                 Path(dest_hekate, 'hekate_ipl.ini'),
             ),
-            'bootlogo': (
-                Path(settings.defaults_directory, 'hekate/bootlogo.bmp'),
-                Path(dest_hekate, 'bootlogo.bmp'),
-            ),
         }
         self._copy_components(component_dict)
 
