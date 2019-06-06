@@ -5,8 +5,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'AmiiSwap'
-COMPONENT_VERSION = 'v0.2'
-COMPONENT_COMMIT_OR_TAG = '85ff8ba'
+COMPONENT_VERSION = 'v1.0'
+COMPONENT_COMMIT_OR_TAG = '0e5a4bb'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
