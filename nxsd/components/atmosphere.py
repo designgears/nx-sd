@@ -24,7 +24,6 @@ class AtmosphereComponent(NXSDComponent):
 
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
         dest_sept = Path(install_directory, 'sdcard/sept/')
-        dest_switch = Path(install_directory, 'sdcard/switch')
 
         component_dict = {
             'dmnt': (
