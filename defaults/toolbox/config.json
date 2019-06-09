@@ -38,7 +38,9 @@
 		{
 			"name"  : "dmnt (ReinX Only)",
 			"tid"   : "010000000000000D",
-			"requires_reboot": true
+			"requires_reboot": true,
+			"atmosphere": false,
+			"reinx": true
 		}
 	]
 }

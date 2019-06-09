@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'NX-Shell'
 COMPONENT_VERSION = 'v1.20'
-COMPONENT_COMMIT_OR_TAG = '86178a7'
+COMPONENT_COMMIT_OR_TAG = '046eaec'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
