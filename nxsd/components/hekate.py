@@ -34,6 +34,7 @@ class HekateComponent(NXSDComponent):
                     Path(install_directory, 'payloads/hekate-{}.bin'.format(COMPONENT_VERSION)),
                     Path(dest_hekate, 'update.bin'),
                     Path(dest_ams, 'reboot_payload.bin'),
+                    Path(dest_reinx, 'reboot_payload.bin'),
                     Path(dest_reinx, 'recovery.bin'),
                 ],
             ),
