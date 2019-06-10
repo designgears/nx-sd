@@ -26,6 +26,8 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 | [Lockpick_RCM](https://github.com/shchmue/Lockpick_RCM)   | Encryption key derivation bare metal RCM payload |
 | [nx-hbloader](https://github.com/switchbrew/nx-hbloader)  | Host process for loading homebrew NROs |
 | [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu)      | The Nintendo Switch homebrew menu |
+| [ReiNX](https://github.com/Reisyukaku/ReiNX/)             | A modular Switch custom firmware |
+| [Toolbox](https://github.com/designgears/Kosmos-Toolbox)  | A toolbox for the Kosmos CFW package |
 
 ### Addons
 
@@ -39,11 +41,9 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 | [NX-Shell](https://github.com/joel16/NX-Shell)            | 3DShell port for the Nintendo Switch |
 | [sys-CLK](https://github.com/retronx-team/sys-clk)        | Overclocking/underclocking system module |
 | [sys-ftpd](https://github.com/designgears/sys-ftpd)       | Ftpd as a Nintendo Switch sysmodule |
-| [Toolbox](https://github.com/designgears/Kosmos-Toolbox)  | A toolbox for the Kosmos CFW package |
 
 ### Optional
 
 | Component                                                 | Description |
 | --------------------------------------------------------- | ----------- |
-| [ReiNX](https://github.com/Reisyukaku/ReiNX/)             | A modular Switch custom firmware |
 | [tinfoil](https://github.com/Adubbz/Tinfoil)              | `OG tnfoil`, also known as `tinfoil 88` |
