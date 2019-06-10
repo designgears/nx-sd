@@ -28,7 +28,7 @@
 		{
 			"name"  : "ldn_mitm",
 			"tid"   : "4200000000000010",
-			"requires_reboot": true
+			"requires_reboot": false
 		},
 		{
 			"name"  : "emuiibo",
@@ -36,11 +36,10 @@
 			"requires_reboot": true
 		},
 		{
-			"name"  : "dmnt (ReinX Only)",
+			"name"  : "dmnt",
 			"tid"   : "010000000000000D",
 			"requires_reboot": true,
-			"atmosphere": false,
-			"reinx": true
+			"atmosphere": false
 		}
 	]
 }
