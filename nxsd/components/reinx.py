@@ -39,10 +39,6 @@ class ReiNXComponent(NXSDComponent):
                 Path(self._source_directory, 'septchainloader/out/payload.bin'),
                 Path(dest_reinx, 'septchainloader.bin'),
             ),
-            'patches': (
-                Path(self._source_directory, 'data/es_patch.rxp'),
-                Path(dest_reinx, 'patches/es_patch.rxp'),
-            ),
             'loader': (
                 Path(self._source_directory, 'NX_Sysmodules/loader/loader.kip'),
                 Path(dest_reinx, 'sysmodules/loader.kip'),
