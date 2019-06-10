@@ -36,47 +36,47 @@ class ReiNXComponent(NXSDComponent):
                 ]
             ),
             'septchainloader': (
-                Path(self._source_directory, 'out/sept/payload.bin'),
+                Path(self._source_directory, 'septchainloader/out/payload.bin'),
                 Path(dest_reinx, 'septchainloader.bin'),
             ),
             'patches': (
-                Path(self._source_directory, 'out/ReiNX/patches/es_patch.rxp'),
+                Path(self._source_directory, 'data/es_patch.rxp'),
                 Path(dest_reinx, 'patches/es_patch.rxp'),
             ),
             'loader': (
-                Path(self._source_directory, 'out/ReiNX/sysmodules/loader.kip'),
+                Path(self._source_directory, 'NX_Sysmodules/loader/loader.kip'),
                 Path(dest_reinx, 'sysmodules/loader.kip'),
             ),
             'pm': (
-                Path(self._source_directory, 'out/ReiNX/sysmodules/pm.kip'),
+                Path(self._source_directory, 'NX_Sysmodules/pm/pm.kip'),
                 Path(dest_reinx, 'sysmodules/pm.kip'),
             ),
             'ams_mitm': (
-                Path(self._source_directory, 'out/ReiNX/sysmodules/ams_mitm.kip'),
+                Path(self._source_directory, 'NX_Sysmodules/ams_mitm/ams_mitm.kip'),
                 Path(dest_reinx, 'sysmodules/ams_mitm.kip'),
             ),
             'sm': (
-                Path(self._source_directory, 'out/ReiNX/sysmodules/sm.kip'),
+                Path(self._source_directory, 'NX_Sysmodules/sm/sm.kip'),
                 Path(dest_reinx, 'sysmodules/sm.kip'),
             ),
             'dmnt': (
-                Path(self._source_directory, 'out/ReiNX/titles/010000000000000D/exefs.nsp'),
+                Path(self._source_directory, 'NX_Sysmodules/dmnt/dmnt.nsp'),
                 Path(dest_reinx, 'titles/010000000000000D/exefs.nsp'),
             ),
             'eclct.stub': (
-                Path(self._source_directory, 'out/ReiNX/titles/0100000000000032/exefs.nsp'),
+                Path(self._source_directory, 'NX_Sysmodules/eclct.stub/eclct.stub.nsp'),
                 Path(dest_reinx, 'titles/0100000000000032/exefs.nsp'),
             ),
             'fatal': (
-                Path(self._source_directory, 'out/ReiNX/titles/0100000000000034/exefs.nsp'),
+                Path(self._source_directory, 'NX_Sysmodules/fatal/fatal.nsp'),
                 Path(dest_reinx, 'titles/0100000000000034/exefs.nsp'),
             ),
             'creport': (
-                Path(self._source_directory, 'out/ReiNX/titles/0100000000000036/exefs.nsp'),
+                Path(self._source_directory, 'NX_Sysmodules/creport/creport.nsp'),
                 Path(dest_reinx, 'titles/0100000000000036/exefs.nsp'),
             ),
             'ro': (
-                Path(self._source_directory, 'out/ReiNX/titles/0100000000000037/exefs.nsp'),
+                Path(self._source_directory, 'NX_Sysmodules/ro/ro.nsp'),
                 Path(dest_reinx, 'titles/0100000000000037/exefs.nsp'),
             ),
             'ams-secmon': (
@@ -112,7 +112,7 @@ class ReiNXComponent(NXSDComponent):
                 Path(dest_reinx, 'system_settings.ini'),
             ),
             'splash': (
-                Path(settings.defaults_directory, 'reinx/splash.bin'),
+                Path(self._source_directory, 'data/splash.bin'),
                 Path(dest_reinx, 'splash.bin'),
             ),
             'bootlogo': (
