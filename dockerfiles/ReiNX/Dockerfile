@@ -18,6 +18,12 @@ RUN dkp-pacman -Syyu --noconfirm --needed \
 
 ENV DEVKITARM=${DEVKITPRO}/devkitARM
 
+RUN git clone https://github.com/switchbrew/libnx.git
+
+WORKDIR /libnx
+
+RUN make -j5 install
+
 WORKDIR /
 
 ENTRYPOINT ["/compile.sh"]

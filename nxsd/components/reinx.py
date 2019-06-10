@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'ReiNX'
 COMPONENT_VERSION = 'v2.3'
-COMPONENT_COMMIT_OR_TAG = '2a9b9e2'
+COMPONENT_COMMIT_OR_TAG = '186da77'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -51,9 +51,9 @@ class ReiNXComponent(NXSDComponent):
                 Path(self._source_directory, 'out/ReiNX/sysmodules/pm.kip'),
                 Path(dest_reinx, 'sysmodules/pm.kip'),
             ),
-            'rnx_mitm': (
-                Path(self._source_directory, 'out/ReiNX/sysmodules/rnx_mitm.kip'),
-                Path(dest_reinx, 'sysmodules/rnx_mitm.kip'),
+            'ams_mitm': (
+                Path(self._source_directory, 'out/ReiNX/sysmodules/ams_mitm.kip'),
+                Path(dest_reinx, 'sysmodules/ams_mitm.kip'),
             ),
             'sm': (
                 Path(self._source_directory, 'out/ReiNX/sysmodules/sm.kip'),
@@ -63,6 +63,10 @@ class ReiNXComponent(NXSDComponent):
                 Path(self._source_directory, 'out/ReiNX/titles/010000000000000D/exefs.nsp'),
                 Path(dest_reinx, 'titles/010000000000000D/exefs.nsp'),
             ),
+            'eclct.stub': (
+                Path(self._source_directory, 'out/ReiNX/titles/0100000000000032/exefs.nsp'),
+                Path(dest_reinx, 'titles/0100000000000032/exefs.nsp'),
+            ),
             'fatal': (
                 Path(self._source_directory, 'out/ReiNX/titles/0100000000000034/exefs.nsp'),
                 Path(dest_reinx, 'titles/0100000000000034/exefs.nsp'),
@@ -70,6 +74,10 @@ class ReiNXComponent(NXSDComponent):
             'creport': (
                 Path(self._source_directory, 'out/ReiNX/titles/0100000000000036/exefs.nsp'),
                 Path(dest_reinx, 'titles/0100000000000036/exefs.nsp'),
+            ),
+            'ro': (
+                Path(self._source_directory, 'out/ReiNX/titles/0100000000000037/exefs.nsp'),
+                Path(dest_reinx, 'titles/0100000000000037/exefs.nsp'),
             ),
             'ams-secmon': (
                 Path(self._ams_source_directory, 'exosphere/exosphere.bin'),
@@ -86,6 +94,22 @@ class ReiNXComponent(NXSDComponent):
             'ams-sept-secondary': (
                 Path(self._ams_source_directory, 'sept/sept-secondary/sept-secondary.enc'),
                 Path(dest_sdcard, 'sept/sept-secondary.enc'),
+            ),
+            'hbl-html': (
+                Path(self._source_directory, 'NX_Sysmodules/common/defaults/hbl_html/'),
+                Path(dest_reinx, 'hbl_html/'),
+            ),
+            'bct.ini': (
+                Path(self._source_directory, 'NX_Sysmodules/common/defaults/BCT.ini'),
+                Path(dest_reinx, 'BCT.ini'),
+            ),
+            'loader.ini': (
+                Path(self._source_directory, 'NX_Sysmodules/common/defaults/loader.ini'),
+                Path(dest_reinx, 'loader.ini'),
+            ),
+            'system-settings': (
+                Path(self._source_directory, 'NX_Sysmodules/common/defaults/system_settings.ini'),
+                Path(dest_reinx, 'system_settings.ini'),
             ),
             'splash': (
                 Path(settings.defaults_directory, 'reinx/splash.bin'),
@@ -105,6 +129,16 @@ class ReiNXComponent(NXSDComponent):
         dmnt_flags_dir = Path(dmnt_dir.parent, 'flags')
         dmnt_flags_dir.mkdir(parents=True, exist_ok=True)
         open(Path(dmnt_flags_dir, 'boot2.flag'), 'a').close()
+
+        _, eclct_dir = component_dict['eclct.stub']
+        eclct_flags_dir = Path(eclct_dir.parent, 'flags')
+        eclct_flags_dir.mkdir(parents=True, exist_ok=True)
+        open(Path(eclct_flags_dir, 'boot2.flag'), 'a').close()
+
+        _, ro_dir = component_dict['ro']
+        ro_flags_dir = Path(ro_dir.parent, 'flags')
+        ro_flags_dir.mkdir(parents=True, exist_ok=True)
+        open(Path(ro_flags_dir, 'boot2.flag'), 'a').close()
 
     def clean(self):
         with util.change_dir(self._source_directory):
