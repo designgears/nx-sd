@@ -34,10 +34,6 @@ class LdnmitmComponent(NXSDComponent):
                     Path(dest_reinx, 'titles/4200000000000010/exefs.nsp'),
                 ]
             ),
-            'config-app': (
-                Path(self._source_directory, 'ldnmitm_config/ldnmitm_config.nro'),
-                Path(dest_nro, 'ldnmitm_config/ldnmitm_config.nro'),
-            ),
         }
         self._copy_components(component_dict)
 
