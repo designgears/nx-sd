@@ -24,7 +24,6 @@ class LdnmitmComponent(NXSDComponent):
         
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
         dest_reinx = Path(install_directory, 'sdcard/ReiNX/')
-        dest_nro = Path(install_directory, 'sdcard/switch/')
 
         component_dict = {
             'ldn_mitm': (
