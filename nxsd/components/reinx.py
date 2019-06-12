@@ -95,10 +95,6 @@ class ReiNXComponent(NXSDComponent):
                 Path(self._source_directory, 'NX_Sysmodules/common/defaults/hbl_html/'),
                 Path(dest_reinx, 'hbl_html/'),
             ),
-            'bct.ini': (
-                Path(self._source_directory, 'NX_Sysmodules/common/defaults/BCT.ini'),
-                Path(dest_reinx, 'BCT.ini'),
-            ),
             'loader.ini': (
                 Path(self._source_directory, 'NX_Sysmodules/common/defaults/loader.ini'),
                 Path(dest_reinx, 'loader.ini'),
