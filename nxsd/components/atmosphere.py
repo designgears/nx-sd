@@ -42,6 +42,10 @@ class AtmosphereComponent(NXSDComponent):
                 Path(self._source_directory, 'stratosphere/creport/creport.nsp'),
                 Path(dest_ams, 'titles/0100000000000036/exefs.nsp'),
             ),
+            'ro': (
+                Path(self._source_directory, 'stratosphere/ro/ro.nsp'),
+                Path(dest_ams, 'titles/0100000000000037/exefs.nsp'),
+            ),
             'fusee-primary': (
                 Path(self._source_directory, 'fusee/fusee-primary/fusee-primary.bin'),
                 Path(install_directory, 'payloads/fusee-primary.bin'),
@@ -88,6 +92,11 @@ class AtmosphereComponent(NXSDComponent):
         eclct_stub_flags_dir = Path(eclct_stub_dir.parent, 'flags')
         eclct_stub_flags_dir.mkdir(parents=True, exist_ok=True)
         open(Path(eclct_stub_flags_dir, 'boot2.flag'), 'a').close()
+
+        _, ro_dir = component_dict['ro']
+        ro_flags_dir = Path(ro_dir.parent, 'flags')
+        ro_flags_dir.mkdir(parents=True, exist_ok=True)
+        open(Path(ro_flags_dir, 'boot2.flag'), 'a').close()
 
         atmos_flags_dir = Path(dest_ams, 'flags')
         atmos_flags_dir.mkdir(parents=True, exist_ok=True)
