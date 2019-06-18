@@ -25,8 +25,8 @@ from nxsd.components import reinx
 
 CORE_COMPONENTS = {
     'hekate': hekate,
-    'reinx': reinx,
     'atmosphere': atmosphere,
+    'reinx': reinx,
     'nxhbloader': nxhbloader,
     'nxhbmenu': nxhbmenu,
     'lockpickrcm': lockpickrcm,
