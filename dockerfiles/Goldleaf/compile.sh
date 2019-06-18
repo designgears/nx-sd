@@ -8,4 +8,4 @@ cp /default_icon.jpg ./nx/default_icon.jpg
 
 cd /
 
-make -j5
+make -j8

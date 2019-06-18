@@ -22,7 +22,7 @@ RUN git clone https://github.com/switchbrew/libnx.git
 
 WORKDIR /libnx
 
-RUN make -j5 install
+RUN make -j8 install
 
 WORKDIR /
 

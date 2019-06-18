@@ -6,4 +6,4 @@ ENV DEVKITARM=${DEVKITPRO}/devkitARM
 
 WORKDIR /developer/components/nx-hbloader
 
-ENTRYPOINT ["make", "-j5"]
+ENTRYPOINT ["make", "-j8"]

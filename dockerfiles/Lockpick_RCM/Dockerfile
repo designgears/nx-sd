@@ -9,4 +9,4 @@ ENV DEVKITARM=${DEVKITPRO}/devkitARM
 
 WORKDIR /developer/components/Lockpick_RCM
 
-ENTRYPOINT ["make", "-j5"]
+ENTRYPOINT ["make", "-j8"]

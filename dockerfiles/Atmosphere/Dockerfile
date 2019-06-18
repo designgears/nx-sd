@@ -20,8 +20,8 @@ WORKDIR /libnx
 
 RUN git reset --hard 9c887a1
 
-RUN make -j5 install
+RUN make -j8 install
 
 WORKDIR /developer/components/Atmosphere
 
-ENTRYPOINT ["make", "-j5"]
+ENTRYPOINT ["make", "-j8"]

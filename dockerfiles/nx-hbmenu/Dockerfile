@@ -9,4 +9,4 @@ ENV DEVKITARM=${DEVKITPRO}/devkitARM
 
 WORKDIR /developer/components/nx-hbmenu
 
-ENTRYPOINT ["make", "-j5", "nx"]
+ENTRYPOINT ["make", "-j8", "nx"]

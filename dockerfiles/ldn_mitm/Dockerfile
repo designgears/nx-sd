@@ -6,4 +6,4 @@ ENV DEVKITARM=${DEVKITPRO}/devkitARM
 
 WORKDIR /developer/components/ldn_mitm
 
-ENTRYPOINT ["make", "-j5"]
+ENTRYPOINT ["make", "-j8"]

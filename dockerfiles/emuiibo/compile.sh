@@ -11,4 +11,4 @@ git reset --hard 163d925 # Update Runtime Firmware Version stuff for 8.0
 mkdir -p /developer/components/emuiibo/out/atmosphere/titles/0100000000000352/
 
 cd /
-make -j5
+make -j8

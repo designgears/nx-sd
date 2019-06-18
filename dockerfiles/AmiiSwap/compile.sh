@@ -2,4 +2,4 @@
 
 cd /developer/components/AmiiSwap
 
-make -j5
+make -j8

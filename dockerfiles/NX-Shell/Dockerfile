@@ -9,4 +9,4 @@ ENV DEVKITA64=${DEVKITPRO}/devkitA64
 
 WORKDIR /developer/components/NX-Shell
 
-ENTRYPOINT ["make", "-j5"]
+ENTRYPOINT ["make", "-j8"]
