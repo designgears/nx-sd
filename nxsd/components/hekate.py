@@ -83,8 +83,8 @@ class HekateComponent(NXSDComponent):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
-                'git submodule update --init --recursive',
                 'git checkout {c} && git reset --hard {c}'.format(c=COMPONENT_COMMIT_OR_TAG),
+                'git submodule update --init --recursive',
                 'docker run --rm -a stdout -a stderr --name {d} --mount src="{bd}",target=/developer,type=bind {d}:latest'.format(
                     d=DOCKER_IMAGE_NAME, bd=Path().absolute().parent.parent),
             ]

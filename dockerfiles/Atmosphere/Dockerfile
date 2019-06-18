@@ -18,6 +18,8 @@ RUN git clone https://github.com/switchbrew/libnx.git
 
 WORKDIR /libnx
 
+RUN git reset --hard 9c887a1
+
 RUN make -j5 install
 
 WORKDIR /developer/components/Atmosphere
