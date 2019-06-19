@@ -1,4 +1,4 @@
-FROM devkitpro/devkita64:latest
+FROM devkitpro/devkita64:20190502
 
 COPY ./Makefile /Makefile
 COPY ./compile.sh /compile.sh

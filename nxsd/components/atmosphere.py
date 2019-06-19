@@ -5,7 +5,8 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Atmosphere'
 COMPONENT_VERSION = 'v0.9.0'
-COMPONENT_COMMIT_OR_TAG = '31fde23'
+COMPONENT_COMMIT_OR_TAG = '63a9c85'
+COMPONENT_BRANCH = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -127,7 +128,7 @@ class AtmosphereComponent(NXSDComponent):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
-                'git checkout {c} && git reset --hard {c}'.format(c=COMPONENT_COMMIT_OR_TAG),
+                'git checkout {b} && git pull && git reset --hard {c}'.format(c=COMPONENT_COMMIT_OR_TAG, b=COMPONENT_BRANCH),
                 'git submodule update --init --recursive',
                 'docker run --rm -a stdout -a stderr --name {d} --mount src="{bd}",target=/developer,type=bind {d}:latest'.format(
                     d=DOCKER_IMAGE_NAME, bd=Path().absolute().parent.parent),

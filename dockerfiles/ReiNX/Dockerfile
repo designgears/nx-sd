@@ -5,8 +5,6 @@ COPY ./compile.sh /compile.sh
 
 RUN chmod a+x /compile.sh
 
-ENV SEPT_ENC_PATH="/sept-secondary.enc"
-
 RUN dkp-pacman -Syyu --noconfirm --needed \
     devkit-env \
     devkitA64 \
@@ -17,12 +15,13 @@ RUN dkp-pacman -Syyu --noconfirm --needed \
     switch-dev
 
 ENV DEVKITARM=${DEVKITPRO}/devkitARM
+ENV SEPT_ENC_PATH="/sept-secondary.enc"
 
 RUN git clone https://github.com/switchbrew/libnx.git
 
 WORKDIR /libnx
 
-RUN git reset --hard 3afc9ae
+RUN git reset --hard 9c887a1
 
 RUN make -j8 install
 
