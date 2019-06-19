@@ -19,18 +19,16 @@ from nxsd.components import nxshell
 from nxsd.components import incognito
 from nxsd.components import amiiswap
 from nxsd.components import emuiibo
-from nxsd.components import ogtinfoil
 from nxsd.components import toolbox
-from nxsd.components import reinx
+from nxsd.components import sigpatches
 
 CORE_COMPONENTS = {
-    'hekate': hekate,
     'atmosphere': atmosphere,
-    'reinx': reinx,
     'nxhbloader': nxhbloader,
     'nxhbmenu': nxhbmenu,
     'lockpickrcm': lockpickrcm,
     'toolbox': toolbox,
+    'sigpatches': sigpatches,
 }
 
 ADDON_COMPONENTS = {
@@ -45,8 +43,7 @@ ADDON_COMPONENTS = {
 }
 
 OPTIONAL_COMPONENTS = {
-    'ogtinfoil': ogtinfoil,
-    'incognito': incognito,
+    'hekate': hekate,
 }
 
 ALL_COMPONENTS = {

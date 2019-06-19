@@ -34,12 +34,6 @@
 			"name"  : "emuiibo",
 			"tid"   : "0100000000000352",
 			"requires_reboot": true
-		},
-		{
-			"name"  : "dmnt",
-			"tid"   : "010000000000000D",
-			"requires_reboot": true,
-			"atmosphere": false
 		}
 	]
 }

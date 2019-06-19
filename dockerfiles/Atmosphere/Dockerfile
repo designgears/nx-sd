@@ -1,6 +1,7 @@
 FROM devkitpro/devkita64:latest
 
-COPY ./sept-secondary.enc /sept-secondary.enc
+COPY ./sept-secondary_00.enc /sept-secondary_00.enc
+COPY ./sept-secondary_01.enc /sept-secondary_01.enc
 
 RUN dkp-pacman -Syyu --noconfirm --needed \
         devkitA64 \
@@ -12,7 +13,8 @@ RUN dkp-pacman -Syyu --noconfirm --needed \
     dkp-pacman -Scc --noconfirm
 
 ENV DEVKITARM=${DEVKITPRO}/devkitARM
-ENV SEPT_ENC_PATH="/sept-secondary.enc"
+ENV SEPT_00_ENC_PATH="/sept-secondary_00.enc"
+ENV SEPT_01_ENC_PATH="/sept-secondary_01.enc"
 
 RUN git clone https://github.com/switchbrew/libnx.git
 

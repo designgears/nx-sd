@@ -4,8 +4,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Atmosphere'
-COMPONENT_VERSION = 'v0.9.0'
-COMPONENT_COMMIT_OR_TAG = '63a9c85'
+COMPONENT_VERSION = 'v0.9.1'
+COMPONENT_COMMIT_OR_TAG = '0.9.1'
 COMPONENT_BRANCH = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
@@ -49,23 +49,25 @@ class AtmosphereComponent(NXSDComponent):
             ),
             'fusee-primary': (
                 Path(self._source_directory, 'fusee/fusee-primary/fusee-primary.bin'),
-                Path(install_directory, 'payloads/fusee-primary.bin'),
+                [
+                    Path(install_directory, 'payloads/fusee-primary.bin'),
+                    Path(dest_ams, 'reboot_payload.bin'),
+                ],
             ),
             'fusee-secondary': (
                 Path(self._source_directory, 'fusee/fusee-secondary/fusee-secondary.bin'),
-                Path(dest_ams, 'fusee-secondary.bin'),
-            ),
-            'sept-primary': (
-                Path(self._source_directory, 'sept/sept-primary/sept-primary.bin'),
-                Path(dest_sept, 'sept-primary.bin'),
-            ),
-            'sept-secondary-enc': (
-                Path(self._source_directory, 'sept/sept-secondary/sept-secondary.enc'),
-                Path(dest_sept, 'sept-secondary.enc'),
+                [
+                    Path(dest_ams, 'fusee-secondary.bin'),
+                    Path(dest_sept, 'payload.bin'),
+                ],
             ),
             'hbl-html': (
                 Path(self._source_directory, 'common/defaults/hbl_html/'),
                 Path(dest_ams, 'hbl_html/'),
+            ),
+            'no-gc': (
+                Path(self._source_directory, 'common/defaults/kip_patches/default_nogc/'),
+                Path(dest_ams, 'kip_patches/default_nogc/'),
             ),
             'bct.ini': (
                 Path(settings.defaults_directory, 'atmosphere/BCT.ini'),
@@ -79,30 +81,31 @@ class AtmosphereComponent(NXSDComponent):
                 Path(settings.defaults_directory, 'atmosphere/system_settings.ini'),
                 Path(dest_ams, 'system_settings.ini'),
             ),
+            'sept-primary': (
+                Path(self._source_directory, 'sept/sept-primary/sept-primary.bin'),
+                Path(dest_sept, 'sept-primary.bin'),
+            ),
+            'sept-secondary_00-enc': (
+                Path(self._dockerfiles_directory, 'sept-secondary_00.enc'),
+                Path(dest_sept, 'sept-secondary_00.enc'),
+            ),
+            'sept-secondary_01-enc': (
+                Path(self._dockerfiles_directory, 'sept-secondary_01.enc'),
+                Path(dest_sept, 'sept-secondary_01.enc'),
+            ),
+            'boot2.flag': (
+                Path(settings.defaults_directory, 'boot2.flag'),
+                [
+                    Path(dest_ams, 'titles/0100000000000032/flags/boot2.flag'),
+                    Path(dest_ams, 'titles/0100000000000037/flags/boot2.flag'),
+                ],
+            ),
             'bootlogo': (
                 Path(settings.defaults_directory, 'atmosphere/bootlogo.bmp'),
                 Path(dest_ams, 'bootlogo.bmp'),
             ),
         }
         self._copy_components(component_dict)
-
-        fatal_errors_dir = Path(dest_ams, 'fatal_errors')
-        fatal_errors_dir.mkdir(parents=True, exist_ok=True)
-
-        _, eclct_stub_dir = component_dict['eclct.stub']
-        eclct_stub_flags_dir = Path(eclct_stub_dir.parent, 'flags')
-        eclct_stub_flags_dir.mkdir(parents=True, exist_ok=True)
-        open(Path(eclct_stub_flags_dir, 'boot2.flag'), 'a').close()
-
-        _, ro_dir = component_dict['ro']
-        ro_flags_dir = Path(ro_dir.parent, 'flags')
-        ro_flags_dir.mkdir(parents=True, exist_ok=True)
-        open(Path(ro_flags_dir, 'boot2.flag'), 'a').close()
-
-        atmos_flags_dir = Path(dest_ams, 'flags')
-        atmos_flags_dir.mkdir(parents=True, exist_ok=True)
-        open(Path(atmos_flags_dir, 'hbl_bis_write.flag'), 'a').close()
-        open(Path(atmos_flags_dir, 'hbl_cal_read.flag'), 'a').close()
 
     def clean(self):
         with util.change_dir(self._source_directory):

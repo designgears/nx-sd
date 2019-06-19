@@ -23,15 +23,11 @@ class HBLoaderComponent(NXSDComponent):
         self._build()
 
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
-        dest_reinx = Path(install_directory, 'sdcard/ReiNX')
 
         component_dict = {
             'hbloader': (
                 Path(self._source_directory, 'hbl.nsp'),
-                [
-                    Path(dest_ams, 'hbl.nsp'),
-                    Path(dest_reinx, 'hbl.nsp'),
-                ]
+                Path(dest_ams, 'hbl.nsp'),
             ),
         }
         self._copy_components(component_dict)

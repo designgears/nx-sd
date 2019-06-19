@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'hekate'
 COMPONENT_VERSION = 'v4.10.2J'
-COMPONENT_COMMIT_OR_TAG = '7c29165'
+COMPONENT_COMMIT_OR_TAG = 'a62c77b'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -24,8 +24,6 @@ class HekateComponent(NXSDComponent):
         self._build()
 
         dest_hekate = Path(install_directory, 'sdcard/bootloader2/')
-        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
-        dest_reinx = Path(install_directory, 'sdcard/ReiNX/')
 
         component_dict = {
             'payload': (
@@ -33,9 +31,6 @@ class HekateComponent(NXSDComponent):
                 [
                     Path(install_directory, 'payloads/hekate-{}.bin'.format(COMPONENT_VERSION)),
                     Path(dest_hekate, 'update.bin'),
-                    Path(dest_ams, 'reboot_payload.bin'),
-                    Path(dest_reinx, 'reboot_payload.bin'),
-                    Path(dest_reinx, 'recovery.bin'),
                 ],
             ),
             'sleep-module': (

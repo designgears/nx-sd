@@ -23,29 +23,14 @@ class LdnmitmComponent(NXSDComponent):
         self._build()
         
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
-        dest_reinx = Path(install_directory, 'sdcard/ReiNX/')
 
         component_dict = {
             'ldn_mitm': (
                 Path(self._source_directory, 'ldn_mitm/out/ldn_mitm.nsp'),
-                [
-                    Path(dest_ams, 'titles/4200000000000010/exefs.nsp'),
-                    Path(dest_reinx, 'titles/4200000000000010/exefs.nsp'),
-                ]
+                Path(dest_ams, 'titles/4200000000000010/exefs.nsp'),
             ),
         }
         self._copy_components(component_dict)
-
-        _, titles_dir = component_dict['ldn_mitm']
-        ams_titles_dir, reinx_titles_dir = titles_dir
-        
-        titles_flags_dir = Path(ams_titles_dir.parent, 'flags')
-        titles_flags_dir.mkdir(parents=True, exist_ok=True)
-        # open(Path(titles_flags_dir, 'boot2.flag'), 'a').close()
-
-        titles_flags_dir = Path(reinx_titles_dir.parent, 'flags')
-        titles_flags_dir.mkdir(parents=True, exist_ok=True)
-        # open(Path(titles_flags_dir, 'boot2.flag'), 'a').close()
 
     def clean(self):
         with util.change_dir(self._source_directory):
