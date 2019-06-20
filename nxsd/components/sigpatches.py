@@ -3,7 +3,7 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Sigpatches'
-SIGPATCHES_VERSION = '8.0.1'
+SIGPATCHES_VERSION = '8.1.0'
 
 
 class SigpatchesComponent(NXSDComponent):
