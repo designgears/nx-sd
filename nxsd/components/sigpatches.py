@@ -24,7 +24,7 @@ class SigpatchesComponent(NXSDComponent):
                 Path(install_directory, 'sdcard/atmosphere/exefs_patches/es_patches/'),
             ),
             'es-patches': (
-                Path(settings.components_directory, 'sigpatches/es_patches/'),
+                Path(settings.components_directory, 'sigpatches/fs_patches/'),
                 Path(install_directory, 'sdcard/atmosphere/kip_patches/fs_patches/'),
             ),
         }
