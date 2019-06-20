@@ -22,11 +22,9 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 | --------------------------------------------------------- | ----------- |
 | [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) | Custom firmware for the Nintendo Switch |
 | [hekate](https://github.com/designgears/hekate)           | Nintendo Switch Bootloader |
-| [incognito](https://github.com/blawar/incognito)          | Wipes personal information from your Nintendo Switch |
 | [Lockpick_RCM](https://github.com/shchmue/Lockpick_RCM)   | Encryption key derivation bare metal RCM payload |
 | [nx-hbloader](https://github.com/switchbrew/nx-hbloader)  | Host process for loading homebrew NROs |
 | [nx-hbmenu](https://github.com/switchbrew/nx-hbmenu)      | The Nintendo Switch homebrew menu |
-| [RèiNX](https://github.com/designgears/ReiNX/)            | A modular Switch custom firmware |
 | [Toolbox](https://github.com/designgears/Kosmos-Toolbox)  | A toolbox for the Kosmos CFW package |
 
 ### Addons
@@ -46,4 +44,3 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 
 | Component                                                 | Description |
 | --------------------------------------------------------- | ----------- |
-| [tinfoil](https://github.com/Adubbz/Tinfoil)              | `OG tnfoil`, also known as `tinfoil 88` |
