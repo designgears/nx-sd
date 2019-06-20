@@ -19,9 +19,13 @@ class SigpatchesComponent(NXSDComponent):
 
     def install(self, install_directory):
         component_dict = {
-            'es-patches': (
-                Path(settings.components_directory, 'sigpatches/'),
+            'fs-patches': (
+                Path(settings.components_directory, 'sigpatches/es_patches/'),
                 Path(install_directory, 'sdcard/atmosphere/exefs_patches/es_patches/'),
+            ),
+            'es-patches': (
+                Path(settings.components_directory, 'sigpatches/es_patches/'),
+                Path(install_directory, 'sdcard/atmosphere/kip_patches/fs_patches/'),
             ),
         }
         self._copy_components(component_dict)
