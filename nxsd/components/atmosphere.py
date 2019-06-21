@@ -117,24 +117,26 @@ class AtmosphereComponent(NXSDComponent):
             util.execute_shell_commands(build_commands)
 
     def _build(self):
+        self._build_prepare()
         self._build_docker()
-        self._build_component()
-
+        
     def _build_docker(self):
         with util.change_dir(self._dockerfiles_directory):
             build_commands = [
                 'docker build . -t {d}:latest'.format(d=DOCKER_IMAGE_NAME),
+                'docker stop {d}'.format(d=DOCKER_IMAGE_NAME),
+                'docker rm {d}'.format(d=DOCKER_IMAGE_NAME),
+                'docker run --rm -a stdout -a stderr --name {d} --mount src="{bd}",target=/developer,type=bind {d}:latest'.format(
+                    d=DOCKER_IMAGE_NAME, bd=Path().absolute().parent.parent),
             ]
             util.execute_shell_commands(build_commands)
 
-    def _build_component(self):
+    def _build_prepare(self):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch origin',
                 'git checkout {b} && git pull && git reset --hard {c}'.format(c=COMPONENT_COMMIT_OR_TAG, b=COMPONENT_BRANCH),
                 'git submodule update --init --recursive',
-                'docker run --rm -a stdout -a stderr --name {d} --mount src="{bd}",target=/developer,type=bind {d}:latest'.format(
-                    d=DOCKER_IMAGE_NAME, bd=Path().absolute().parent.parent),
             ]
             util.execute_shell_commands(build_commands)
 

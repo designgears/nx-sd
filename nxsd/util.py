@@ -17,14 +17,6 @@ def change_dir(new_dir):
     finally:
         os.chdir(prev_dir)
 
-def check_environment_variable(environment_variable):
-    logger = logging.getLogger('nxsd')
-    if os.environ.get(environment_variable) is None:
-        logger.error('Environment variable {} not defined'.format(environment_variable))
-        return False
-
-    return True
-
 def delete_if_exists(path):
     with contextlib.suppress(FileNotFoundError):
         os.remove(path)

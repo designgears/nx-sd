@@ -13,10 +13,6 @@ class SigpatchesComponent(NXSDComponent):
         self._name = COMPONENT_NAME
         self._version_string = SIGPATCHES_VERSION
 
-    def has_all_dependencies(self):
-        # No dependencies
-        return True
-
     def install(self, install_directory):
         component_dict = {
             'es-patches': (

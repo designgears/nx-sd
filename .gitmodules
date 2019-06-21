@@ -18,10 +18,6 @@
 	path = components/ldn_mitm
 	url = https://github.com/spacemeowx2/ldn_mitm.git
 	ignore = dirty
-[submodule "components/EdiZon"]
-	path = components/EdiZon
-	url = https://github.com/WerWolv/EdiZon.git
-	ignore = dirty
 [submodule "components/sys-clk"]
 	path = components/sys-clk
 	url = https://github.com/retronx-team/sys-clk.git
@@ -54,3 +50,10 @@
 	path = components/hekate
 	url = https://github.com/designgears/hekate.git
 	ignore = dirty
+[submodule "components/ReiNX"]
+	path = components/ReiNX
+	url = https://github.com/designgears/ReiNX.git
+	ignore = dirty
+[submodule "components/EdiZon"]
+	path = components/EdiZon
+	url = https://github.com/designgears/EdiZon.git
