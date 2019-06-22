@@ -47,14 +47,7 @@ class HBLoaderComponent(NXSDComponent):
         
     def _build_docker(self):
         with util.change_dir(self._dockerfiles_directory):
-            build_commands = [
-                'docker build . -t {d}:latest'.format(d=DOCKER_IMAGE_NAME),
-                'docker stop {d}'.format(d=DOCKER_IMAGE_NAME),
-                'docker rm {d}'.format(d=DOCKER_IMAGE_NAME),
-                'docker run --rm -a stdout -a stderr --name {d} --mount src="{bd}",target=/developer,type=bind {d}:latest'.format(
-                    d=DOCKER_IMAGE_NAME, bd=Path().absolute().parent.parent),
-            ]
-            util.execute_shell_commands(build_commands)
+            util.dock_worker(DOCKER_IMAGE_NAME)
 
     def _build_prepare(self):
         with util.change_dir(self._source_directory):
