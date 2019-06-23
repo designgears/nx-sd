@@ -24,7 +24,6 @@ class SysCLKComponent(NXSDComponent):
         self._build()
 
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
-        # dest_reinx = Path(install_directory, 'sdcard/ReiNX/')
         dest_conf = Path(install_directory, 'sdcard/config/')
 
         component_dict = {

@@ -5,7 +5,6 @@ import logging
 import nxsd
 
 from nxsd.package import NXSDPackage
-from nxsd.components import hekate
 from nxsd.components import atmosphere
 from nxsd.components import nxhbloader
 from nxsd.components import nxhbmenu
@@ -43,7 +42,7 @@ ADDON_COMPONENTS = {
 }
 
 OPTIONAL_COMPONENTS = {
-    'hekate': hekate,
+    
 }
 
 ALL_COMPONENTS = {

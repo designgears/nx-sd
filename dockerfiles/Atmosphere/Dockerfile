@@ -20,7 +20,7 @@ RUN git clone https://github.com/switchbrew/libnx.git
 
 WORKDIR /libnx
 
-RUN git reset --hard 9c887a1
+RUN git reset --hard e1a6a46
 
 RUN make -j8 install
 
