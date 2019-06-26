@@ -5,7 +5,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'nx-hbmenu'
 COMPONENT_VERSION = 'v3.0.1'
-COMPONENT_COMMIT_OR_TAG = '7c029c1'
+COMPONENT_COMMIT_OR_TAG = '753a97e'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -37,6 +37,8 @@ class HBMenuComponent(NXSDComponent):
             build_commands = [
                 'git clean -fdx',
                 'git submodule foreach --recursive git clean -fdx',
+                'git reset --hard',
+                'git submodule update --init --recursive',
                 'docker image rm {d}'.format(d=DOCKER_IMAGE_NAME),
             ]
             util.execute_shell_commands(build_commands)
