@@ -5,6 +5,7 @@ import logging
 import nxsd
 
 from nxsd.package import NXSDPackage
+from nxsd.components import hekate
 from nxsd.components import atmosphere
 from nxsd.components import nxhbloader
 from nxsd.components import nxhbmenu
@@ -22,6 +23,7 @@ from nxsd.components import toolbox
 from nxsd.components import sigpatches
 
 CORE_COMPONENTS = {
+    'hekate': hekate,
     'atmosphere': atmosphere,
     'nxhbloader': nxhbloader,
     'nxhbmenu': nxhbmenu,
@@ -42,7 +44,7 @@ ADDON_COMPONENTS = {
 }
 
 OPTIONAL_COMPONENTS = {
-    
+    'incognito': incognito
 }
 
 ALL_COMPONENTS = {

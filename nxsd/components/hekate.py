@@ -45,17 +45,17 @@ class HekateComponent(NXSDComponent):
                 Path(self._source_directory, 'output/libsys_minerva.bso'),
                 Path(dest_hekate, 'sys/libsys_minerva.bso'),
             ),
-            'config': (
-                Path(settings.defaults_directory, 'hekate/hekate_ipl.ini'),
-                Path(dest_hekate, 'hekate_ipl.ini'),
-            ),
             'res': (
-                Path(settings.defaults_directory, 'hekate/nyx/res/'),
+                Path(self._source_directory, 'nyx/res/'),
                 Path(dest_hekate, 'res/'),
             ),
             'res_pak': (
                 Path(settings.defaults_directory, 'hekate/res.pak'),
-                Path(dest_hekate, 'res.pak'),
+                Path(dest_hekate, 'sys/res.pak'),
+            ),
+            'config': (
+                Path(settings.defaults_directory, 'hekate/hekate_ipl.ini'),
+                Path(dest_hekate, 'hekate_ipl.ini'),
             ),
         }
         self._copy_components(component_dict)
