@@ -4,13 +4,13 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-COMPONENT_NAME = 'sys-clk'
-COMPONENT_VERSION = 'v0.12.3'
-COMPONENT_COMMIT_OR_TAG = '5e78c80'
+COMPONENT_NAME = 'hekate'
+COMPONENT_VERSION = 'v5.0.0'
+COMPONENT_COMMIT_OR_TAG = 'a62c77b'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
-class SysCLKComponent(NXSDComponent):
+class HekateComponent(NXSDComponent):
 
     def __init__(self):
         super().__init__()
@@ -23,20 +23,48 @@ class SysCLKComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
-        dest_conf = Path(install_directory, 'sdcard/config/')
+        dest_hekate = Path(install_directory, 'sdcard/bootloader2/')
 
         component_dict = {
-            'titles': (
-                Path(self._source_directory, 'out/sys-clk.nsp'),
-                Path(dest_ams, 'titles/00FF0000636C6BFF/exefs.nsp'),
+            'payload': (
+                Path(self._source_directory, 'output/hekate.bin'),
+                [
+                    Path(install_directory, 'payloads/hekate-{}.bin'.format(COMPONENT_VERSION)),
+                    Path(dest_hekate, 'update.bin'),
+                ],
+            ),
+            'nyx': (
+                Path(self._source_directory, 'output/nyx.bin'),
+                Path(dest_hekate, 'sys/nyx.bin'),
+            ),
+            'sleep-module': (
+                Path(self._source_directory, 'output/libsys_lp0.bso'),
+                Path(dest_hekate, 'sys/libsys_lp0.bso'),
+            ),
+            'minerva': (
+                Path(self._source_directory, 'output/libsys_minerva.bso'),
+                Path(dest_hekate, 'sys/libsys_minerva.bso'),
             ),
             'config': (
-                Path(settings.defaults_directory, 'sys-clk/config.ini'),
-                Path(dest_conf, 'sys-clk/config.ini'),
+                Path(settings.defaults_directory, 'hekate/hekate_ipl.ini'),
+                Path(dest_hekate, 'hekate_ipl.ini'),
+            ),
+            'res': (
+                Path(settings.defaults_directory, 'hekate/nyx/res/'),
+                Path(dest_hekate, 'res/'),
+            ),
+            'res_pak': (
+                Path(settings.defaults_directory, 'hekate/res.pak'),
+                Path(dest_hekate, 'res.pak'),
             ),
         }
         self._copy_components(component_dict)
+
+        ini_dir = Path(dest_hekate, 'ini')
+        ini_dir.mkdir(parents=True, exist_ok=True)
+
+        payloads_dir = Path(dest_hekate, 'payloads')
+        payloads_dir.mkdir(parents=True, exist_ok=True)
 
     def clean(self):
         with util.change_dir(self._source_directory):
@@ -66,4 +94,4 @@ class SysCLKComponent(NXSDComponent):
 
 
 def get_component():
-    return SysCLKComponent()
+    return HekateComponent()
