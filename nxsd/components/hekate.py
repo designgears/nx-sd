@@ -24,6 +24,7 @@ class HekateComponent(NXSDComponent):
         self._build()
 
         dest_hekate = Path(install_directory, 'sdcard/bootloader2/')
+        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
 
         component_dict = {
             'payload': (
@@ -31,6 +32,7 @@ class HekateComponent(NXSDComponent):
                 [
                     Path(install_directory, 'payloads/hekate-{}.bin'.format(COMPONENT_VERSION)),
                     Path(dest_hekate, 'update.bin'),
+                    Path(dest_ams, 'reboot_payload.bin'),
                 ],
             ),
             'nyx': (
@@ -52,6 +54,10 @@ class HekateComponent(NXSDComponent):
             'res_pak': (
                 Path(settings.defaults_directory, 'hekate/res.pak'),
                 Path(dest_hekate, 'sys/res.pak'),
+            ),
+            'patches': (
+                Path(settings.defaults_directory, 'hekate/patches.ini'),
+                Path(dest_hekate, 'patches.ini'),
             ),
             'config': (
                 Path(settings.defaults_directory, 'hekate/hekate_ipl.ini'),

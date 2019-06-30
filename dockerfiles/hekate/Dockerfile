@@ -1,9 +1,4 @@
-FROM devkitpro/devkita64:20190502
-
-RUN dkp-pacman -Syyu --noconfirm --needed \
-    devkitARM \
-    devkitarm-rules && \
-    dkp-pacman -Scc --noconfirm
+FROM devkitpro/devkita64_devkitarm:20190510
 
 ENV DEVKITARM=${DEVKITPRO}/devkitARM
 
