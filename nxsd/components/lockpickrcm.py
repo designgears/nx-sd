@@ -26,8 +26,10 @@ class LockpickRCMComponent(NXSDComponent):
         component_dict = {
             'lockpick-rcm': (
                 Path(self._source_directory, 'output/Lockpick_RCM.bin'),
-                Path(install_directory, 'payloads/Lockpick_RCM.bin'),
-                Path(dest_hekate, 'payloads/Lockpick_RCM.bin'),
+                [
+                    Path(install_directory, 'payloads/Lockpick_RCM.bin'),
+                    Path(dest_hekate, 'payloads/Lockpick_RCM.bin'),
+                ],
             ),
         }
         self._copy_components(component_dict)
