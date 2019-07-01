@@ -5,7 +5,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Atmosphere'
 COMPONENT_VERSION = 'v0.9.2'
-COMPONENT_COMMIT_OR_TAG = 'e561919'
+COMPONENT_COMMIT_OR_TAG = '6f85b11'
 COMPONENT_BRANCH = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
