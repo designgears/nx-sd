@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'hekate'
 COMPONENT_VERSION = 'v5.0.0'
-COMPONENT_COMMIT_OR_TAG = 'a62c77b'
+COMPONENT_COMMIT_OR_TAG = '8d89ec7'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 

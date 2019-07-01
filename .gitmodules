@@ -54,3 +54,4 @@
 	path = components/hekate
 	url = https://github.com/designgears/hekate.git
 	ignore = dirty
+	
