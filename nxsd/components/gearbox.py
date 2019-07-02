@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Gearbox'
 COMPONENT_VERSION = 'v2.0.0'
-COMPONENT_COMMIT_OR_TAG = '3b13ac8'
+COMPONENT_COMMIT_OR_TAG = 'cbee889'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
