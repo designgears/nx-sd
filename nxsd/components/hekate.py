@@ -63,6 +63,10 @@ class HekateComponent(NXSDComponent):
                 Path(settings.defaults_directory, 'hekate/hekate_ipl.ini'),
                 Path(dest_hekate, 'hekate_ipl.ini'),
             ),
+            'res_extra': (
+                Path(settings.defaults_directory, 'hekate/res/'),
+                Path(dest_hekate, 'res/'),
+            ),
         }
         self._copy_components(component_dict)
 
