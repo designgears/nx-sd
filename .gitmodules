@@ -42,10 +42,6 @@
 	path = components/sys-ftpd
 	url = https://github.com/designgears/sys-ftpd.git
 	ignore = dirty
-[submodule "components/Toolbox"]
-	path = components/Toolbox
-	url = https://github.com/designgears/Kosmos-Toolbox.git
-	ignore = dirty
 [submodule "components/EdiZon"]
 	path = components/EdiZon
 	ignore = dirty
@@ -54,4 +50,7 @@
 	path = components/hekate
 	url = https://github.com/designgears/hekate.git
 	ignore = dirty
-	
+[submodule "components/Gearbox"]
+	path = components/Gearbox
+	url = https://github.com/designgears/Kosmos-Toolbox.git
+	ignore = dirty

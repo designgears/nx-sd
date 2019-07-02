@@ -4,6 +4,6 @@ RUN dkp-pacman -Scc --noconfirm
 
 ENV DEVKITARM=${DEVKITPRO}/devkitARM
 
-WORKDIR /developer/components/Toolbox
+WORKDIR /developer/components/Gearbox
 
 ENTRYPOINT ["make", "-j8"]
