@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'sys-ftpd'
 COMPONENT_VERSION = 'v1.0' # fake version, doesn't seem to have a version
-COMPONENT_COMMIT_OR_TAG = '0fc1fef'
+COMPONENT_COMMIT_OR_TAG = '6e4993f'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -32,7 +32,7 @@ class SysftpdComponent(NXSDComponent):
                 Path(dest_ams, 'titles/420000000000000E/exefs.nsp'),
             ),
             'config': (
-                Path(self._source_directory, 'sd_card/ftpd/'),
+                Path(self._source_directory, 'sd_card/config/sys-ftpd/'),
                 Path(dest_sd, 'config/sys-ftpd/'),
             ),
         }
@@ -58,6 +58,7 @@ class SysftpdComponent(NXSDComponent):
     def _build_prepare(self):
         with util.change_dir(self._source_directory):
             build_commands = [
+                'git clean -fdx',
                 'git fetch origin',
                 'git checkout {c} && git reset --hard {c}'.format(c=COMPONENT_COMMIT_OR_TAG),
                 'git submodule update --init --recursive',
