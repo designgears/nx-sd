@@ -1,4 +1,4 @@
-FROM devkitpro/devkita64:latest
+FROM devkitpro/devkita64_devkitarm:20190510
 
 COPY ./sept-secondary_00.enc /sept-secondary_00.enc
 COPY ./sept-secondary_01.enc /sept-secondary_01.enc
@@ -19,8 +19,6 @@ ENV SEPT_01_ENC_PATH="/sept-secondary_01.enc"
 RUN git clone https://github.com/switchbrew/libnx.git
 
 WORKDIR /libnx
-
-RUN git reset --hard 950e1ec
 
 RUN make -j8 install
 
