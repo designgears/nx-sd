@@ -5,8 +5,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'hekate'
-COMPONENT_VERSION = 'v5.0.0'
-COMPONENT_COMMIT_OR_TAG = '8d89ec7'
+COMPONENT_VERSION = 'v5.0.1'
+COMPONENT_COMMIT_OR_TAG = '6d8daeb'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -39,6 +39,10 @@ class HekateComponent(NXSDComponent):
                 Path(self._source_directory, 'output/nyx.bin'),
                 Path(dest_hekate, 'sys/nyx.bin'),
             ),
+            'emummc': (
+                Path(self._source_directory, 'output/emummc.kipm'),
+                Path(dest_hekate, 'sys/emummc.kipm'),
+            ),
             'sleep-module': (
                 Path(self._source_directory, 'output/libsys_lp0.bso'),
                 Path(dest_hekate, 'sys/libsys_lp0.bso'),
@@ -48,7 +52,7 @@ class HekateComponent(NXSDComponent):
                 Path(dest_hekate, 'sys/libsys_minerva.bso'),
             ),
             'res': (
-                Path(self._source_directory, 'nyx/res/'),
+                Path(self._source_directory, 'nyx/resources/'),
                 Path(dest_hekate, 'res/'),
             ),
             'res_pak': (
