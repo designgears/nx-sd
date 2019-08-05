@@ -53,3 +53,8 @@
 [submodule "components/sys-ftpd"]
 	path = components/sys-ftpd
 	url = https://github.com/jakibaki/sys-ftpd.git
+	ignore = dirty
+[submodule "components/incognito"]
+	path = components/incognito
+	url = https://github.com/blawar/incognito.git
+	ignore = dirty
