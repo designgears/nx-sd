@@ -12,6 +12,7 @@ from nxsd.components import nxhbmenu
 from nxsd.components import edizon
 from nxsd.components import lockpickrcm
 from nxsd.components import ldnmitm
+from nxsd.components import incognito
 from nxsd.components import sysclk
 from nxsd.components import sysftpd
 from nxsd.components import goldleaf
@@ -41,6 +42,7 @@ ADDON_COMPONENTS = {
     'edizon': edizon,
     'goldleaf': goldleaf,
     'nxshell': nxshell,
+    'incognito': incognito,
 }
 
 OPTIONAL_COMPONENTS = {
