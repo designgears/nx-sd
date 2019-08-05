@@ -3,3 +3,4 @@
 cd /
 
 make -j8
+make
