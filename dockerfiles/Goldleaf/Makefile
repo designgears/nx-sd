@@ -1,9 +1,9 @@
-COMPONENTS := libnx-Goldleaf Goldleaf
+COMPONENTS := libnx Goldleaf
 
 all: $(COMPONENTS)
 
-libnx-Goldleaf:
-	$(MAKE) -C /developer/components/Goldleaf/libnx-Goldleaf/nx install
+libnx:
+	$(MAKE) -C /developer/components/Goldleaf/libnx install
 
 Goldleaf:
 	$(MAKE) -C /developer/components/Goldleaf/Goldleaf
