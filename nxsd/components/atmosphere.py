@@ -5,7 +5,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Atmosphere'
 COMPONENT_VERSION = 'v0.9.2'
-COMPONENT_COMMIT_OR_TAG = 'dc4dbe2'
+COMPONENT_COMMIT_OR_TAG = '5c140b4'
 COMPONENT_BRANCH = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
@@ -60,6 +60,10 @@ class AtmosphereComponent(NXSDComponent):
                     Path(dest_ams, 'fusee-secondary.bin'),
                     Path(dest_sept, 'payload.bin'),
                 ],
+            ),
+            'fusee-mtc': (
+                Path(self._source_directory, 'fusee/fusee-mtc/fusee-mtc.bin'),
+                Path(dest_ams, 'fusee-mtc.bin'),
             ),
             'hbl-html': (
                 Path(self._source_directory, 'common/defaults/hbl_html/'),
