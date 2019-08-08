@@ -1,13 +1,10 @@
-FROM devkitpro/devkita64_devkitarm:20190510
-
-ENV DEVKITARM=${DEVKITPRO}/devkitARM
+FROM devkitpro/devkita64_devkitarm:20190720
 
 COPY ./compile.sh /compile.sh
 
 RUN chmod a+x /compile.sh
 
-RUN dkp-pacman -Syyu --noconfirm --needed && \
-    dkp-pacman -Scc --noconfirm
+RUN dkp-pacman -Scc --noconfirm
 
 RUN apt update && \
     apt -y install gcc python

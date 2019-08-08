@@ -1,11 +1,6 @@
-FROM devkitpro/devkita64:20190502
+FROM devkitpro/devkita64:20190720
 
-RUN dkp-pacman -Syyu --noconfirm \
-    switch-libwebp && \
-    dkp-pacman -Scc --noconfirm
-
-ENV DEVKITARM=${DEVKITPRO}/devkitARM
-ENV DEVKITA64=${DEVKITPRO}/devkitA64
+RUN dkp-pacman -Scc --noconfirm
 
 WORKDIR /developer/components/NX-Shell
 

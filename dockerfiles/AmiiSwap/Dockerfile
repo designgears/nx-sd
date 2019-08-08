@@ -1,15 +1,7 @@
-FROM devkitpro/devkita64:20190502
+FROM devkitpro/devkita64:20190720
 
-COPY ./compile.sh /compile.sh
-
-RUN chmod a+x /compile.sh
-
-RUN dkp-pacman -Syyu --noconfirm \
-    switch-libwebp && \
-    dkp-pacman -Scc --noconfirm
-
-ENV DEVKITARM=${DEVKITPRO}/devkitARM
+RUN dkp-pacman -Scc --noconfirm
 
 WORKDIR /developer/components/AmiiSwap
 
-ENTRYPOINT ["/compile.sh"]
+ENTRYPOINT ["make", "-j8"]

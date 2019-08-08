@@ -1,11 +1,6 @@
-FROM devkitpro/devkita64:20190502
+FROM devkitpro/devkita64_devkitarm:20190720
 
-RUN dkp-pacman -Syyu --noconfirm --needed \
-    devkitARM \
-    devkitarm-rules && \
-    dkp-pacman -Scc --noconfirm
-
-ENV DEVKITARM=${DEVKITPRO}/devkitARM
+RUN dkp-pacman -Scc --noconfirm
 
 WORKDIR /developer/components/Lockpick_RCM
 

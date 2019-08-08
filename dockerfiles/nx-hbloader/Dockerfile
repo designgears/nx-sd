@@ -1,4 +1,4 @@
-FROM devkitpro/devkita64:20190502
+FROM devkitpro/devkita64:20190720
 
 RUN dkp-pacman -Scc --noconfirm
 
@@ -6,9 +6,9 @@ RUN git clone https://github.com/switchbrew/libnx.git
 
 WORKDIR /libnx
 
-RUN make -j8 install
+RUN git reset --hard f5b24bd
 
-ENV DEVKITARM=${DEVKITPRO}/devkitARM
+RUN make -j8 install
 
 WORKDIR /developer/components/nx-hbloader
 

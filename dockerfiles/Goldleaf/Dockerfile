@@ -1,18 +1,11 @@
-FROM devkitpro/devkita64:latest
+FROM devkitpro/devkita64:20190720
 
 COPY ./Makefile /Makefile
 COPY ./compile.sh /compile.sh
 
 RUN chmod a+x /compile.sh
 
-RUN dkp-pacman -Syyu --noconfirm --needed \
-        devkitA64 \
-        devkitARM \
-        devkitarm-rules \
-        switch-freetype \
-        switch-portlibs \
-        switch-dev && \
-    dkp-pacman -Scc --noconfirm
+RUN dkp-pacman -Scc --noconfirm
 
 ENV DEVKITARM=${DEVKITPRO}/devkitARM
 
