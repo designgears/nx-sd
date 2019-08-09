@@ -58,3 +58,7 @@
 	path = components/Toolbox
 	url = https://github.com/designgears/Kosmos-Toolbox.git
 	ignore = dirty
+[submodule "components/hid-mitm"]
+	path = components/hid-mitm
+	url = https://github.com/jakibaki/hid-mitm.git
+	ignore = dirty

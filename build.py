@@ -21,6 +21,7 @@ from nxsd.components import incognito
 from nxsd.components import amiiswap
 from nxsd.components import emuiibo
 from nxsd.components import toolbox
+from nxsd.components import hidmitm
 from nxsd.components import sigpatches
 
 CORE_COMPONENTS = {
@@ -37,6 +38,7 @@ ADDON_COMPONENTS = {
     'emuiibo': emuiibo,
     'ldnmitm': ldnmitm,
     'sysclk': sysclk,
+    'hidmitm': hidmitm,
     'sysftpd': sysftpd,
     'amiiswap': amiiswap,
     'edizon': edizon,
