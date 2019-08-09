@@ -20,7 +20,7 @@ from nxsd.components import nxshell
 from nxsd.components import incognito
 from nxsd.components import amiiswap
 from nxsd.components import emuiibo
-from nxsd.components import gearbox
+from nxsd.components import toolbox
 from nxsd.components import sigpatches
 
 CORE_COMPONENTS = {
@@ -29,8 +29,8 @@ CORE_COMPONENTS = {
     'nxhbloader': nxhbloader,
     'nxhbmenu': nxhbmenu,
     'lockpickrcm': lockpickrcm,
-    'gearbox': gearbox,
     'sigpatches': sigpatches,
+    'toolbox': toolbox,
 }
 
 ADDON_COMPONENTS = {

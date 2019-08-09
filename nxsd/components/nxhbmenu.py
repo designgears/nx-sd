@@ -4,8 +4,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'nx-hbmenu'
-COMPONENT_VERSION = 'v3.0.1'
-COMPONENT_COMMIT_OR_TAG = 'ea4db4f'
+COMPONENT_VERSION = 'v3.1.0'
+COMPONENT_COMMIT_OR_TAG = 'd7c37c6'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 

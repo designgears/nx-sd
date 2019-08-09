@@ -4,13 +4,13 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-COMPONENT_NAME = 'Gearbox'
+COMPONENT_NAME = 'Toolbox'
 COMPONENT_VERSION = 'v2.0.0'
-COMPONENT_COMMIT_OR_TAG = 'ea27d5d'
+COMPONENT_COMMIT_OR_TAG = 'f2dedb4'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
-class GearboxComponent(NXSDComponent):
+class ToolboxComponent(NXSDComponent):
 
     def __init__(self):
         super().__init__()
@@ -27,12 +27,12 @@ class GearboxComponent(NXSDComponent):
 
         component_dict = {
             'app': (
-                Path(self._source_directory, 'out/Gearbox.nro'),
-                Path(dest_nro, 'Gearbox/Gearbox.nro'),
+                Path(self._source_directory, 'out/Toolbox.nro'),
+                Path(dest_nro, 'Toolbox/Toolbox.nro'),
             ),
             'config': (
-                Path(settings.defaults_directory, 'gearbox/config.json'),
-                Path(dest_nro, 'Gearbox/config.json'),
+                Path(settings.defaults_directory, 'toolbox/config.json'),
+                Path(dest_nro, 'Toolbox/config.json'),
             ),
         }
         self._copy_components(component_dict)
@@ -65,4 +65,4 @@ class GearboxComponent(NXSDComponent):
 
 
 def get_component():
-    return GearboxComponent()
+    return ToolboxComponent()
