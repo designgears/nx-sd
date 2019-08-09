@@ -28,12 +28,17 @@
 		{
 			"name"  : "ldn_mitm",
 			"tid"   : "4200000000000010",
-			"requires_reboot": false
+			"requires_reboot": true
 		},
 		{
 			"name"  : "emuiibo",
 			"tid"   : "0100000000000352",
 			"requires_reboot": true
+		},
+		{
+			"name"  : "ojds-nx",
+			"tid"   : "0100000000000901",
+			"requires_reboot": false
 		}
 	]
 }
