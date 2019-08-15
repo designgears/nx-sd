@@ -8,7 +8,7 @@ class NXSDConfig(object):
 
 
 settings = NXSDConfig(
-    build_directory='build/',
+    build_directory='out/',
     components_directory='components/',
     defaults_directory='defaults/',
     dockerfiles_directory='dockerfiles/',

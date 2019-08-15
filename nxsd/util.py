@@ -4,9 +4,6 @@ import nxsd
 import os
 from subprocess import Popen, PIPE, STDOUT
 
-# import docker
-# client = docker.DockerClient(base_url='tcp://127.0.0.1:2375', version='auto', timeout=120)
-
 from contextlib import contextmanager
 from pathlib import Path
 
@@ -42,20 +39,3 @@ def dock_worker(name):
     ]
     execute_shell_commands(build_commands)
 
-# def dock_worker_wip(name):
-#     client.images.build(path='.', tag=name, rm=True)
-#     container = client.containers.run(
-#         image=name,
-#         name=name,
-#         auto_remove=True,
-#         stderr=True,
-#         detach=True,
-#         volumes={
-#             PROJECT_PATH: {
-#                 'bind': '/developer',
-#                 'mode': 'rw',
-#             },
-#         },
-#     )
-
-#     container.wait()
