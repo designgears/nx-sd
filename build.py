@@ -22,6 +22,7 @@ from nxsd.components import amiiswap
 from nxsd.components import emuiibo
 from nxsd.components import toolbox
 from nxsd.components import sigpatches
+from nxsd.components import sysclkeditor
 
 CORE_COMPONENTS = {
     'hekate': hekate,
@@ -42,6 +43,7 @@ ADDON_COMPONENTS = {
     'edizon': edizon,
     'goldleaf': goldleaf,
     'nxshell': nxshell,
+    'sysclkeditor': sysclkeditor,
     'incognito': incognito,
 }
 
