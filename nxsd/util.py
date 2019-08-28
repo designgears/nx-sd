@@ -35,17 +35,17 @@ def component_clean(name):
         'git submodule foreach --recursive git reset --hard',
         'git reset --hard',
         'git submodule update --init --recursive',
-        'docker image ls | grep {d} -c > /dev/null && docker image rm {d} || echo "No image to delete."'.format(
+        'docker inspect "{d}" > /dev/null 2>&1 && docker image rm {d} || echo "No image to delete."'.format(
             d=name),
     ]
     execute_shell_commands(build_commands)
 
 def dock_worker(name):
     build_commands = [
-        'docker image ls | grep {d} -c > /dev/null && echo "Using existing image." || docker build . -t {d}:latest'.format(
+        'docker inspect "{d}" > /dev/null 2>&1 && echo "Using existing image." || docker build . -t {d}:latest'.format(
                 d=name),
-        'docker stop {d}'.format(d=name),
-        'docker rm {d}'.format(d=name),
+        'docker container inspect "{d}" > /dev/null 2>&1 && docker stop {d} || echo "Container not running."'.format(d=name),
+        'docker container inspect "{d}" > /dev/null 2>&1 && docker rm {d} || echo "Container not found."'.format(d=name),
         'docker run --rm -a stdout -a stderr --name {d} --mount src="{bd}",target=/developer,type=bind {d}:latest'.format(
                 d=name, bd=PROJECT_PATH),
     ]
