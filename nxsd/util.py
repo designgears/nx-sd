@@ -28,14 +28,26 @@ def execute_shell_commands(command_list):
             for line in p.stdout:
                 nxsd.logger.log(logging.DEBUG, '%s', line.rstrip())
 
+def component_clean(name):
+    build_commands = [
+        'git clean -fdx',
+        'git submodule foreach --recursive git clean -fdx',
+        'git submodule foreach --recursive git reset --hard',
+        'git reset --hard',
+        'git submodule update --init --recursive',
+        'docker image ls | grep {d} -c > /dev/null && docker image rm {d} || echo "No image to delete."'.format(
+            d=name),
+    ]
+    execute_shell_commands(build_commands)
 
 def dock_worker(name):
     build_commands = [
-        'docker build . -t {d}:latest'.format(d=name),
+        'docker image ls | grep {d} -c > /dev/null && echo "Using existing image." || docker build . -t {d}:latest'.format(
+                d=name),
         'docker stop {d}'.format(d=name),
         'docker rm {d}'.format(d=name),
         'docker run --rm -a stdout -a stderr --name {d} --mount src="{bd}",target=/developer,type=bind {d}:latest'.format(
-            d=name, bd=PROJECT_PATH),
+                d=name, bd=PROJECT_PATH),
     ]
     execute_shell_commands(build_commands)
 

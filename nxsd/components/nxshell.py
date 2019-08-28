@@ -35,12 +35,7 @@ class NXShellComponent(NXSDComponent):
 
     def clean(self):
         with util.change_dir(self._source_directory):
-            build_commands = [
-                'git clean -fdx',
-                'git submodule foreach --recursive git clean -fdx',
-                'docker image rm {d}'.format(d=DOCKER_IMAGE_NAME),
-            ]
-            util.execute_shell_commands(build_commands)
+            util.component_clean(DOCKER_IMAGE_NAME)
 
     def _build(self):
         self._build_prepare()
