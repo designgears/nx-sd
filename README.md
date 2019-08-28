@@ -1,6 +1,6 @@
 ## Building
 
-1. Install [Docker](https://hub.docker.com/search/?type=edition&offering=community) and [Python 3.7](https://www.python.org/downloads/).
+1. Install [Docker](https://hub.docker.com/search/?type=edition&offering=community) and [Python 3.7](https://www.python.org/downloads/). ([WSL](https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly) or Linux VM needed for Windows)
 
 2. Clone this repo and all submodules recursively.
 
