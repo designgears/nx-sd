@@ -5,7 +5,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'ldn_mitm'
 COMPONENT_VERSION = 'v1.2.3'
-COMPONENT_COMMIT_OR_TAG = 'v1.2.3'
+COMPONENT_COMMIT_OR_TAG = 'eeff793'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
