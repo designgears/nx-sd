@@ -24,11 +24,16 @@ class SysCLKComponent(NXSDComponent):
         self._build()
 
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
+        dest_conf = Path(install_directory, 'sdcard/config/')
 
         component_dict = {
             'titles': (
                 Path(self._source_directory, 'out/sys-clk.nsp'),
                 Path(dest_ams, 'titles/00FF0000636C6BFF/exefs.nsp'),
+            ),
+            'config': (
+                Path(settings.defaults_directory, 'sys-clk/config.ini'),
+                Path(dest_conf, 'sys-clk/config.ini'),
             ),
         }
         self._copy_components(component_dict)
