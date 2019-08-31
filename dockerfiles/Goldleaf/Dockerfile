@@ -1,11 +1,9 @@
 FROM devkitpro/devkita64:20190720
 
-COPY ./compile.sh /compile.sh
-
-RUN chmod a+x /compile.sh
-
 RUN dkp-pacman -Scc --noconfirm
 
 ENV DEVKITARM=${DEVKITPRO}/devkitARM
 
-ENTRYPOINT ["/compile.sh"]
+WORKDIR /developer/components/Goldleaf/Goldleaf
+
+ENTRYPOINT ["make", "-j8"]

@@ -40,7 +40,7 @@ class SysCLKComponent(NXSDComponent):
 
     def clean(self):
         with util.change_dir(self._source_directory):
-            util.component_clean(DOCKER_IMAGE_NAME)
+            util.clean_component(DOCKER_IMAGE_NAME, COMPONENT_COMMIT_OR_TAG)
 
     def _build(self):
         self._build_prepare()

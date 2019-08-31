@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Goldleaf'
 COMPONENT_VERSION = 'v0.7-dev'
-COMPONENT_COMMIT_OR_TAG = '6116775'
+COMPONENT_COMMIT_OR_TAG = '5db7a9c'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -35,7 +35,7 @@ class GoldleafComponent(NXSDComponent):
 
     def clean(self):
         with util.change_dir(self._source_directory):
-            util.component_clean(DOCKER_IMAGE_NAME)
+            util.clean_component(DOCKER_IMAGE_NAME, COMPONENT_COMMIT_OR_TAG)
 
     def _build(self):
         self._build_prepare()

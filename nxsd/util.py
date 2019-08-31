@@ -28,12 +28,12 @@ def execute_shell_commands(command_list):
             for line in p.stdout:
                 nxsd.logger.log(logging.DEBUG, '%s', line.rstrip())
 
-def component_clean(name):
+def clean_component(name, commit):
     build_commands = [
         'git clean -fdx',
         'git submodule foreach --recursive git clean -fdx',
         'git submodule foreach --recursive git reset --hard',
-        'git reset --hard',
+        'git reset --hard {c}'.format(c=commit),
         'git submodule update --init --recursive',
         'docker inspect "{d}" > /dev/null 2>&1 && docker image rm {d} || echo "No image to delete."'.format(
             d=name),
