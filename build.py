@@ -25,30 +25,29 @@ from nxsd.components import sigpatches
 from nxsd.components import sysclkeditor
 
 CORE_COMPONENTS = {
-    'hekate': hekate,
-    'atmosphere': atmosphere,
-    'nxhbloader': nxhbloader,
-    'nxhbmenu': nxhbmenu,
-    'lockpickrcm': lockpickrcm,
-    'sigpatches': sigpatches,
-    'toolbox': toolbox,
+    'hekate':       hekate,
+    'atmosphere':   atmosphere,
+    'nxhbloader':   nxhbloader,
+    'nxhbmenu':     nxhbmenu,
+    'lockpickrcm':  lockpickrcm,
+    'sigpatches':   sigpatches,
+    'toolbox':      toolbox,
 }
 
 ADDON_COMPONENTS = {
-    'emuiibo': emuiibo,
-    'ldnmitm': ldnmitm,
-    'sysclk': sysclk,
-    'sysftpd': sysftpd,
-    'amiiswap': amiiswap,
-    'edizon': edizon,
-    'goldleaf': goldleaf,
-    'nxshell': nxshell,
-    'sysclkeditor': sysclkeditor,
-    'incognito': incognito,
+    'emuiibo':      emuiibo,
+    'ldnmitm':      ldnmitm,
+    'sysftpd':      sysftpd,
+    'edizon':       edizon,
+    'goldleaf':     goldleaf,
+    'sysclk':       sysclk,
+    'sysclkeditor': sysclkeditor
 }
 
 OPTIONAL_COMPONENTS = {
-    'incognito': incognito
+    'incognito':    incognito,
+    'nxshell':      nxshell,
+    'amiiswap':     amiiswap
 }
 
 ALL_COMPONENTS = {
