@@ -31,13 +31,10 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 
 | Component                                                 | Description |
 | --------------------------------------------------------- | ----------- |
-| [AmiiSwap](https://github.com/FuryBaguette/AmiiSwap)      | Nintendo Switch GUI Amiibo Manager homebrew for emulation with Emuiibo |
 | [EdiZon](https://github.com/WerWolv/EdiZon)               | Save manager, editing tool, and memory trainer |
 | [emuiibo](https://github.com/XorTroll/emuiibo)            | MitM'ing NFP services for Amiibo emulation! |
 | [Goldleaf](https://github.com/XorTroll/Goldleaf)          | Nintendo Switch multipurpose homebrew tool |
-| [incognito](https://github.com/blawar/incognito)          | Wipes personal information from your Nintendo Switch |
 | [ldn_mitm](https://github.com/spacemeowx2/ldn_mitm)       | Play local wireless supported games online |
-| [NX-Shell](https://github.com/joel16/NX-Shell)            | 3DShell port for the Nintendo Switch |
 | [sys-clk-Editor](https://github.com/SunTheCourier/sys-clk-Editor) | Editor for your sys-clk configuration! |
 | [sys-CLK](https://github.com/retronx-team/sys-clk)        | Overclocking/underclocking system module |
 | [sys-ftpd](https://github.com/designgears/sys-ftpd)       | Ftpd as a Nintendo Switch sysmodule |
@@ -46,3 +43,6 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 
 | Component                                                 | Description |
 | --------------------------------------------------------- | ----------- |
+| [AmiiSwap](https://github.com/FuryBaguette/AmiiSwap)      | Nintendo Switch GUI Amiibo Manager homebrew for emulation with Emuiibo |
+| [incognito](https://github.com/blawar/incognito)          | Wipes personal information from your Nintendo Switch |
+| [NX-Shell](https://github.com/joel16/NX-Shell)            | 3DShell port for the Nintendo Switch |
