@@ -2,6 +2,8 @@ import nxsd
 import shutil
 import logging
 import git
+import os
+import glob
 
 from nxsd import util
 from pathlib import Path
@@ -43,6 +45,8 @@ class NXSDPackage(object):
 
     def clean(self):
         self._cleanup_build_directory()
+
+        [os.remove(x) for x in glob.glob("out/"+self.name+"*.zip")]
 
         for component_module in self.components:
             component = component_module.get_component()
