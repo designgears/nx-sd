@@ -27,6 +27,7 @@ from nxsd.components import sysclkeditor
 CORE_COMPONENTS = {
     'hekate':       hekate,
     'atmosphere':   atmosphere,
+    'incognito':    incognito,
     'nxhbloader':   nxhbloader,
     'nxhbmenu':     nxhbmenu,
     'lockpickrcm':  lockpickrcm,
@@ -39,15 +40,14 @@ ADDON_COMPONENTS = {
     'ldnmitm':      ldnmitm,
     'sysftpd':      sysftpd,
     'edizon':       edizon,
+    'nxshell':      nxshell,
     'goldleaf':     goldleaf,
     'sysclk':       sysclk,
-    'sysclkeditor': sysclkeditor
+    'sysclkeditor': sysclkeditor,
 }
 
 OPTIONAL_COMPONENTS = {
-    'incognito':    incognito,
-    'nxshell':      nxshell,
-    'amiiswap':     amiiswap
+    'amiiswap':     amiiswap,
 }
 
 ALL_COMPONENTS = {
