@@ -5,7 +5,7 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'incognito'
-COMPONENT_VERSION = 'v1.3'
+COMPONENT_VERSION = 'v1.4'
 COMPONENT_COMMIT_OR_TAG = 'd365cb9'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
