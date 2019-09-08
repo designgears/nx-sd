@@ -97,11 +97,11 @@ class AtmosphereComponent(NXSDComponent):
                 Path(self._dockerfiles_directory, 'sept-secondary_01.enc'),
                 Path(dest_sept, 'sept-secondary_01.enc'),
             ),
-            'boot2.flag': (
-                Path(settings.defaults_directory, 'boot2.flag'),
+            'boot_flags': (
+                Path(settings.defaults_directory, 'stub.flag'),
                 [
-                    Path(dest_ams, 'titles/0100000000000032/flags/boot2.flag'),
-                    Path(dest_ams, 'titles/0100000000000037/flags/boot2.flag'),
+                    Path(dest_ams, 'titles/0100000000000032/flags/boot2.flag'), # eclct.stub
+                    Path(dest_ams, 'titles/0100000000000037/flags/boot2.flag'), # ro
                 ],
             ),
             'bootlogo': (
