@@ -40,8 +40,8 @@
 	ignore = dirty
 [submodule "components/EdiZon"]
 	path = components/EdiZon
-	ignore = dirty
 	url = https://github.com/designgears/EdiZon.git
+	ignore = dirty
 [submodule "components/sys-ftpd"]
 	path = components/sys-ftpd
 	url = https://github.com/jakibaki/sys-ftpd.git
@@ -61,4 +61,8 @@
 [submodule "components/hekate"]
 	path = components/hekate
 	url = https://github.com/CTCaer/hekate.git
+	ignore = dirty
+[submodule "components/Noexes"]
+	path = components/Noexes
+	url = https://github.com/KranKRival/Noexes.git
 	ignore = dirty
