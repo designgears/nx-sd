@@ -39,6 +39,11 @@
 			"name"  : "ojds-nx",
 			"tid"   : "0100000000000901",
 			"requires_reboot": false
+		},
+		{
+			"name"  : "noexes",
+			"tid"   : "0100000000000038",
+			"requires_reboot": true
 		}
 	]
 }
