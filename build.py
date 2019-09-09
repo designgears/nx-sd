@@ -23,6 +23,7 @@ from nxsd.components import emuiibo
 from nxsd.components import toolbox
 from nxsd.components import sysclkeditor
 from nxsd.components import noexes
+from nxsd.components import checkpoint
 
 CORE_COMPONENTS = {
     'hekate':       hekate,
@@ -48,6 +49,7 @@ ADDON_COMPONENTS = {
 OPTIONAL_COMPONENTS = {
     'amiiswap':     amiiswap,
     'noexes':       noexes,
+    'checkpoint':   checkpoint,
 }
 
 ALL_COMPONENTS = {

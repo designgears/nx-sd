@@ -66,3 +66,7 @@
 	path = components/Noexes
 	url = https://github.com/KranKRival/Noexes.git
 	ignore = dirty
+[submodule "components/Checkpoint"]
+	path = components/Checkpoint
+	url = https://github.com/FlagBrew/Checkpoint.git
+	ignore = dirty
