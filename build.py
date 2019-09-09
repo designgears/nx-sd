@@ -118,6 +118,7 @@ def clean(args):
 def get_package(component):
     nxsd_component = NXSDPackage(
         name=component,
+        build_type='component',
         build_directory='out/{}/'.format(component),
         output_filename='out/{}.zip'.format(component),
     )
@@ -128,6 +129,7 @@ def get_package(component):
 def get_packages():
     nxsd_core = NXSDPackage(
         name='nxsd-core',
+        build_type='package',
         build_directory='out/core/',
         output_filename='out/nxsd-core.zip',
     )
@@ -135,6 +137,7 @@ def get_packages():
 
     nxsd_addon = NXSDPackage(
         name='nxsd-addon',
+        build_type='package',
         build_directory='out/addon/',
         output_filename='out/nxsd-addon.zip',
     )

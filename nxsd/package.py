@@ -11,8 +11,9 @@ from pathlib import Path
 
 class NXSDPackage(object):
 
-    def __init__(self, name, build_directory, output_filename):
+    def __init__(self, name, build_type, build_directory, output_filename):
         self.name = name
+        self.build_type = build_type
         self.build_directory = build_directory
         self.output_filename = output_filename
 
@@ -25,7 +26,10 @@ class NXSDPackage(object):
         sha = ''
 
         try:
-            repo = git.Repo(search_parent_directories=True)
+            if self.build_type == 'package':
+                repo = git.Repo(search_parent_directories=True)
+            else:
+                repo = git.Repo(search_parent_directories=False, path='components/'+self.name)
             sha = '-'+repo.head.object.hexsha[:7]
         except:
             nxsd.logger.log(logging.DEBUG, '%s', 'Git repo not found, skipping SHA.')
@@ -46,8 +50,6 @@ class NXSDPackage(object):
     def clean(self):
         self._cleanup_build_directory()
 
-        [os.remove(x) for x in glob.glob("out/"+self.name+"*.zip")]
-
         for component_module in self.components:
             component = component_module.get_component()
             nxsd.logger.info('Cleaning {name} {version}...'.format(
@@ -57,6 +59,7 @@ class NXSDPackage(object):
         util.delete_if_exists(Path(self.output_filename))
 
     def _cleanup_build_directory(self):
+        [os.remove(x) for x in glob.glob("out/"+self.name+"*.zip")]
         build_dir = Path(self.build_directory)
         if build_dir.exists():
             shutil.rmtree(build_dir, ignore_errors=True)
