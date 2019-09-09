@@ -19,6 +19,7 @@ class AtmosphereComponent(NXSDComponent):
 
         self._source_directory = Path(settings.components_directory, COMPONENT_NAME)
         self._dockerfiles_directory = Path(settings.dockerfiles_directory, COMPONENT_NAME)
+        self._defaults_directory = Path(settings.defaults_directory, COMPONENT_NAME.lower())
 
     def install(self, install_directory):
         self._build()
@@ -74,7 +75,7 @@ class AtmosphereComponent(NXSDComponent):
                 Path(dest_ams, 'kip_patches/default_nogc/'),
             ),
             'bct.ini': (
-                Path(settings.defaults_directory, 'atmosphere/BCT.ini'),
+                Path(self._defaults_directory, 'BCT.ini'),
                 Path(dest_ams, 'BCT.ini'),
             ),
             'loader.ini': (
@@ -82,7 +83,7 @@ class AtmosphereComponent(NXSDComponent):
                 Path(dest_ams, 'loader.ini'),
             ),
             'system-settings': (
-                Path(settings.defaults_directory, 'atmosphere/system_settings.ini'),
+                Path(self._defaults_directory, 'system_settings.ini'),
                 Path(dest_ams, 'system_settings.ini'),
             ),
             'sept-primary': (
@@ -104,8 +105,16 @@ class AtmosphereComponent(NXSDComponent):
                     Path(dest_ams, 'titles/0100000000000037/flags/boot2.flag'), # ro
                 ],
             ),
+            'es-patches': (
+                Path(self._defaults_directory, 'sigpatches/es_patches/'),
+                Path(dest_ams, 'exefs_patches/es_patches/'),
+            ),
+            'fs-patches': (
+                Path(self._defaults_directory, 'sigpatches/fs_patches/'),
+                Path(dest_ams, 'kip_patches/fs_patches/'),
+            ),
             'bootlogo': (
-                Path(settings.defaults_directory, 'atmosphere/bootlogo.bmp'),
+                Path(self._defaults_directory, 'bootlogo.bmp'),
                 Path(dest_ams, 'bootlogo.bmp'),
             ),
         }

@@ -21,7 +21,6 @@ from nxsd.components import incognito
 from nxsd.components import amiiswap
 from nxsd.components import emuiibo
 from nxsd.components import toolbox
-from nxsd.components import sigpatches
 from nxsd.components import sysclkeditor
 from nxsd.components import noexes
 
@@ -32,7 +31,6 @@ CORE_COMPONENTS = {
     'nxhbloader':   nxhbloader,
     'nxhbmenu':     nxhbmenu,
     'lockpickrcm':  lockpickrcm,
-    'sigpatches':   sigpatches,
     'toolbox':      toolbox,
 }
 
