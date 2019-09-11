@@ -23,16 +23,6 @@ class NXSDPackage(object):
         self._cleanup_build_directory()
         
         all_builds_successful = True
-        sha = ''
-
-        try:
-            if self.build_type == 'package':
-                repo = git.Repo(search_parent_directories=True)
-            else:
-                repo = git.Repo(search_parent_directories=False, path='components/'+self.name)
-            sha = '-'+repo.head.object.hexsha[:7]
-        except:
-            nxsd.logger.log(logging.DEBUG, '%s', 'Git repo not found, skipping SHA.')
 
         for component_module in self.components:
             component = component_module.get_component()
@@ -42,7 +32,7 @@ class NXSDPackage(object):
 
         if all_builds_successful:
             output_path = Path(self.output_filename)
-            shutil.make_archive(str(output_path.with_suffix(''))+sha, 'zip',
+            shutil.make_archive(str(output_path.with_suffix(''))+self._get_repo_sha(), 'zip',
                 root_dir=self.build_directory)
 
         return all_builds_successful
@@ -63,3 +53,16 @@ class NXSDPackage(object):
         build_dir = Path(self.build_directory)
         if build_dir.exists():
             shutil.rmtree(build_dir, ignore_errors=True)
+
+    def _get_repo_sha(self):
+        sha = ''
+        try:
+            if self.build_type == 'package':
+                repo = git.Repo(search_parent_directories=True)
+            else:
+                repo = git.Repo(search_parent_directories=False, path='components/'+self.name)
+            sha = '-'+repo.head.object.hexsha[:7]
+        except:
+            nxsd.logger.log(logging.DEBUG, '%s', 'Git repo not found, skipping SHA.')
+        
+        return sha
