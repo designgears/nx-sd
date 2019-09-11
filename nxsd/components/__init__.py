@@ -24,14 +24,12 @@ class NXSDComponent(ABC):
         Build this component from source (if necessary), then install it to the
         specified directory,
         """
-        pass
 
     @abstractmethod
     def clean(self):
         """
         Clean up built binaries for this component.
         """
-        pass
 
 
     @staticmethod

@@ -1,4 +1,4 @@
-class NXSDConfig(object):
+class NXSDConfig():
 
     def __init__(self, build_directory, components_directory, defaults_directory, dockerfiles_directory):
         self.build_directory = build_directory

@@ -1,4 +1,3 @@
-import os
 from nxsd import util
 from nxsd.components import NXSDComponent
 from nxsd.config import settings

@@ -17,7 +17,6 @@ from nxsd.components import sysclk
 from nxsd.components import sysftpd
 from nxsd.components import goldleaf
 from nxsd.components import nxshell
-from nxsd.components import incognito
 from nxsd.components import amiiswap
 from nxsd.components import emuiibo
 from nxsd.components import toolbox
@@ -83,7 +82,7 @@ def main():
     commands[args.command](args)
 
 def build(args):
-    if args.component != None:
+    if args.component is not None:
         packages = get_package(args.component)
     else:
         packages = get_packages()
@@ -105,15 +104,13 @@ def purge(args):
 def clean(args):
     with open('log/build.log', "w"):
         nxsd.logger.info('Cleared log!')
-        pass
-    if args.component != None:
+    if args.component is not None:
         packages = get_package(args.component)
     else:
         packages = get_packages()
     for package in packages:
         package.clean()
         nxsd.logger.info('Cleaned {name} package!'.format(name=package.name))
-    pass
 
 def get_package(component):
     nxsd_component = NXSDPackage(

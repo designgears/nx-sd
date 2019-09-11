@@ -9,7 +9,7 @@ from nxsd import util
 from pathlib import Path
 
 
-class NXSDPackage(object):
+class NXSDPackage():
 
     def __init__(self, name, build_type, build_directory, output_filename):
         self.name = name
