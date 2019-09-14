@@ -5,7 +5,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Checkpoint'
 COMPONENT_VERSION = 'v3.7.1'
-COMPONENT_COMMIT_OR_TAG = '5c3873d'
+COMPONENT_COMMIT_OR_TAG = 'ccb8f7a'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 

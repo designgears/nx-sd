@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'incognito'
 COMPONENT_VERSION = 'v1.4'
-COMPONENT_COMMIT_OR_TAG = 'd365cb9'
+COMPONENT_COMMIT_OR_TAG = '3fb392e'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
