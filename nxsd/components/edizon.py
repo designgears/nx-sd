@@ -4,8 +4,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'EdiZon'
-COMPONENT_VERSION = 'v3.1.0'
-COMPONENT_COMMIT_OR_TAG = 'd5e4d35'
+COMPONENT_VERSION = 'v3.1.0 - ReiNX Support'
+COMPONENT_COMMIT_OR_TAG = 'fcc4825'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
