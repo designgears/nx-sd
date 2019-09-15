@@ -32,7 +32,8 @@ class NXSDPackage():
 
         if all_builds_successful:
             output_path = Path(self.output_filename)
-            shutil.make_archive(str(output_path.with_suffix(''))+self._get_repo_sha(component.name), 'zip',
+            sha = self._get_repo_sha(component.name)
+            shutil.make_archive(str(output_path.with_suffix(''))+sha, 'zip',
                 root_dir=self.build_directory)
 
         return all_builds_successful
