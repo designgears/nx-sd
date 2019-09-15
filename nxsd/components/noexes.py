@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Noexes'
 COMPONENT_VERSION = 'v1.2'
-COMPONENT_COMMIT_OR_TAG = '6d0bcf0'
+COMPONENT_COMMIT_OR_TAG = '54c5f6b'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 

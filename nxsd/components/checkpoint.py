@@ -4,8 +4,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Checkpoint'
-COMPONENT_VERSION = 'v3.7.1'
-COMPONENT_COMMIT_OR_TAG = 'ccb8f7a'
+COMPONENT_VERSION = 'v3.7.2'
+COMPONENT_COMMIT_OR_TAG = 'b468676'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 

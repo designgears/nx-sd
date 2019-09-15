@@ -32,7 +32,7 @@ class NXSDPackage():
 
         if all_builds_successful:
             output_path = Path(self.output_filename)
-            shutil.make_archive(str(output_path.with_suffix(''))+self._get_repo_sha(), 'zip',
+            shutil.make_archive(str(output_path.with_suffix(''))+self._get_repo_sha(component.name), 'zip',
                 root_dir=self.build_directory)
 
         return all_builds_successful
@@ -54,13 +54,13 @@ class NXSDPackage():
         if build_dir.exists():
             shutil.rmtree(build_dir, ignore_errors=True)
 
-    def _get_repo_sha(self):
+    def _get_repo_sha(self, name):
         sha = ''
         try:
             if self.build_type == 'package':
                 repo = git.Repo(search_parent_directories=True)
             else:
-                repo = git.Repo(search_parent_directories=False, path='components/'+self.name)
+                repo = git.Repo(search_parent_directories=False, path='components/'+name)
             sha = '-'+repo.head.object.hexsha[:7]
         except:
             nxsd.logger.log(logging.DEBUG, '%s', 'Git repo not found, skipping SHA.')
