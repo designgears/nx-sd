@@ -25,30 +25,30 @@ from nxsd.components import noexes
 from nxsd.components import checkpoint
 
 CORE_COMPONENTS = {
-    'hekate':       hekate,
     'atmosphere':   atmosphere,
+    'hekate':       hekate,
     'incognito':    incognito,
+    'lockpickrcm':  lockpickrcm,
     'nxhbloader':   nxhbloader,
     'nxhbmenu':     nxhbmenu,
-    'lockpickrcm':  lockpickrcm,
     'toolbox':      toolbox,
 }
 
 ADDON_COMPONENTS = {
-    'emuiibo':      emuiibo,
-    'ldnmitm':      ldnmitm,
-    'sysftpd':      sysftpd,
     'edizon':       edizon,
-    'nxshell':      nxshell,
     'goldleaf':     goldleaf,
+    'ldnmitm':      ldnmitm,
+    'nxshell':      nxshell,
     'sysclk':       sysclk,
     'sysclkeditor': sysclkeditor,
+    'sysftpd':      sysftpd,
 }
 
 OPTIONAL_COMPONENTS = {
     'amiiswap':     amiiswap,
-    'noexes':       noexes,
     'checkpoint':   checkpoint,
+    'emuiibo':      emuiibo,
+    'noexes':       noexes,
 }
 
 ALL_COMPONENTS = {
