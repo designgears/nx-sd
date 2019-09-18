@@ -70,3 +70,6 @@
 	path = components/Checkpoint
 	url = https://github.com/FlagBrew/Checkpoint.git
 	ignore = dirty
+[submodule "components/nxdumptool"]
+	path = components/nxdumptool
+	url = https://github.com/DarkMatterCore/nxdumptool.git

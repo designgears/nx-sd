@@ -23,6 +23,7 @@ from nxsd.components import toolbox
 from nxsd.components import sysclkeditor
 from nxsd.components import noexes
 from nxsd.components import checkpoint
+from nxsd.components import nxdumptool
 
 CORE_COMPONENTS = {
     'atmosphere':   atmosphere,
@@ -38,6 +39,7 @@ ADDON_COMPONENTS = {
     'edizon':       edizon,
     'goldleaf':     goldleaf,
     'ldnmitm':      ldnmitm,
+    'nxdumptool':   nxdumptool,
     'nxshell':      nxshell,
     'sysclk':       sysclk,
     'sysclkeditor': sysclkeditor,
