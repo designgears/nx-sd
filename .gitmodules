@@ -73,3 +73,4 @@
 [submodule "components/nxdumptool"]
 	path = components/nxdumptool
 	url = https://github.com/DarkMatterCore/nxdumptool.git
+	ignore = dirty
