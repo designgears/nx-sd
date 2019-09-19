@@ -34,17 +34,18 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 | --------------------------------------------------------- | ----------- |
 | [EdiZon](https://github.com/WerWolv/EdiZon)               | Save manager, editing tool, and memory trainer |
 | [emuiibo](https://github.com/XorTroll/emuiibo)            | MitM'ing NFP services for Amiibo emulation! |
-| [Goldleaf](https://github.com/XorTroll/Goldleaf)          | Nintendo Switch multipurpose homebrew tool |
+| [Goldleaf](https://github.com/XorTroll/Goldleaf)          | Switch multipurpose homebrew tool |
 | [ldn_mitm](https://github.com/spacemeowx2/ldn_mitm)       | Play local wireless supported games online |
-| [NX-Shell](https://github.com/joel16/NX-Shell)            | 3DShell port for the Nintendo Switch |
+| [NX-Shell](https://github.com/joel16/NX-Shell)            | 3DShell port for the Switch |
+| [nxdumptool](https://github.com/DarkMatterCore/nxdumptool)| Generates dumps from Switch gamecards and installed SD/eMMC titles |
 | [sys-CLK](https://github.com/retronx-team/sys-clk)        | Overclocking/underclocking system module |
 | [sys-clk-Editor](https://github.com/SunTheCourier/sys-clk-Editor) | Editor for your sys-clk configuration |
-| [sys-ftpd](https://github.com/designgears/sys-ftpd)       | Ftpd as a Nintendo Switch sysmodule |
+| [sys-ftpd](https://github.com/designgears/sys-ftpd)       | Ftpd as a Switch sysmodule |
 
 ### Optional
 
 | Component                                                 | Description |
 | --------------------------------------------------------- | ----------- |
-| [AmiiSwap](https://github.com/FuryBaguette/AmiiSwap)      | Nintendo Switch GUI Amiibo Manager homebrew for emulation with Emuiibo |
+| [AmiiSwap](https://github.com/FuryBaguette/AmiiSwap)      | Switch GUI Amiibo Manager homebrew for emulation with Emuiibo |
 | [Checkpoint](https://github.com/FlagBrew/Checkpoint)      | Fast and simple homebrew save manager for 3DS and Switch |
-| [Noexes](https://github.com/KranKRival/Noexes)            | graphical remote debugger for the Nintendo Switch |
+| [Noexes](https://github.com/KranKRival/Noexes)            | graphical remote debugger for the Switch |
