@@ -1,16 +1,17 @@
 FROM devkitpro/devkita64:20190720
 
-COPY ./compile.sh /compile.sh
+# COPY ./compile.sh /compile.sh
 
-RUN chmod a+x /compile.sh
+# RUN chmod a+x /compile.sh
 
+RUN dkp-pacman -Syu libnx --noconfirm
 RUN dkp-pacman -Scc --noconfirm
 
-RUN git clone https://github.com/switchbrew/libnx.git
-WORKDIR /libnx
-RUN git reset --hard 40d7e0d
-RUN make -j8 install
+# RUN git clone https://github.com/switchbrew/libnx.git
+# WORKDIR /libnx
+# RUN git reset --hard 40d7e0d
+# RUN make -j8 install
 
-WORKDIR /
+WORKDIR /developer/components/emuiibo
 
-ENTRYPOINT ["/compile.sh"]
+ENTRYPOINT ["make", "-j8"]
