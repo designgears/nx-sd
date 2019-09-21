@@ -5,8 +5,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'sys-clk'
-COMPONENT_VERSION = 'v0.12.3'
-COMPONENT_COMMIT_OR_TAG = '5e78c80'
+COMPONENT_VERSION = 'v0.13.0'
+COMPONENT_COMMIT_OR_TAG = '1a5ce8e'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -27,8 +27,8 @@ class SysCLKComponent(NXSDComponent):
         dest_conf = Path(install_directory, 'sdcard/config/')
 
         component_dict = {
-            'titles': (
-                Path(self._source_directory, 'out/sys-clk.nsp'),
+            'title': (
+                Path(self._source_directory, 'sysmodule/out/sys-clk.nsp'),
                 Path(dest_ams, 'titles/00FF0000636C6BFF/exefs.nsp'),
             ),
             'config': (
