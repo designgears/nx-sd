@@ -10,7 +10,7 @@ COMPONENT_COMMIT_OR_TAG = '099dc0e'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
-class IncognitoComponent(NXSDComponent):
+class IncognitoRCMComponent(NXSDComponent):
 
     def __init__(self):
         super().__init__()
@@ -59,4 +59,4 @@ class IncognitoComponent(NXSDComponent):
 
 
 def get_component():
-    return IncognitoComponent()
+    return IncognitoRCMComponent()
