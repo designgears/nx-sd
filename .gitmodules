@@ -74,3 +74,7 @@
 	path = components/nxdumptool
 	url = https://github.com/DarkMatterCore/nxdumptool.git
 	ignore = dirty
+[submodule "components/Incognito_RCM"]
+	path = components/Incognito_RCM
+	url = https://github.com/jimzrt/Incognito_RCM
+	ignore = dirty

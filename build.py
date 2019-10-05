@@ -13,6 +13,7 @@ from nxsd.components import edizon
 from nxsd.components import lockpickrcm
 from nxsd.components import ldnmitm
 from nxsd.components import incognito
+from nxsd.components import incognitorcm
 from nxsd.components import sysclk
 from nxsd.components import sysftpd
 from nxsd.components import goldleaf
@@ -28,7 +29,7 @@ from nxsd.components import nxdumptool
 CORE_COMPONENTS = {
     'atmosphere':   atmosphere,
     'hekate':       hekate,
-    'incognito':    incognito,
+    'incognitorcm': incognitorcm,
     'lockpickrcm':  lockpickrcm,
     'nxhbloader':   nxhbloader,
     'nxhbmenu':     nxhbmenu,
@@ -50,6 +51,7 @@ ADDON_COMPONENTS = {
 OPTIONAL_COMPONENTS = {
     'amiiswap':     amiiswap,
     'checkpoint':   checkpoint,
+    'incognito':    incognito,
     'noexes':       noexes,
 }
 

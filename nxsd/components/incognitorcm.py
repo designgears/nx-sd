@@ -1,14 +1,16 @@
+import os
 from nxsd import util
 from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-COMPONENT_NAME = 'Lockpick_RCM'
-COMPONENT_VERSION = 'v1.6.0'
-COMPONENT_COMMIT_OR_TAG = '3b6f356'
+COMPONENT_NAME = 'Incognito_RCM'
+COMPONENT_VERSION = 'v0.1.0'
+COMPONENT_COMMIT_OR_TAG = '099dc0e'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
-class LockpickRCMComponent(NXSDComponent):
+
+class IncognitoComponent(NXSDComponent):
 
     def __init__(self):
         super().__init__()
@@ -22,13 +24,13 @@ class LockpickRCMComponent(NXSDComponent):
         self._build()
 
         dest_hekate = Path(install_directory, 'sdcard/bootloader/')
-
+        
         component_dict = {
             'payload': (
-                Path(self._source_directory, 'output/Lockpick_RCM.bin'),
+                Path(self._source_directory, 'output/Incognito_RCM.bin'),
                 [
-                    Path(install_directory, 'payloads/Lockpick_RCM.bin'),
-                    Path(dest_hekate, 'payloads/Lockpick_RCM.bin'),
+                    Path(install_directory, 'payloads/Incognito_RCM.bin'),
+                    Path(dest_hekate, 'payloads/Incognito_RCM.bin'),
                 ],
             ),
         }
@@ -57,4 +59,4 @@ class LockpickRCMComponent(NXSDComponent):
 
 
 def get_component():
-    return LockpickRCMComponent()
+    return IncognitoComponent()
