@@ -33,8 +33,6 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 | Component                                                 | Description |
 | --------------------------------------------------------- | ----------- |
 | [EdiZon](https://github.com/WerWolv/EdiZon)               | Save manager, editing tool, and memory trainer |
-| [emuiibo](https://github.com/XorTroll/emuiibo)            | MitM'ing NFP services for Amiibo emulation! |
-| [Goldleaf](https://github.com/XorTroll/Goldleaf)          | Switch multipurpose homebrew tool |
 | [ldn_mitm](https://github.com/spacemeowx2/ldn_mitm)       | Play local wireless supported games online |
 | [NX-Shell](https://github.com/joel16/NX-Shell)            | 3DShell port for the Switch |
 | [nxdumptool](https://github.com/DarkMatterCore/nxdumptool)| Generates dumps from Switch gamecards and installed SD/eMMC titles |
@@ -48,5 +46,7 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 | --------------------------------------------------------- | ----------- |
 | [AmiiSwap](https://github.com/FuryBaguette/AmiiSwap)      | Switch GUI Amiibo Manager homebrew for emulation with Emuiibo |
 | [Checkpoint](https://github.com/FlagBrew/Checkpoint)      | Fast and simple homebrew save manager for 3DS and Switch |
+| [emuiibo](https://github.com/XorTroll/emuiibo)            | MitM'ing NFP services for Amiibo emulation! |
+| [Goldleaf](https://github.com/XorTroll/Goldleaf)          | Switch multipurpose homebrew tool |
 | [incognito](https://github.com/blawar/incognito)          | Wipes personal information from your Nintendo Switch |
 | [Noexes](https://github.com/KranKRival/Noexes)            | graphical remote debugger for the Switch |
