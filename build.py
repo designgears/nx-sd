@@ -38,7 +38,6 @@ CORE_COMPONENTS = {
 
 ADDON_COMPONENTS = {
     'edizon':       edizon,
-    
     'ldnmitm':      ldnmitm,
     'nxdumptool':   nxdumptool,
     'nxshell':      nxshell,
