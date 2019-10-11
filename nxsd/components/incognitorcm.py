@@ -5,8 +5,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Incognito_RCM'
-COMPONENT_VERSION = 'v0.2.0'
-COMPONENT_COMMIT_OR_TAG = '5de9cf3'
+COMPONENT_VERSION = 'v0.3.0'
+COMPONENT_COMMIT_OR_TAG = 'b71b1ff'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
