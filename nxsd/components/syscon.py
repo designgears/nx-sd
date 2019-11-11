@@ -1,15 +1,16 @@
+import os
 from nxsd import util
 from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-COMPONENT_NAME = 'nxdumptool'
-COMPONENT_VERSION = 'v1.1.7'
-COMPONENT_COMMIT_OR_TAG = '3a16147'
+COMPONENT_NAME = 'sys-con'
+COMPONENT_VERSION = 'v0.4.2'
+COMPONENT_COMMIT_OR_TAG = '744c42a'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
-class NxdumptoolComponent(NXSDComponent):
+class SysConComponent(NXSDComponent):
 
     def __init__(self):
         super().__init__()
@@ -22,12 +23,21 @@ class NxdumptoolComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_nro = Path(install_directory, 'sdcard/switch/')
+        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
+        dest_conf = Path(install_directory, 'sdcard/config/')
 
         component_dict = {
-            'app': (
-                Path(self._source_directory, 'nxdumptool.nro'),
-                Path(dest_nro, 'nxdumptool/nxdumptool.nro'),
+            'title': (
+                Path(self._source_directory, 'sys-con.nsp'),
+                Path(dest_ams, 'titles/690000000000000D/exefs.nsp'),
+            ),
+            'boot_flags': (
+                Path(settings.defaults_directory, 'stub.flag'),
+                Path(dest_ams, 'titles/690000000000000D/flags/boot2.flag'),
+            ),
+            'configs': (
+                Path(self._source_directory, 'config/sys-con/'),
+                Path(dest_conf, 'sys-con/'),
             ),
         }
         self._copy_components(component_dict)
@@ -55,4 +65,4 @@ class NxdumptoolComponent(NXSDComponent):
 
 
 def get_component():
-    return NxdumptoolComponent()
+    return SysConComponent()

@@ -78,3 +78,7 @@
 	path = components/Incognito_RCM
 	url = https://github.com/jimzrt/Incognito_RCM.git
 	ignore = dirty
+[submodule "components/sys-con"]
+	path = components/sys-con
+	url = https://github.com/cathery/sys-con.git
+	ignore = dirty

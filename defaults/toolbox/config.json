@@ -26,6 +26,11 @@
 			"requires_reboot": false
 		},
 		{
+			"name"  : "sys-con",
+			"tid"   : "690000000000000D",
+			"requires_reboot": true
+		},
+		{
 			"name"  : "ldn_mitm",
 			"tid"   : "4200000000000010",
 			"requires_reboot": true
