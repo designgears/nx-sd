@@ -5,8 +5,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'sys-con'
-COMPONENT_VERSION = 'v0.4.2'
-COMPONENT_COMMIT_OR_TAG = '744c42a'
+COMPONENT_VERSION = 'v0.5.0'
+COMPONENT_COMMIT_OR_TAG = '48e9527'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -30,10 +30,6 @@ class SysConComponent(NXSDComponent):
             'title': (
                 Path(self._source_directory, 'sys-con.nsp'),
                 Path(dest_ams, 'titles/690000000000000D/exefs.nsp'),
-            ),
-            'boot_flags': (
-                Path(settings.defaults_directory, 'stub.flag'),
-                Path(dest_ams, 'titles/690000000000000D/flags/boot2.flag'),
             ),
             'configs': (
                 Path(self._source_directory, 'config/sys-con/'),
