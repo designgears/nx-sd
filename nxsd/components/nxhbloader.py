@@ -5,7 +5,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'nx-hbloader'
 COMPONENT_VERSION = 'v2.2.0'
-COMPONENT_COMMIT_OR_TAG = '0d526f9'
+COMPONENT_COMMIT_OR_TAG = '9b2a16c'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 

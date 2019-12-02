@@ -4,8 +4,7 @@ RUN dkp-pacman -Scc --noconfirm
 
 RUN git clone https://github.com/switchbrew/libnx.git
 WORKDIR /libnx
-RUN git fetch
-RUN git reset --hard d4c5fbdf0f80a19ecfa4b553b6267641210a8e43
+RUN git fetch && git reset --hard d4c5fbd
 RUN make -j8 install
 
 WORKDIR /developer/components/sys-con
