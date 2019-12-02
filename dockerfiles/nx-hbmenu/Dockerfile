@@ -7,7 +7,7 @@ RUN dkp-pacman -Scc --noconfirm
 
 RUN git clone https://github.com/switchbrew/libnx.git
 WORKDIR /libnx
-RUN git reset --hard f4fe337
+RUN git reset --hard 4078de1
 RUN make -j8 install
 
 WORKDIR /developer/components/nx-hbmenu
