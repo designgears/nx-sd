@@ -26,6 +26,7 @@ class AtmosphereComponent(NXSDComponent):
 
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
         dest_sept = Path(install_directory, 'sdcard/sept/')
+        dest_hekate = Path(install_directory, 'sdcard/bootloader/')
 
         component_dict = {
             'dmnt': (
@@ -54,7 +55,10 @@ class AtmosphereComponent(NXSDComponent):
             ),
             'fusee-primary': (
                 Path(self._source_directory, 'fusee/fusee-primary/fusee-primary.bin'),
-                Path(install_directory, 'payloads/fusee-primary.bin'),
+                [
+                    Path(install_directory, 'payloads/fusee-primary.bin'),
+                    Path(dest_hekate, 'payloads/fusee-primary.bin'),
+                ],
             ),
             'fusee-secondary': (
                 Path(self._source_directory, 'fusee/fusee-secondary/fusee-secondary.bin'),
