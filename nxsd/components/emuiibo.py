@@ -26,9 +26,9 @@ class EmuiiboComponent(NXSDComponent):
         dest_ams = Path(install_directory, 'sdcard/atmosphere/')
         
         component_dict = {
-            'titles': (
+            'contents': (
                 Path(self._source_directory, 'emuiibo.nsp'),
-                Path(dest_ams, 'titles/0100000000000352/exefs.nsp'),
+                Path(dest_ams, 'contents/0100000000000352/exefs.nsp'),
             ),
         }
         self._copy_components(component_dict)

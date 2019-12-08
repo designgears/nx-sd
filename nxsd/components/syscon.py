@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'sys-con'
 COMPONENT_VERSION = 'v0.5.1'
-COMPONENT_COMMIT_OR_TAG = '3ff5734'
+COMPONENT_COMMIT_OR_TAG = '275eaa9'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -27,9 +27,9 @@ class SysConComponent(NXSDComponent):
         dest_conf = Path(install_directory, 'sdcard/config/')
 
         component_dict = {
-            'title': (
+            'contents': (
                 Path(self._source_directory, 'sys-con.nsp'),
-                Path(dest_ams, 'titles/690000000000000D/exefs.nsp'),
+                Path(dest_ams, 'contents/690000000000000D/exefs.nsp'),
             ),
             'configs': (
                 Path(self._source_directory, 'config/sys-con/'),

@@ -4,8 +4,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Atmosphere'
-COMPONENT_VERSION = 'v0.9.4'
-COMPONENT_COMMIT_OR_TAG = '73d9040'
+COMPONENT_VERSION = 'v0.10.0'
+COMPONENT_COMMIT_OR_TAG = '3c7ece2'
 COMPONENT_BRANCH = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
@@ -30,23 +30,27 @@ class AtmosphereComponent(NXSDComponent):
         component_dict = {
             'dmnt': (
                 Path(self._source_directory, 'stratosphere/dmnt/dmnt.nsp'),
-                Path(dest_ams, 'titles/010000000000000D/exefs.nsp'),
+                Path(dest_ams, 'contents/010000000000000D/exefs.nsp'),
+            ),
+            'boot2': (
+                Path(self._source_directory, 'stratosphere/boot2/boot2.nsp'),
+                Path(dest_ams, 'contents/0100000000000008/exefs.nsp'),
             ),
             'eclct.stub': (
                 Path(self._source_directory, 'stratosphere/eclct.stub/eclct.stub.nsp'),
-                Path(dest_ams, 'titles/0100000000000032/exefs.nsp'),
+                Path(dest_ams, 'contents/0100000000000032/exefs.nsp'),
             ),
             'fatal': (
                 Path(self._source_directory, 'stratosphere/fatal/fatal.nsp'),
-                Path(dest_ams, 'titles/0100000000000034/exefs.nsp'),
+                Path(dest_ams, 'contents/0100000000000034/exefs.nsp'),
             ),
             'creport': (
                 Path(self._source_directory, 'stratosphere/creport/creport.nsp'),
-                Path(dest_ams, 'titles/0100000000000036/exefs.nsp'),
+                Path(dest_ams, 'contents/0100000000000036/exefs.nsp'),
             ),
             'ro': (
                 Path(self._source_directory, 'stratosphere/ro/ro.nsp'),
-                Path(dest_ams, 'titles/0100000000000037/exefs.nsp'),
+                Path(dest_ams, 'contents/0100000000000037/exefs.nsp'),
             ),
             'fusee-primary': (
                 Path(self._source_directory, 'fusee/fusee-primary/fusee-primary.bin'),
@@ -73,15 +77,15 @@ class AtmosphereComponent(NXSDComponent):
             ),
             'bct.ini': (
                 Path(self._defaults_directory, 'BCT.ini'),
-                Path(dest_ams, 'BCT.ini'),
+                Path(dest_ams, 'config/BCT.ini'),
             ),
-            'loader.ini': (
-                Path(self._source_directory, 'common/defaults/loader.ini'),
-                Path(dest_ams, 'loader.ini'),
+            'override_config.ini': (
+                Path(self._defaults_directory, 'override_config.ini'),
+                Path(dest_ams, 'config/override_config.ini'),
             ),
             'system-settings': (
                 Path(self._defaults_directory, 'system_settings.ini'),
-                Path(dest_ams, 'system_settings.ini'),
+                Path(dest_ams, 'config/system_settings.ini'),
             ),
             'sept-primary': (
                 Path(self._source_directory, 'sept/sept-primary/sept-primary.bin'),
@@ -98,8 +102,8 @@ class AtmosphereComponent(NXSDComponent):
             'boot_flags': (
                 Path(settings.defaults_directory, 'stub.flag'),
                 [
-                    Path(dest_ams, 'titles/0100000000000032/flags/boot2.flag'), # eclct.stub
-                    Path(dest_ams, 'titles/0100000000000037/flags/boot2.flag'), # ro
+                    Path(dest_ams, 'contents/0100000000000032/flags/boot2.flag'), # eclct.stub
+                    Path(dest_ams, 'contents/0100000000000037/flags/boot2.flag'), # ro
                 ],
             ),
             'es-patches': (

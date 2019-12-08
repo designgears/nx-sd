@@ -27,9 +27,9 @@ class SysCLKComponent(NXSDComponent):
         dest_conf = Path(install_directory, 'sdcard/config/')
 
         component_dict = {
-            'title': (
+            'contents': (
                 Path(self._source_directory, 'sysmodule/out/sys-clk.nsp'),
-                Path(dest_ams, 'titles/00FF0000636C6BFF/exefs.nsp'),
+                Path(dest_ams, 'contents/00FF0000636C6BFF/exefs.nsp'),
             ),
             'config': (
                 Path(settings.defaults_directory, 'sys-clk/config.ini'),

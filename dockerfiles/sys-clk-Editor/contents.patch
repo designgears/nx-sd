@@ -1,0 +1,22 @@
+From a1b519eb35b9e2b4ecc28546f22b7d545626ac73 Mon Sep 17 00:00:00 2001
+From: designgears <bobby@designgears.com>
+Date: Sun, 8 Dec 2019 00:41:49 -0700
+Subject: [PATCH] Update for atmos 0.10.0 changes
+
+---
+ source/menu.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/source/menu.h b/source/menu.h
+index 838c9d9..7113c3d 100644
+--- a/source/menu.h
++++ b/source/menu.h
+@@ -103,7 +103,7 @@ const std::vector<std::string> GPUCmt{
+ const int max_title_items = 43;
+ const std::string logFlag = "sdmc:/config/sys-clk/log.flag";
+ const std::string configFile = "sdmc:/config/sys-clk/config.ini";
+-const std::string boot2Flag = "sdmc:/atmosphere/titles/00FF0000636C6BFF/flags/boot2.flag";
++const std::string boot2Flag = "sdmc:/atmosphere/contents/00FF0000636C6BFF/flags/boot2.flag";
+ const u64 sysClkTid = 0x00FF0000636C6BFF;
+ 
+ extern signed int selection;

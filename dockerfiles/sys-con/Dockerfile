@@ -9,4 +9,4 @@ RUN make -j8 install
 
 WORKDIR /developer/components/sys-con
 
-ENTRYPOINT ["make", "-f", "MakefileSysmodule", "-j8"]
+ENTRYPOINT ["make", "-j8"]

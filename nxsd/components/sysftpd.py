@@ -27,9 +27,9 @@ class SysftpdComponent(NXSDComponent):
         dest_sd = Path(install_directory, 'sdcard/')
         
         component_dict = {
-            'titles': (
+            'contents': (
                 Path(self._source_directory, 'sys-ftpd.nsp'),
-                Path(dest_ams, 'titles/420000000000000E/exefs.nsp'),
+                Path(dest_ams, 'contents/420000000000000E/exefs.nsp'),
             ),
             'config': (
                 Path(self._source_directory, 'sd_card/config/sys-ftpd/'),
