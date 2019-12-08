@@ -5,8 +5,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'hekate'
-COMPONENT_VERSION = 'v5.0.2'
-COMPONENT_COMMIT_OR_TAG = '7445207'
+COMPONENT_VERSION = 'v5.1.0'
+COMPONENT_COMMIT_OR_TAG = 'd085051'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
