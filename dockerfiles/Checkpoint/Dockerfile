@@ -20,4 +20,4 @@ RUN dkp-pacman -Scc --noconfirm
 
 WORKDIR /developer/components/Checkpoint
 
-ENTRYPOINT ["/compile.sh"]
+ENTRYPOINT ["make", "-j8"]
