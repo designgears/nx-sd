@@ -5,7 +5,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Atmosphere'
 COMPONENT_VERSION = 'v0.10.0'
-COMPONENT_COMMIT_OR_TAG = '9d7b52e'
+COMPONENT_COMMIT_OR_TAG = 'a26e157'
 COMPONENT_BRANCH = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
@@ -72,11 +72,11 @@ class AtmosphereComponent(NXSDComponent):
                 Path(dest_ams, 'fusee-mtc.bin'),
             ),
             'hbl-html': (
-                Path(self._source_directory, 'common/defaults/hbl_html/'),
+                Path(self._source_directory, 'config_templates/hbl_html/'),
                 Path(dest_ams, 'hbl_html/'),
             ),
             'no-gc': (
-                Path(self._source_directory, 'common/defaults/kip_patches/default_nogc/'),
+                Path(self._source_directory, 'config_templates/kip_patches/default_nogc/'),
                 Path(dest_ams, 'kip_patches/default_nogc/'),
             ),
             'bct.ini': (
