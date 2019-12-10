@@ -31,6 +31,7 @@ def execute_shell_commands(command_list):
 def clean_component(name, commit):
     build_commands = [
         'git clean -fdx',
+        'git fetch',
         'git submodule foreach --recursive git clean -fdx',
         'git submodule foreach --recursive git reset --hard',
         'git reset --hard {c}'.format(c=commit),
