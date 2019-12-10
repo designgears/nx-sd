@@ -3,10 +3,6 @@ FROM debian:buster
 ENV DEVKITPRO=/opt/devkitpro
 ENV DEVKITARM=/opt/devkitpro/devkitARM
 
-COPY ./contents.patch /contents.patch
-COPY ./compile.sh /compile.sh
-RUN chmod a+x /compile.sh
-
 RUN apt update
 RUN apt install -y wget gpg libxml2 xz-utils make python3 git pkg-config gcc
 
