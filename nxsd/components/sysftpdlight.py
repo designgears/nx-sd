@@ -4,13 +4,13 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-COMPONENT_NAME = 'sys-ftpd'
+COMPONENT_NAME = 'sys-ftpd-light'
 COMPONENT_VERSION = 'v1.0' # fake version, doesn't seem to have a version
-COMPONENT_COMMIT_OR_TAG = '6e4993f'
+COMPONENT_COMMIT_OR_TAG = 'e074369'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
-class SysftpdComponent(NXSDComponent):
+class SysftpdliteComponent(NXSDComponent):
 
     def __init__(self):
         super().__init__()
@@ -62,4 +62,4 @@ class SysftpdComponent(NXSDComponent):
 
 
 def get_component():
-    return SysftpdComponent()
+    return SysftpdliteComponent()

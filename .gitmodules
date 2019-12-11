@@ -38,10 +38,6 @@
 	path = components/emuiibo
 	url = https://github.com/XorTroll/emuiibo.git
 	ignore = dirty
-[submodule "components/sys-ftpd"]
-	path = components/sys-ftpd
-	url = https://github.com/jakibaki/sys-ftpd.git
-	ignore = dirty
 [submodule "components/incognito"]
 	path = components/incognito
 	url = https://github.com/blawar/incognito.git
@@ -82,4 +78,7 @@
 	path = components/EdiZon
 	url = https://github.com/WerWolv/EdiZon.git
 	ignore = dirty
-	
+[submodule "components/sys-ftpd-light"]
+	path = components/sys-ftpd-light
+	url = https://github.com/cathery/sys-ftpd-light.git
+	ignore = dirty

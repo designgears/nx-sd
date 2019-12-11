@@ -16,7 +16,7 @@ from nxsd.components import incognito
 from nxsd.components import incognitorcm
 from nxsd.components import sysclk
 from nxsd.components import syscon
-from nxsd.components import sysftpd
+from nxsd.components import sysftpdlight
 from nxsd.components import goldleaf
 from nxsd.components import nxshell
 from nxsd.components import amiiswap
@@ -45,7 +45,7 @@ ADDON_COMPONENTS = {
     'syscon':       syscon,
     'sysclk':       sysclk,
     'sysclkeditor': sysclkeditor,
-    'sysftpd':      sysftpd,
+    'sysftpdlight': sysftpdlight,
 }
 
 OPTIONAL_COMPONENTS = {
