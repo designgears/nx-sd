@@ -4,7 +4,7 @@ RUN dkp-pacman -Scc --noconfirm
 
 RUN git clone https://github.com/switchbrew/libnx.git
 WORKDIR /libnx
-RUN git fetch && git reset --hard 4078de1
+RUN git fetch && git reset --hard d1e5a5d
 RUN make -j8 install
 
 WORKDIR /developer/components/nx-hbloader
