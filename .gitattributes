@@ -1,5 +1,5 @@
 # In general, use LF for text
-* text eol=lf
+* text eol=auto
 
 # Windows CMD does not like LF in batch files
 *.bat text eol=crlf
