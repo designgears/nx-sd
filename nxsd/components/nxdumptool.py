@@ -4,8 +4,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'nxdumptool'
-COMPONENT_VERSION = 'v1.1.7'
-COMPONENT_COMMIT_OR_TAG = '3a16147'
+COMPONENT_VERSION = 'v1.1.8'
+COMPONENT_COMMIT_OR_TAG = 'v1.1.8'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 

@@ -103,7 +103,7 @@ def purge(args):
         'git clean -fdx',
         'git submodule foreach --recursive git clean -fdx',
         'git submodule update --init --recursive',
-        'docker system prune -f',
+        'docker system prune -a -f',
     ]
     nxsd.util.execute_shell_commands(purge_commands)
 
