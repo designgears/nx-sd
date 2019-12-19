@@ -1,25 +1,24 @@
-FROM debian:buster
+FROM devkitpro/devkita64_devkitarm:20190720
 
-ENV DEBIAN_FRONTEND=noninteractive
+ENV PATH=/usr/local/bin:/usr/local:$PATH
 
-ENV DEVKITPRO=/opt/devkitpro
-ENV DEVKITARM=/opt/devkitpro/devkitARM
-ENV PATH=${DEVKITPRO}/tools/bin:$PATH
+RUN dkp-pacman -Scc --noconfirm
 
-RUN apt-get update && \
-    apt-get install -y apt-utils && \
-    apt-get install -y --no-install-recommends sudo ca-certificates pkg-config curl wget bzip2 xz-utils make git bsdtar doxygen gnupg libxml2 xz-utils python3 gcc && \
-    apt-get clean
+RUN apt-get update
+RUN apt-get install build-essential -y
+RUN apt-get install zlib1g-dev libbz2-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev -y
 
-RUN wget https://github.com/devkitPro/pacman/releases/download/devkitpro-pacman-1.0.1/devkitpro-pacman.deb && \
-    dpkg -i devkitpro-pacman.deb && \
-    rm devkitpro-pacman.deb && \
-    dkp-pacman -Scc --noconfirm
+WORKDIR /usr/src
 
-RUN dkp-pacman -Syyu --noconfirm switch-dev devkitARM devkitarm-rules && \
-    dkp-pacman -S --needed --noconfirm `dkp-pacman -Slq dkp-libs | grep '^switch-'` && \
-    dkp-pacman -Scc --noconfirm
+RUN wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz
+RUN tar xzf Python-3.7.2.tgz
+
+WORKDIR /usr/src/Python-3.7.2
+
+RUN ./configure
+RUN make altinstall
+RUN ln -s /usr/local/bin/python3.7 /usr/local/bin/python3
 
 WORKDIR /developer/components/Checkpoint
 
-ENTRYPOINT ["make", "-j8"]
+ENTRYPOINT ["make", "-j8", "switch"]
