@@ -5,8 +5,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'sys-con'
-COMPONENT_VERSION = 'v0.5.1'
-COMPONENT_COMMIT_OR_TAG = '1c71923'
+COMPONENT_VERSION = 'v0.5.2'
+COMPONENT_COMMIT_OR_TAG = 'b68795b'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 

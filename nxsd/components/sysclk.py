@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'sys-clk'
 COMPONENT_VERSION = 'v0.13.0'
-COMPONENT_COMMIT_OR_TAG = 'bb598fa'
+COMPONENT_COMMIT_OR_TAG = 'b03c67f'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 

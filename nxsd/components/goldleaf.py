@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Goldleaf'
 COMPONENT_VERSION = 'v0.7.3'
-COMPONENT_COMMIT_OR_TAG = '5a1bb65'
+COMPONENT_COMMIT_OR_TAG = 'fdc9fe9'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -27,7 +27,7 @@ class GoldleafComponent(NXSDComponent):
 
         component_dict = {
             'app': (
-                Path(self._source_directory, 'Goldleaf/Output/Goldleaf.nro'),
+                Path(self._source_directory, 'Goldleaf/Goldleaf.nro'),
                 Path(dest_nro, 'Goldleaf/Goldleaf.nro'),
             ),
         }

@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'emuiibo'
 COMPONENT_VERSION = 'v0.3.1'
-COMPONENT_COMMIT_OR_TAG = '1105887'
+COMPONENT_COMMIT_OR_TAG = '99cfaf3'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -27,7 +27,7 @@ class EmuiiboComponent(NXSDComponent):
         
         component_dict = {
             'contents': (
-                Path(self._source_directory, 'emuiibo.nsp'),
+                Path(self._source_directory, 'SdOut/contents/0100000000000352/exefs.nsp'),
                 Path(dest_ams, 'contents/0100000000000352/exefs.nsp'),
             ),
         }

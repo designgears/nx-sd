@@ -5,7 +5,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'nx-hbmenu'
 COMPONENT_VERSION = 'v3.2.0'
-COMPONENT_COMMIT_OR_TAG = 'bd3466f'
+COMPONENT_COMMIT_OR_TAG = '387850d'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
