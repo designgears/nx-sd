@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Goldleaf'
 COMPONENT_VERSION = 'v0.7.3'
-COMPONENT_COMMIT_OR_TAG = 'fdc9fe9'
+COMPONENT_COMMIT_OR_TAG = 'b3561ac'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
