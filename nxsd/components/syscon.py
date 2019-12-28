@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'sys-con'
 COMPONENT_VERSION = 'v0.5.2'
-COMPONENT_COMMIT_OR_TAG = 'b68795b'
+COMPONENT_COMMIT_OR_TAG = '7a6eb0e'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
