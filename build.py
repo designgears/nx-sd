@@ -40,6 +40,7 @@ CORE_COMPONENTS = {
 ADDON_COMPONENTS = {
     'edizon':       edizon,
     'emuiibo':      emuiibo,
+    'ldnmitm':      ldnmitm,
     'nxdumptool':   nxdumptool,
     'nxshell':      nxshell,
     'syscon':       syscon,
@@ -53,7 +54,6 @@ OPTIONAL_COMPONENTS = {
     'checkpoint':   checkpoint,
     'goldleaf':     goldleaf,
     'incognito':    incognito,
-    'ldnmitm':      ldnmitm,
     'noexes':       noexes,
 }
 
