@@ -4,8 +4,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'ldn_mitm'
-COMPONENT_VERSION = 'v1.2.7'
-COMPONENT_COMMIT_OR_TAG = '1806608'
+COMPONENT_VERSION = 'v1.3.1-alpha'
+COMPONENT_COMMIT_OR_TAG = 'e6c1fcf'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -26,7 +26,7 @@ class LdnmitmComponent(NXSDComponent):
 
         component_dict = {
             'contents': (
-                Path(self._source_directory, 'ldn_mitm/out/ldn_mitm.nsp'),
+                Path(self._source_directory, 'out/sd/atmosphere/contents/4200000000000010/exefs.nsp'),
                 Path(dest_ams, 'contents/4200000000000010/exefs.nsp'),
             ),
         }
