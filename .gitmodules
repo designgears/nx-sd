@@ -85,3 +85,4 @@
 [submodule "components/Awoo-Installer"]
 	path = components/Awoo-Installer
 	url = https://github.com/Huntereb/Awoo-Installer.git
+	ignore = dirty

@@ -26,6 +26,8 @@ from nxsd.components import sysclkeditor
 from nxsd.components import noexes
 from nxsd.components import checkpoint
 from nxsd.components import nxdumptool
+from nxsd.components import awooinstaller
+from nxsd.components import switchzstd
 
 CORE_COMPONENTS = {
     'atmosphere':   atmosphere,
@@ -51,10 +53,12 @@ ADDON_COMPONENTS = {
 
 OPTIONAL_COMPONENTS = {
     'amiiswap':     amiiswap,
+    'awooinstaller':awooinstaller,
     'checkpoint':   checkpoint,
     'goldleaf':     goldleaf,
     'incognito':    incognito,
     'noexes':       noexes,
+    'switchzstd':   switchzstd,
 }
 
 ALL_COMPONENTS = {
