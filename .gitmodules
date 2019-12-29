@@ -82,3 +82,6 @@
 	path = components/sys-ftpd-light
 	url = https://github.com/cathery/sys-ftpd-light.git
 	ignore = dirty
+[submodule "components/Awoo-Installer"]
+	path = components/Awoo-Installer
+	url = https://github.com/Huntereb/Awoo-Installer.git
