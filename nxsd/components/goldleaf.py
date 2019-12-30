@@ -5,8 +5,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Goldleaf'
-COMPONENT_VERSION = 'v0.7.3'
-COMPONENT_COMMIT_OR_TAG = '0e673e3'
+COMPONENT_VERSION = 'v0.8'
+COMPONENT_COMMIT_OR_TAG = 'd55b2e9'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
