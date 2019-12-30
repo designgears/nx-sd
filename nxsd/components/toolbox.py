@@ -5,8 +5,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Toolbox'
-COMPONENT_VERSION = 'v2.0.0'
-COMPONENT_COMMIT_OR_TAG = '3cd7e83'
+COMPONENT_VERSION = 'v3.0.0'
+COMPONENT_COMMIT_OR_TAG = '099f45b'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 

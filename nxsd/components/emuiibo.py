@@ -5,8 +5,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'emuiibo'
-COMPONENT_VERSION = 'v0.3.1'
-COMPONENT_COMMIT_OR_TAG = 'b13dcc8'
+COMPONENT_VERSION = 'v0.4'
+COMPONENT_COMMIT_OR_TAG = 'b4eb9f5'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
