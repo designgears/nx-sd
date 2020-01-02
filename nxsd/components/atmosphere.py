@@ -5,7 +5,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Atmosphere'
 COMPONENT_VERSION = 'v0.10.1'
-COMPONENT_COMMIT_OR_TAG = '4877230'
+COMPONENT_COMMIT_OR_TAG = '43c0e39'
 COMPONENT_BRANCH = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
@@ -24,9 +24,9 @@ class AtmosphereComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
-        dest_sept = Path(install_directory, 'sdcard/sept/')
-        dest_hekate = Path(install_directory, 'sdcard/bootloader/')
+        dest_ams = Path(install_directory, 'sdcard/atmosphere')
+        dest_sept = Path(install_directory, 'sdcard/sept')
+        dest_hekate = Path(install_directory, 'sdcard/bootloader')
 
         component_dict = {
             'dmnt': (
