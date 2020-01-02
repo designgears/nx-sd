@@ -23,8 +23,8 @@ class HekateComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_hekate = Path(install_directory, 'sdcard/bootloader/')
-        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
+        dest_hekate = Path(install_directory, 'sdcard/bootloader')
+        dest_ams = Path(install_directory, 'sdcard/atmosphere')
 
         component_dict = {
             'payload': (
@@ -43,7 +43,7 @@ class HekateComponent(NXSDComponent):
                 Path(self._source_directory, 'output/emummc.kipm'),
                 Path(dest_hekate, 'sys/emummc.kipm'),
             ),
-            'sleep-module': (
+            'lp0': (
                 Path(self._source_directory, 'output/libsys_lp0.bso'),
                 Path(dest_hekate, 'sys/libsys_lp0.bso'),
             ),
@@ -53,6 +53,10 @@ class HekateComponent(NXSDComponent):
             ),
             'res': (
                 Path(self._source_directory, 'nyx/resources/'),
+                Path(dest_hekate, 'res/'),
+            ),
+            'res_extra': (
+                Path(settings.defaults_directory, 'hekate/res/'),
                 Path(dest_hekate, 'res/'),
             ),
             'res_pak': (
@@ -66,10 +70,6 @@ class HekateComponent(NXSDComponent):
             'config': (
                 Path(settings.defaults_directory, 'hekate/hekate_ipl.ini'),
                 Path(dest_hekate, 'hekate_ipl.ini'),
-            ),
-            'res_extra': (
-                Path(settings.defaults_directory, 'hekate/res/'),
-                Path(dest_hekate, 'res/'),
             ),
         }
         self._copy_components(component_dict)

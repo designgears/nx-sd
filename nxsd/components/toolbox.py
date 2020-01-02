@@ -23,16 +23,16 @@ class ToolboxComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_nro = Path(install_directory, 'sdcard/switch/Toolbox/')
+        dest_switch = Path(install_directory, 'sdcard/switch', COMPONENT_NAME)
 
         component_dict = {
-            'app': (
+            'nro': (
                 Path(self._source_directory, 'out/Toolbox.nro'),
-                Path(dest_nro, 'Toolbox.nro'),
+                Path(dest_switch, 'Toolbox.nro'),
             ),
             'config': (
                 Path(settings.defaults_directory, 'toolbox/config.json'),
-                Path(dest_nro, 'config.json'),
+                Path(dest_switch, 'config.json'),
             ),
         }
         self._copy_components(component_dict)

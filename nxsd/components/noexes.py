@@ -23,12 +23,12 @@ class NoexesComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
+        dest_contents = Path(install_directory, 'sdcard/atmosphere/contents')
 
         component_dict = {
             'contents': (
                 Path(self._source_directory, 'server/source/noexs/noexs.nsp'),
-                Path(dest_ams, 'contents/0100000000000038/exefs.nsp'),
+                Path(dest_contents, '0100000000000038/exefs.nsp'),
             ),
         }
         self._copy_components(component_dict)

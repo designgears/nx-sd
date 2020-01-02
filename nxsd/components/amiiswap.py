@@ -22,12 +22,12 @@ class AmiiSwapComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_nro = Path(install_directory, 'sdcard/switch/AmiiSwap/')
+        dest_switch = Path(install_directory, 'sdcard/switch', COMPONENT_NAME)
         
         component_dict = {
-            'app': (
+            'nro': (
                 Path(self._source_directory, 'AmiiSwap.nro'),
-                Path(dest_nro, 'AmiiSwap.nro'),
+                Path(dest_switch, 'AmiiSwap.nro'),
             ),
         }
         self._copy_components(component_dict)

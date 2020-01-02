@@ -23,7 +23,7 @@ class IncognitoRCMComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_hekate = Path(install_directory, 'sdcard/bootloader/')
+        dest_hekate = Path(install_directory, 'sdcard/bootloader')
         
         component_dict = {
             'payload': (

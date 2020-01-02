@@ -22,10 +22,10 @@ class HBMenuComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_sd = Path(install_directory, 'sdcard/')
+        dest_sd = Path(install_directory, 'sdcard')
 
         component_dict = {
-            'hbmenu': (
+            'nro': (
                 Path(self._source_directory, 'nx-hbmenu.nro'),
                 Path(dest_sd, 'hbmenu.nro'),
             ),

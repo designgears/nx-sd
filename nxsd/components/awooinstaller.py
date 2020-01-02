@@ -24,16 +24,16 @@ class AwooInstallerComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_nro = Path(install_directory, 'sdcard/switch/Awoo-Installer/')
+        dest_switch = Path(install_directory, 'sdcard/switch', COMPONENT_NAME)
 
         component_dict = {
-            'app': (
+            'nro': (
                 Path(self._source_directory, 'Awoo-Installer.nro'),
-                Path(dest_nro, 'Awoo-Installer.nro'),
+                Path(dest_switch, 'Awoo-Installer.nro'),
             ),
             'config': (
                 Path(self._defaults_directory, 'config.json'),
-                Path(dest_nro, 'config.json'),
+                Path(dest_switch, 'config.json'),
             ),
         }
         self._copy_components(component_dict)

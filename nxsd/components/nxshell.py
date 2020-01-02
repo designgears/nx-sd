@@ -23,12 +23,12 @@ class NXShellComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_nro = Path(install_directory, 'sdcard/switch/NX-Shell/')
+        dest_switch = Path(install_directory, 'sdcard/switch', COMPONENT_NAME)
 
         component_dict = {
-            'app': (
+            'nro': (
                 Path(self._source_directory, 'NX-Shell.nro'),
-                Path(dest_nro, 'NX-Shell.nro'),
+                Path(dest_switch, 'NX-Shell.nro'),
             ),
         }
         self._copy_components(component_dict)

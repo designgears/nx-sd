@@ -22,10 +22,10 @@ class HBLoaderComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
+        dest_ams = Path(install_directory, 'sdcard/atmosphere')
 
         component_dict = {
-            'hbloader': (
+            'nsp': (
                 Path(self._source_directory, 'hbl.nsp'),
                 Path(dest_ams, 'hbl.nsp'),
             ),

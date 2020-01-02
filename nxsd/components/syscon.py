@@ -23,13 +23,13 @@ class SysConComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
-        dest_conf = Path(install_directory, 'sdcard/config/')
+        dest_contents = Path(install_directory, 'sdcard/atmosphere/contents')
+        dest_conf = Path(install_directory, 'sdcard/config')
 
         component_dict = {
             'contents': (
                 Path(self._source_directory, 'sys-con.nsp'),
-                Path(dest_ams, 'contents/690000000000000D/exefs.nsp'),
+                Path(dest_contents, '690000000000000D/exefs.nsp'),
             ),
             'configs': (
                 Path(self._source_directory, 'config/sys-con/'),

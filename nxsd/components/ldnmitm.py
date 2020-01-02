@@ -22,12 +22,12 @@ class LdnmitmComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
         
-        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
+        dest_contents = Path(install_directory, 'sdcard/atmosphere/contents')
 
         component_dict = {
             'contents': (
                 Path(self._source_directory, 'out/sd/atmosphere/contents/4200000000000010/exefs.nsp'),
-                Path(dest_ams, 'contents/4200000000000010/exefs.nsp'),
+                Path(dest_contents, '4200000000000010/exefs.nsp'),
             ),
         }
         self._copy_components(component_dict)

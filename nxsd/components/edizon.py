@@ -22,12 +22,12 @@ class EdizonComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_nro = Path(install_directory, 'sdcard/switch/EdiZon/')
+        dest_switch = Path(install_directory, 'sdcard/switch', COMPONENT_NAME)
 
         component_dict = {
-            'edizon': (
+            'nro': (
                 Path(self._source_directory, 'out/EdiZon.nro'),
-                Path(dest_nro, 'EdiZon.nro'),
+                Path(dest_switch, 'EdiZon.nro'),
             ),
         }
         self._copy_components(component_dict)

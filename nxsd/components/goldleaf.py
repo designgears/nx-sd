@@ -23,12 +23,12 @@ class GoldleafComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_nro = Path(install_directory, 'sdcard/switch/Goldleaf/')
+        dest_switch = Path(install_directory, 'sdcard/switch', COMPONENT_NAME)
 
         component_dict = {
-            'app': (
+            'nro': (
                 Path(self._source_directory, 'Goldleaf/Goldleaf.nro'),
-                Path(dest_nro, 'Goldleaf.nro'),
+                Path(dest_switch, 'Goldleaf.nro'),
             ),
         }
         self._copy_components(component_dict)

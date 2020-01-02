@@ -23,13 +23,13 @@ class SysftpdliteComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
+        dest_contents = Path(install_directory, 'sdcard/atmosphere/contents')
         dest_sd = Path(install_directory, 'sdcard/')
         
         component_dict = {
             'contents': (
                 Path(self._source_directory, 'sys-ftpd.nsp'),
-                Path(dest_ams, 'contents/420000000000000E/exefs.nsp'),
+                Path(dest_contents, '420000000000000E/exefs.nsp'),
             ),
             'config': (
                 Path(self._source_directory, 'sd_card/config/sys-ftpd/'),
