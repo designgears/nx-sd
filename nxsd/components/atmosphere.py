@@ -5,7 +5,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Atmosphere'
 COMPONENT_VERSION = 'v0.10.1'
-COMPONENT_COMMIT_OR_TAG = '5a15d62'
+COMPONENT_COMMIT_OR_TAG = '2619cca'
 COMPONENT_BRANCH = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
@@ -104,7 +104,7 @@ class AtmosphereComponent(NXSDComponent):
                 Path(dest_sept, 'sept-secondary_01.enc'),
             ),
             'boot_flags': (
-                Path(settings.defaults_directory, 'stub.flag'),
+                Path(settings.defaults_directory, 'boot2.flag'),
                 [
                     Path(dest_ams, 'contents/0100000000000032/flags/boot2.flag'), # eclct.stub
                     Path(dest_ams, 'contents/0100000000000037/flags/boot2.flag'), # ro

@@ -86,3 +86,7 @@
 	path = components/Awoo-Installer
 	url = https://github.com/Huntereb/Awoo-Installer.git
 	ignore = dirty
+[submodule "components/hb-appstore"]
+	path = components/hb-appstore
+	url = https://github.com/vgmoose/hb-appstore.git
+	ignore = dirty

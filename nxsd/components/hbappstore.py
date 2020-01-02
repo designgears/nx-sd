@@ -4,13 +4,13 @@ from nxsd.components import NXSDComponent
 from nxsd.config import settings
 from pathlib import Path
 
-COMPONENT_NAME = 'emuiibo'
-COMPONENT_VERSION = 'v0.4'
-COMPONENT_COMMIT_OR_TAG = 'ea603f8'
+COMPONENT_NAME = 'hb-appstore'
+COMPONENT_VERSION = 'v2.2'
+COMPONENT_COMMIT_OR_TAG = '16f7ba7'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
-class EmuiiboComponent(NXSDComponent):
+class HbAppStoreComponent(NXSDComponent):
 
     def __init__(self):
         super().__init__()
@@ -23,12 +23,12 @@ class EmuiiboComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_ams = Path(install_directory, 'sdcard/atmosphere/')
-        
+        dest_nro = Path(install_directory, 'sdcard/switch/')
+
         component_dict = {
-            'contents': (
-                Path(self._source_directory, 'SdOut/contents/0100000000000352/exefs.nsp'),
-                Path(dest_ams, 'contents/0100000000000352/exefs.nsp'),
+            'app': (
+                Path(self._source_directory, 'appstore.nro'),
+                Path(dest_nro, 'appstore/appstore.nro'),
             ),
         }
         self._copy_components(component_dict)
@@ -56,4 +56,4 @@ class EmuiiboComponent(NXSDComponent):
 
 
 def get_component():
-    return EmuiiboComponent()
+    return HbAppStoreComponent()

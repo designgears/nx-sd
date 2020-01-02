@@ -28,6 +28,7 @@ from nxsd.components import checkpoint
 from nxsd.components import nxdumptool
 from nxsd.components import awooinstaller
 from nxsd.components import switchzstd
+from nxsd.components import hbappstore
 
 CORE_COMPONENTS = {
     'atmosphere':   atmosphere,
@@ -56,6 +57,7 @@ OPTIONAL_COMPONENTS = {
     'awooinstaller':awooinstaller,
     'checkpoint':   checkpoint,
     'goldleaf':     goldleaf,
+    'hbappstore':   hbappstore,
     'incognito':    incognito,
     'noexes':       noexes,
     'switchzstd':   switchzstd,
