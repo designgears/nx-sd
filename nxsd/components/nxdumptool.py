@@ -22,12 +22,12 @@ class NxdumptoolComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_nro = Path(install_directory, 'sdcard/switch/')
+        dest_nro = Path(install_directory, 'sdcard/switch/nxdumptool/')
 
         component_dict = {
             'app': (
                 Path(self._source_directory, 'nxdumptool.nro'),
-                Path(dest_nro, 'nxdumptool/nxdumptool.nro'),
+                Path(dest_nro, 'nxdumptool.nro'),
             ),
         }
         self._copy_components(component_dict)

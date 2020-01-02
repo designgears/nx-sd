@@ -23,12 +23,12 @@ class IncognitoComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_nro = Path(install_directory, 'sdcard/switch/')
+        dest_nro = Path(install_directory, 'sdcard/switch/incognito/')
         
         component_dict = {
             'app': (
                 Path(self._source_directory, 'incognito.nro'),
-                Path(dest_nro, 'incognito/incognito.nro'),
+                Path(dest_nro, 'incognito.nro'),
             ),
         }
         self._copy_components(component_dict)

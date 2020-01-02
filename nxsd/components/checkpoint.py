@@ -22,12 +22,12 @@ class CheckpointComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_nro = Path(install_directory, 'sdcard/switch/')
+        dest_nro = Path(install_directory, 'sdcard/switch/Checkpoint/')
 
         component_dict = {
             'nro': (
                 Path(self._source_directory, 'switch/out/Checkpoint.nro'),
-                Path(dest_nro, 'Checkpoint/Checkpoint.nro'),
+                Path(dest_nro, 'Checkpoint.nro'),
             ),
         }
         self._copy_components(component_dict)

@@ -19,7 +19,7 @@ class AtmosphereComponent(NXSDComponent):
 
         self._source_directory = Path(settings.components_directory, COMPONENT_NAME)
         self._dockerfiles_directory = Path(settings.dockerfiles_directory, COMPONENT_NAME)
-        self._defaults_directory = Path(settings.defaults_directory, COMPONENT_NAME.lower())
+        self._defaults_directory = Path(settings.defaults_directory, COMPONENT_NAME)
 
     def install(self, install_directory):
         self._build()

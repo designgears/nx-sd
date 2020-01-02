@@ -22,12 +22,12 @@ class SysCLKEditorComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_nro = Path(install_directory, 'sdcard/switch/')
+        dest_nro = Path(install_directory, 'sdcard/switch/sys-clk-Editor/')
 
         component_dict = {
             'nro': (
                 Path(self._source_directory, 'sys-clk-Editor.nro'),
-                Path(dest_nro, 'sys-clk-Editor/sys-clk-Editor.nro'),
+                Path(dest_nro, 'sys-clk-Editor.nro'),
             ),
         }
         self._copy_components(component_dict)

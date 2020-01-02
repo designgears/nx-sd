@@ -15,10 +15,9 @@ class SwitchZstdComponent(NXSDComponent):
         super().__init__()
         self._name = COMPONENT_NAME
         self._version_string = COMPONENT_VERSION
-        
+
         self._source_directory = Path(settings.components_directory, COMPONENT_NAME)
         self._dockerfiles_directory = Path(settings.dockerfiles_directory, COMPONENT_NAME)
-        self._defaults_directory = Path(settings.defaults_directory, COMPONENT_NAME.lower())
 
     def install(self, install_directory):
         self._build()
