@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Toolbox'
 COMPONENT_VERSION = 'v3.0.0'
-COMPONENT_COMMIT_OR_TAG = '099f45b'
+COMPONENT_COMMIT_OR_TAG = '778847d'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
