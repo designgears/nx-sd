@@ -33,20 +33,24 @@ The name of each componenet corresponds with its filename in `/nxsd/components`.
 | Component                                                 | Description |
 | --------------------------------------------------------- | ----------- |
 | [EdiZon](https://github.com/WerWolv/EdiZon)               | Save manager, editing tool, and memory trainer |
+| [emuiibo](https://github.com/XorTroll/emuiibo)            | MitM'ing NFP services for Amiibo emulation! |
 | [ldn_mitm](https://github.com/spacemeowx2/ldn_mitm)       | Play local wireless supported games online |
 | [NX-Shell](https://github.com/joel16/NX-Shell)            | 3DShell port for the Switch |
 | [nxdumptool](https://github.com/DarkMatterCore/nxdumptool)| Generates dumps from Switch gamecards and installed SD/eMMC titles |
+| [sys-con](https://github.com/cathery/sys-con)             | Sysmodule that allows support for third-party controllers |
 | [sys-CLK](https://github.com/retronx-team/sys-clk)        | Overclocking/underclocking system module |
 | [sys-clk-Editor](https://github.com/SunTheCourier/sys-clk-Editor) | Editor for your sys-clk configuration |
-| [sys-ftpd](https://github.com/designgears/sys-ftpd)       | Ftpd as a Switch sysmodule |
+| [sys-ftpd-light](https://github.com/cathery/sys-ftpd-light) | Re-work of the original sys-ftpd |
 
 ### Optional
 
 | Component                                                 | Description |
 | --------------------------------------------------------- | ----------- |
 | [AmiiSwap](https://github.com/FuryBaguette/AmiiSwap)      | Switch GUI Amiibo Manager homebrew for emulation with Emuiibo |
+| [Awoo-Installer](https://github.com/Huntereb/Awoo-Installer) | A No-Bullshit NSP, NSZ, XCI, and XCZ Installer |
 | [Checkpoint](https://github.com/FlagBrew/Checkpoint)      | Fast and simple homebrew save manager for 3DS and Switch |
-| [emuiibo](https://github.com/XorTroll/emuiibo)            | MitM'ing NFP services for Amiibo emulation! |
 | [Goldleaf](https://github.com/XorTroll/Goldleaf)          | Switch multipurpose homebrew tool |
+| [hb-appstore](https://github.com/vgmoose/hb-appstore)     | GUI for downloading/managing homebrew apps |
 | [incognito](https://github.com/blawar/incognito)          | Wipes personal information from your Nintendo Switch |
-| [Noexes](https://github.com/KranKRival/Noexes)            | graphical remote debugger for the Switch |
+| [Noexes](https://github.com/KranKRival/Noexes)            | graphical remote debugger |
+| [zstd](https://github.com/facebook/zstd)                  | Zstandard - Fast real-time compression algorithm |
