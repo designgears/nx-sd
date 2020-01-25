@@ -38,10 +38,6 @@
 	path = components/emuiibo
 	url = https://github.com/XorTroll/emuiibo.git
 	ignore = dirty
-[submodule "components/incognito"]
-	path = components/incognito
-	url = https://github.com/blawar/incognito.git
-	ignore = dirty
 [submodule "components/Toolbox"]
 	path = components/Toolbox
 	url = https://github.com/designgears/Kosmos-Toolbox.git

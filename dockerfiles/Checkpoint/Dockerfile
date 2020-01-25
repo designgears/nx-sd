@@ -2,6 +2,7 @@ FROM devkitpro/devkita64_devkitarm:20190720
 
 ENV PATH=/usr/local/bin:/usr/local:$PATH
 
+RUN dkp-pacman -Sy libnx --noconfirm
 RUN dkp-pacman -Scc --noconfirm
 
 RUN apt-get update

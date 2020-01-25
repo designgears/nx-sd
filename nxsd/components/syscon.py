@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'sys-con'
 COMPONENT_VERSION = 'v0.5.2'
-COMPONENT_COMMIT_OR_TAG = '7a6eb0e'
+COMPONENT_COMMIT_OR_TAG = '0efde14'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -28,11 +28,11 @@ class SysConComponent(NXSDComponent):
 
         component_dict = {
             'contents': (
-                Path(self._source_directory, 'sys-con.nsp'),
+                Path(self._source_directory, 'out/atmosphere/contents/690000000000000D/exefs.nsp'),
                 Path(dest_contents, '690000000000000D/exefs.nsp'),
             ),
             'configs': (
-                Path(self._source_directory, 'config/sys-con/'),
+                Path(self._source_directory, 'out/config/sys-con/'),
                 Path(dest_conf, 'sys-con/'),
             ),
         }
