@@ -58,7 +58,6 @@ OPTIONAL_COMPONENTS = {
     'checkpoint':   checkpoint,
     'goldleaf':     goldleaf,
     'hbappstore':   hbappstore,
-    'incognito':    incognito,
     'noexes':       noexes,
     'switchzstd':   switchzstd,
 }
