@@ -1,7 +1,6 @@
 FROM devkitpro/devkita64_devkitarm:20190720
 
 COPY ./compile.sh /compile.sh
-
 RUN chmod a+x /compile.sh
 
 RUN dkp-pacman -Scc --noconfirm
