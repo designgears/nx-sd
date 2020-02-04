@@ -1,0 +1,27 @@
+diff --git a/stratosphere/ams_mitm/source/fs_mitm/fs_mitm_service.cpp b/stratosphere/ams_mitm/source/fs_mitm/fs_mitm_service.cpp
+index ca046a4d..85d00d1e 100644
+--- a/stratosphere/ams_mitm/source/fs_mitm/fs_mitm_service.cpp
++++ b/stratosphere/ams_mitm/source/fs_mitm/fs_mitm_service.cpp
+@@ -189,8 +189,9 @@ namespace ams::mitm::fs {
+ 
+         const bool is_sysmodule = ncm::IsSystemProgramId(this->client_info.program_id);
+         const bool is_hbl = this->client_info.override_status.IsHbl();
+-        const bool can_write_bis = is_sysmodule || (is_hbl && GetSettingsItemBooleanValue("atmosphere", "enable_hbl_bis_write"));
+-        const bool can_read_cal  = is_sysmodule || (is_hbl && GetSettingsItemBooleanValue("atmosphere", "enable_hbl_cal_read"));
++        const bool can_write_bis  = is_sysmodule || (GetSettingsItemBooleanValue("atmosphere", "enable_hbl_bis_write"));
++        const bool can_read_cal   = is_sysmodule || (GetSettingsItemBooleanValue("atmosphere", "enable_hbl_cal_read"));
++        const bool can_write_cal  = is_sysmodule || (GetSettingsItemBooleanValue("atmosphere", "enable_hbl_cal_write"));
+ 
+         /* Allow HBL to write to boot1 (safe firm) + package2. */
+         /* This is needed to not break compatibility with ChoiDujourNX, which does not check for write access before beginning an update. */
+@@ -205,7 +206,9 @@ namespace ams::mitm::fs {
+         } else if (bis_partition_id == FsBisPartitionId_CalibrationBinary) {
+             /* PRODINFO should *never* be writable. */
+             /* If we have permissions, create a read only storage. */
+-            if (can_read_cal) {
++            if (can_write_cal) {
++                out.SetValue(std::make_shared<IStorageInterface>(new RemoteStorage(bis_storage)), target_object_id);
++            } else if (can_read_cal) {
+                 out.SetValue(std::make_shared<IStorageInterface>(new ReadOnlyStorageAdapter(new RemoteStorage(bis_storage))), target_object_id);
+             } else {
+                 /* If we can't read cal, return permission denied. */
