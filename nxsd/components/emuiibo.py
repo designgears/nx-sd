@@ -24,11 +24,16 @@ class EmuiiboComponent(NXSDComponent):
         self._build()
 
         dest_contents = Path(install_directory, 'sdcard/atmosphere/contents')
+        dest_overlays = Path(install_directory, 'sdcard/switch/.overlays')
         
         component_dict = {
             'contents': (
                 Path(self._source_directory, 'SdOut/contents/0100000000000352/exefs.nsp'),
                 Path(dest_contents, '0100000000000352/exefs.nsp'),
+            ),
+            'overlay': (
+                Path(self._source_directory, 'overlay/emuiibo.ovl'),
+                Path(dest_overlays, 'emuiibo.ovl'),
             ),
         }
         self._copy_components(component_dict)
