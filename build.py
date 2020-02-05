@@ -21,12 +21,14 @@ from nxsd.components import noexes
 from nxsd.components import nxdumptool
 from nxsd.components import nxhbloader
 from nxsd.components import nxhbmenu
+from nxsd.components import nxovlloader
 from nxsd.components import nxshell
 from nxsd.components import switchzstd
 from nxsd.components import sysclk
 from nxsd.components import sysclkeditor
 from nxsd.components import syscon
 from nxsd.components import sysftpdlight
+from nxsd.components import teslamenu
 from nxsd.components import toolbox
 
 CORE_COMPONENTS = {
@@ -44,11 +46,13 @@ ADDON_COMPONENTS = {
     'emuiibo':      emuiibo,
     'ldnmitm':      ldnmitm,
     'nxdumptool':   nxdumptool,
+    'nxovlloader':  nxovlloader,
     'nxshell':      nxshell,
     'syscon':       syscon,
     'sysclk':       sysclk,
     'sysclkeditor': sysclkeditor,
     'sysftpdlight': sysftpdlight,
+    'teslamenu':    teslamenu,
 }
 
 OPTIONAL_COMPONENTS = {

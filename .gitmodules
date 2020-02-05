@@ -82,3 +82,11 @@
 	path = components/hb-appstore
 	url = https://github.com/vgmoose/hb-appstore.git
 	ignore = dirty
+[submodule "components/Tesla-Menu"]
+	path = components/Tesla-Menu
+	url = https://github.com/WerWolv/Tesla-Menu.git
+	ignore = dirty
+[submodule "components/nx-ovlloader"]
+	path = components/nx-ovlloader
+	url = https://github.com/WerWolv/nx-ovlloader.git
+	ignore = dirty
