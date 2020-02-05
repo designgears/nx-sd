@@ -30,10 +30,6 @@
 	path = components/NX-Shell
 	url = https://github.com/joel16/NX-Shell.git
 	ignore = dirty
-[submodule "components/AmiiSwap"]
-	path = components/AmiiSwap
-	url = https://github.com/FuryBaguette/AmiiSwap.git
-	ignore = dirty
 [submodule "components/emuiibo"]
 	path = components/emuiibo
 	url = https://github.com/XorTroll/emuiibo.git

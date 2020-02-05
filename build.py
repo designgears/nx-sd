@@ -5,30 +5,29 @@ import logging
 import nxsd
 
 from nxsd.package import NXSDPackage
-from nxsd.components import hekate
 from nxsd.components import atmosphere
-from nxsd.components import nxhbloader
-from nxsd.components import nxhbmenu
+from nxsd.components import awooinstaller
+from nxsd.components import checkpoint
 from nxsd.components import edizon
-from nxsd.components import lockpickrcm
-from nxsd.components import ldnmitm
+from nxsd.components import emuiibo
+from nxsd.components import goldleaf
+from nxsd.components import hbappstore
+from nxsd.components import hekate
 from nxsd.components import incognito
 from nxsd.components import incognitorcm
+from nxsd.components import ldnmitm
+from nxsd.components import lockpickrcm
+from nxsd.components import noexes
+from nxsd.components import nxdumptool
+from nxsd.components import nxhbloader
+from nxsd.components import nxhbmenu
+from nxsd.components import nxshell
+from nxsd.components import switchzstd
 from nxsd.components import sysclk
+from nxsd.components import sysclkeditor
 from nxsd.components import syscon
 from nxsd.components import sysftpdlight
-from nxsd.components import goldleaf
-from nxsd.components import nxshell
-from nxsd.components import amiiswap
-from nxsd.components import emuiibo
 from nxsd.components import toolbox
-from nxsd.components import sysclkeditor
-from nxsd.components import noexes
-from nxsd.components import checkpoint
-from nxsd.components import nxdumptool
-from nxsd.components import awooinstaller
-from nxsd.components import switchzstd
-from nxsd.components import hbappstore
 
 CORE_COMPONENTS = {
     'atmosphere':   atmosphere,
@@ -53,7 +52,6 @@ ADDON_COMPONENTS = {
 }
 
 OPTIONAL_COMPONENTS = {
-    'amiiswap':     amiiswap,
     'awooinstaller':awooinstaller,
     'checkpoint':   checkpoint,
     'goldleaf':     goldleaf,
