@@ -93,3 +93,5 @@
 [submodule "components/sys-clk-Overlay"]
 	path = components/sys-clk-Overlay
 	url = https://github.com/Sun-Research-University/sys-clk-Overlay.git
+	ignore = dirty
+	
