@@ -25,6 +25,7 @@ from nxsd.components import nxovlloader
 from nxsd.components import nxshell
 from nxsd.components import switchzstd
 from nxsd.components import sysclk
+from nxsd.components import sysclkoverlay
 from nxsd.components import sysclkeditor
 from nxsd.components import syscon
 from nxsd.components import sysftpdlight
@@ -50,7 +51,7 @@ ADDON_COMPONENTS = {
     'nxshell':      nxshell,
     'syscon':       syscon,
     'sysclk':       sysclk,
-    'sysclkeditor': sysclkeditor,
+    'sysclkoverlay':sysclkoverlay,
     'sysftpdlight': sysftpdlight,
     'teslamenu':    teslamenu,
 }
@@ -62,6 +63,7 @@ OPTIONAL_COMPONENTS = {
     'hbappstore':   hbappstore,
     'noexes':       noexes,
     'switchzstd':   switchzstd,
+    'sysclkeditor': sysclkeditor,
 }
 
 ALL_COMPONENTS = {
