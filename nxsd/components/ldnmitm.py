@@ -4,8 +4,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'ldn_mitm'
-COMPONENT_VERSION = 'v1.3.1-alpha'
-COMPONENT_COMMIT_OR_TAG = 'e6c1fcf'
+COMPONENT_VERSION = 'v1.3.2'
+COMPONENT_COMMIT_OR_TAG = '286949c'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
