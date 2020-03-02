@@ -4,8 +4,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Tesla-Menu'
-COMPONENT_VERSION = 'v1.0.1'
-COMPONENT_COMMIT_OR_TAG = 'c6ed6e0'
+COMPONENT_VERSION = 'v1.0.2'
+COMPONENT_COMMIT_OR_TAG = '6e16505'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
