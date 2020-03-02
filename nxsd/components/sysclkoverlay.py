@@ -4,8 +4,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'sys-clk-Overlay'
-COMPONENT_VERSION = 'v1.0.2'
-COMPONENT_COMMIT_OR_TAG = 'c9d39b5'
+COMPONENT_VERSION = 'v1.1'
+COMPONENT_COMMIT_OR_TAG = 'f380f02'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
