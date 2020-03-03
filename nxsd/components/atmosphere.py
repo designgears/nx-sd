@@ -4,8 +4,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Atmosphere'
-COMPONENT_VERSION = 'v0.10.2'
-COMPONENT_COMMIT_OR_TAG = '9df7f0a'
+COMPONENT_VERSION = 'v0.10.3'
+COMPONENT_COMMIT_OR_TAG = 'f940320'
 COMPONENT_BRANCH = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
@@ -102,6 +102,14 @@ class AtmosphereComponent(NXSDComponent):
             'sept-secondary_01-enc': (
                 Path(self._dockerfiles_directory, 'sept-secondary_01.enc'),
                 Path(dest_sept, 'sept-secondary_01.enc'),
+            ),
+            'sept-secondary_dev_00-enc': (
+                Path(self._dockerfiles_directory, 'sept-secondary_dev_00.enc'),
+                Path(dest_sept, 'sept-secondary_dev_00.enc'),
+            ),
+            'sept-secondary_dev_01-enc': (
+                Path(self._dockerfiles_directory, 'sept-secondary_dev_01.enc'),
+                Path(dest_sept, 'sept-secondary_dev_01.enc'),
             ),
             'boot_flags': (
                 Path(settings.defaults_directory, 'boot2.flag'),
