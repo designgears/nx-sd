@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'hekate'
 COMPONENT_VERSION = 'v5.1.2 & Nyx v0.8.5'
-COMPONENT_COMMIT_OR_TAG = '3f10cc7'
+COMPONENT_COMMIT_OR_TAG = 'a52af1b'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 

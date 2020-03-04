@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'hb-appstore'
 COMPONENT_VERSION = 'v2.2'
-COMPONENT_COMMIT_OR_TAG = '16f7ba7'
+COMPONENT_COMMIT_OR_TAG = 'f331685'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
