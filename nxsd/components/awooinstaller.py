@@ -5,8 +5,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Awoo-Installer'
-COMPONENT_VERSION = 'v1.3.0'
-COMPONENT_COMMIT_OR_TAG = 'db061e8'
+COMPONENT_VERSION = 'v1.3.2'
+COMPONENT_COMMIT_OR_TAG = '9f9a584'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
