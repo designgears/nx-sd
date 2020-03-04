@@ -8,7 +8,6 @@ COMPONENT_VERSION = 'v1.1'
 COMPONENT_COMMIT_OR_TAG = 'f380f02'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
-
 class sysClkOverlayComponent(NXSDComponent):
 
     def __init__(self):

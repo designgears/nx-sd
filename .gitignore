@@ -1,4 +1,5 @@
 out/
+dockerfiles/Awoo-Installer/*.pkg.tar.xz
 
 __pycache__/
 .idea/

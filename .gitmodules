@@ -94,4 +94,7 @@
 	path = components/sys-clk-Overlay
 	url = https://github.com/Sun-Research-University/sys-clk-Overlay.git
 	ignore = dirty
-	
+[submodule "components/pacman-packages"]
+	path = components/pacman-packages
+	url = https://github.com/HookedBehemoth/pacman-packages.git
+	ignore = dirty

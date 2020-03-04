@@ -4,9 +4,6 @@ ENV DEVKITPRO=/opt/devkitpro
 ENV DEVKITARM=/opt/devkitpro/devkitARM
 ENV DEVKITPPC=/opt/devkitpro/devkitPPC
 
-COPY ./compile.sh /compile.sh
-RUN chmod a+x /compile.sh
-
 RUN pacman-key --init
 RUN pacman-key --recv F7FD5492264BB9D0
 RUN pacman-key --lsign F7FD5492264BB9D0
@@ -22,12 +19,12 @@ RUN pacman -Syu --noconfirm
 RUN useradd -r -s /usr/bin/nologin builder
 RUN mkdir /builder
 RUN chown builder.builder /builder -R
+RUN ln -s /builder /developer
 
 RUN pacman -Syu make cmake wget sudo fakeroot devkitA64 devkitpro-pkgbuild-helpers switch-dev --noconfirm
 
 USER builder
 
-WORKDIR /builder
-RUN wget https://raw.githubusercontent.com/HookedBehemoth/pacman-packages/master/switch/zstd/PKGBUILD
+WORKDIR /developer/components/pacman-packages/switch/zstd
 
-ENTRYPOINT ["/compile.sh"]
+ENTRYPOINT ["makepkg"]
