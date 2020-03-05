@@ -31,6 +31,10 @@ class LockpickRCMComponent(NXSDComponent):
                     Path(dest_hekate, 'payloads/Lockpick_RCM.bin'),
                 ],
             ),
+            'ini': (
+                Path(settings.defaults_directory, COMPONENT_NAME, 'Lockpick_RCM.ini'),
+                Path(dest_hekate, 'ini/Lockpick_RCM.ini'),
+            ),
         }
         self._copy_components(component_dict)
 
