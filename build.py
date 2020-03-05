@@ -35,7 +35,6 @@ from nxsd.components import toolbox
 CORE_COMPONENTS = {
     'atmosphere':   atmosphere,
     'hekate':       hekate,
-    'incognitorcm': incognitorcm,
     'lockpickrcm':  lockpickrcm,
     'nxhbloader':   nxhbloader,
     'nxhbmenu':     nxhbmenu,
@@ -61,6 +60,7 @@ OPTIONAL_COMPONENTS = {
     'checkpoint':   checkpoint,
     'goldleaf':     goldleaf,
     'hbappstore':   hbappstore,
+    'incognitorcm': incognitorcm,
     'noexes':       noexes,
     'switchzstd':   switchzstd,
     'sysclkeditor': sysclkeditor,
