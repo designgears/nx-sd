@@ -29,6 +29,10 @@ class LdnmitmComponent(NXSDComponent):
                 Path(self._source_directory, 'out/sd/atmosphere/contents/4200000000000010/exefs.nsp'),
                 Path(dest_contents, '4200000000000010/exefs.nsp'),
             ),
+            'toolbox': (
+                Path(settings.defaults_directory, 'Toolbox/ldn_mitm.json'),
+                Path(dest_contents, '4200000000000010/toolbox.json'),
+            ),
         }
         self._copy_components(component_dict)
 

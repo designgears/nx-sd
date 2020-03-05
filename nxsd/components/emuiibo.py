@@ -31,6 +31,10 @@ class EmuiiboComponent(NXSDComponent):
                 Path(self._source_directory, 'SdOut/contents/0100000000000352/exefs.nsp'),
                 Path(dest_contents, '0100000000000352/exefs.nsp'),
             ),
+            'toolbox': (
+                Path(settings.defaults_directory, 'Toolbox/emuiibo.json'),
+                Path(dest_contents, '0100000000000352/toolbox.json'),
+            ),
             'overlay': (
                 Path(self._source_directory, 'overlay/emuiibo.ovl'),
                 Path(dest_overlays, 'emuiibo.ovl'),

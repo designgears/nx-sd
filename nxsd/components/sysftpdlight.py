@@ -31,6 +31,10 @@ class SysftpdliteComponent(NXSDComponent):
                 Path(self._source_directory, 'sys-ftpd.nsp'),
                 Path(dest_contents, '420000000000000E/exefs.nsp'),
             ),
+            'toolbox': (
+                Path(settings.defaults_directory, 'Toolbox/sys-ftpd-light.json'),
+                Path(dest_contents, '420000000000000E/toolbox.json'),
+            ),
             'config': (
                 Path(self._source_directory, 'sd_card/config/sys-ftpd/'),
                 Path(dest_sd, 'config/sys-ftpd/'),

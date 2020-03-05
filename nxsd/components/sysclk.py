@@ -31,6 +31,10 @@ class SysCLKComponent(NXSDComponent):
                 Path(self._source_directory, 'sysmodule/out/sys-clk.nsp'),
                 Path(dest_contents, '00FF0000636C6BFF/exefs.nsp'),
             ),
+            'toolbox': (
+                Path(settings.defaults_directory, 'Toolbox/sys-clk.json'),
+                Path(dest_contents, '00FF0000636C6BFF/toolbox.json'),
+            ),
             'config': (
                 Path(settings.defaults_directory, 'sys-clk/config.ini'),
                 Path(dest_conf, 'sys-clk/config.ini'),

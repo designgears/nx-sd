@@ -31,6 +31,10 @@ class SysConComponent(NXSDComponent):
                 Path(self._source_directory, 'out/atmosphere/contents/690000000000000D/exefs.nsp'),
                 Path(dest_contents, '690000000000000D/exefs.nsp'),
             ),
+            'toolbox': (
+                Path(settings.defaults_directory, 'Toolbox/sys-con.json'),
+                Path(dest_contents, '690000000000000D/toolbox.json'),
+            ),
             'configs': (
                 Path(self._source_directory, 'out/config/sys-con/'),
                 Path(dest_conf, 'sys-con/'),

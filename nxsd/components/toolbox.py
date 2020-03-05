@@ -30,10 +30,6 @@ class ToolboxComponent(NXSDComponent):
                 Path(self._source_directory, 'out/Toolbox.nro'),
                 Path(dest_switch, 'Toolbox.nro'),
             ),
-            'config': (
-                Path(settings.defaults_directory, 'toolbox/config.json'),
-                Path(dest_switch, 'config.json'),
-            ),
         }
         self._copy_components(component_dict)
 

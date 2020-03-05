@@ -30,6 +30,10 @@ class NoexesComponent(NXSDComponent):
                 Path(self._source_directory, 'server/source/noexs/noexs.nsp'),
                 Path(dest_contents, '0100000000000038/exefs.nsp'),
             ),
+            'toolbox': (
+                Path(settings.defaults_directory, 'Toolbox/noexes.json'),
+                Path(dest_contents, '0100000000000038/toolbox.json'),
+            ),
         }
         self._copy_components(component_dict)
 
