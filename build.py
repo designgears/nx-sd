@@ -13,7 +13,6 @@ from nxsd.components import emuiibo
 from nxsd.components import goldleaf
 from nxsd.components import hbappstore
 from nxsd.components import hekate
-from nxsd.components import incognito
 from nxsd.components import incognitorcm
 from nxsd.components import ldnmitm
 from nxsd.components import lockpickrcm
