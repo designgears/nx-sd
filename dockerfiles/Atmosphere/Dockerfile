@@ -7,8 +7,13 @@ COPY ./sept-secondary_dev_01.enc /sept-secondary_dev_01.enc
 COPY ./cal0.patch /cal0.patch
 COPY ./compile.sh /compile.sh
 
-RUN dkp-pacman -Syu libnx --noconfirm
+RUN dkp-pacman -Syu --noconfirm
 RUN dkp-pacman -Scc --noconfirm
+
+RUN git clone https://github.com/switchbrew/libnx.git
+WORKDIR /libnx
+RUN git fetch && git reset --hard ccb79ff
+RUN make -j8 install
 
 RUN apt update -y && apt install python -y
 

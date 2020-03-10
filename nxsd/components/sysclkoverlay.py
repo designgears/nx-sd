@@ -5,7 +5,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'sys-clk-Overlay'
 COMPONENT_VERSION = 'v1.1'
-COMPONENT_COMMIT_OR_TAG = 'f380f02'
+COMPONENT_COMMIT_OR_TAG = '5381138'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 class sysClkOverlayComponent(NXSDComponent):

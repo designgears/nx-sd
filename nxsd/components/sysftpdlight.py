@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'sys-ftpd-light'
 COMPONENT_VERSION = 'v1.0.1'
-COMPONENT_COMMIT_OR_TAG = '3ee4406'
+COMPONENT_COMMIT_OR_TAG = '232e518'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
