@@ -98,3 +98,7 @@
 	path = components/pacman-packages
 	url = https://github.com/HookedBehemoth/pacman-packages.git
 	ignore = dirty
+[submodule "components/Status-Monitor-Overlay"]
+	path = components/Status-Monitor-Overlay
+	url = https://github.com/masagrator/Status-Monitor-Overlay.git
+	ignore = dirty

@@ -22,6 +22,7 @@ from nxsd.components import nxhbloader
 from nxsd.components import nxhbmenu
 from nxsd.components import nxovlloader
 from nxsd.components import nxshell
+from nxsd.components import statusmonitoroverlay
 from nxsd.components import switchzstd
 from nxsd.components import sysclk
 from nxsd.components import sysclkoverlay
@@ -41,17 +42,18 @@ CORE_COMPONENTS = {
 }
 
 ADDON_COMPONENTS = {
-    'edizon':       edizon,
-    'emuiibo':      emuiibo,
-    'ldnmitm':      ldnmitm,
-    'nxdumptool':   nxdumptool,
-    'nxovlloader':  nxovlloader,
-    'nxshell':      nxshell,
-    'syscon':       syscon,
-    'sysclk':       sysclk,
-    'sysclkoverlay':sysclkoverlay,
-    'sysftpdlight': sysftpdlight,
-    'teslamenu':    teslamenu,
+    'edizon':               edizon,
+    'emuiibo':              emuiibo,
+    'ldnmitm':              ldnmitm,
+    'nxdumptool':           nxdumptool,
+    'nxovlloader':          nxovlloader,
+    'nxshell':              nxshell,
+    'statusmonitoroverlay': statusmonitoroverlay,
+    'syscon':               syscon,
+    'sysclk':               sysclk,
+    'sysclkoverlay':        sysclkoverlay,
+    'sysftpdlight':         sysftpdlight,
+    'teslamenu':            teslamenu,
 }
 
 OPTIONAL_COMPONENTS = {
