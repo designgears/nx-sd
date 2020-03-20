@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Awoo-Installer'
 COMPONENT_VERSION = 'v1.3.2'
-COMPONENT_COMMIT_OR_TAG = '9f9a584'
+COMPONENT_COMMIT_OR_TAG = 'ee7e7c7'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
