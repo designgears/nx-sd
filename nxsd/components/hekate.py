@@ -5,8 +5,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'hekate'
-COMPONENT_VERSION = 'v5.1.2 & Nyx v0.8.5'
-COMPONENT_COMMIT_OR_TAG = 'a52af1b'
+COMPONENT_VERSION = 'v5.1.3 & Nyx v0.8.6'
+COMPONENT_COMMIT_OR_TAG = '9c2202f'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
