@@ -5,7 +5,7 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'NX-Shell'
-COMPONENT_VERSION = 'v2.11'
+COMPONENT_VERSION = 'v3.00'
 COMPONENT_COMMIT_OR_TAG = 'a79cc60'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 

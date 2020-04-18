@@ -34,8 +34,6 @@ from nxsd.components import toolbox
 
 CORE_COMPONENTS = {
     'atmosphere':   atmosphere,
-    'hekate':       hekate,
-    'lockpickrcm':  lockpickrcm,
     'nxhbloader':   nxhbloader,
     'nxhbmenu':     nxhbmenu,
     'toolbox':      toolbox,
@@ -43,11 +41,9 @@ CORE_COMPONENTS = {
 
 ADDON_COMPONENTS = {
     'edizon':               edizon,
-    'emuiibo':              emuiibo,
     'ldnmitm':              ldnmitm,
     'nxdumptool':           nxdumptool,
     'nxovlloader':          nxovlloader,
-    'nxshell':              nxshell,
     'statusmonitoroverlay': statusmonitoroverlay,
     'syscon':               syscon,
     'sysclk':               sysclk,
@@ -59,10 +55,14 @@ ADDON_COMPONENTS = {
 OPTIONAL_COMPONENTS = {
     'awooinstaller':awooinstaller,
     'checkpoint':   checkpoint,
+    'emuiibo':      emuiibo,
     'goldleaf':     goldleaf,
     'hbappstore':   hbappstore,
+    'hekate':       hekate,
     'incognitorcm': incognitorcm,
+    'lockpickrcm':  lockpickrcm,
     'noexes':       noexes,
+    'nxshell':      nxshell,
     'switchzstd':   switchzstd,
     'sysclkeditor': sysclkeditor,
 }

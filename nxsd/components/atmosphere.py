@@ -4,9 +4,9 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Atmosphere'
-COMPONENT_VERSION = 'v0.10.5'
-COMPONENT_COMMIT_OR_TAG = '9bb5af9'
-COMPONENT_BRANCH = 'master'
+COMPONENT_VERSION = 'v0.11.1'
+COMPONENT_COMMIT_OR_TAG = '7a0afe4'
+COMPONENT_BRANCH = 'neutos'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -26,12 +26,15 @@ class AtmosphereComponent(NXSDComponent):
 
         dest_ams = Path(install_directory, 'sdcard/atmosphere')
         dest_sept = Path(install_directory, 'sdcard/sept')
-        dest_hekate = Path(install_directory, 'sdcard/bootloader')
 
         component_dict = {
             'dmnt': (
                 Path(self._source_directory, 'stratosphere/dmnt/dmnt.nsp'),
                 Path(dest_ams, 'contents/010000000000000D/exefs.nsp'),
+            ),
+            'erpt': (
+                Path(self._source_directory, 'stratosphere/erpt/erpt.nsp'),
+                Path(dest_ams, 'contents/010000000000002B/exefs.nsp'),
             ),
             'boot2': (
                 Path(self._source_directory, 'stratosphere/boot2/boot2.nsp'),
@@ -57,7 +60,7 @@ class AtmosphereComponent(NXSDComponent):
                 Path(self._source_directory, 'fusee/fusee-primary/fusee-primary.bin'),
                 [
                     Path(install_directory, 'payloads/fusee-primary.bin'),
-                    Path(dest_hekate, 'payloads/fusee-primary.bin'),
+                    Path(dest_ams, 'reboot_payload.bin'),
                 ],
             ),
             'fusee-secondary': (
@@ -149,9 +152,7 @@ class AtmosphereComponent(NXSDComponent):
         with util.change_dir(self._source_directory):
             build_commands = [
                 'git fetch',
-                'git submodule foreach --recursive git reset --hard',
                 'git checkout {b} && git pull && git reset --hard {c}'.format(c=COMPONENT_COMMIT_OR_TAG, b=COMPONENT_BRANCH),
-                'git submodule update --init --recursive',
             ]
             util.execute_shell_commands(build_commands)
 

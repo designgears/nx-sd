@@ -10,10 +10,6 @@
 	path = components/Lockpick_RCM
 	url = https://github.com/shchmue/Lockpick_RCM.git
 	ignore = dirty
-[submodule "components/Atmosphere"]
-	path = components/Atmosphere
-	url = https://github.com/Atmosphere-NX/Atmosphere.git
-	ignore = dirty
 [submodule "components/ldn_mitm"]
 	path = components/ldn_mitm
 	url = https://github.com/spacemeowx2/ldn_mitm.git
@@ -101,4 +97,8 @@
 [submodule "components/Status-Monitor-Overlay"]
 	path = components/Status-Monitor-Overlay
 	url = https://github.com/masagrator/Status-Monitor-Overlay.git
+	ignore = dirty
+[submodule "components/Atmosphere"]
+	path = components/Atmosphere
+	url = https://github.com/borntohonk/NEUTOS.git
 	ignore = dirty
