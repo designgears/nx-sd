@@ -5,8 +5,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'emuiibo'
-COMPONENT_VERSION = 'v0.4'
-COMPONENT_COMMIT_OR_TAG = 'c06b211'
+COMPONENT_VERSION = 'v0.5'
+COMPONENT_COMMIT_OR_TAG = '2398ca1'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -28,7 +28,7 @@ class EmuiiboComponent(NXSDComponent):
         
         component_dict = {
             'contents': (
-                Path(self._source_directory, 'SdOut/contents/0100000000000352/exefs.nsp'),
+                Path(self._source_directory, 'SdOut/atmosphere/contents/0100000000000352/exefs.nsp'),
                 Path(dest_contents, '0100000000000352/exefs.nsp'),
             ),
             'toolbox': (
