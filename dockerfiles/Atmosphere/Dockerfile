@@ -10,7 +10,7 @@ RUN dkp-pacman -Scc --noconfirm
 
 RUN git clone https://github.com/switchbrew/libnx.git
 WORKDIR /libnx
-RUN git fetch && git reset --hard 7e581f6
+RUN git fetch && git reset --hard 0de0dfd
 RUN make -j8 install
 
 RUN apt update -y && apt install python -y

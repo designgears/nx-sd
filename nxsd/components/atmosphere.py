@@ -5,7 +5,7 @@ from pathlib import Path
 
 COMPONENT_NAME = 'Atmosphere'
 COMPONENT_VERSION = 'v0.11.1'
-COMPONENT_COMMIT_OR_TAG = '7a0afe4'
+COMPONENT_COMMIT_OR_TAG = '9987fbf'
 COMPONENT_BRANCH = 'neutos'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
@@ -129,10 +129,10 @@ class AtmosphereComponent(NXSDComponent):
                 Path(self._defaults_directory, 'sigpatches/fs_patches/'),
                 Path(dest_ams, 'kip_patches/fs_patches/'),
             ),
-            'bootlogo': (
-                Path(self._defaults_directory, 'bootlogo.bmp'),
-                Path(dest_ams, 'bootlogo.bmp'),
-            ),
+            'NeuOS_logo': (
+                Path(self._defaults_directory, 'sigpatches/NeuOS_logo/'),
+                Path(dest_ams, 'exefs_patches/NeuOS_logo/'),
+            ),            
         }
         self._copy_components(component_dict)
 
