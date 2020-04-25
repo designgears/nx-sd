@@ -45,7 +45,6 @@ ADDON_COMPONENTS = {
     'nxdumptool':           nxdumptool,
     'nxovlloader':          nxovlloader,
     'statusmonitoroverlay': statusmonitoroverlay,
-    'syscon':               syscon,
     'sysclk':               sysclk,
     'sysclkoverlay':        sysclkoverlay,
     'sysftpdlight':         sysftpdlight,
@@ -65,6 +64,7 @@ OPTIONAL_COMPONENTS = {
     'nxshell':      nxshell,
     'switchzstd':   switchzstd,
     'sysclkeditor': sysclkeditor,
+    'syscon':       syscon,
 }
 
 ALL_COMPONENTS = {

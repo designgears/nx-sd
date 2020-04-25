@@ -4,8 +4,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'nx-ovlloader'
-COMPONENT_VERSION = 'v1.0.4'
-COMPONENT_COMMIT_OR_TAG = 'ed00b96'
+COMPONENT_VERSION = 'v1.0.5'
+COMPONENT_COMMIT_OR_TAG = '0f26f78'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 

@@ -4,8 +4,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Status-Monitor-Overlay'
-COMPONENT_VERSION = 'v0.5.1'
-COMPONENT_COMMIT_OR_TAG = 'b660d90'
+COMPONENT_VERSION = 'v0.5.2'
+COMPONENT_COMMIT_OR_TAG = '9ab9e06'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 

@@ -4,9 +4,9 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'Atmosphere'
-COMPONENT_VERSION = 'v0.11.1'
-COMPONENT_COMMIT_OR_TAG = '9987fbf'
-COMPONENT_BRANCH = 'neutos'
+COMPONENT_VERSION = 'v0.12.0'
+COMPONENT_COMMIT_OR_TAG = '7bc0250'
+COMPONENT_BRANCH = 'master'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -24,8 +24,9 @@ class AtmosphereComponent(NXSDComponent):
     def install(self, install_directory):
         self._build()
 
-        dest_ams = Path(install_directory, 'sdcard/atmosphere')
-        dest_sept = Path(install_directory, 'sdcard/sept')
+        dest_sd = Path(install_directory, 'sdcard')
+        dest_ams = Path(dest_sd, 'atmosphere')
+        dest_sept = Path(dest_sd, 'sept')
 
         component_dict = {
             'dmnt': (
@@ -56,6 +57,10 @@ class AtmosphereComponent(NXSDComponent):
                 Path(self._source_directory, 'stratosphere/ro/ro.nsp'),
                 Path(dest_ams, 'contents/0100000000000037/exefs.nsp'),
             ),
+            'jpegdec': (
+                Path(self._source_directory, 'stratosphere/jpegdec/jpegdec.nsp'),
+                Path(dest_ams, 'contents/010000000000003C/exefs.nsp'),
+            ),
             'fusee-primary': (
                 Path(self._source_directory, 'fusee/fusee-primary/fusee-primary.bin'),
                 [
@@ -78,13 +83,13 @@ class AtmosphereComponent(NXSDComponent):
                 Path(self._source_directory, 'config_templates/hbl_html/'),
                 Path(dest_ams, 'hbl_html/'),
             ),
-            'no-gc': (
-                Path(self._source_directory, 'config_templates/kip_patches/default_nogc/'),
-                Path(dest_ams, 'kip_patches/default_nogc/'),
-            ),
             'bct.ini': (
                 Path(self._defaults_directory, 'BCT.ini'),
                 Path(dest_ams, 'config/BCT.ini'),
+            ),
+            'exosphere.ini': (
+                Path(self._defaults_directory, 'exosphere.ini'),
+                Path(dest_sd, 'exosphere.ini'),
             ),
             'override_config.ini': (
                 Path(self._defaults_directory, 'override_config.ini'),
@@ -121,18 +126,22 @@ class AtmosphereComponent(NXSDComponent):
                     Path(dest_ams, 'contents/0100000000000037/flags/boot2.flag'), # ro
                 ],
             ),
-            'es-patches': (
-                Path(self._defaults_directory, 'sigpatches/es_patches/'),
-                Path(dest_ams, 'exefs_patches/es_patches/'),
+            'nogc-patches': (
+                Path(self._source_directory, 'config_templates/kip_patches/default_nogc/'),
+                Path(dest_ams, 'kip_patches/default_nogc/'),
             ),
             'fs-patches': (
                 Path(self._defaults_directory, 'sigpatches/fs_patches/'),
                 Path(dest_ams, 'kip_patches/fs_patches/'),
             ),
-            'NeuOS_logo': (
-                Path(self._defaults_directory, 'sigpatches/NeuOS_logo/'),
-                Path(dest_ams, 'exefs_patches/NeuOS_logo/'),
-            ),            
+            'logo-patches': (
+                Path(self._defaults_directory, 'sigpatches/logo_patches/'),
+                Path(dest_ams, 'exefs_patches/logo_patches/'),
+            ),
+            'es-patches': (
+                Path(self._defaults_directory, 'sigpatches/es_patches/'),
+                Path(dest_ams, 'exefs_patches/es_patches/'),
+            ),
         }
         self._copy_components(component_dict)
 

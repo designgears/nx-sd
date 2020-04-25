@@ -1,0 +1,39 @@
+diff --git a/stratosphere/boot/source/boot_main.cpp b/stratosphere/boot/source/boot_main.cpp
+index 5a371326..85876f89 100644
+--- a/stratosphere/boot/source/boot_main.cpp
++++ b/stratosphere/boot/source/boot_main.cpp
+@@ -131,9 +131,6 @@ int main(int argc, char **argv)
+ 
+     const auto hw_type = spl::GetHardwareType();
+     if (hw_type != spl::HardwareType::Copper && hw_type != spl::HardwareType::Calcio) {
+-        /* Display splash screen for two seconds. */
+-        boot::ShowSplashScreen();
+-
+         /* Check that the battery has enough to boot. */
+         boot::CheckBatteryCharge();
+     }
+diff --git a/stratosphere/loader/source/ldr_meta.cpp b/stratosphere/loader/source/ldr_meta.cpp
+index 0da9a333..994e77ed 100644
+--- a/stratosphere/loader/source/ldr_meta.cpp
++++ b/stratosphere/loader/source/ldr_meta.cpp
+@@ -74,11 +74,6 @@ namespace ams::ldr {
+             /* Validate magic. */
+             R_UNLESS(acid->magic == Acid::Magic, ResultInvalidMeta());
+ 
+-            /* Validate that the acid is for production if not development. */
+-            if (!IsDevelopmentForAcidProductionCheck()) {
+-                R_UNLESS((acid->flags & Acid::AcidFlag_Production) != 0, ResultInvalidMeta());
+-            }
+-
+             /* Validate Fac, Sac, Kac. */
+             R_TRY(ValidateSubregion(sizeof(Acid), size, acid->fac_offset, acid->fac_size));
+             R_TRY(ValidateSubregion(sizeof(Acid), size, acid->sac_offset, acid->sac_size));
+@@ -111,7 +106,7 @@ namespace ams::ldr {
+ 
+         Result ValidateAcidSignature(Meta *meta) {
+             /* Loader did not check signatures prior to 10.0.0. */
+-            if (hos::GetVersion() < hos::Version_10_0_0) {
++            {
+                 meta->is_signed = false;
+                 return ResultSuccess();
+             }
