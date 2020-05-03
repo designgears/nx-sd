@@ -15,7 +15,7 @@ class AtmosphereComponent(NXSDComponent):
     def __init__(self):
         super().__init__()
         self._name = COMPONENT_NAME
-        self._version_string = COMPONENT_VERSION
+        self._version_string = COMPONENT_VERSION+'-'+COMPONENT_COMMIT_OR_TAG
 
         self._source_directory = Path(settings.components_directory, COMPONENT_NAME)
         self._dockerfiles_directory = Path(settings.dockerfiles_directory, COMPONENT_NAME)
@@ -27,6 +27,7 @@ class AtmosphereComponent(NXSDComponent):
         dest_sd = Path(install_directory, 'sdcard')
         dest_ams = Path(dest_sd, 'atmosphere')
         dest_sept = Path(dest_sd, 'sept')
+        dest_hekate = Path(dest_sd, 'bootloader')
 
         component_dict = {
             'dmnt': (
@@ -65,7 +66,7 @@ class AtmosphereComponent(NXSDComponent):
                 Path(self._source_directory, 'fusee/fusee-primary/fusee-primary.bin'),
                 [
                     Path(install_directory, 'payloads/fusee-primary.bin'),
-                    Path(dest_ams, 'reboot_payload.bin'),
+                    Path(dest_hekate, 'payloads/fusee-primary.bin'),
                 ],
             ),
             'fusee-secondary': (

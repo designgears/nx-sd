@@ -102,3 +102,8 @@
 	path = components/Atmosphere
 	url = https://github.com/Atmosphere-NX/Atmosphere.git
 	ignore = dirty
+[submodule "components/JKSV"]
+	path = components/JKSV
+	url = https://github.com/J-D-K/JKSV.git
+	ignore = dirty
+	

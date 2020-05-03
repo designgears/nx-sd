@@ -14,6 +14,7 @@ from nxsd.components import goldleaf
 from nxsd.components import hbappstore
 from nxsd.components import hekate
 from nxsd.components import incognitorcm
+from nxsd.components import jksv
 from nxsd.components import ldnmitm
 from nxsd.components import lockpickrcm
 from nxsd.components import noexes
@@ -34,13 +35,14 @@ from nxsd.components import toolbox
 
 CORE_COMPONENTS = {
     'atmosphere':   atmosphere,
+    'hekate':       hekate,
     'nxhbloader':   nxhbloader,
     'nxhbmenu':     nxhbmenu,
     'toolbox':      toolbox,
 }
 
 ADDON_COMPONENTS = {
-    'edizon':               edizon,
+    'jksv':                 jksv,
     'ldnmitm':              ldnmitm,
     'nxdumptool':           nxdumptool,
     'nxovlloader':          nxovlloader,
@@ -54,10 +56,10 @@ ADDON_COMPONENTS = {
 OPTIONAL_COMPONENTS = {
     'awooinstaller':awooinstaller,
     'checkpoint':   checkpoint,
+    'edizon':       edizon,
     'emuiibo':      emuiibo,
     'goldleaf':     goldleaf,
     'hbappstore':   hbappstore,
-    'hekate':       hekate,
     'incognitorcm': incognitorcm,
     'lockpickrcm':  lockpickrcm,
     'noexes':       noexes,

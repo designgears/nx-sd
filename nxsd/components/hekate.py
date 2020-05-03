@@ -5,8 +5,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'hekate'
-COMPONENT_VERSION = 'v5.1.3 & Nyx v0.8.6'
-COMPONENT_COMMIT_OR_TAG = 'a39ba2c'
+COMPONENT_VERSION = 'v5.2.0 & Nyx v0.9.0'
+COMPONENT_COMMIT_OR_TAG = 'ee8854f'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 
@@ -62,10 +62,6 @@ class HekateComponent(NXSDComponent):
             'res_pak': (
                 Path(settings.defaults_directory, 'hekate/res.pak'),
                 Path(dest_hekate, 'sys/res.pak'),
-            ),
-            'patches': (
-                Path(settings.defaults_directory, 'hekate/patches.ini'),
-                Path(dest_hekate, 'patches.ini'),
             ),
             'config': (
                 Path(settings.defaults_directory, 'hekate/hekate_ipl.ini'),

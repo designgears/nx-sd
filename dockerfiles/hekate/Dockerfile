@@ -1,4 +1,4 @@
-FROM devkitpro/devkita64_devkitarm:20190720
+FROM devkitpro/devkita64_devkitarm:20200405
 
 COPY ./compile.sh /compile.sh
 RUN chmod a+x /compile.sh
