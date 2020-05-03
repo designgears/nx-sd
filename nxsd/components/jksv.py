@@ -4,8 +4,8 @@ from nxsd.config import settings
 from pathlib import Path
 
 COMPONENT_NAME = 'JKSV'
-COMPONENT_VERSION = '04.10.2020'
-COMPONENT_COMMIT_OR_TAG = '4716225'
+COMPONENT_VERSION = '04.30.2020'
+COMPONENT_COMMIT_OR_TAG = '1e03cba'
 DOCKER_IMAGE_NAME = COMPONENT_NAME.lower()+'-builder'
 
 

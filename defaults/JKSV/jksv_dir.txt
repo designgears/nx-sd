@@ -1,1 +1,1 @@
-sdmc:/switch/JKSV/
+sdmc:/switch/JKSV/saves/
